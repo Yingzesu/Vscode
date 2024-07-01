@@ -1,0 +1,365 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usefonttheme{professionalfonts}
+\AtBeginSection[]{
+\begin{frame} 
+    \frametitle{Contents}
+    \tableofcontents[currentsection]
+\end{frame}
+}
+\title[CHY formula]{Scattering of massless particles: scalars, gluons and gravitons}
+\subtitle{Freddy Cachazo, Song He, Ellis Ye Yuan}
+\author{Su Yingze}
+\institute{Nagoya University}
+\date[7 23rd 2024]{July 23rd 2024} 
+\begin{document}
+\frame{\titlepage}
+
+\section{Why the S-matrix is so important?}
+\begin{frame}{Locality and Unitarity}
+    aa
+\end{frame}
+\section{Review of some pertinent results}
+\begin{frame}{Gauge theory color structure}
+    At tree level, with particles in the adjoint representaion of gauge group SU(N), the amplitude can be 
+decomposed as
+\textcolor{red}{\begin{equation*}
+    \mathcal{A}_n^{tree}(1,2,3,\dots,n)=\sum _{\mathcal{P}(2,3,\dots,n)}Tr[T^{a_1}T^{a_2}T^{a_3}\dots
+    T^{a_n}]A_n^{tree}[1,2,3,\dots,n]
+\end{equation*}}
+
+here we ommit the coupling constant g, and $A_n^{tree}$ is called tree-level color-ordered partial amplitude.
+Notice that this basis includes \textcolor{red}{$(n-1)!$} independent amplitudes.
+\end{frame}
+\begin{frame}
+    Color-ordered partial amplitudes satisfy a set of well-known properties,
+    \begin{itemize}
+        \item Cyclic:\quad $$A_n^{tree}[1,2,3,\dots,n]=A_n^{tree}[2,3,\dots,n,1]$$
+        \item Reflection: \quad $$A_n^{tree}[1,2,3,\dots,n]=(-1)^nA_n^{tree}[n,\dots,3,2,1]$$
+        \item "photon" decoupling: \quad $$\sum_{\sigma\in \text{cyclic}}A_n^{tree}[1,\sigma(2,3,\dots,n)]=0$$
+        \item KK(Kleiss-Kuijf) relation:\quad $$A_n^{tree}[1,{\alpha},n,{\beta}]=(-1)^{n_\beta}
+        \sum_{\left\{\sigma\right\}_i\in OP(\left\{\alpha\right\},\left\{\beta\right\}^T)}A_n^{tree}[1,\left\{\sigma\right\}_i,n]$$
+    \end{itemize}
+    where the OP means ordered permutaions, that is all permutations of$\left\{\alpha\right\},\left\{\beta\right\}^T$
+    that matains the order of individual elements of each set.
+\end{frame}
+\begin{frame}
+    For example, a five point amplitude $A_n^{tree}(1,\{2,3\},5,\{4\})$, we have
+\begin{equation*}
+    A_n^{tree}[1,2,3,5,4]=-A_n^{tree}[1,2,3,4,5]-A_n^{tree}[1,2,4,3,5]-A_n^{tree}[1,4,2,3,5]
+\end{equation*}
+The other five point relations can be obtained by permuting legs 2,3,4 and using cyclic and reflection properties.
+\\ \hspace*{\fill}\\
+This means that the six amplitudes $A_n^{tree}(1,\mathcal{P}\{2,3,4 \},5 )$ form a basis of remaining five-point partial amplitudes.
+\textcolor{red}{More generally, for multiplicity n, the KK relation can be used to rewrite any color-ordered partial amplitude in terms of only $(n-2)!$
+basis partial amplitudes, where two legs are fixed(usually choose 1 and n).}
+\end{frame}
+\begin{frame}{A Similar Structure}
+    It can be proved that tree level amplitudes can also be decomposed like 
+\begin{equation*}
+    \mathcal{A}_n^\text{tree}=\sum_{\sigma\in S_{n-2}}\tilde{f}^{a_1a_{\sigma_1}b_1}\tilde{f}^{b_1a_{\sigma_2}b_2}\cdots\tilde{f}^{b_{n-3}a_{\sigma_{n-2}}a_n}\tilde{A}_n(1,\sigma_1,\sigma_2,\ldots,\sigma_{n-2},n)
+\end{equation*}
+It is easy to realize that the number of basis amplitudes is also \textcolor{red}{$(n-2)!$}.
+\end{frame}
+\begin{frame}
+    \begin{Large}
+        \textcolor{red}{How can we realize the existence of this basis?}
+    \end{Large}
+\\ \hspace*{\fill}\\
+We just need to notice the contribution from ladder diagram
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1\linewidth]{1.png}
+\end{figure}
+And any (three vertex) diagram, by using the Jacobbi identity like 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1\linewidth]{2.png}
+\end{figure}
+can be transformed to the ladder diagram. It has been proved that $\textcolor{red}{\tilde{A}_n(\dots)}$ here is identical to $\textcolor{red}{A_n^{tree}[\dots]}$ in the trace basis.
+\end{frame}
+\begin{frame}{Color-Kinematics Duality and BCJ Relation}
+The Color-Kinematics Duality here is not the complete version, but we can sketch some point from lower point case
+\end{frame}
+
+\section{CHY Formula}
+\begin{frame}{Scattering equations}
+    It has benn proposed that there is connection between the scattering data of n massless particles and the n-punctured sphere from a rational map
+    \begin{equation*}
+        k_\mu^a=\frac{1}{2\pi i}\oint_{|z-\sigma_a|}dz\frac{p^\mu(z)}{\prod ^n_{b=1}(z-\sigma_b)}
+    \end{equation*}
+ 
+    To discribe the n-punctured sphere more properly, we can introduce the Riemann sphere as
+    \begin{equation*}
+        \mathbb{CP}^1\cong \mathcal{S}^2\cong \mathbb{C}\cup\{\infty\}
+    \end{equation*}
+    and n-punctured Riemann sphere can be discribed by $SL(2,\mathbb{C})$ affine coordinates ${\sigma_1,\sigma_2,\ldots,\sigma_n}$, that is to say we have a equvilance relation
+    \begin{align*}
+        \{\sigma_1,\sigma_2,\ldots,\sigma_n\}\sim\{\psi(\sigma_1),\psi(\sigma_2),\ldots,\psi(\sigma_n)\},\\\psi(\sigma):=\frac{\alpha\sigma+\beta}{\gamma\sigma+\delta},\quad\alpha,\beta,\gamma,\delta\in\mathbb{C},\alpha\delta-\beta\gamma=1
+    \end{align*}
+    because of the redundancy of 
+\end{frame}
+\begin{frame}
+    From this map, we can easily obtain the main ingredients of this report \\
+    
+
+    \begin{block}{\textcolor{red}{Scattering equations}}
+        \begin{equation*}
+            \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\qquad a\in \{1,\dots,n\}
+        \end{equation*}
+    \end{block}
+    It has been proved that the number of solutions in any dimension is $\alert{(n-3)!}$, and only \alert{n-3} of the equtions are independent, so we can rewrite the scattering equations as following 
+    \begin{equation*}
+        \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\quad a\in \{4,5,\dots,n\}\quad and\quad  \sigma_1\rightarrow\infty,\sigma_2=0,\sigma_3=1
+    \end{equation*}
+\end{frame}
+\begin{frame}{KLT Relation}
+    So-called KLT relation, in the language of field theory, refers to the decomposition of \alert{gravity amplitudes} to \alert{two gauge theory amplitues}. 
+    \begin{table}[]
+        \resizebox{\textwidth}{!}{
+        \begin{tabular}{|l|l|l|l|l|}
+        \hline
+         \(\mathcal{N}\) & Factors & Supergravity   \\ \hline
+         8 &   \(\mathcal{N}=4SYM\otimes \mathcal{N}=4SYM\)      &   pure \(\mathcal{N}=8 \)SG             \\ \hline
+         6 &   \(\mathcal{N}=4SYM\otimes \mathcal{N}=2SYM\)      &   pure \(\mathcal{N}=6 \)SG             \\ \hline
+         5 &   \(\mathcal{N}=4SYM\otimes \mathcal{N}=1SYM\)      &   pure \(\mathcal{N}=5 \)SG             \\ \hline
+         4 &   \(\mathcal{N}=4SYM\otimes (\mathcal{N}=0YM+n_\nu scalars)\)      &    \(\mathcal{N}=4 \)SG,\(n_\nu\)vector multiplets             \\ \hline
+         4 &   \(\mathcal{N}=2SYM\otimes \mathcal{N}=2SYM\)      &    \(\mathcal{N}=4 \)SG,2 vector multiplets            \\ \hline
+         3 &   \(\mathcal{N}=2SYM\otimes \mathcal{N}=1SYM\)      &    \(\mathcal{N}=3 \)SG,1 vector multiplet           \\ \hline
+         2 &   \(\mathcal{N}=2SYM\otimes (\mathcal{N}=0YM+n_\nu scalars)\)      &    \(\mathcal{N}=2 \)SG,\(n_\nu\) multiplets+1 vector multiplets            \\ \hline
+         2 &   \(\mathcal{N}=1SYM\otimes \mathcal{N}=1SYM\)       &    \(\mathcal{N}=2 \)SG ,1 hypermultiplet               \\ \hline
+         1 &   \(\mathcal{N}=1SYM\otimes (\mathcal{N}=0YM+n_\nu scalars)\)      &     \(\mathcal{N}=1 \)SG,  \(n_\nu\) vector and 1 chiral multiplet           \\ \hline
+        \end{tabular}
+        }
+        \end{table}
+\end{frame}
+\begin{frame}{KLT Orthogonality}
+    $\bullet$ KLT orthogonality is a striking property of the solutions to scattering equations.
+    \begin{block}{Proposition 1}
+        \begin{equation*}
+            \frac{(i,j)}{(i,i)^{\frac12}(j,j)^{\frac12}}=\delta_{ij}
+        \end{equation*}
+    \end{block}
+    
+\end{frame}
+\begin{frame}
+    First we need to define the Jacobian matrix associated to the scattering equations
+        
+        \begin{equation*}
+            \boxed{
+            \label{jacobbi}
+            \Phi_{ab}\equiv\partial\left(\sum_{c\neq a}\frac{s_{ac}}{\sigma_a-\sigma_c}\right)/\left(\partial\sigma_b\right)=\begin{cases}\frac{s_{ab}}{(\sigma_a-\sigma_b)^2},&a\neq b,\\-\sum_{c\neq a}\Phi_{ac}, &a=b\end{cases}
+            }
+        \end{equation*}
+    As mentioned above only n-3 of the scattering equations are independent so the matrix $\Phi$ has \alert{rank n-3}.  (This matrix was first encountered in the gravity amplitudes constructed from gauge theory using KLT relation ) 
+\end{frame}
+\begin{frame}
+    Consider a generalization of $\Phi_{ab}$ 
+    \begin{equation*}
+        \Psi_{ab,a\neq b}\equiv\frac{s_{ab}}{(\sigma_a-\sigma_b)(\sigma_a^{\prime}-\sigma_b^{\prime})},\quad\Psi_{aa}\equiv-\sum_{c\neq a}\Psi_{ac}.
+    \end{equation*}
+    \begin{block}{Proposition 2}
+        \begin{equation*}
+            \operatorname{rank}\Psi(\{\sigma\},\{\sigma^{\prime}\})=\begin{cases}n-4, \{\sigma\}\neq\{\sigma^{\prime}\}\\n-3, \{\sigma\}=\{\sigma^{\prime}\}\end{cases}
+        \end{equation*}
+        $\sigma$ and $\sigma^\prime$ are assmused to be solutions to scattering equation.
+    \end{block}
+\end{frame}
+\begin{frame}{Prove of KLT orthogonality}
+    For the purpose of proving KLT orthogonality, we can construct a n! dimension vector for each solution
+    \begin{equation*}
+        \frac1{(\sigma_{\omega(1)}-\sigma_{\omega(2)})(\sigma_{\omega(2)}-\sigma_{\omega(3)})\cdots(\sigma_{\omega(n)}-\sigma_{\omega(1)})}
+    \end{equation*}
+    Not so obvious is the fact that we can fix the positon of 3 labels, which we choose 1,n-1,n, give rise to the KK relation and BCJ relation.
+    \\ \hspace*{\fill}\\
+    Now the vectors become (n-3)! dimension, and even aftering selecting three lables, we still have the freedom of where to put them. Here we only use two choices :
+    \begin{equation*}
+        \textcolor{red}{(1,\omega(2),\dots,\omega(n-2),n-1,n)\quad and \quad (1,\omega(2),\dots,\omega(n-2),n,n-1 )}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    The corresponding two vectors are 
+    \begin{align*}V(\omega)&=\frac1{(\sigma_1-\sigma_{\omega(2)})\cdots(\sigma_{\omega(n-2)}-\sigma_{n-1})(\sigma_{n-1}-\sigma_n)(\sigma_n-\sigma_1)},\\U(\omega)&=\frac1{(\sigma_1-\sigma_{\omega(2)})\cdots(\sigma_{\omega(n-2)}-\sigma_n)(\sigma_n-\sigma_{n-1})(\sigma_{n-1}-\sigma_1)}.
+    \end{align*}
+    In this language, we can construct a bilinear form 
+    \begin{equation*}
+        S[\alpha|\beta]=\prod^{n-2}_{i=2}\left(s_{1,\alpha_i}+\sum_{j=2}^{i-1}
+        \theta(\alpha(j),\alpha(i))_\beta s_{\alpha(j),\alpha(i)}\right)
+    \end{equation*}
+    where $\alpha,\beta\in S_{n-3}$,$\theta(i,j)_\beta=1$if the order of i,j is the same in both permutations 
+    $\alpha(2,3,\dots,n-2)$ and $\beta(2,3,\dots,n-2)$, and 0 otherwise.
+    S is usually called \alert{Momentum Kernel}.
+\end{frame}
+\begin{frame}
+    Given any two solutions of scatering equations,
+    \begin{equation*}
+        \{\sigma_1^{(i)},\sigma_2^{(i)},\dots,\sigma_n^{(i)}\}\quad and \quad \{\sigma_1^{(j)},\sigma_2^{(j)},\dots,\sigma_n^{(j)}\}
+    \end{equation*}
+    define two vectors, $V(\alpha)^{(i)}$ and $U(\beta)^{(j)}$, i,j are choices of solutions and $\alpha,\beta$ are the choices of permutaions,
+    the number of both is \alert{(n-3)!}.
+    \\ \hspace*{\fill}\\
+    A natural inner product can be defined as
+    \begin{equation*}
+        (i,j):=\sum_{\alpha,\beta\in S_{n-3}}V^{(i)}(\alpha)S[\alpha|\beta]U^{(j)}(\beta)
+    \end{equation*}
+    Knowing all definetions above, we can proceed to prove KLT orthogonality.
+\end{frame}
+\begin{frame}
+    The starting point is to notice that
+    \begin{equation*}
+        \frac{(i,j)}{(i,i)^{\frac12}(j,j)^{\frac12}}=\delta_{ij}
+    \end{equation*}
+    is clearly invariant under $SL(2,\mathbb{C})\times SL(2,\mathbb{C})$. Partially fixing both $SL(2,\mathbb{C})$
+    redundancies with convenient choice $\sigma_{n-1}^{(i)}=\sigma_n^{(j)}=\infty$ and $\sigma_n^{(i)}=\sigma_{n-1}^{(j)}=1$
+    and define 
+    \begin{align*}
+            K_n(\{\sigma\},\{\sigma'\})\equiv\sum_{\alpha,\beta\in S_{n-3}}&\frac1{\sigma_{1,\alpha(2)}\ldots\sigma_{\alpha(n-3),\alpha(n-2)}}S[\alpha|\beta]\\
+            &\frac1{\sigma_{1,\beta(2)}^{\prime}\ldots\sigma_{\beta(n-3),\beta(n-2)}^{\prime}}
+    \end{align*}
+    The motivation for this definition is that $K_n$ appears in the numerator of KLT orthogonality.
+\end{frame}
+\begin{frame}
+    It is also convenient to define an auxiliary co-rank one $(n-2)\times(n-2)$ matrix $\psi^{(n)}$
+    \begin{equation*}
+        \psi_{ab,a\neq b}=\frac{s_{ab}}{\sigma_{ab}\sigma_{ab}^{\prime}},\quad\psi_{aa}=-\sum_{b\neq a}\psi_{ab},\quad a,b=1,\ldots,n{-}2
+    \end{equation*}
+    It can be proven that any $(n-3)\times(n-3)$ minors of $\psi^{(n)}$ are the same, and we denote such a minor as
+    ${\det}^\prime\psi^{(n)}$ , that is to say, the determinat of the matrix after removing any row and colum.
+    \begin{block}{Proposition 3}
+        The two functions defined above are identical up to a sign.
+        \begin{equation*}
+            K_n(\{\sigma\},\{\sigma'\})=(-1)^n{\det}^\prime\psi^{(n)}
+        \end{equation*}
+    \end{block}
+\end{frame}
+\begin{frame}
+    The final step is put all pieces together. With the choice  $\sigma_{n-1}^{(i)}=\sigma_n^{(j)}=\infty$ and $\sigma_n^{(i)}=\sigma_{n-1}^{(j)}=1$,
+    we have 
+    \begin{equation*}
+        \frac{(i,j)}{(i,i)^{\frac12}(j,j)^{\frac12}}=\frac{K_n(\{\sigma^{(i)}\},\{\sigma^{(j)}\})}{K_n^{\frac12}(\{\sigma^{(i)}\},\{\sigma^{(i)}\})K_n^{\frac12}(\{\sigma^{(j)}\},\{\sigma^{(j)}\})}
+    \end{equation*}
+    In addition, one finds that the minor of $\psi$ obtained by removing the first row and colum is identical to 
+    that of $\Psi(\{\sigma\},\{\sigma^{\prime}\})$ after removing rows and colums $\{1,n-1,n\}$. We denote them respectively
+    $|\psi^{(n)}|^1_1$ and $|\Psi|^{1,n-1,n}_{1,n-1,n}$. Then,
+    \begin{align*}
+        \frac{(i,j)}{(i,i)^{\frac12}(j,j)^{\frac12}}&=\frac{K_n(\{\sigma^{(i)}\},\{\sigma^{(j)}\})}{K_n^{\frac12}(\{\sigma^{(i)}\},\{\sigma^{(i)}\})K_n^{\frac12}(\{\sigma^{(j)}\},\{\sigma^{(j)}\})}\\
+        &=\frac{(-1)^n|\psi^{(n)}|^1_1}{{(-1)^n|\psi^{(n)}|^1_1}^{\frac{1}{2}}{|\psi^{(n)}|^1_1}^{\frac{1}{2}}}\\
+        &=\frac{|\Psi(\{\sigma^{(i)}\},\{\sigma^{(j)}\})|_{1,n-1,n}^{1,n-1,n}}{(|\Psi(\{\sigma^{(i)},\sigma^{(i)}\}|_{1,n-1,n}^{1,n-1,n})^{\frac12}(|\Psi(\{\sigma^{(j)}\},\{\sigma^{(j)}\}|_{1,n-1,n}^{1,n-1,n})^{\frac12}}
+    \end{align*}
+\end{frame}
+\begin{frame}
+    Fianlly, we just need to use Proposition 2. 
+    \begin{itemize}
+        \item If $i=j$, the rank of matrix $\Psi$ is $n-3$ and the minor is nonzero, we obtain
+        \begin{equation*}
+            \frac{(i,i)}{(i,i)^{\frac12}(i,i)^{\frac12}}=\frac{|\Psi(\{\sigma^{(i)}\},\{\sigma^{(j)}\})|_{1,n-1,n}^{1,n-1,n}}{|\Psi(\{\sigma^{(i)}\},\{\sigma^{(j)}\})|_{1,n-1,n}^{1,n-1,n}}=1
+        \end{equation*}
+        \item If $i\neq j$, the rank of matrix is $n-4$, so any minor with volume more than $n-4$ equals 0.
+        \begin{equation*}
+            |\Psi(\{\sigma^{(i)}\},\{\sigma^{(j)}\})|_{1,n-1,n}^{1,n-1,n}=0\Rightarrow \frac{(i,j)}{(i,i)^{\frac12}(j,j)^{\frac12}}=0
+        \end{equation*}
+    \end{itemize}
+    Up to now, we conclude the proof of KLT orthogonality.
+\end{frame}
+\begin{frame}
+    \frametitle{Attempt to construct S-matrix --- Towards CHY}
+    Thanks to the excellent properties of scattering equations, it is very tempting to propose that the solutions
+    to scattering equations should be used to construct scattering amplitudes.
+    \\ \hspace*{\fill}\\
+    The first two constructed are YM and gravity amplitudes in any dimensions
+    \begin{align*}
+        M_n^{\mathrm{YM}}(1,2,\dots,n)&=\int\frac{d^n\sigma}{\text{vol SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)\frac{E_n(\{k,\epsilon,\sigma\})}{\sigma_{12}\dots\sigma_{n1}},\\
+        M_n^{\mathrm{gravity}}&=\int\frac{d^n\sigma}{\text{vol SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)E_n(\{k,\epsilon,\sigma\})^2
+    \end{align*}
+    The measure is defined as following
+    \begin{equation*}
+        \prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}{:}=\sigma_{ij}\sigma_{jk}\sigma_{ki}\prod_{a\neq i,j,k}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    The reason we extract 3 indices from delta equation is the fact that only $n-3$ scattering equations are independent.
+    This from can be proved to be \alert{independent of choice of $i,j,k$}, therefore permutaion invariant.
+    We also have
+    \begin{equation*}
+        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad d\mu_n\to\prod_{a=1}^n(\gamma\sigma_a+\delta)^{-4}d\mu_n
+    \end{equation*}
+    $E_n(\{k,\epsilon,\sigma\})$ itself is permutaion invariant with resprct to $\sigma_a,k_a^\mu$ and $\epsilon_a^\mu$. The $SL(2,\mathbb{C})$ invariance of amplitude also 
+    constraints the form of $E_n(\{k,\epsilon,\sigma\})$
+    \begin{equation*}
+        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad E_n(\{k,\epsilon,\sigma\})\to E_n(\{k,\epsilon,\sigma\})\prod_{a=1}^n(\gamma\sigma_a+\delta)^2
+    \end{equation*}
+\end{frame}
+\begin{frame}{The form of measure}
+    It is worth to computed the measure explictly.Aftering "gauge fixing" the $SL(2,\mathbb{C})$ redundancy, one finds 
+    \begin{equation*}
+        \int\prod_{c\neq p,q,r}d\sigma_c(\sigma_{pq}\sigma_{qr}\sigma_{rp})(\sigma_{ij}\sigma_{jk}\sigma_{ki})\prod_{a\neq i,j,k}\delta\biggl(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\biggr)
+    \end{equation*}
+    The delta functions completely localize all integrals and the answer is evaluating a Jacobian defined above.
+    \begin{equation*}
+            \Phi_{ab}\equiv\partial\left(\sum_{c\neq a}\frac{s_{ac}}{\sigma_a-\sigma_c}\right)/\left(\partial\sigma_b\right)=\begin{cases}\frac{s_{ab}}{(\sigma_a-\sigma_b)^2},&a\neq b,\\-\sum_{c\neq a}\Phi_{ac}, &a=b\end{cases}
+    \end{equation*}
+    Then, we obtain the measure
+    \begin{equation*}
+            \boxed{
+            \sum_{\{\sigma\}\in\mathrm{solutions}}\frac{(\sigma_{pq}\sigma_{qr}\sigma_{rp})(\sigma_{ij}\sigma_{jk}\sigma_{ki})}{|\Phi|_{pqr}^{ijk}}}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    Always denoted by 
+    \begin{equation*}
+        \boxed{
+        \det{'}\Phi:=\frac{|\Phi|_{pqr}^{ijk}}{(\sigma_{pq}\sigma_{qr}\sigma_{rp})(\sigma_{ij}\sigma_{jk}\sigma_{ki})}}
+    \end{equation*}
+    $|\Phi|_{pqr}^{ijk}$ means that we need to delete the rows $\{i,j,k\}$ and the colums $\{p,q,r\}$, of course it is free to choose which inedex refers
+    to row or colum ($\Phi$ is a symmetric matrix).
+\end{frame}
+\begin{frame}
+    \frametitle{The form of $E_n(\{k,\epsilon,\sigma\})$}
+    In order to present the explict form of $E_n(\{k,\epsilon,\sigma\})$, first define the following $2n\times2n$ antisymmetric matrix 
+    \begin{equation*}
+        \Psi=\begin{pmatrix}
+            A & -C^T \\
+            C & B 
+        \end{pmatrix}
+    \end{equation*}
+    where $A,B$ and $C$ are $n\times n$ matrices, defined as 
+    \begin{equation*}
+        A_{ab}=\begin{cases}\frac{s_{ab}}{\sigma_a-\sigma_b}&a\neq b,\\0&a=b,\end{cases} \quad 
+        B_{ab}=\begin{cases}\frac{\epsilon_a \cdot \epsilon_b}{\sigma_a-\sigma_b}&a\neq b,\\0&a=b, \end{cases} \quad
+    \end{equation*}
+    \begin{equation*}
+        C_{ab}=\begin{cases}\frac{\epsilon_a\cdot k_b}{\sigma_a-\sigma_b}&a\neq b,\\-\sum_{c\neq a}\frac{\epsilon_a\cdot k_c}{\sigma_a-\sigma_c}&a\neq b.\end{cases}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    The first important observation is that while the Pfaffian of $\Psi$ is 0, but after removing any rows $i,j$ and colums $i,j$
+    with $1\leq i< j\leq n$, the new matrix $\Psi_{ij}^{ij}$ have nonzero Pfaffian and we define the corresponding reduced Pfaffian as 
+    \begin{equation*}
+            \boxed{
+            \mathrm{Pf}^{\prime}\Psi:=\frac{(-1)^{i+j}}{(\sigma_i-\sigma_j)}\mathrm{Pf}(\Psi_{ij}^{ij})}
+    \end{equation*}
+    It can be proved that the reduced Pfaffian is invariant under permutaion of \alert{particle labels}.
+    
+    \begin{alertblock}{Pfaffian}
+        Pfaffian is defined for antisymmetric matrix, usually in two ways as following
+        \begin{itemize}
+            \item \begin{equation*}
+                \mathrm{Pf}(A)^2=\det A
+            \end{equation*}
+            \item \begin{equation*}
+                \mathrm{Pf}(A)=\frac{1}{2^n n!}\sum_{\sigma \in S_{2n}}sgn(\sigma)\prod_{i=1}^n a_{\sigma_{(2i-1)},\sigma(2i)}
+            \end{equation*}
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+\begin{frame}
+    Write down the proposal
+    \alert{
+    \begin{equation*}
+        E_n(\{k,\epsilon,\sigma\})=\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)
+    \end{equation*}}
+\end{frame}
+
+\end{document}
+
+
