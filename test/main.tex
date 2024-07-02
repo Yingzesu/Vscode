@@ -394,17 +394,54 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
         \end{equation*}
         we find the amplitude in the soft limit is 
         \begin{equation*}
-            A_n\to\left(\frac{\epsilon_n\cdot k_{n-1}}{k_n\cdot k_{n-1}}+\frac{\epsilon_n\cdot k_1}{k_n\cdot k_!}\right)A_{n-1}
+            A_n\to\left(\frac{\epsilon_n\cdot k_{n-1}}{k_n\cdot k_{n-1}}+\frac{\epsilon_n\cdot k_1}{k_n\cdot k_1}\right)A_{n-1}
         \end{equation*}
     \end{itemize}
 \end{frame}
 \begin{frame}
     \frametitle{CHY form of amplitudes}
     Both formulas above can be written in this simplest form 
+    \alert{
+        \begin{equation*}
+            \!\!\!\!\mathcal{M}^{(s)}\!=\!\!\!\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)
+            \!\!\!\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_3})}{(\sigma_1-\sigma_2)\dots (\sigma_n-\sigma_1)}\right)^{(2-s)}{(\mathrm{Pf}^\prime\Psi)}^s
+        \end{equation*}}
+    with $s=1$ for Yang-Mills and $s=2$ for gravity.
+    \\ \hspace*{\fill}\\
+    Here we would like to consider that the formula above is not only a convenient way to write Yang-Mills and gravity amplitudes, but can be \alert{a definition of S-matrix
+    for spin s particles}.This means that 
     \begin{equation*}
-        \mathcal{M}^{(s)}
+        s=0\quad\to \quad \text{a corresponding sclar theory}
     \end{equation*}
 \end{frame}
+\begin{frame}
+    In order to get more general case, the gravity amplitudes actually can be modified to the product of two different Pfaffians,each with own choice of polariazation vector
+    \begin{equation*}
+        \left(\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)\right)^2\to\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)\mathrm{Pf}^\prime \Psi(k,\tilde{\epsilon},\sigma)
+    \end{equation*}
+    actually it gives amplitudes with gravitons coupled to dilatons and B-fields.
+    \\ \hspace*{\fill}\\
+    For the case $s=0$, the similar consequence is 
+    \begin{equation*}
+        \left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)^2\to\left(\frac{\mathrm{Tr}(T^{a_1}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)
+        \left(\frac{\mathrm{Tr}(\tilde{T}^{b_1}\dots \tilde{T}^{b_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)
+    \end{equation*}
+    while the original color group is $U(N)$, the new factors are the product of two different color group \alert{$U(N)\times U(\tilde{N})$}.
+\end{frame}
+\begin{frame}
+    The simplest possibility is the theory with only cubic interaction
+    \begin{equation*}
+        -f_{abc}\tilde{f}_{a^\prime b^\prime c^\prime}\phi^{aa^\prime}\phi^{bb^\prime}\phi^{cc^\prime}
+    \end{equation*}
+    The conclusion of the factors above
+    \begin{equation*}
+        \mathcal{C}_{U(N)}\equiv \left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)\quad \mathrm{and} \quad E_\epsilon\equiv\mathrm{Pf}^{'}\Psi(\epsilon)
+    \end{equation*}
+    
+
+\end{frame}
+
+
 
 \end{document}
 
