@@ -1,6 +1,7 @@
 \documentclass{beamer}
 \usetheme{Madrid}
 \usefonttheme{professionalfonts}
+\usepackage{tikz}
 \AtBeginSection[]{
 \begin{frame} 
     \frametitle{Contents}
@@ -59,7 +60,7 @@ basis partial amplitudes, where two legs are fixed(usually choose 1 and n).}
 \begin{equation*}
     \mathcal{A}_n^\text{tree}=\sum_{\sigma\in S_{n-2}}\tilde{f}^{a_1a_{\sigma_1}b_1}\tilde{f}^{b_1a_{\sigma_2}b_2}\cdots\tilde{f}^{b_{n-3}a_{\sigma_{n-2}}a_n}\tilde{A}_n(1,\sigma_1,\sigma_2,\ldots,\sigma_{n-2},n)
 \end{equation*}
-It is easy to realize that the number of basis amplitudes is also \textcolor{red}{$(n-2)!$}.
+The basis is called DDM and more convenient in parctice. It is easy to realize that the number of basis amplitudes is also \textcolor{red}{$(n-2)!$} with fiexed particle labels 1 and n.
 \end{frame}
 \begin{frame}
     \begin{Large}
@@ -411,7 +412,7 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
     Here we would like to consider that the formula above is not only a convenient way to write Yang-Mills and gravity amplitudes, but can be \alert{a definition of S-matrix
     for spin s particles}.This means that 
     \begin{equation*}
-        s=0\quad\to \quad \text{a corresponding sclar theory}
+        s=0\quad\to \quad \text{a corresponding scalar theory}
     \end{equation*}
 \end{frame}
 \begin{frame}
@@ -433,15 +434,85 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
     \begin{equation*}
         -f_{abc}\tilde{f}_{a^\prime b^\prime c^\prime}\phi^{aa^\prime}\phi^{bb^\prime}\phi^{cc^\prime}
     \end{equation*}
-    The conclusion of the factors above
+    All of above leads to the conclusion that the factors 
     \begin{equation*}
-        \mathcal{C}_{U(N)}\equiv \left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)\quad \mathrm{and} \quad E_\epsilon\equiv\mathrm{Pf}^{'}\Psi(\epsilon)
+        \mathcal{C}_{U(N)}\equiv \sum_{\sigma\in S_n/Z_n}\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)\quad \mathrm{and} \quad E_\epsilon\equiv\mathrm{Pf}^{'}\Psi(\epsilon)
     \end{equation*}
-    
-
+    are interchangeable and this is a color-Kinematics corresopondence which is valid for individual solutions to scattering equations.
+   
 \end{frame}
 
+\begin{frame}
+    The connection of amplitudes between 3 theories can be described by the following diagram 
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=1\linewidth]{main.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Double partial amplitudes}
+    Because there are two color indices in this sclar theory, so it can be anticipateed that the amplitude
+    have double trace decomposition structure
+    \begin{align*}
+        \mathcal{M}_n^{(0)}&=\sum_{\alpha\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})M_n^{(0)}(\alpha(1),\alpha(2),\ldots,\alpha(n))\\
+        &=\sum_{\alpha,\beta\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})\text{Tr}(T^{\mathtt{a}_{\beta(1)}}T^{\mathtt{a}_{\beta(2)}}\cdots T^{\mathtt{a}_{\beta(n)}})\\
+        &\times \alert{m_n^{(0)}(\alpha|\beta)}
+    \end{align*} 
+    where the last term $m_n^{(0)}(\alpha|\beta)$ is called \alert{double partial amplitude} and can be read off from the full amplitude
+    \begin{align*}
+    m_{n}^{(0)}(\alpha|\beta)&=\int\frac{d^{n}\sigma}{\operatorname{vol}\operatorname{SL}(2,\mathbb{C})}\frac{\prod_{a}{}^{\prime}\delta(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}})}{(\sigma_{\alpha(1),\alpha(2)}\cdots\sigma_{\alpha(n),\alpha(1)})(\sigma_{\beta(1),\beta(2)}\cdots\sigma_{\beta(n),\beta(1)})}\\
+    =&\sum_{\{\sigma\}\in\mathrm{solutions}}\frac1{\det^{\prime}\Phi}\frac{1}{(\sigma_{\alpha(1),\alpha(2)}\cdots\sigma_{\alpha(n),\alpha(1)})(\sigma_{\beta(1),\beta(2)}\cdots\sigma_{\beta(n),\beta(1)})}
+    \end{align*}
 
+\end{frame}
+\begin{frame}
+    Likewise the decomposition in the first section, it is more usually to write the amplitudes in terms of colore basis
+    \begin{equation*}
+        \boxed{\mathbf{c}_\alpha\equiv\sum_{\mathsf{c}_1,...,\mathsf{c}_{n-3}}f_{\mathsf{a}_1\mathsf{a}_{\alpha(2)}\mathsf{c}_1}\cdots f_{\mathsf{c}_{n-3}\mathsf{a}_{\alpha(n-1)}\mathsf{a}_n}}
+    \end{equation*}
+    where $\alpha \in S_{n-2}$. The amplitude is 
+    \begin{equation*}
+        \mathcal{M}_n^{(0)}=\sum_{\alpha,\beta\in S_{n-2}}\mathbf{c_\alpha}\tilde{\mathbf{c_\beta}}m_{n}^{(0)}(\alpha|\beta)
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    \frametitle{Examples}
+    \begin{itemize}
+        \item The simplest example is the 3 point case
+        \begin{equation*}
+            \mathcal{M}_3^{(0)}(1^{aa^\prime,bb^\prime,cc^\prime})=(\sigma_{12}\sigma_{23}\sigma_{31})^2\frac{f_{abc}f_{a^\prime b^\prime c^\prime}}{(\sigma_{12}\sigma_{23}\sigma_{31})^2}=f_{abc}f_{a^\prime b^\prime c^\prime}
+        \end{equation*}
+        It actually gives the correct answer.
+        \item The 4 point case is a little complex. Solving the scattering equations with $\sigma_1=0,\sigma_2=1,\sigma_3=\infty$ gives $\sigma_4=-s_{23}/s_{12}$. Define
+        $s_{12}=s$, $s_{23}=t$, $s_{13}=u$, the color factors are 
+        \begin{equation*}
+            \mathbf{c_s}=\sum_bf_{a_1a_2b}f_{ba_3a_4},\mathbf{c_t}=\sum_bf_{a_1a_4b}f_{ba_3a_2},\mathbf{c_u}=\sum_bf_{a_1a_3b}f_{ba_2a_4}
+        \end{equation*}
+        Denoting the ordering $(1324)$ as $P$ and comuputing $\det{'}\Phi=\frac{s^2}{t}/(\sigma_{12}\sigma_{23}^2\sigma_{31}\sigma_{34}\sigma_{42})$, one gets
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{align*}
+        \!\!\!\!\mathcal{M}_4^{(0)}&=\mathbf{c_s}\tilde{\mathbf{c_s}}m_4^{(0)}(I;I)+\mathbf{c_s}\tilde{\mathbf{c_u}}m_4^{(0)}(I;P)+\mathbf{c_u}\tilde{\mathbf{c_s}}m_4^{(0)}(P;I)+\mathbf{c_u}\tilde{\mathbf{c_u}}m_4^{(0)}(P;P)\\
+        &=\mathbf{c_s}\tilde{\mathbf{c_s}}\frac{u}{st}+(\mathbf{c_s}\tilde{\mathbf{c_u}}+\mathbf{c_u}\tilde{\mathbf{c_s}})\frac{1}{t}+\mathbf{c_u}\tilde{\mathbf{c_u}}\frac{s}{ut}\\
+        &=-\frac{\mathbf{c_s}\tilde{\mathbf{c_s}}}{s}-\frac{\mathbf{c_t}\tilde{\mathbf{c_t}}}{t}-\frac{\mathbf{c_u}\tilde{\mathbf{c_u}}}{u}
+    \end{align*}
+    \quad \quad as expected for a color-dressed cubic theory.
+    \begin{itemize}
+        \item For the five point, I just give the results of some double partial amplitudes.
+        Denoting the orderings as $I=P_0$, $(13245)=P_1$, $(12435)=P_2$, $(14325)=P_3$, $(13425)=P_4$, $(14235)=P_5$
+        \begin{equation*}
+            \begin{aligned}&m_5^{(0)}(I|I)=\frac{1}{s_{12}s_{34}}+\frac{1}{s_{23}s_{45}}+\frac{1}{s_{34}s_{51}}+\frac{1}{s_{45}s_{12}}+\frac{1}{s_{51}s_{23}},\\&m_5^{(0)}(I|P_1)=-\frac{1}{s_{23}}\left(\frac{1}{s_{45}}+\frac{1}{s_{12}}\right),\quad
+                m_5^{(0)}(I|P_2)=-\frac{1}{s_{34}}\left(\frac{1}{s_{51}}+\frac{1}{s_{12}}\right).\end{aligned}
+        \end{equation*}
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{align*}
+        &m_5^{(0)}(I|P_3)=-\frac{1}{s_{51}}\left(\frac{1}{s_{23}}+\frac{1}{s_{34}}\right),\quad  m_5^{(0)}(I|P_2)=-\frac{1}{s_{34}s_{51}},\\
+        &m_5^{(0)}(I|P_5)=0
+    \end{align*}
+\end{frame}
 
 \end{document}
 
