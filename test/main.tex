@@ -2,6 +2,7 @@
 \usetheme{Madrid}
 \usefonttheme{professionalfonts}
 \usepackage{tikz}
+\usepackage{svg}
 \AtBeginSection[]{
 \begin{frame} 
     \frametitle{Contents}
@@ -509,11 +510,238 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
 \end{frame}
 \begin{frame}
     \begin{align*}
-        &m_5^{(0)}(I|P_3)=-\frac{1}{s_{51}}\left(\frac{1}{s_{23}}+\frac{1}{s_{34}}\right),\quad  m_5^{(0)}(I|P_2)=-\frac{1}{s_{34}s_{51}},\\
+        &m_5^{(0)}(I|P_3)=-\frac{1}{s_{51}}\left(\frac{1}{s_{23}}+\frac{1}{s_{34}}\right),\quad  m_5^{(0)}(I|P_4)=-\frac{1}{s_{34}s_{51}},\\
         &m_5^{(0)}(I|P_5)=0
     \end{align*}
-\end{frame}
+    From there examples, it is easy to see that when both permutations in $m_n^{(0)}(\alpha|\beta)$ are the same, then the answer is a sum over all color-orded
+    trivalent diagrams; When the two permutations are different, it gives a subset of terms of $m_n^{(0)}(\alpha|\alpha)$. 
+    \\ \hspace*{\fill}\\
+    More explictly,
 
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+    
+    %Straight Lines [id:da8455657796938298] 
+    \draw    (179.5,110) -- (212.5,142) ;
+    %Straight Lines [id:da5324594211620186] 
+    \draw    (212.5,142) -- (182.5,170) ;
+    %Straight Lines [id:da4643902351443361] 
+    \draw    (212.5,142) -- (254.5,142) ;
+    %Straight Lines [id:da8904360433186445] 
+    \draw    (280.5,111) -- (254.5,142) ;
+    %Straight Lines [id:da18000644921445508] 
+    \draw    (254.5,142) -- (281.5,171) ;
+    %Straight Lines [id:da29602344087941934] 
+    \draw    (320.5,109) -- (353.5,141) ;
+    %Straight Lines [id:da9975053882839713] 
+    \draw    (353.5,141) -- (323.5,169) ;
+    %Straight Lines [id:da5157442319090852] 
+    \draw    (353.5,141) -- (395.5,141) ;
+    %Straight Lines [id:da049884375007126946] 
+    \draw    (421.5,110) -- (395.5,141) ;
+    %Straight Lines [id:da9299487354359295] 
+    \draw    (395.5,141) -- (422.5,170) ;
+    
+    % Text Node
+    \draw (111,135.4) node [anchor=north west][inner sep=0.75pt]    {$m_{4}^{(0)}(I,I) =$};
+    % Text Node
+    \draw (184.5,173) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (184.5,94) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (264.5,94) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (263.5,172) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (298,133.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (325.5,172) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (325.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (405.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (404.5,171) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+    
+    
+    \end{tikzpicture}
+
+\end{frame}
+\begin{frame}
+    Similarly,
+    
+
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,350); %set diagram left start at 0, and has height of 350
+    
+    %Straight Lines [id:da8963901965951664] 
+    \draw    (84,71) -- (108,93) ;
+    %Straight Lines [id:da07470927432540231] 
+    \draw    (108,93) -- (136,93) ;
+    %Straight Lines [id:da12245379377221366] 
+    \draw    (108,93) -- (85,111) ;
+    %Straight Lines [id:da6511432990080723] 
+    \draw    (136,93) -- (161,114) ;
+    %Straight Lines [id:da1430135957918477] 
+    \draw    (157,71) -- (136,93) ;
+    %Straight Lines [id:da8765002291973463] 
+    \draw    (157,71) -- (158,47) ;
+    %Straight Lines [id:da9623971067643409] 
+    \draw    (157,71) -- (178,87) ;
+    %Straight Lines [id:da5561877649988292] 
+    \draw    (214,70) -- (238,92) ;
+    %Straight Lines [id:da44100018812085007] 
+    \draw    (238,92) -- (266,92) ;
+    %Straight Lines [id:da05824517478761182] 
+    \draw    (238,92) -- (215,110) ;
+    %Straight Lines [id:da35334338456014613] 
+    \draw    (266,92) -- (291,113) ;
+    %Straight Lines [id:da9313767826880515] 
+    \draw    (287,70) -- (266,92) ;
+    %Straight Lines [id:da696534040519218] 
+    \draw    (287,70) -- (288,46) ;
+    %Straight Lines [id:da5526828548209644] 
+    \draw    (287,70) -- (308,86) ;
+    %Straight Lines [id:da19124382298581288] 
+    \draw    (359,64) -- (383,86) ;
+    %Straight Lines [id:da5237814153432139] 
+    \draw    (383,86) -- (411,86) ;
+    %Straight Lines [id:da7974585866426673] 
+    \draw    (383,86) -- (360,104) ;
+    %Straight Lines [id:da46316924534551385] 
+    \draw    (411,86) -- (436,107) ;
+    %Straight Lines [id:da37617479030606993] 
+    \draw    (432,64) -- (411,86) ;
+    %Straight Lines [id:da9834219129393018] 
+    \draw    (432,64) -- (433,40) ;
+    %Straight Lines [id:da7117622111604034] 
+    \draw    (432,64) -- (453,80) ;
+    %Straight Lines [id:da8760088009181417] 
+    \draw    (82,171) -- (106,193) ;
+    %Straight Lines [id:da7078786925271212] 
+    \draw    (106,193) -- (134,193) ;
+    %Straight Lines [id:da5389180018159456] 
+    \draw    (106,193) -- (83,211) ;
+    %Straight Lines [id:da26578622720899636] 
+    \draw    (134,193) -- (159,214) ;
+    %Straight Lines [id:da5989066756692625] 
+    \draw    (155,171) -- (134,193) ;
+    %Straight Lines [id:da13747441694892726] 
+    \draw    (155,171) -- (156,147) ;
+    %Straight Lines [id:da4119117050779677] 
+    \draw    (155,171) -- (176,187) ;
+    %Straight Lines [id:da5379584617019675] 
+    \draw    (221,169) -- (245,191) ;
+    %Straight Lines [id:da788296500370655] 
+    \draw    (245,191) -- (273,191) ;
+    %Straight Lines [id:da4136462405421193] 
+    \draw    (245,191) -- (222,209) ;
+    %Straight Lines [id:da37414431568833373] 
+    \draw    (273,191) -- (298,212) ;
+    %Straight Lines [id:da8232480161298765] 
+    \draw    (294,169) -- (273,191) ;
+    %Straight Lines [id:da7983669347123197] 
+    \draw    (294,169) -- (295,145) ;
+    %Straight Lines [id:da7903324165137171] 
+    \draw    (294,169) -- (315,185) ;
+    
+    % Text Node
+    \draw (5,76.4) node [anchor=north west][inner sep=0.75pt]    {$m_{5}( I,I) =$};
+    % Text Node
+    \draw (87,114) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (86,68) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (159.5,56) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (180,84) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (163,111) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (198,73.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (217,113) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (216,67) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (289.5,55) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (310,83) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (293,110) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (335,72.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (362,107) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (361,61) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (434.5,49) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (455,77) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (438,104) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (65,184.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (85,214) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (84,168) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (157.5,156) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (178,184) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (161,211) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (201,181.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (224,212) node [anchor=north west][inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (226,172) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (296.5,154) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (317,182) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (300,209) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    
+    
+    \end{tikzpicture}
+\end{frame}
+\begin{frame}
+    \frametitle{Trivalent graph expansion}
+    \begin{alertblock}{Proposition}
+        The function $m_n^{(0)}(\alpha|\beta)$ computes the sum of all trivalent scalar diagrams which can be regarded as both $\alpha$ color-ordered and $\beta$ color-orded.
+    \end{alertblock}
+    \pause
+    More explictly, 
+    \begin{equation*}
+        \boxed{m_n^{(0)}(\alpha|\beta)=(-1)^{n-3+n_{\text{flip}}(\alpha|\beta)}\sum_{g\in\mathcal{T}(\alpha)\cap\mathcal{T}(\beta)}\prod_{e\in E(g)}\frac{1}{s_e}}
+\end{equation*}
+where the $\text{flip}(\alpha|\beta)$ is defined below, $\mathcal{T}(\alpha)$ and $\mathcal{T}(\beta)$ refer to the set of color-ordered diagrams in $\alpha$ and 
+$\beta$ ordering respectively. To make this expression more clear, see the following diagram
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{5.png}
+\end{figure}
+\end{frame}
+\begin{frame}
+    We take $m_8^{(0)}(I;18543762)$ as an example to explain how to compute it in an systematic way
+    \begin{itemize}
+        \item First step, draw a disk with n nodes sitting on the boundary in the ordering $\alpha$, then link the n nodes with a loop of line segments according to
+              the ording $\beta$. The line segments from $\beta$ split the disk into some polygons, like the graph (b). We need to move the external points of every polygon
+              to make them have no common edges, like graph (c).
+        \item Second step, put a point in every polygon, named equivalant vertex, and connect this point to all external points in corresponding area. Lines that connect equivalent 
+              vertices in two regions with common vertices are called equivalent propagators. The resulting graph is an equivalent Feynman diagram, as shown in Figure (d).
+    \end{itemize}
+\end{frame}
 \end{document}
 
 
