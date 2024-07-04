@@ -18,8 +18,34 @@
 \frame{\titlepage}
 
 \section{Why the S-matrix is so important?}
-\begin{frame}{Locality and Unitarity}
-    aa
+\begin{frame}
+    It is well known that in the conventional quantum field theory, S-matrix is a deduced physical quantity following
+    unitarity and localty. But as the understanding of scatering amplitudes improves, by using the amplituhedron method,
+    S-matrix can be constructed directly from a special kind of geometry object and we even have no need to introduce the Lagrangian
+    of the specific theory. Also the localty and unitarity can be the outcome from the request of positivity instead of input or previous constraints.
+    It may give us some implications about the significance of S-matrix and encourage us to reconstruct the field theory in another way.
+\end{frame}
+\begin{frame}{}
+    \begin{itemize}
+        \item BCFW recursion relation.
+        \begin{equation*}
+            \!\!\!\!A_n ~= \!\!\!\!\sum_{\text{diagrams}~I} \hat{A}_\text{L}(z_I) 
+            \,\frac{1}{P_I^2}\,
+            \hat{A}_\text{R}(z_I)
+               ~~=
+               \!\!\!\!\sum_{\text{diagrams}~I}
+           \raisebox{-5.5mm}{\includegraphics[height=1.4cm]{recrel1.pdf}}
+           \,.
+        \end{equation*}
+        \item Dual superconformal symmetry of $\mathcal{N}=4$ Super Yang-Mills amplitude.
+        \item Generalized unitarity
+        \item Positive geometry and Amplituhedra.
+        \item \dots
+    \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{Grassmanian-Image.jpg}
+    \end{figure}
 \end{frame}
 \section{Review of some pertinent results}
 \begin{frame}{Gauge theory color structure}
@@ -741,6 +767,41 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
         \item Second step, put a point in every polygon, named equivalant vertex, and connect this point to all external points in corresponding area. Lines that connect equivalent 
               vertices in two regions with common vertices are called equivalent propagators. The resulting graph is an equivalent Feynman diagram, as shown in Figure (d).
     \end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{itemize}
+        \item Third step, we can read off the corresponding amplitudes from the equivalent Feynman diagram. 
+    \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{7.png}
+    \end{figure}
+    In this example, we can obtain 
+    \begin{equation*}
+        m_8^{(0)}(I|54376218)=(-1)^?\left(\frac{1}{s_{21}}+\frac{1}{s_{18}}\right)\left(\frac{1}{s_{34}}+\frac{1}{s_{45}}\right)\frac{1}{s_{345}s_{812}s_{67}}
+    \end{equation*}
+    As for the indefinite sign, there is also a procedure to determine it.
+\end{frame}
+\begin{frame}
+    \begin{itemize}
+        \item First step, determine the orientation of the disk by ordering $\alpha$, and define the loop segments by ordering $\beta$, which also determine the orientation of every polygon.
+        \item Second step, (1) each polygon with odd number vertices contributes a plus sign if the orientation is the same as disk, and a minus sign oppositely;
+              (2) each polygon with even number vertices contribute a minus sign; (3) each intersection point contributes a minus sign.
+    \end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{6.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Relation to KLT matrix}
+    It can be shown that the scalar double partial amplitudes are the same as the inverse of KLT matrix.
+    \begin{align*}
+        &(S_{\mathrm{KLT}}^{-1})_\beta^\alpha=(m_{\mathrm{scalar}})_\beta^\alpha\\
+        &\equiv m^{(0)}(1,\alpha(2),\ldots,\alpha(n-2),n-1,n|1,\beta(2),\ldots,\beta(n-2),n,n-1)
+    \end{align*}
+    The inverse of KLT matrix have been also discussed in other paper, in which it was related to field theory limit if string 
+    disk integrals, so it would be interesting to explore the connection further. 
 \end{frame}
 \end{document}
 

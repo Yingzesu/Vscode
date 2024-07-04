@@ -1,3 +1,3 @@
 \beamer@sectionintoc {1}{Why the S-matrix is so important?}{2}{0}{1}
-\beamer@sectionintoc {2}{Review of some pertinent results}{4}{0}{2}
-\beamer@sectionintoc {3}{CHY Formula}{11}{0}{3}
+\beamer@sectionintoc {2}{Review of some pertinent results}{5}{0}{2}
+\beamer@sectionintoc {3}{CHY Formula}{12}{0}{3}
