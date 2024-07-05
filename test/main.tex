@@ -3,6 +3,7 @@
 \usefonttheme{professionalfonts}
 \usepackage{tikz}
 \usepackage{svg}
+\usepackage{graphics}
 \AtBeginSection[]{
 \begin{frame} 
     \frametitle{Contents}
@@ -44,7 +45,8 @@
     \end{itemize}
     \begin{figure}
         \centering
-        \includegraphics[width=0.8\linewidth]{Grassmanian-Image.jpg}
+        \caption{Positive geometry}
+        \includegraphics[width=0.4\linewidth]{Grassmanian-Image.jpg}
     \end{figure}
 \end{frame}
 \section{Review of some pertinent results}
@@ -106,9 +108,85 @@ And any (three vertex) diagram, by using the Jacobbi identity like
 \end{figure}
 can be transformed to the ladder diagram. It has been proved that $\textcolor{red}{\tilde{A}_n(\dots)}$ here is identical to $\textcolor{red}{A_n^{tree}[\dots]}$ in the trace basis.
 \end{frame}
-\begin{frame}{Color-Kinematics Duality and BCJ Relation}
-The Color-Kinematics Duality here is not the complete version, but we can sketch some point from lower point case
+\begin{frame}{Color-Kinematics Duality }
+The Color-Kinematics Duality here is not the complete version, but we can catch some points.
+At four points we have
+\begin{equation*}
+    A_4^{\mathrm{tree}}(1,2,3,4)+    A_4^{\mathrm{tree}}(1,3,2,4)+    A_4^{\mathrm{tree}}(1,4,2,3)=0.
+\end{equation*}
+%The decoupling identity does not rely on the specific polariazation and space-time, so the hold of this equation is 
+%entirely due to the amplitudes' dependence on Mandelstam variables.
+We recognize that the only nontrival way the equation holds accoring to $s+t+u=0$ 
+\begin{align*}
+    &A_4^{\mathrm{tree}}(1,2,3,4)+    A_4^{\mathrm{tree}}(1,3,2,4)+    A_4^{\mathrm{tree}}(1,4,2,3)\\
+\quad&= (s+t+u)\chi=0
+\end{align*} 
+Considering that $A_4^{\mathrm{tree}}(1,2,3,4)$ treats $s$ and $t$ the same, and similar to the other two, we make the identification
+\begin{equation*}
+    A_4^{\mathrm{tree}}(1,2,3,4)=u\chi,\quad   A_4^{\mathrm{tree}}(1,3,2,4)=t\chi,\quad    A_4^{\mathrm{tree}}(1,4,2,3)=s\chi
+\end{equation*}
 \end{frame}
+\begin{frame}
+    We obtain
+    \begin{align*}
+        tA_4^{\mathrm{tree}}(1,2,3,4)=uA_4^{\mathrm{tree}}(1,3,4,2),\\
+        sA_4^{\mathrm{tree}}(1,2,3,4)=uA_4^{\mathrm{tree}}(1,4,2,3),\\
+        tA_4^{\mathrm{tree}}(1,2,3,4)=sA_4^{\mathrm{tree}}(1,3,4,2).\\
+    \end{align*}
+    And in order to obtain the knematic analog of Jacobbi identity, it is convenient to express the amplitudes in terms of poles
+\begin{align*}
+    &A_4^{\mathrm{tree}}(1,2,3,4)\equiv\frac{n_s}{s}+\frac{n_t}{t},\\
+    &A_4^{\mathrm{tree}}(1,3,4,2)\equiv-\frac{n_u}{u}-\frac{n_s}{s},\\
+    &A_4^{\mathrm{tree}}(1,4,2,3)\equiv-\frac{n_t}{t}+\frac{n_u}{u}.
+\end{align*}
+the relative sign here is just a convention.
+\end{frame}
+\begin{frame}
+    Combining the two relation above gives the desired identity
+    \begin{equation*}
+        \alert{n_u=n_s-n_t}
+    \end{equation*}
+    this is exactly the same form of Jacobbi identity for the color factors.
+    The full amplitude can be written like
+\begin{equation*}
+    \mathcal{A}_4^{\mathrm{tree}}=g^2\left(\frac{n_sc_s}{s}+\frac{n_uc_u}{u}+\frac{n_tc_t}{t}\right)
+\end{equation*}
+\end{frame}
+\begin{frame}
+    For the five point case, an example is 
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=1\linewidth]{FivePtTwist2.eps}
+    \end{figure}
+    we have the corresponding color factor Jacobbi identities like
+    \begin{equation*}
+        c_3=c_5-c_8
+    \end{equation*}
+    so we need to have the knematic analog
+    \begin{equation*}
+        n_3=n_5-n_8
+    \end{equation*}
+    The explict forms of all these factors can be found in the original paper \textbf{New relations for gauge theory amplituds, PRD 78, 085011}
+\end{frame}
+\begin{frame}
+    Full amplitudes of 5 points are
+    \begin{eqnarray*}
+        \mathcal {A}^\mathrm{tree}_5& = & 
+        g^3\Biggl( {n_1 c_1\over s_{12}s_{45}}+{n_2 c_2\over s_{23}s_{51}}
+        +{n_3 c_3 \over s_{34}s_{12}}+{n_4 c_4\over s_{45}s_{23}}
+        +{n_5 c_5\over s_{51}s_{34}} +{n_{6} c_6\over s_{14}s_{25}}  \\
+        &&\null \hskip .3 cm 
+        + {n_7 c_7\over s_{32}s_{14}}+{n_{8} c_8\over s_{25}s_{43}}
+        +{n_{9} c_9\over s_{13}s_{25}}+{n_{10} c_{10}\over s_{42}s_{13}}
+        +{n_{11} c_{11}\over s_{51}s_{42}}+ {n_{12} c_{12}\over s_{12}s_{35}}  \\
+        &&\null \hskip .3 cm 
+        +{n_{13} c_{13}\over s_{35}s_{24}} 
+        +{n_{14} c_{14}\over s_{14}s_{35}}
+        +{n_{15} c_{15}\over s_{13}s_{45}}\Biggr)\,,
+        \end{eqnarray*}
+    This relation had been proved upto 8 points at the time and I think it has been improved to arbitrary points.  
+\end{frame}
+
 
 \section{CHY Formula}
 \begin{frame}{Scattering equations}
@@ -125,7 +203,7 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
     \begin{align*}
         \{\sigma_1,\sigma_2,\ldots,\sigma_n\}\sim\{\psi(\sigma_1),\psi(\sigma_2),\ldots,\psi(\sigma_n)\},\\\psi(\sigma):=\frac{\alpha\sigma+\beta}{\gamma\sigma+\delta},\quad\alpha,\beta,\gamma,\delta\in\mathbb{C},\alpha\delta-\beta\gamma=1
     \end{align*}
-    because of the redundancy of 
+    because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are independent.
 \end{frame}
 \begin{frame}
     From this map, we can easily obtain the main ingredients of this report \\
@@ -136,11 +214,12 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
             \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\qquad a\in \{1,\dots,n\}
         \end{equation*}
     \end{block}
-    It has been proved that the number of solutions in any dimension is $\alert{(n-3)!}$, and only \alert{n-3} of the equtions are independent, so we can rewrite the scattering equations as following 
+    It has been proved that the number of solutions in any dimension is $\alert{(n-3)!}$, and only \alert{$n-3$} of the equtions are independent, so we can rewrite the scattering equations as following 
     \begin{equation*}
         \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\quad a\in \{4,5,\dots,n\}\quad and\quad  \sigma_1\rightarrow\infty,\sigma_2=0,\sigma_3=1
     \end{equation*}
 \end{frame}
+\iffalse
 \begin{frame}{KLT Relation}
     So-called KLT relation, in the language of field theory, refers to the decomposition of \alert{gravity amplitudes} to \alert{two gauge theory amplitues}. 
     \begin{table}[]
@@ -161,6 +240,7 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
         }
         \end{table}
 \end{frame}
+\fi
 \begin{frame}{KLT Orthogonality}
     $\bullet$ KLT orthogonality is a striking property of the solutions to scattering equations.
     \begin{block}{Proposition 1}
@@ -318,7 +398,7 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
     \end{equation*}
 \end{frame}
 \begin{frame}{The form of measure}
-    It is worth to computed the measure explictly.Aftering "gauge fixing" the $SL(2,\mathbb{C})$ redundancy, one finds 
+    It is worth to computed the measure explicitly.Aftering "gauge fixing" the $SL(2,\mathbb{C})$ redundancy, one finds 
     \begin{equation*}
         \int\prod_{c\neq p,q,r}d\sigma_c(\sigma_{pq}\sigma_{qr}\sigma_{rp})(\sigma_{ij}\sigma_{jk}\sigma_{ki})\prod_{a\neq i,j,k}\delta\biggl(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\biggr)
     \end{equation*}
@@ -542,7 +622,7 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
     From there examples, it is easy to see that when both permutations in $m_n^{(0)}(\alpha|\beta)$ are the same, then the answer is a sum over all color-orded
     trivalent diagrams; When the two permutations are different, it gives a subset of terms of $m_n^{(0)}(\alpha|\alpha)$. 
     \\ \hspace*{\fill}\\
-    More explictly,
+    More explicitly,
 
 
     \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
@@ -747,7 +827,7 @@ The Color-Kinematics Duality here is not the complete version, but we can sketch
         The function $m_n^{(0)}(\alpha|\beta)$ computes the sum of all trivalent scalar diagrams which can be regarded as both $\alpha$ color-ordered and $\beta$ color-orded.
     \end{alertblock}
     \pause
-    More explictly, 
+    More explicitly, 
     \begin{equation*}
         \boxed{m_n^{(0)}(\alpha|\beta)=(-1)^{n-3+n_{\text{flip}}(\alpha|\beta)}\sum_{g\in\mathcal{T}(\alpha)\cap\mathcal{T}(\beta)}\prod_{e\in E(g)}\frac{1}{s_e}}
 \end{equation*}
@@ -802,6 +882,36 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
     \end{align*}
     The inverse of KLT matrix have been also discussed in other paper, in which it was related to field theory limit if string 
     disk integrals, so it would be interesting to explore the connection further. 
+\end{frame}
+\begin{frame}
+    \frametitle{Color-Kinematics Duality again}
+    At the begining, I mentioned that sclar-, gluon- and graviton- amplitudes can be related by simple transformations ($C\to E$ or $\tilde{C}\to\tilde{E}$ or both).
+    More explicitly,
+    \begin{equation*}
+        {\cal M}^{(0)}_n =\!\!\sum_{I=1}^{(n-3)!}\frac{C(\sigma^{(I)}){\tilde C}(\sigma^{(I)})}{{\rm det}'\Phi(\sigma^{(I)})},\quad {\cal M}^{(1)}_n = \!\!\sum_{I=1}^{(n-3)!}\frac{C(\sigma^{(I)}){\tilde E}(\sigma^{(I)})}{{\rm det}'\Phi(\sigma^{(I)})},
+    \end{equation*}
+    \begin{equation*}
+        {\cal M}^{(2)}_n = \!\!\sum_{I=1}^{(n-3)!}\frac{E(\sigma^{(I)}){\tilde E}(\sigma^{(I)})}{{\rm det}'\Phi(\sigma^{(I)})}.
+    \end{equation*}
+    If we expand the color factor like 
+    \begin{equation*}
+        C=\sum_{\gamma\in S_{n-2}}\frac{{\bf c}_{1\gamma(2)\cdots\gamma(n-1)n}}{\sigma_{1,\gamma(2)}\cdots\sigma_{\gamma(n-1),n}\sigma_{n,1}},
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    It hints the exsitence of similar form for $E$. More explicitly, there must functions, denoted as $\boldsymbol{n}$, which depends only on kinematic data $\{\epsilon^{\mu}_a,k^\mu_a \}$
+    \begin{equation*}
+        E = {\rm Pf}'\Psi(\epsilon,k,\sigma ) = \sum_{\gamma\in S_{n-2}}\frac{{\bf n}_{1\gamma(2)\cdots\gamma(n-1)n}}{\sigma_{1,\gamma(2)}\cdots\sigma_{\gamma(n-1),n}\sigma_{n,1}}.
+    \end{equation*}
+    Now we can unify $\bf c$ and $\bf n$ as e in all three theories, the full amplitude can be written in a unified form
+    \begin{equation*}
+       \mathcal{M}_n^{(s)}=\sum_{\alpha,\beta\in S_{n-2}}e_\alpha e_\beta m^{(0)}(\alpha|\beta)
+    \end{equation*}
+    and the factor satisfies the "BCJ" relation
+    \begin{equation*}
+        e_{g_t}=\pm(e_{g_s}-e_{g_u})
+    \end{equation*}
+    If we contentate on pure Yang-Mills theory, the realtion is just the one we list in the first second section.
 \end{frame}
 \end{document}
 
