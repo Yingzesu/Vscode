@@ -403,12 +403,12 @@ INPUT ./recrel1.pdf
 INPUT ./recrel1.pdf
 INPUT ./recrel1.pdf
 INPUT ./recrel1.pdf
+INPUT ./Grassmannian.png
+INPUT ./Grassmannian.png
+INPUT ./Grassmannian.png
+INPUT ./Grassmannian.png
+INPUT ./Grassmannian.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
-INPUT ./Grassmanian-Image.jpg
-INPUT ./Grassmanian-Image.jpg
-INPUT ./Grassmanian-Image.jpg
-INPUT ./Grassmanian-Image.jpg
-INPUT ./Grassmanian-Image.jpg
 INPUT ./main.toc
 INPUT ./main.toc
 INPUT main.toc

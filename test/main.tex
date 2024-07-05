@@ -19,14 +19,19 @@
 \frame{\titlepage}
 
 \section{Why the S-matrix is so important?}
+\iffalse
 \begin{frame}
     It is well known that in the conventional quantum field theory, S-matrix is a deduced physical quantity following
     unitarity and localty. But as the understanding of scatering amplitudes improves, by using the amplituhedron method,
     S-matrix can be constructed directly from a special kind of geometry object and we even have no need to introduce the Lagrangian
     of the specific theory. Also the localty and unitarity can be the outcome from the request of positivity instead of input or previous constraints.
     It may give us some implications about the significance of S-matrix and encourage us to reconstruct the field theory in another way.
+    Most of the developments before have made for particular theories like $\mathcal{N}=4$ Super Yang-Mills theory or $\mathcal{N}=8$ Supergravity,
+    but this paper gives some hints to the construction of amplitudes for theories with less or no supersymmetry.
 \end{frame}
+\fi
 \begin{frame}{}
+    \frametitle{Some developments of amplitudes}
     \begin{itemize}
         \item BCFW recursion relation.
         \begin{equation*}
@@ -45,8 +50,8 @@
     \end{itemize}
     \begin{figure}
         \centering
-        \caption{Positive geometry}
-        \includegraphics[width=0.4\linewidth]{Grassmanian-Image.jpg}
+        \includegraphics[width=0.25\linewidth]{Grassmannian.png}
+        \caption{Positive Grassmanian}
     \end{figure}
 \end{frame}
 \section{Review of some pertinent results}
@@ -70,7 +75,7 @@ Notice that this basis includes \textcolor{red}{$(n-1)!$} independent amplitudes
         \item KK(Kleiss-Kuijf) relation:\quad $$A_n^{tree}[1,{\alpha},n,{\beta}]=(-1)^{n_\beta}
         \sum_{\left\{\sigma\right\}_i\in OP(\left\{\alpha\right\},\left\{\beta\right\}^T)}A_n^{tree}[1,\left\{\sigma\right\}_i,n]$$
     \end{itemize}
-    where the OP means ordered permutaions, that is all permutations of$\left\{\alpha\right\},\left\{\beta\right\}^T$
+    where the OP means ordered permutaions, that is all permutations of $\left\{\alpha\right\}$$\bigcup$$\left\{\beta\right\}^T$
     that matains the order of individual elements of each set.
 \end{frame}
 \begin{frame}

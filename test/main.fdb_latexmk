@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1720160996.50851 "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" "main.pdf" "main" 1720160998.94365 0
-  "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" 1720160996.38525 50126 c7eb837fd8ba654f7220c6df986c3ba4 ""
+["pdflatex"] 1720163232.58209 "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" "main.pdf" "main" 1720163235.03751 0
+  "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" 1720163232.46779 50460 4f9651d562895c0a0d2c37dd2e221cfa ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -246,15 +246,15 @@
   "5.png" 1720057157.32342 2907 2c95ceda1fca4125677eab313e0fb4b5 ""
   "6.png" 1720059644.41749 231707 705263950036d05bac6a0580b8b0f889 ""
   "7.png" 1720059199.21469 275369 c0c4a4fe2b8203012d75ad84f1cc8182 ""
-  "FivePtTwist2.eps" 1210359516 73093 a2466cbce70696b06f60728ed7022db5 ""
-  "Grassmanian-Image.jpg" 1720080807.38861 124891 c7d56498e669d5b67e30ec44ff3fcb27 ""
-  "main.aux" 1720160998.84384 8534 dc49071be88159636cdfd81c6e9fdbc4 "pdflatex"
-  "main.nav" 1720160998.84517 5741 a04ec42ddd6959885088833bd78af768 "pdflatex"
-  "main.out" 1720160998.84501 539 478602ed87c99f879bcfe48077fef06b "pdflatex"
+  "FivePtTwist2.eps" 1720161678.42198 73093 a2466cbce70696b06f60728ed7022db5 ""
+  "Grassmannian.png" 1720162472.24801 353550 53643b39d5a36bab577f734620ea59d2 ""
+  "main.aux" 1720163234.93707 8406 53a13e2ec4d75cb7c6824ac5d8e4515d "pdflatex"
+  "main.nav" 1720163234.93823 5649 5ace958b25b69d31465e26383b6361b2 "pdflatex"
+  "main.out" 1720163234.93806 539 478602ed87c99f879bcfe48077fef06b "pdflatex"
   "main.png" 1719984686.25945 209543 605a8141390e8b9ff37318758d58f175 ""
-  "main.tex" 1720160996.38525 50126 c7eb837fd8ba654f7220c6df986c3ba4 ""
-  "main.toc" 1720160998.84527 185 b75681b20f09a2ee4e809dafacb39a99 "pdflatex"
-  "recrel1.pdf" 1375905026 5913 80346aaed99aa2960e27cbcb2181ddca ""
+  "main.tex" 1720163232.46779 50460 4f9651d562895c0a0d2c37dd2e221cfa ""
+  "main.toc" 1720163234.93826 185 b51d791f57a69e4790171f7c16800cbf "pdflatex"
+  "recrel1.pdf" 1720161678.43693 5913 80346aaed99aa2960e27cbcb2181ddca ""
   (generated)
   "main.aux"
   "main.log"
