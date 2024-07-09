@@ -419,7 +419,7 @@ the relative sign here is just a convention.
         \begin{equation*}
             C_{ii}=-\sum_{c\neq i}\frac{\epsilon_i\cdot k_c}{\sigma_i-\sigma_c} \to -\sum_{c\neq i}\frac{k_i\cdot k_c}{\sigma_i-\sigma_c}=0
         \end{equation*}
-        It is easy to discover that the $i$th and $i+n$ th colums become identical, so the determinat and Pfaffian become 0.
+        It is easy to discover that the $i$th and $i+n$ th colums become identical, so the determinat and Pfaffian becomes 0.
         \pause
         \item \alert{Soft limit}\\
         Using a special property of Pfaffian
@@ -808,6 +808,35 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
     \end{equation*}
 \end{frame}
 \section{Conclusion and Outlook}
+\begin{frame}
+    \begin{itemize}
+        \item A compact form of tree-level S-matrix in 3 different theories are introduced
+            \begin{equation*}
+                \mathcal{M}_n^{(s)}=\sum_{\alpha,\beta\in S_{n-2}}e_\alpha e_\beta m^{(0)}(\alpha|\beta)
+             \end{equation*}
+        \item The computaion method for double partial amplitudes are given 
+            \begin{equation*}
+                    m_n^{(0)}(\alpha|\beta)=(-1)^{n-3+n_{\text{flip}}(\alpha|\beta)}\sum_{g\in\mathcal{T}(\alpha)\cap\mathcal{T}(\beta)}\prod_{e\in E(g)}\frac{1}{s_e}
+            \end{equation*}
+        \item The CK duality and BCJ double-copy relation can be easily obtained
+            \begin{equation*}
+                e_{g_t}=\pm(e_{g_s}-e_{g_u})
+            \end{equation*}
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Connection between other theories}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{9.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{4.png}
+    \end{figure}
+\end{frame}
 
 \section{Appendix}
 \begin{frame}{KLT Relation}
