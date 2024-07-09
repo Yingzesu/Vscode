@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.28)  5 JUL 2024 19:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.28)  8 JUL 2024 16:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -604,31 +604,31 @@ Package shellesc Info: Restricted shell escape enabled on input line 77.
 Package: transparent 2022-10-27 v1.5 Transparency with color stacks
  (/usr/local/texlive/2024/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
 Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color stack (HO)
-)) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+)) (/usr/local/texlive/2024/texmf-dist/tex/latex/appendixnumberbeamer/appendixnumberbeamer.sty) (/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-02-20 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count348
 \l__pdf_internal_box=\box82
 ) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -683,7 +683,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2024/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 18.
+Package hyperref Info: Link coloring OFF on input line 19.
  (./main.out) (./main.out)
 \@outlinefile=\write5
 \openout5 = `main.out'.
@@ -705,133 +705,155 @@ Dictionary: translator-theorem-dictionary, Language: English
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./main.toc) [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 57.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 56.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 57.
  (/usr/local/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<recrel1.pdf, id=110, 313.17pt x 97.36375pt>
+<recrel1.pdf, id=127, 313.17pt x 97.36375pt>
 File: recrel1.pdf Graphic file (type pdf)
 <use recrel1.pdf>
-Package pdftex.def Info: recrel1.pdf  used on input line 56.
+Package pdftex.def Info: recrel1.pdf  used on input line 57.
 (pdftex.def)             Requested size: 128.12337pt x 39.83368pt.
 
-Overfull \hbox (7.86272pt too wide) detected at line 56
+Overfull \hbox (7.86272pt too wide) detected at line 57
     \OML/cmm/m/it/10.95 A[]  \OT1/cmr/m/n/10.95 =     [] [](\OML/cmm/m/it/10.95 z[]\OT1/cmr/m/n/10.95 ) [] [](\OML/cmm/m/it/10.95 z[]\OT1/cmr/m/n/10.95 )   =     [] [] \OML/cmm/m/it/10.95 :
  []
 
-<Grassmannian.png, id=111, 429.605pt x 429.605pt>
+<Grassmannian.png, id=128, 429.605pt x 429.605pt>
 File: Grassmannian.png Graphic file (type png)
 <use Grassmannian.png>
-Package pdftex.def Info: Grassmannian.png  used on input line 56.
+Package pdftex.def Info: Grassmannian.png  used on input line 57.
 (pdftex.def)             Requested size: 85.57382pt x 85.57204pt.
 
-Overfull \vbox (9.28845pt too high) detected at line 56
+Overfull \vbox (9.28845pt too high) detected at line 57
  []
 
 [3
 
- <./recrel1.pdf> <./Grassmannian.png>] (./main.toc) [4
+ <./recrel1.pdf> <./Grassmannian.png>] [4
 
-] [5
+] (./main.toc) [5
 
 ] [6
 
-]
-Overfull \hbox (4.51454pt too wide) detected at line 91
-\OML/cmm/m/it/10.95 A[]\OT1/cmr/m/n/10.95 [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4] = \OMS/cmsy/m/n/10.95 ^^@\OML/cmm/m/it/10.95 A[]\OT1/cmr/m/n/10.95 [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 A[]\OT1/cmr/m/n/10.95 [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5] \OMS/cmsy/m/n/10.95 ^^@ \OML/cmm/m/it/10.95 A[]\OT1/cmr/m/n/10.95 [1\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 4\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 2\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 3\OML/cmm/m/it/10.95 ; \OT1/cmr/m/n/10.95 5]
- []
-
-[7
+] [7
 
 ] [8
 
-]
-<1.png, id=300, 976.14688pt x 120.95187pt>
-File: 1.png Graphic file (type png)
-<use 1.png>
-Package pdftex.def Info: 1.png  used on input line 115.
-(pdftex.def)             Requested size: 342.2953pt x 42.41313pt.
-<2.png, id=301, 980.16188pt x 206.7725pt>
-File: 2.png Graphic file (type png)
-<use 2.png>
-Package pdftex.def Info: 2.png  used on input line 115.
-(pdftex.def)             Requested size: 342.2953pt x 72.20738pt.
- [9
+] [9
 
- <./1.png> <./2.png>] [10
+] [10
 
 ] [11
 
 ] [12
 
-]
-Package epstopdf Info: Source file: <FivePtTwist2.eps>
-(epstopdf)                    date: 2024-07-05 15:41:18
-(epstopdf)                    size: 73093 bytes
-(epstopdf)             Output file: <FivePtTwist2-eps-converted-to.pdf>
-(epstopdf)                    date: 2024-07-05 15:41:51
-(epstopdf)                    size: 6151 bytes
-(epstopdf)             Command: <repstopdf --outfile=FivePtTwist2-eps-converted-to.pdf FivePtTwist2.eps>
-(epstopdf)             \includegraphics on input line 175.
-Package epstopdf Info: Output file is already uptodate.
-<FivePtTwist2-eps-converted-to.pdf, id=413, 607.26875pt x 142.5325pt>
-File: FivePtTwist2-eps-converted-to.pdf Graphic file (type pdf)
-<use FivePtTwist2-eps-converted-to.pdf>
-Package pdftex.def Info: FivePtTwist2-eps-converted-to.pdf  used on input line 175.
-(pdftex.def)             Requested size: 342.2953pt x 80.34178pt.
- [13
+] [13
 
- <./FivePtTwist2-eps-converted-to.pdf>]
+] [14
 
-Package amsmath Warning: Foreign command \over;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 193.
-
-[14
-
-] (./main.toc) [15
+] [15
 
 ] [16
 
-] [17
+]
+Overfull \hbox (10.8842pt too wide) detected at line 451
+    \OMS/cmsy/m/n/10.95 M[]  \OT1/cmr/m/n/10.95 =    [] [] [] []\OML/cmm/m/it/10.95 ^^N[] [] [][]    [][] [][]
+ []
+
+[17
 
 ] [18
 
 ] [19
 
-] [20
+]
+<main.png, id=683, 2229.32875pt x 789.95125pt>
+File: main.png Graphic file (type png)
+<use main.png>
+Package pdftex.def Info: main.png  used on input line 486.
+(pdftex.def)             Requested size: 342.2953pt x 121.28401pt.
+ [20
 
-] [21
+ <./main.png (PNG copy)>]
+Overfull \hbox (9.86246pt too wide) detected at line 502
+[]
+ []
+
+[21
 
 ] [22
 
 ] [23
 
-] [24
+]
+Overfull \hbox (10.00874pt too wide) detected at line 544
+[]
+ []
+
+
+Overfull \hbox (10.17531pt too wide) detected at line 544
+[][]
+ []
+
+[24
 
 ] [25
 
-] [26
+]
+Overfull \hbox (2.9297pt too wide) in paragraph at lines 751--751
+[][]  
+ []
 
-] [27
+[26
 
-] [28
+]
+<5.png, id=905, 424.58624pt x 73.27374pt>
+File: 5.png Graphic file (type png)
+<use 5.png>
+Package pdftex.def Info: 5.png  used on input line 768.
+(pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
+ [27
 
-] [29
+ <./5.png>]
+File: 5.png Graphic file (type png)
+<use 5.png>
+Package pdftex.def Info: 5.png  used on input line 768.
+(pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
+ [28
 
-] [30
+]
+<7.png, id=974, 1143.27126pt x 305.64188pt>
+File: 7.png Graphic file (type png)
+<use 7.png>
+Package pdftex.def Info: 7.png  used on input line 789.
+(pdftex.def)             Requested size: 342.2953pt x 91.50671pt.
+ [29
 
-] [31
+ <./7.png>]
+<6.png, id=1004, 840.64063pt x 312.16624pt>
+File: 6.png Graphic file (type png)
+<use 6.png>
+Package pdftex.def Info: 6.png  used on input line 809.
+(pdftex.def)             Requested size: 342.2953pt x 127.10777pt.
+ [30
 
-] [32
+ <./6.png>] (./main.toc) [31
+
+] (./main.toc) [32
 
 ] [33
 
-] [34
+]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 833.
+
+[34
 
 ] [35
 
@@ -839,97 +861,123 @@ Package amsmath Warning: Foreign command \over;
 
 ] [37
 
-]
-Overfull \hbox (10.8842pt too wide) detected at line 529
-    \OMS/cmsy/m/n/10.95 M[]  \OT1/cmr/m/n/10.95 =    [] [] [] []\OML/cmm/m/it/10.95 ^^N[] [] [][]    [][] [][]
- []
-
-[38
+] [38
 
 ] [39
 
 ] [40
 
-]
-<main.png, id=1271, 2229.32875pt x 789.95125pt>
-File: main.png Graphic file (type png)
-<use main.png>
-Package pdftex.def Info: main.png  used on input line 563.
-(pdftex.def)             Requested size: 342.2953pt x 121.28401pt.
- [41
+] [41
 
- <./main.png (PNG copy)>]
-Overfull \hbox (9.86246pt too wide) detected at line 579
-[]
- []
-
-[42
+] [42
 
 ] [43
 
 ] [44
 
-]
-Overfull \hbox (10.00874pt too wide) detected at line 621
-[]
- []
-
-
-Overfull \hbox (10.17531pt too wide) detected at line 621
-[][]
- []
-
-[45
+] [45
 
 ] [46
 
-]
-Overfull \hbox (2.9297pt too wide) in paragraph at lines 828--828
-[][]  
- []
+] [47
 
-[47
+] [48
 
-]
-<5.png, id=1479, 424.58624pt x 73.27374pt>
-File: 5.png Graphic file (type png)
-<use 5.png>
-Package pdftex.def Info: 5.png  used on input line 845.
-(pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
- [48
-
- <./5.png>]
-File: 5.png Graphic file (type png)
-<use 5.png>
-Package pdftex.def Info: 5.png  used on input line 845.
-(pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
- [49
+] [49
 
 ] [50
 
+] [51
+
+] [52
+
+] [53
+
 ]
-<7.png, id=1572, 1143.27126pt x 305.64188pt>
-File: 7.png Graphic file (type png)
-<use 7.png>
-Package pdftex.def Info: 7.png  used on input line 869.
-(pdftex.def)             Requested size: 342.2953pt x 91.50671pt.
- [51
+Overfull \hbox (10.8842pt too wide) detected at line 1114
+    \OMS/cmsy/m/n/10.95 M[]  \OT1/cmr/m/n/10.95 =    [] [] [] []\OML/cmm/m/it/10.95 ^^N[] [] [][]    [][] [][]
+ []
 
- <./7.png>]
-<6.png, id=1601, 840.64063pt x 312.16624pt>
-File: 6.png Graphic file (type png)
-<use 6.png>
-Package pdftex.def Info: 6.png  used on input line 880.
-(pdftex.def)             Requested size: 342.2953pt x 127.10777pt.
- [52
-
- <./6.png>] [53
-
-] [54
+[54
 
 ] [55
 
 ] [56
+
+]
+File: main.png Graphic file (type png)
+<use main.png>
+Package pdftex.def Info: main.png  used on input line 1148.
+(pdftex.def)             Requested size: 342.2953pt x 121.28401pt.
+ [57
+
+]
+Overfull \hbox (9.86246pt too wide) detected at line 1164
+[]
+ []
+
+[58
+
+] [59
+
+] [60
+
+]
+Overfull \hbox (10.00874pt too wide) detected at line 1206
+[]
+ []
+
+
+Overfull \hbox (10.17531pt too wide) detected at line 1206
+[][]
+ []
+
+[61
+
+] [62
+
+]
+Overfull \hbox (2.9297pt too wide) in paragraph at lines 1413--1413
+[][]  
+ []
+
+[63
+
+]
+File: 5.png Graphic file (type png)
+<use 5.png>
+Package pdftex.def Info: 5.png  used on input line 1430.
+(pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
+ [64
+
+]
+File: 5.png Graphic file (type png)
+<use 5.png>
+Package pdftex.def Info: 5.png  used on input line 1430.
+(pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
+ [65
+
+] [66
+
+]
+File: 7.png Graphic file (type png)
+<use 7.png>
+Package pdftex.def Info: 7.png  used on input line 1454.
+(pdftex.def)             Requested size: 342.2953pt x 91.50671pt.
+ [67
+
+]
+File: 6.png Graphic file (type png)
+<use 6.png>
+Package pdftex.def Info: 6.png  used on input line 1465.
+(pdftex.def)             Requested size: 342.2953pt x 127.10777pt.
+ [68
+
+] [69
+
+] [70
+
+] [71
 
 ]
 \tf@nav=\write6
@@ -947,21 +995,21 @@ LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 478602ED87C99F879BCFE48077FEF06B;539.
+(rerunfilecheck)             Checksum: F1C64380FBA6B69AF47539D07910FAD9;647.
  ) 
 Here is how much of TeX's memory you used:
- 25893 strings out of 474116
- 518153 string characters out of 5743682
- 1948187 words of memory out of 5000000
- 47607 multiletter control sequences out of 15000+600000
- 571008 words of font info for 85 fonts, out of 8000000 for 9000
+ 25991 strings out of 474116
+ 519737 string characters out of 5743682
+ 1950187 words of memory out of 5000000
+ 47665 multiletter control sequences out of 15000+600000
+ 572444 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,443b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (56 pages, 1471434 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (71 pages, 1445382 bytes).
 PDF statistics:
- 1854 PDF objects out of 2073 (max. 8388607)
- 1605 compressed objects within 17 object streams
- 117 named destinations out of 1000 (max. 500000)
- 430 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2428 PDF objects out of 2487 (max. 8388607)
+ 2139 compressed objects within 22 object streams
+ 149 named destinations out of 1000 (max. 500000)
+ 521 words of extra memory for PDF output out of 10000 (max. 10000000)
 

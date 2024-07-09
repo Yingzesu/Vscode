@@ -4,6 +4,7 @@
 \usepackage{tikz}
 \usepackage{svg}
 \usepackage{graphics}
+\usepackage{appendixnumberbeamer}
 \AtBeginSection[]{
 \begin{frame} 
     \frametitle{Contents}
@@ -54,6 +55,45 @@
         \caption{Positive Grassmanian}
     \end{figure}
 \end{frame}
+\begin{frame}
+    
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da04992460244937069] 
+\draw    (116,79) -- (116.49,163) ;
+\draw [shift={(116.5,165)}, rotate = 269.67] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da7393833245286348] 
+\draw    (218,134) -- (343.5,134) ;
+\draw [shift={(345.5,134)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da6514784763465036] 
+\draw    (447,76) -- (447.49,160) ;
+\draw [shift={(447.5,162)}, rotate = 269.67] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da8109804852164224] 
+\draw    (257,265) -- (320.5,265) ;
+\draw [shift={(322.5,265)}, rotate = 180] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (79,46) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\mathrm{Lagrangian}$};
+% Text Node
+\draw (86,178) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\mathrm{S-matrix}$};
+% Text Node
+\draw (391,49.4) node [anchor=north west][inner sep=0.75pt]    {$\mathrm{Amplituhedron}$};
+% Text Node
+\draw (417,173) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\mathrm{S-matrix}$};
+% Text Node
+\draw (94,256) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\mathrm{Positivity}$ of $\mathrm{geometry}$ };
+% Text Node
+\draw (339,255) node [anchor=north west][inner sep=0.75pt]   [align=left] {$\mathrm{Unitarity}$ and $\mathrm{Localty}$};
+
+
+\end{tikzpicture}
+
+\end{frame}
+\iffalse
 \section{Review of some pertinent results}
 \begin{frame}{Gauge theory color structure}
     At tree level, with particles in the adjoint representaion of gauge group SU(N), the amplitude can be 
@@ -191,8 +231,56 @@ the relative sign here is just a convention.
         \end{eqnarray*}
     This relation had been proved upto 8 points at the time and I think it has been improved to arbitrary points.  
 \end{frame}
+\fi
+\section{CHY Formula}
+\begin{frame}
+    \frametitle{Motivation}
+    %Most of the developments of amplitudes before have made for some specific theories, like N=4 super yang-mills theory and N=8 supergravity.
+    %The natural question is that what is the space of all field theories whose tree level S-matrix can be expressed in a compact form? 
+    \begin{itemize}
+        \item Compact form of amplitudes for sclar, pure Yang-Mills and gravity theories in any spacetime dimension.
+        %The author introduce a compact form of tree level amplitudes for three different theories, colored scalar theory, pure Yang-Mills and Einstein gravity.
+        %The concrete form of this formula implies that there is a relation between these three theories, and it may give some new insights of the connection between gravity and gauge theory.
+        \item A special amplitude --- Double partial amplitude
+        %Because of the special color structure of this scalar theory, the authors proposed a easy method to compute all scalar tree amplitudes, and then pure Yang-Mills and gravity can also be done using similar methods.
+        \item BCJ double copy at tree level
+        %In terms of this construction of amplitudes, it is easy to obtain the BCJ double copy relation. It may give some implications for the construcion of nonpermubative BCJ double copy.
+        \item Related to other theories, such as EYM, EM, NLSM and so on.
+        %In the following paper of these authors, by introducing some special operations which performed on the integrand of CHY formula, they give some relations between other theories.   
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{Scattering equations}
+    It has benn proposed that there is connection between the scattering data of n massless particles and the n-punctured sphere from a rational map
+    \begin{equation*}
+        k_\mu^a=\frac{1}{2\pi i}\oint_{|z-\sigma_a|}dz\frac{p^\mu(z)}{\prod ^n_{b=1}(z-\sigma_b)}
+    \end{equation*}
+ 
+    To discribe the n-punctured sphere more properly, we can introduce the Riemann sphere as
+    \begin{equation*}
+        \mathbb{CP}^1\cong \mathcal{S}^2\cong \mathbb{C}\cup\{\infty\}
+    \end{equation*}
+    and n-punctured Riemann sphere can be discribed by $SL(2,\mathbb{C})$ affine coordinates ${\sigma_1,\sigma_2,\ldots,\sigma_n}$, that is to say we have a equvilance relation
+    \begin{align*}
+        \{\sigma_1,\sigma_2,\ldots,\sigma_n\}\sim\{\psi(\sigma_1),\psi(\sigma_2),\ldots,\psi(\sigma_n)\},\\\psi(\sigma):=\frac{\alpha\sigma+\beta}{\gamma\sigma+\delta},\quad\alpha,\beta,\gamma,\delta\in\mathbb{C},\alpha\delta-\beta\gamma=1
+    \end{align*}
+    because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are independent.
+\end{frame}
+\begin{frame}
+    From this map, we can easily obtain the main ingredients of this report \\
+    
 
-
+    \begin{block}{\textcolor{red}{Scattering equations}}
+        \begin{equation*}
+            \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\qquad a\in \{1,\dots,n\}
+        \end{equation*}
+    \end{block}
+    It has been proved that the number of solutions in any dimension is $\alert{(n-3)!}$, and only \alert{$n-3$} of the equtions are independent, so we can rewrite the scattering equations as following 
+    \begin{equation*}
+        \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\quad a\in \{4,5,\dots,n\}\quad and\quad  \sigma_1\rightarrow\infty,\sigma_2=0,\sigma_3=1
+    \end{equation*}
+\end{frame}
+\iffalse
 \section{CHY Formula}
 \begin{frame}{Scattering equations}
     It has benn proposed that there is connection between the scattering data of n massless particles and the n-punctured sphere from a rational map
@@ -224,7 +312,504 @@ the relative sign here is just a convention.
         \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\quad a\in \{4,5,\dots,n\}\quad and\quad  \sigma_1\rightarrow\infty,\sigma_2=0,\sigma_3=1
     \end{equation*}
 \end{frame}
-\iffalse
+\fi
+\begin{frame}
+    \frametitle{Attempt to construct S-matrix --- Towards CHY}
+    %Thanks to the excellent properties of scattering equations, it is very tempting to propose that the solutions
+    %to scattering equations should be used to construct scattering amplitudes.
+    The first two constructed are YM and gravity amplitudes in any dimensions
+    \begin{align*}
+        M_n^{\mathrm{YM}}(1,2,\dots,n)&=\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)\frac{E_n(\{k,\epsilon,\sigma\})}{\sigma_{12}\dots\sigma_{n1}},\\
+        M_n^{\mathrm{gravity}}&=\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)E_n(\{k,\epsilon,\sigma\})^2
+    \end{align*}
+    The measure is defined as following
+    \begin{equation*}
+        \prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}{:}=\sigma_{ij}\sigma_{jk}\sigma_{ki}\prod_{a\neq i,j,k}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    \frametitle{The form of measure}
+    The measure can be written like
+    \begin{equation*}
+            \boxed{
+            \sum_{\{\sigma\}\in\mathrm{solutions}}\frac{(\sigma_{pq}\sigma_{qr}\sigma_{rp})(\sigma_{ij}\sigma_{jk}\sigma_{ki})}{|\Phi|_{pqr}^{ijk}}}
+    \end{equation*}
+    where the determinant is that of the following Jacobbi matrix
+    \begin{equation*}
+        \Phi_{ab}\equiv\partial\left(\sum_{c\neq a}\frac{s_{ac}}{\sigma_a-\sigma_c}\right)/\left(\partial\sigma_b\right)=\begin{cases}\frac{s_{ab}}{(\sigma_a-\sigma_b)^2},&a\neq b,\\-\sum_{c\neq a}\Phi_{ac}, &a=b\end{cases}
+    \end{equation*}
+    Usually we take the notation as following
+    \begin{equation*}
+        \boxed{
+        \det{'}\Phi:=\frac{|\Phi|_{pqr}^{ijk}}{(\sigma_{pq}\sigma_{qr}\sigma_{rp})(\sigma_{ij}\sigma_{jk}\sigma_{ki})}}
+    \end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The form of integrand}
+    In order to present the explict form of $E_n(\{k,\epsilon,\sigma\})$, first define the following $2n\times2n$ antisymmetric matrix 
+    \begin{equation*}
+        \Psi=\begin{pmatrix}
+            A & -C^T \\
+            C & B 
+        \end{pmatrix}
+    \end{equation*}
+    where $A,B$ and $C$ are $n\times n$ matrices, defined as 
+    \begin{equation*}
+        A_{ab}=\begin{cases}\frac{s_{ab}}{\sigma_a-\sigma_b}&a\neq b,\\0&a=b,\end{cases} \quad 
+        B_{ab}=\begin{cases}\frac{\epsilon_a \cdot \epsilon_b}{\sigma_a-\sigma_b}&a\neq b,\\0&a=b, \end{cases} \quad
+    \end{equation*}
+    \begin{equation*}
+        C_{ab}=\begin{cases}\frac{\epsilon_a\cdot k_b}{\sigma_a-\sigma_b}&a\neq b,\\-\sum_{c\neq a}\frac{\epsilon_a\cdot k_c}{\sigma_a-\sigma_c}&a\neq b.\end{cases}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    %The first important observation is that while the Pfaffian of $\Psi$ is 0, but after removing any rows $i,j$ and colums $i,j$
+    %with $1\leq i< j\leq n$, the new matrix $\Psi_{ij}^{ij}$ have nonzero Pfaffian and we define the corresponding reduced Pfaffian as 
+    The Pfaffian of $\Psi$ is 0, but aftering removing any two rows and colums $i,j$ with $1\leq i< j\leq n$, 
+    the new matrix $\Psi_{ij}^{ij}$ have nonzero Pfaffian and we define the corresponding reduced Pfaffian as
+    \begin{equation*}
+            \boxed{
+            \mathrm{Pf}^{\prime}\Psi:=\frac{(-1)^{i+j}}{(\sigma_i-\sigma_j)}\mathrm{Pf}(\Psi_{ij}^{ij})}
+    \end{equation*}
+    It can be proved that the reduced Pfaffian is invariant under permutaion of \alert{particle labels}.
+    
+    \begin{alertblock}{Pfaffian}
+        Pfaffian is defined for antisymmetric matrix, usually in two ways as following
+        \begin{itemize}
+            \item \begin{equation*}
+                \mathrm{Pf}(A)^2=\det A
+            \end{equation*}
+            \item \begin{equation*}
+                \mathrm{Pf}(A)=\frac{1}{2^n n!}\sum_{\sigma \in S_{2n}}sgn(\sigma)\prod_{i=1}^n a_{\sigma_{(2i-1)},\sigma(2i)}
+            \end{equation*}
+        \end{itemize}
+    \end{alertblock}
+\end{frame}
+\begin{frame}
+    Write down the proposal
+    \alert{
+    \begin{equation*}
+        E_n(\{k,\epsilon,\sigma\})=\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)
+    \end{equation*}}
+    Combine the measure and integrand, we conclude the formula for the tree-level S-matrix of Yang-Mills in any dimension
+    \begin{equation*}
+        M_n^{\mathrm{YM}}(1,2,\dots,n)=\frac{1}{\mathrm{vol\,SL}(2,\mathbb{C})}\int\frac{d^n\sigma}{\sigma_{12}\cdots\sigma_{n1}}\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\mathrm{Pf}^{\prime}\Psi
+    \end{equation*}
+    and gravity amplitudes by using KLT construcion
+    \begin{equation*}
+        M_n^{\mathrm{gravity}}=\frac{1}{\mathrm{vol\,SL}(2,\mathbb{C})}\int d^n\sigma\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\mathrm{Pf}^{\prime}\Psi\mathrm{Pf}^{\prime}\tilde{\Psi}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    We can also write the amplitude in another form
+    \begin{equation*}
+        M_n^{\mathrm{YM}}=\sum_{\{\sigma\}\in\mathrm{solutions}}\frac{1}{\sigma_{12}\cdots\sigma_{n1}}\frac{\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)}{\det{'}\Phi}
+    \end{equation*}
+    \begin{equation*}
+        M_n^{\mathrm{gravity}}=\sum_{\{\sigma\}\in\mathrm{solutions}}\frac{\det{'}\Psi(k,\epsilon,\sigma)}{\det{'}\Phi}
+    \end{equation*}
+    where we use the property of Pfaffian $\det{'}\Psi(k,\epsilon,\sigma)=\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)$\\$\times \mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)$.
+\end{frame}
+\begin{frame}
+    \frametitle{Consistency check}
+    \begin{itemize}
+        \item \alert{Gauge invariance}\\
+        If we replce the ith polariazation vector $\epsilon_i^\mu$ with momentum $k_i^\mu$, we find that
+        \begin{equation*}
+            C_{ii}=-\sum_{c\neq i}\frac{\epsilon_i\cdot k_c}{\sigma_i-\sigma_c} \to -\sum_{c\neq i}\frac{k_i\cdot k_c}{\sigma_i-\sigma_c}=0
+        \end{equation*}
+        It is easy to discover that the $i$th and $i+n$ th colums become identical, so the determinat and Pfaffian become 0.
+        \pause
+        \item \alert{Soft limit}\\
+        Using a special property of Pfaffian
+        \begin{equation*}
+            \mathrm{Pf} (E)=\sum_{q=1}^{2n}(-1)^q e_{pq}\mathrm{Pf}(E^{pq}_{pq})
+        \end{equation*}
+        we find the amplitude in the soft limit is 
+        \begin{equation*}
+            A_n\to\left(\frac{\epsilon_n\cdot k_{n-1}}{k_n\cdot k_{n-1}}+\frac{\epsilon_n\cdot k_1}{k_n\cdot k_1}\right)A_{n-1}
+        \end{equation*}
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{CHY form of amplitudes}
+    Both formulas above can be written in this simplest form 
+    \alert{
+        \begin{equation*}
+            \!\!\!\!\mathcal{M}^{(s)}\!=\!\!\!\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)
+            \!\!\!\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_3})}{(\sigma_1-\sigma_2)\dots (\sigma_n-\sigma_1)}\right)^{(2-s)}{(\mathrm{Pf}^\prime\Psi)}^s
+        \end{equation*}}
+    with $s=1$ for Yang-Mills and $s=2$ for gravity.
+    \\ \hspace*{\fill}\\
+    \begin{equation*}
+        \mathcal{M}^{(s)} \text{ as \alert{definition of S-matrix for spin s particles}}
+    \end{equation*}
+    \begin{equation*}
+        s=0\quad\to \quad \text{a corresponding scalar theory}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    %In order to get more general case, the gravity amplitudes actually can be modified to the product of two different Pfaffians,each with own choice of polariazation vector
+    The general case is that we can choose different polariazation vector like 
+    \begin{equation*}
+        \left(\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)\right)^2\to\mathrm{Pf}^\prime \Psi(k,\epsilon,\sigma)\mathrm{Pf}^\prime \Psi(k,\tilde{\epsilon},\sigma)
+    \end{equation*}
+    actually it gives amplitudes with gravitons coupled to dilatons and B-fields.
+    \\ \hspace*{\fill}\\
+    For the case $s=0$, the similar consequence is 
+    \begin{equation*}
+        \left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)^2\to\left(\frac{\mathrm{Tr}(T^{a_1}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)
+        \left(\frac{\mathrm{Tr}(\tilde{T}^{b_1}\dots \tilde{T}^{b_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)
+    \end{equation*}
+    while the original color group is $U(N)$, the new factors are the product of two different color group \alert{$U(N)\times U(\tilde{N})$}.
+\end{frame}
+\begin{frame}
+    The simplest possibility is the theory with only cubic interaction
+    \begin{equation*}
+        -f_{abc}\tilde{f}_{a^\prime b^\prime c^\prime}\phi^{aa^\prime}\phi^{bb^\prime}\phi^{cc^\prime}
+    \end{equation*}
+    All of above leads to the conclusion that the factors 
+    \begin{equation*}
+        \mathcal{C}_{U(N)}\equiv \sum_{\sigma\in S_n/Z_n}\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)\quad \mathrm{and} \quad E_\epsilon\equiv\mathrm{Pf}^{'}\Psi(\epsilon)
+    \end{equation*}
+    are interchangeable and this is a color-Kinematics corresopondence which is valid for individual solutions to scattering equations.
+   
+\end{frame}
+
+\begin{frame}
+    The connection of amplitudes between 3 theories can be described by the following diagram 
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=1\linewidth]{main.png}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Double partial amplitudes}
+    Because there are two color indices in this sclar theory, so it can be anticipateed that the amplitude
+    have double trace decomposition structure
+    \begin{align*}
+        \mathcal{M}_n^{(0)}&=\sum_{\alpha\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})M_n^{(0)}(\alpha(1),\alpha(2),\ldots,\alpha(n))\\
+        &=\sum_{\alpha,\beta\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})\text{Tr}(T^{\mathtt{a}_{\beta(1)}}T^{\mathtt{a}_{\beta(2)}}\cdots T^{\mathtt{a}_{\beta(n)}})\\
+        &\times \alert{m_n^{(0)}(\alpha|\beta)}
+    \end{align*} 
+    where the last term $m_n^{(0)}(\alpha|\beta)$ is called \alert{double partial amplitude} and can be read off from the full amplitude
+    \begin{align*}
+    m_{n}^{(0)}(\alpha|\beta)&=\int\frac{d^{n}\sigma}{\operatorname{vol}\operatorname{SL}(2,\mathbb{C})}\frac{\prod_{a}{}^{\prime}\delta(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}})}{(\sigma_{\alpha(1),\alpha(2)}\cdots\sigma_{\alpha(n),\alpha(1)})(\sigma_{\beta(1),\beta(2)}\cdots\sigma_{\beta(n),\beta(1)})}\\
+    =&\sum_{\{\sigma\}\in\mathrm{solutions}}\frac1{\det^{\prime}\Phi}\frac{1}{(\sigma_{\alpha(1),\alpha(2)}\cdots\sigma_{\alpha(n),\alpha(1)})(\sigma_{\beta(1),\beta(2)}\cdots\sigma_{\beta(n),\beta(1)})}
+    \end{align*}
+
+\end{frame}
+\begin{frame}
+    Likewise the decomposition in the first section, it is more usually to write the amplitudes in terms of colore basis
+    \begin{equation*}
+        \boxed{\mathbf{c}_\alpha\equiv\sum_{\mathsf{c}_1,...,\mathsf{c}_{n-3}}f_{\mathsf{a}_1\mathsf{a}_{\alpha(2)}\mathsf{c}_1}\cdots f_{\mathsf{c}_{n-3}\mathsf{a}_{\alpha(n-1)}\mathsf{a}_n}}
+    \end{equation*}
+    where $\alpha \in S_{n-2}$. The amplitude is 
+    \begin{equation*}
+        \mathcal{M}_n^{(0)}=\sum_{\alpha,\beta\in S_{n-2}}\mathbf{c_\alpha}\tilde{\mathbf{c_\beta}}m_{n}^{(0)}(\alpha|\beta)
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    \frametitle{Examples}
+    \begin{itemize}
+        \item The simplest example is the 3 point case
+        \begin{equation*}
+            \mathcal{M}_3^{(0)}(1^{aa^\prime,bb^\prime,cc^\prime})=(\sigma_{12}\sigma_{23}\sigma_{31})^2\frac{f_{abc}f_{a^\prime b^\prime c^\prime}}{(\sigma_{12}\sigma_{23}\sigma_{31})^2}=f_{abc}f_{a^\prime b^\prime c^\prime}
+        \end{equation*}
+        It actually gives the correct answer.
+        \item The 4 point case is a little complex. Solving the scattering equations with $\sigma_1=0,\sigma_2=1,\sigma_3=\infty$ gives $\sigma_4=-s_{23}/s_{12}$. Define
+        $s_{12}=s$, $s_{23}=t$, $s_{13}=u$, the color factors are 
+        \begin{equation*}
+            \mathbf{c_s}=\sum_bf_{a_1a_2b}f_{ba_3a_4},\mathbf{c_t}=\sum_bf_{a_1a_4b}f_{ba_3a_2},\mathbf{c_u}=\sum_bf_{a_1a_3b}f_{ba_2a_4}
+        \end{equation*}
+        Denoting the ordering $(1324)$ as $P$ and comuputing $\det{'}\Phi=\frac{s^2}{t}/(\sigma_{12}\sigma_{23}^2\sigma_{31}\sigma_{34}\sigma_{42})$, one gets
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{align*}
+        \!\!\!\!\mathcal{M}_4^{(0)}&=\mathbf{c_s}\tilde{\mathbf{c_s}}m_4^{(0)}(I;I)+\mathbf{c_s}\tilde{\mathbf{c_u}}m_4^{(0)}(I;P)+\mathbf{c_u}\tilde{\mathbf{c_s}}m_4^{(0)}(P;I)+\mathbf{c_u}\tilde{\mathbf{c_u}}m_4^{(0)}(P;P)\\
+        &=\mathbf{c_s}\tilde{\mathbf{c_s}}\frac{u}{st}+(\mathbf{c_s}\tilde{\mathbf{c_u}}+\mathbf{c_u}\tilde{\mathbf{c_s}})\frac{1}{t}+\mathbf{c_u}\tilde{\mathbf{c_u}}\frac{s}{ut}\\
+        &=-\frac{\mathbf{c_s}\tilde{\mathbf{c_s}}}{s}-\frac{\mathbf{c_t}\tilde{\mathbf{c_t}}}{t}-\frac{\mathbf{c_u}\tilde{\mathbf{c_u}}}{u}
+    \end{align*}
+    \quad \quad as expected for a color-dressed cubic theory.
+    \begin{itemize}
+        \item For the five point, I just give the results of some double partial amplitudes.
+        Denoting the orderings as $I=P_0$, $(13245)=P_1$, $(12435)=P_2$, $(14325)=P_3$, $(13425)=P_4$, $(14235)=P_5$
+        \begin{equation*}
+            \begin{aligned}&m_5^{(0)}(I|I)=\frac{1}{s_{12}s_{34}}+\frac{1}{s_{23}s_{45}}+\frac{1}{s_{34}s_{51}}+\frac{1}{s_{45}s_{12}}+\frac{1}{s_{51}s_{23}},\\&m_5^{(0)}(I|P_1)=-\frac{1}{s_{23}}\left(\frac{1}{s_{45}}+\frac{1}{s_{12}}\right),\quad
+                m_5^{(0)}(I|P_2)=-\frac{1}{s_{34}}\left(\frac{1}{s_{51}}+\frac{1}{s_{12}}\right).\end{aligned}
+        \end{equation*}
+    \end{itemize}
+\end{frame}
+\begin{frame}
+    \begin{align*}
+        &m_5^{(0)}(I|P_3)=-\frac{1}{s_{51}}\left(\frac{1}{s_{23}}+\frac{1}{s_{34}}\right),\quad  m_5^{(0)}(I|P_4)=-\frac{1}{s_{34}s_{51}},\\
+        &m_5^{(0)}(I|P_5)=0
+    \end{align*}
+    From there examples, it is easy to see that when both permutations in $m_n^{(0)}(\alpha|\beta)$ are the same, then the answer is a sum over all color-orded
+    trivalent diagrams; When the two permutations are different, it gives a subset of terms of $m_n^{(0)}(\alpha|\alpha)$. 
+    \\ \hspace*{\fill}\\
+    More explicitly,
+
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+    
+    %Straight Lines [id:da8455657796938298] 
+    \draw    (179.5,110) -- (212.5,142) ;
+    %Straight Lines [id:da5324594211620186] 
+    \draw    (212.5,142) -- (182.5,170) ;
+    %Straight Lines [id:da4643902351443361] 
+    \draw    (212.5,142) -- (254.5,142) ;
+    %Straight Lines [id:da8904360433186445] 
+    \draw    (280.5,111) -- (254.5,142) ;
+    %Straight Lines [id:da18000644921445508] 
+    \draw    (254.5,142) -- (281.5,171) ;
+    %Straight Lines [id:da29602344087941934] 
+    \draw    (320.5,109) -- (353.5,141) ;
+    %Straight Lines [id:da9975053882839713] 
+    \draw    (353.5,141) -- (323.5,169) ;
+    %Straight Lines [id:da5157442319090852] 
+    \draw    (353.5,141) -- (395.5,141) ;
+    %Straight Lines [id:da049884375007126946] 
+    \draw    (421.5,110) -- (395.5,141) ;
+    %Straight Lines [id:da9299487354359295] 
+    \draw    (395.5,141) -- (422.5,170) ;
+    
+    % Text Node
+    \draw (111,135.4) node [anchor=north west][inner sep=0.75pt]    {$m_{4}^{(0)}(I,I) =$};
+    % Text Node
+    \draw (184.5,173) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (184.5,94) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (264.5,94) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (263.5,172) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (298,133.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (325.5,172) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (325.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (405.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (404.5,171) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+    
+    
+    \end{tikzpicture}
+
+\end{frame}
+\begin{frame}
+    Similarly,
+    
+
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,350); %set diagram left start at 0, and has height of 350
+    
+    %Straight Lines [id:da8963901965951664] 
+    \draw    (84,71) -- (108,93) ;
+    %Straight Lines [id:da07470927432540231] 
+    \draw    (108,93) -- (136,93) ;
+    %Straight Lines [id:da12245379377221366] 
+    \draw    (108,93) -- (85,111) ;
+    %Straight Lines [id:da6511432990080723] 
+    \draw    (136,93) -- (161,114) ;
+    %Straight Lines [id:da1430135957918477] 
+    \draw    (157,71) -- (136,93) ;
+    %Straight Lines [id:da8765002291973463] 
+    \draw    (157,71) -- (158,47) ;
+    %Straight Lines [id:da9623971067643409] 
+    \draw    (157,71) -- (178,87) ;
+    %Straight Lines [id:da5561877649988292] 
+    \draw    (214,70) -- (238,92) ;
+    %Straight Lines [id:da44100018812085007] 
+    \draw    (238,92) -- (266,92) ;
+    %Straight Lines [id:da05824517478761182] 
+    \draw    (238,92) -- (215,110) ;
+    %Straight Lines [id:da35334338456014613] 
+    \draw    (266,92) -- (291,113) ;
+    %Straight Lines [id:da9313767826880515] 
+    \draw    (287,70) -- (266,92) ;
+    %Straight Lines [id:da696534040519218] 
+    \draw    (287,70) -- (288,46) ;
+    %Straight Lines [id:da5526828548209644] 
+    \draw    (287,70) -- (308,86) ;
+    %Straight Lines [id:da19124382298581288] 
+    \draw    (359,64) -- (383,86) ;
+    %Straight Lines [id:da5237814153432139] 
+    \draw    (383,86) -- (411,86) ;
+    %Straight Lines [id:da7974585866426673] 
+    \draw    (383,86) -- (360,104) ;
+    %Straight Lines [id:da46316924534551385] 
+    \draw    (411,86) -- (436,107) ;
+    %Straight Lines [id:da37617479030606993] 
+    \draw    (432,64) -- (411,86) ;
+    %Straight Lines [id:da9834219129393018] 
+    \draw    (432,64) -- (433,40) ;
+    %Straight Lines [id:da7117622111604034] 
+    \draw    (432,64) -- (453,80) ;
+    %Straight Lines [id:da8760088009181417] 
+    \draw    (82,171) -- (106,193) ;
+    %Straight Lines [id:da7078786925271212] 
+    \draw    (106,193) -- (134,193) ;
+    %Straight Lines [id:da5389180018159456] 
+    \draw    (106,193) -- (83,211) ;
+    %Straight Lines [id:da26578622720899636] 
+    \draw    (134,193) -- (159,214) ;
+    %Straight Lines [id:da5989066756692625] 
+    \draw    (155,171) -- (134,193) ;
+    %Straight Lines [id:da13747441694892726] 
+    \draw    (155,171) -- (156,147) ;
+    %Straight Lines [id:da4119117050779677] 
+    \draw    (155,171) -- (176,187) ;
+    %Straight Lines [id:da5379584617019675] 
+    \draw    (221,169) -- (245,191) ;
+    %Straight Lines [id:da788296500370655] 
+    \draw    (245,191) -- (273,191) ;
+    %Straight Lines [id:da4136462405421193] 
+    \draw    (245,191) -- (222,209) ;
+    %Straight Lines [id:da37414431568833373] 
+    \draw    (273,191) -- (298,212) ;
+    %Straight Lines [id:da8232480161298765] 
+    \draw    (294,169) -- (273,191) ;
+    %Straight Lines [id:da7983669347123197] 
+    \draw    (294,169) -- (295,145) ;
+    %Straight Lines [id:da7903324165137171] 
+    \draw    (294,169) -- (315,185) ;
+    
+    % Text Node
+    \draw (5,76.4) node [anchor=north west][inner sep=0.75pt]    {$m_{5}( I,I) =$};
+    % Text Node
+    \draw (87,114) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (86,68) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (159.5,56) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (180,84) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (163,111) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (198,73.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (217,113) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (216,67) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (289.5,55) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (310,83) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (293,110) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (335,72.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (362,107) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (361,61) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (434.5,49) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (455,77) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (438,104) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (65,184.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (85,214) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+    % Text Node
+    \draw (84,168) node [anchor=south west] [inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (157.5,156) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (178,184) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (161,211) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (201,181.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
+    % Text Node
+    \draw (224,212) node [anchor=north west][inner sep=0.75pt]   [align=left] {5};
+    % Text Node
+    \draw (226,172) node [anchor=south west] [inner sep=0.75pt]   [align=left] {1};
+    % Text Node
+    \draw (296.5,154) node [anchor=south west] [inner sep=0.75pt]   [align=left] {2};
+    % Text Node
+    \draw (317,182) node [anchor=south west] [inner sep=0.75pt]   [align=left] {3};
+    % Text Node
+    \draw (300,209) node [anchor=south west] [inner sep=0.75pt]   [align=left] {4};
+    
+    
+    \end{tikzpicture}
+\end{frame}
+\begin{frame}
+    \frametitle{Trivalent graph expansion}
+    \begin{alertblock}{Proposition}
+        The function $m_n^{(0)}(\alpha|\beta)$ computes the sum of all trivalent scalar diagrams which can be regarded as both $\alpha$ color-ordered and $\beta$ color-orded.
+    \end{alertblock}
+    \pause
+    More explicitly, 
+    \begin{equation*}
+        \boxed{m_n^{(0)}(\alpha|\beta)=(-1)^{n-3+n_{\text{flip}}(\alpha|\beta)}\sum_{g\in\mathcal{T}(\alpha)\cap\mathcal{T}(\beta)}\prod_{e\in E(g)}\frac{1}{s_e}}
+\end{equation*}
+where the $\text{flip}(\alpha|\beta)$ is defined below, $\mathcal{T}(\alpha)$ and $\mathcal{T}(\beta)$ refer to the set of color-ordered diagrams in $\alpha$ and 
+$\beta$ ordering respectively. To make this expression more clear, see the following diagram
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.8\linewidth]{5.png}
+\end{figure}
+\end{frame}
+\begin{frame}
+    We take $m_8^{(0)}(I;18543762)$ as an example to explain how to compute it in an systematic way
+    
+    %\begin{itemize}
+    %    \item First step, draw a disk with n nodes sitting on the boundary in the ordering $\alpha$, then link the n nodes with a loop of line segments according to
+    %          the ording $\beta$. The line segments from $\beta$ split the disk into some polygons, like the graph (b). We need to move the external points of every polygon
+    %          to make them have no common edges, like graph (c).
+    %    \item Second step, put a point in every polygon, named equivalant vertex, and connect this point to all external points in corresponding area. Lines that connect equivalent 
+    %          vertices in two regions with common vertices are called equivalent propagators. The resulting graph is an equivalent Feynman diagram, as shown in Figure (d).
+    %\end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{7.png}
+    \end{figure}
+    In this example, we can obtain 
+    \begin{equation*}
+        m_8^{(0)}(I|54376218)=(-1)^?\left(\frac{1}{s_{21}}+\frac{1}{s_{18}}\right)\left(\frac{1}{s_{34}}+\frac{1}{s_{45}}\right)\frac{1}{s_{345}s_{812}s_{67}}
+    \end{equation*}
+    As for the indefinite sign, there is also a procedure to determine it.
+    
+\end{frame}
+    
+\begin{frame}
+    
+    %\begin{itemize}
+    %    \item Third step, we can read off the corresponding amplitudes from the equivalent Feynman diagram. 
+    %\end{itemize}
+    %\begin{itemize}
+    %\item First step, determine the orientation of the disk by ordering $\alpha$, and define the loop segments by ordering $\beta$, which also determine the orientation of every polygon.
+    %    \item Second step, (1) each polygon with odd number vertices contributes a plus sign if the orientation is the same as disk, and a minus sign oppositely;
+    %          (2) each polygon with even number vertices contribute a minus sign; (3) each intersection point contributes a minus sign.
+    %\end{itemize}
+    \begin{figure}
+        \centering
+        \includegraphics[width=1\linewidth]{6.png}
+    \end{figure}
+    The final answer is that
+    \begin{equation*}
+        m_8^{(0)}(I|54376218)=(-1)^6\left(\frac{1}{s_{21}}+\frac{1}{s_{18}}\right)\left(\frac{1}{s_{34}}+\frac{1}{s_{45}}\right)\frac{1}{s_{345}s_{812}s_{67}}
+    \end{equation*}
+\end{frame}
+\section{Conclusion and Outlook}
+
+\section{Appendix}
 \begin{frame}{KLT Relation}
     So-called KLT relation, in the language of field theory, refers to the decomposition of \alert{gravity amplitudes} to \alert{two gauge theory amplitues}. 
     \begin{table}[]
@@ -245,7 +830,8 @@ the relative sign here is just a convention.
         }
         \end{table}
 \end{frame}
-\fi
+
+\appendix
 \begin{frame}{KLT Orthogonality}
     $\bullet$ KLT orthogonality is a striking property of the solutions to scattering equations.
     \begin{block}{Proposition 1}
@@ -917,9 +1503,6 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
         e_{g_t}=\pm(e_{g_s}-e_{g_u})
     \end{equation*}
     If we contentate on pure Yang-Mills theory, the realtion is just the one we list in the first second section.
-\end{frame}
-\begin{frame}
-    \frametitle{Conclusion and Outlook}
 \end{frame}
 \end{document}
 
