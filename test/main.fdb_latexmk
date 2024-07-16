@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1720519665.67573 "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" "main.pdf" "main" 1720519669.9907 0
-  "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" 1720519665.54469 83602 83df07a7ecd2992df228b1c6745bd98e ""
+["pdflatex"] 1720754512.48087 "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" "main.pdf" "main" 1720754516.7807 0
+  "/Users/suyz/Desktop/Vscode Cloud/Vscode/test/main.tex" 1720754512.355 83753 1bb3baf55da552f756afc8578de2facb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy8.tfm" 1246382020 1120 200be8b775682cdf80acad4be5ef57e4 ""
@@ -248,12 +248,12 @@
   "7.png" 1720059199.21469 275369 c0c4a4fe2b8203012d75ad84f1cc8182 ""
   "9.png" 1720519439.02794 214233 e884366dfd935b65d7ce59fcabfce389 ""
   "Grassmannian.png" 1720162472.24801 353550 53643b39d5a36bab577f734620ea59d2 ""
-  "main.aux" 1720519669.89321 11495 602b705c6592c2ce0f80508cbf4cf398 "pdflatex"
-  "main.nav" 1720519669.89481 7739 4eb818719d1fc128a26a7ba92c74443d "pdflatex"
-  "main.out" 1720519669.89459 647 f1c64380fba6b69af47539d07910fad9 "pdflatex"
+  "main.aux" 1720754516.67766 11495 602b705c6592c2ce0f80508cbf4cf398 "pdflatex"
+  "main.nav" 1720754516.6791 7739 4eb818719d1fc128a26a7ba92c74443d "pdflatex"
+  "main.out" 1720754516.67892 647 f1c64380fba6b69af47539d07910fad9 "pdflatex"
   "main.png" 1719984686.25945 209543 605a8141390e8b9ff37318758d58f175 ""
-  "main.tex" 1720519665.54469 83602 83df07a7ecd2992df228b1c6745bd98e ""
-  "main.toc" 1720519669.89489 220 50cd9b953cd8ef147026c351b2fbab6a "pdflatex"
+  "main.tex" 1720754512.355 83753 1bb3baf55da552f756afc8578de2facb ""
+  "main.toc" 1720754516.67919 220 50cd9b953cd8ef147026c351b2fbab6a "pdflatex"
   "recrel1.pdf" 1720161678.43693 5913 80346aaed99aa2960e27cbcb2181ddca ""
   (generated)
   "main.aux"

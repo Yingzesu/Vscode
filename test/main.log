@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.28)  9 JUL 2024 19:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.28)  12 JUL 2024 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -761,7 +761,7 @@ Overfull \vbox (9.28845pt too high) detected at line 57
 ] [16
 
 ]
-Overfull \hbox (10.8842pt too wide) detected at line 451
+Overfull \hbox (10.8842pt too wide) detected at line 452
     \OMS/cmsy/m/n/10.95 M[]  \OT1/cmr/m/n/10.95 =    [] [] [] []\OML/cmm/m/it/10.95 ^^N[] [] [][]    [][] [][]
  []
 
@@ -775,12 +775,12 @@ Overfull \hbox (10.8842pt too wide) detected at line 451
 <main.png, id=683, 2229.32875pt x 789.95125pt>
 File: main.png Graphic file (type png)
 <use main.png>
-Package pdftex.def Info: main.png  used on input line 486.
+Package pdftex.def Info: main.png  used on input line 487.
 (pdftex.def)             Requested size: 342.2953pt x 121.28401pt.
  [20
 
  <./main.png (PNG copy)>]
-Overfull \hbox (9.86246pt too wide) detected at line 502
+Overfull \hbox (9.86246pt too wide) detected at line 503
 []
  []
 
@@ -791,12 +791,12 @@ Overfull \hbox (9.86246pt too wide) detected at line 502
 ] [23
 
 ]
-Overfull \hbox (10.00874pt too wide) detected at line 544
+Overfull \hbox (10.00874pt too wide) detected at line 545
 []
  []
 
 
-Overfull \hbox (10.17531pt too wide) detected at line 544
+Overfull \hbox (10.17531pt too wide) detected at line 545
 [][]
  []
 
@@ -805,7 +805,7 @@ Overfull \hbox (10.17531pt too wide) detected at line 544
 ] [25
 
 ]
-Overfull \hbox (2.9297pt too wide) in paragraph at lines 751--751
+Overfull \hbox (2.9297pt too wide) in paragraph at lines 752--752
 [][]  
  []
 
@@ -815,14 +815,14 @@ Overfull \hbox (2.9297pt too wide) in paragraph at lines 751--751
 <5.png, id=905, 424.58624pt x 73.27374pt>
 File: 5.png Graphic file (type png)
 <use 5.png>
-Package pdftex.def Info: 5.png  used on input line 768.
+Package pdftex.def Info: 5.png  used on input line 769.
 (pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
  [27
 
  <./5.png>]
 File: 5.png Graphic file (type png)
 <use 5.png>
-Package pdftex.def Info: 5.png  used on input line 768.
+Package pdftex.def Info: 5.png  used on input line 769.
 (pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
  [28
 
@@ -830,7 +830,7 @@ Package pdftex.def Info: 5.png  used on input line 768.
 <7.png, id=974, 1143.27126pt x 305.64188pt>
 File: 7.png Graphic file (type png)
 <use 7.png>
-Package pdftex.def Info: 7.png  used on input line 789.
+Package pdftex.def Info: 7.png  used on input line 790.
 (pdftex.def)             Requested size: 342.2953pt x 91.50671pt.
  [29
 
@@ -838,7 +838,7 @@ Package pdftex.def Info: 7.png  used on input line 789.
 <6.png, id=1004, 840.64063pt x 312.16624pt>
 File: 6.png Graphic file (type png)
 <use 6.png>
-Package pdftex.def Info: 6.png  used on input line 809.
+Package pdftex.def Info: 6.png  used on input line 810.
 (pdftex.def)             Requested size: 342.2953pt x 127.10777pt.
  [30
 
@@ -850,7 +850,7 @@ Package pdftex.def Info: 6.png  used on input line 809.
 <9.png, id=1099, 378.4539pt x 268.54327pt>
 File: 9.png Graphic file (type png)
 <use 9.png>
-Package pdftex.def Info: 9.png  used on input line 833.
+Package pdftex.def Info: 9.png  used on input line 834.
 (pdftex.def)             Requested size: 273.83728pt x 194.31393pt.
  [33
 
@@ -858,7 +858,7 @@ Package pdftex.def Info: 9.png  used on input line 833.
 <4.png, id=1128, 1047.915pt x 674.52pt>
 File: 4.png Graphic file (type png)
 <use 4.png>
-Package pdftex.def Info: 4.png  used on input line 839.
+Package pdftex.def Info: 4.png  used on input line 840.
 (pdftex.def)             Requested size: 342.2953pt x 220.32797pt.
  [34
 
@@ -869,7 +869,7 @@ Package pdftex.def Info: 4.png  used on input line 839.
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 863.
+(hyperref)                removing `\translate ' on input line 864.
 
 [37
 
@@ -912,7 +912,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 ] [56
 
 ]
-Overfull \hbox (10.8842pt too wide) detected at line 1144
+Overfull \hbox (10.8842pt too wide) detected at line 1145
     \OMS/cmsy/m/n/10.95 M[]  \OT1/cmr/m/n/10.95 =    [] [] [] []\OML/cmm/m/it/10.95 ^^N[] [] [][]    [][] [][]
  []
 
@@ -925,12 +925,12 @@ Overfull \hbox (10.8842pt too wide) detected at line 1144
 ]
 File: main.png Graphic file (type png)
 <use main.png>
-Package pdftex.def Info: main.png  used on input line 1178.
+Package pdftex.def Info: main.png  used on input line 1179.
 (pdftex.def)             Requested size: 342.2953pt x 121.28401pt.
  [60
 
 ]
-Overfull \hbox (9.86246pt too wide) detected at line 1194
+Overfull \hbox (9.86246pt too wide) detected at line 1195
 []
  []
 
@@ -941,12 +941,12 @@ Overfull \hbox (9.86246pt too wide) detected at line 1194
 ] [63
 
 ]
-Overfull \hbox (10.00874pt too wide) detected at line 1236
+Overfull \hbox (10.00874pt too wide) detected at line 1237
 []
  []
 
 
-Overfull \hbox (10.17531pt too wide) detected at line 1236
+Overfull \hbox (10.17531pt too wide) detected at line 1237
 [][]
  []
 
@@ -955,7 +955,7 @@ Overfull \hbox (10.17531pt too wide) detected at line 1236
 ] [65
 
 ]
-Overfull \hbox (2.9297pt too wide) in paragraph at lines 1443--1443
+Overfull \hbox (2.9297pt too wide) in paragraph at lines 1444--1444
 [][]  
  []
 
@@ -964,14 +964,14 @@ Overfull \hbox (2.9297pt too wide) in paragraph at lines 1443--1443
 ]
 File: 5.png Graphic file (type png)
 <use 5.png>
-Package pdftex.def Info: 5.png  used on input line 1460.
+Package pdftex.def Info: 5.png  used on input line 1461.
 (pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
  [67
 
 ]
 File: 5.png Graphic file (type png)
 <use 5.png>
-Package pdftex.def Info: 5.png  used on input line 1460.
+Package pdftex.def Info: 5.png  used on input line 1461.
 (pdftex.def)             Requested size: 273.83728pt x 47.2595pt.
  [68
 
@@ -980,14 +980,14 @@ Package pdftex.def Info: 5.png  used on input line 1460.
 ]
 File: 7.png Graphic file (type png)
 <use 7.png>
-Package pdftex.def Info: 7.png  used on input line 1484.
+Package pdftex.def Info: 7.png  used on input line 1485.
 (pdftex.def)             Requested size: 342.2953pt x 91.50671pt.
  [70
 
 ]
 File: 6.png Graphic file (type png)
 <use 6.png>
-Package pdftex.def Info: 6.png  used on input line 1495.
+Package pdftex.def Info: 6.png  used on input line 1496.
 (pdftex.def)             Requested size: 342.2953pt x 127.10777pt.
  [71
 
@@ -1024,7 +1024,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  128i,15n,123p,443b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (74 pages, 2112189 bytes).
+Output written on main.pdf (74 pages, 2112291 bytes).
 PDF statistics:
  2522 PDF objects out of 2984 (max. 8388607)
  2223 compressed objects within 23 object streams
