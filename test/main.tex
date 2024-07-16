@@ -18,16 +18,45 @@
 \date[7 23rd 2024]{July 23rd 2024} 
 \begin{document}
 \frame{\titlepage}
+\begin{frame}
+    This report is mainly based on the following works
+    \begin{itemize}
+        \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1306.6575
+        \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1307.2199
+        \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1309.0885
+        \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1412.3479
+        \item Z. Bern, J.J.M. Carrasco, H. Johansson, arxiv: 0805.3993
+    \end{itemize}
+\end{frame}
 
 \section{Why the S-matrix is so important?}
+
+\begin{frame}
+    \Large \alert{Scattering amplitude is one of the most important concepts in QFT}
+    \begin{itemize}
+        \pause
+        \item It is the bridge connecting experimental data and theoretical prediction.
+        \pause
+        \item It reveals various properties of theory, such as Lorentz symmetry, localty and unitarity.
+        \pause
+        \item Some recent work show that scattering amplitude contains many interesting mathematical structures.
+              Actually, this report introduces one of these structures.
+    \end{itemize}
+\end{frame}
 \iffalse
 \begin{frame}
-    It is well known that in the conventional quantum field theory, S-matrix is a deduced physical quantity following
+    I would like to emphasize two of them, BCFW recursion relations and Amplituhedron.
+    \bullet Generally, we would like to consider the scalar theory as the most basic theory in the Quantum field theory. But according to the BCFW, we
+            know that amplitudes in sclar theory can not be constructed recursively, but that of more complicated theory --- Yang-Mills, can be completely
+            constructed from 3 point amplitudes. So it may give us some new understandings of field theory.
+
+    \bullet It is well known that in the conventional quantum field theory, S-matrix is a deduced physical quantity following
     unitarity and localty. But as the understanding of scatering amplitudes improves, by using the amplituhedron method,
     S-matrix can be constructed directly from a special kind of geometry object and we even have no need to introduce the Lagrangian
     of the specific theory. Also the localty and unitarity can be the outcome from the request of positivity instead of input or previous constraints.
     It may give us some implications about the significance of S-matrix and encourage us to reconstruct the field theory in another way.
-    Most of the developments before have made for particular theories like $\mathcal{N}=4$ Super Yang-Mills theory or $\mathcal{N}=8$ Supergravity,
+    
+    \bullet Most of the developments before have made for particular theories like $\mathcal{N}=4$ Super Yang-Mills theory or $\mathcal{N}=8$ Supergravity,
     but this paper gives some hints to the construction of amplitudes for theories with less or no supersymmetry.
 \end{frame}
 \fi
@@ -46,7 +75,7 @@
         \end{equation*}
         \item Dual superconformal symmetry of $\mathcal{N}=4$ Super Yang-Mills amplitude.
         \item Generalized unitarity
-        \item Positive geometry and Amplituhedra.
+        \item Positive geometry and Amplituhedron.
         \item \dots
     \end{itemize}
     \begin{figure}
@@ -93,145 +122,7 @@
 \end{tikzpicture}
 
 \end{frame}
-\iffalse
-\section{Review of some pertinent results}
-\begin{frame}{Gauge theory color structure}
-    At tree level, with particles in the adjoint representaion of gauge group SU(N), the amplitude can be 
-decomposed as
-\textcolor{red}{\begin{equation*}
-    \mathcal{A}_n^{tree}(1,2,3,\dots,n)=\sum _{\mathcal{P}(2,3,\dots,n)}Tr[T^{a_1}T^{a_2}T^{a_3}\dots
-    T^{a_n}]A_n^{tree}[1,2,3,\dots,n]
-\end{equation*}}
 
-here we ommit the coupling constant g, and $A_n^{tree}$ is called tree-level color-ordered partial amplitude.
-Notice that this basis includes \textcolor{red}{$(n-1)!$} independent amplitudes.
-\end{frame}
-\begin{frame}
-    Color-ordered partial amplitudes satisfy a set of well-known properties,
-    \begin{itemize}
-        \item Cyclic:\quad $$A_n^{tree}[1,2,3,\dots,n]=A_n^{tree}[2,3,\dots,n,1]$$
-        \item Reflection: \quad $$A_n^{tree}[1,2,3,\dots,n]=(-1)^nA_n^{tree}[n,\dots,3,2,1]$$
-        \item "photon" decoupling: \quad $$\sum_{\sigma\in \text{cyclic}}A_n^{tree}[1,\sigma(2,3,\dots,n)]=0$$
-        \item KK(Kleiss-Kuijf) relation:\quad $$A_n^{tree}[1,{\alpha},n,{\beta}]=(-1)^{n_\beta}
-        \sum_{\left\{\sigma\right\}_i\in OP(\left\{\alpha\right\},\left\{\beta\right\}^T)}A_n^{tree}[1,\left\{\sigma\right\}_i,n]$$
-    \end{itemize}
-    where the OP means ordered permutaions, that is all permutations of $\left\{\alpha\right\}$$\bigcup$$\left\{\beta\right\}^T$
-    that matains the order of individual elements of each set.
-\end{frame}
-\begin{frame}
-    For example, a five point amplitude $A_n^{tree}(1,\{2,3\},5,\{4\})$, we have
-\begin{equation*}
-    A_n^{tree}[1,2,3,5,4]=-A_n^{tree}[1,2,3,4,5]-A_n^{tree}[1,2,4,3,5]-A_n^{tree}[1,4,2,3,5]
-\end{equation*}
-The other five point relations can be obtained by permuting legs 2,3,4 and using cyclic and reflection properties.
-\\ \hspace*{\fill}\\
-This means that the six amplitudes $A_n^{tree}(1,\mathcal{P}\{2,3,4 \},5 )$ form a basis of remaining five-point partial amplitudes.
-\textcolor{red}{More generally, for multiplicity n, the KK relation can be used to rewrite any color-ordered partial amplitude in terms of only $(n-2)!$
-basis partial amplitudes, where two legs are fixed(usually choose 1 and n).}
-\end{frame}
-\begin{frame}{A Similar Structure}
-    It can be proved that tree level amplitudes can also be decomposed like 
-\begin{equation*}
-    \mathcal{A}_n^\text{tree}=\sum_{\sigma\in S_{n-2}}\tilde{f}^{a_1a_{\sigma_1}b_1}\tilde{f}^{b_1a_{\sigma_2}b_2}\cdots\tilde{f}^{b_{n-3}a_{\sigma_{n-2}}a_n}\tilde{A}_n(1,\sigma_1,\sigma_2,\ldots,\sigma_{n-2},n)
-\end{equation*}
-The basis is called DDM and more convenient in parctice. It is easy to realize that the number of basis amplitudes is also \textcolor{red}{$(n-2)!$} with fiexed particle labels 1 and n.
-\end{frame}
-\begin{frame}
-    \begin{Large}
-        \textcolor{red}{How can we realize the existence of this basis?}
-    \end{Large}
-\\ \hspace*{\fill}\\
-We just need to notice the contribution from ladder diagram
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=1\linewidth]{1.png}
-\end{figure}
-And any (three vertex) diagram, by using the Jacobbi identity like 
-\begin{figure}[htb]
-    \centering
-    \includegraphics[width=1\linewidth]{2.png}
-\end{figure}
-can be transformed to the ladder diagram. It has been proved that $\textcolor{red}{\tilde{A}_n(\dots)}$ here is identical to $\textcolor{red}{A_n^{tree}[\dots]}$ in the trace basis.
-\end{frame}
-\begin{frame}{Color-Kinematics Duality }
-The Color-Kinematics Duality here is not the complete version, but we can catch some points.
-At four points we have
-\begin{equation*}
-    A_4^{\mathrm{tree}}(1,2,3,4)+    A_4^{\mathrm{tree}}(1,3,2,4)+    A_4^{\mathrm{tree}}(1,4,2,3)=0.
-\end{equation*}
-%The decoupling identity does not rely on the specific polariazation and space-time, so the hold of this equation is 
-%entirely due to the amplitudes' dependence on Mandelstam variables.
-We recognize that the only nontrival way the equation holds accoring to $s+t+u=0$ 
-\begin{align*}
-    &A_4^{\mathrm{tree}}(1,2,3,4)+    A_4^{\mathrm{tree}}(1,3,2,4)+    A_4^{\mathrm{tree}}(1,4,2,3)\\
-\quad&= (s+t+u)\chi=0
-\end{align*} 
-Considering that $A_4^{\mathrm{tree}}(1,2,3,4)$ treats $s$ and $t$ the same, and similar to the other two, we make the identification
-\begin{equation*}
-    A_4^{\mathrm{tree}}(1,2,3,4)=u\chi,\quad   A_4^{\mathrm{tree}}(1,3,2,4)=t\chi,\quad    A_4^{\mathrm{tree}}(1,4,2,3)=s\chi
-\end{equation*}
-\end{frame}
-\begin{frame}
-    We obtain
-    \begin{align*}
-        tA_4^{\mathrm{tree}}(1,2,3,4)=uA_4^{\mathrm{tree}}(1,3,4,2),\\
-        sA_4^{\mathrm{tree}}(1,2,3,4)=uA_4^{\mathrm{tree}}(1,4,2,3),\\
-        tA_4^{\mathrm{tree}}(1,2,3,4)=sA_4^{\mathrm{tree}}(1,3,4,2).\\
-    \end{align*}
-    And in order to obtain the knematic analog of Jacobbi identity, it is convenient to express the amplitudes in terms of poles
-\begin{align*}
-    &A_4^{\mathrm{tree}}(1,2,3,4)\equiv\frac{n_s}{s}+\frac{n_t}{t},\\
-    &A_4^{\mathrm{tree}}(1,3,4,2)\equiv-\frac{n_u}{u}-\frac{n_s}{s},\\
-    &A_4^{\mathrm{tree}}(1,4,2,3)\equiv-\frac{n_t}{t}+\frac{n_u}{u}.
-\end{align*}
-the relative sign here is just a convention.
-\end{frame}
-\begin{frame}
-    Combining the two relation above gives the desired identity
-    \begin{equation*}
-        \alert{n_u=n_s-n_t}
-    \end{equation*}
-    this is exactly the same form of Jacobbi identity for the color factors.
-    The full amplitude can be written like
-\begin{equation*}
-    \mathcal{A}_4^{\mathrm{tree}}=g^2\left(\frac{n_sc_s}{s}+\frac{n_uc_u}{u}+\frac{n_tc_t}{t}\right)
-\end{equation*}
-\end{frame}
-\begin{frame}
-    For the five point case, an example is 
-    \begin{figure}[htb]
-        \centering
-        \includegraphics[width=1\linewidth]{FivePtTwist2.eps}
-    \end{figure}
-    we have the corresponding color factor Jacobbi identities like
-    \begin{equation*}
-        c_3=c_5-c_8
-    \end{equation*}
-    so we need to have the knematic analog
-    \begin{equation*}
-        n_3=n_5-n_8
-    \end{equation*}
-    The explict forms of all these factors can be found in the original paper \textbf{New relations for gauge theory amplituds, PRD 78, 085011}
-\end{frame}
-\begin{frame}
-    Full amplitudes of 5 points are
-    \begin{eqnarray*}
-        \mathcal {A}^\mathrm{tree}_5& = & 
-        g^3\Biggl( {n_1 c_1\over s_{12}s_{45}}+{n_2 c_2\over s_{23}s_{51}}
-        +{n_3 c_3 \over s_{34}s_{12}}+{n_4 c_4\over s_{45}s_{23}}
-        +{n_5 c_5\over s_{51}s_{34}} +{n_{6} c_6\over s_{14}s_{25}}  \\
-        &&\null \hskip .3 cm 
-        + {n_7 c_7\over s_{32}s_{14}}+{n_{8} c_8\over s_{25}s_{43}}
-        +{n_{9} c_9\over s_{13}s_{25}}+{n_{10} c_{10}\over s_{42}s_{13}}
-        +{n_{11} c_{11}\over s_{51}s_{42}}+ {n_{12} c_{12}\over s_{12}s_{35}}  \\
-        &&\null \hskip .3 cm 
-        +{n_{13} c_{13}\over s_{35}s_{24}} 
-        +{n_{14} c_{14}\over s_{14}s_{35}}
-        +{n_{15} c_{15}\over s_{13}s_{45}}\Biggr)\,,
-        \end{eqnarray*}
-    This relation had been proved upto 8 points at the time and I think it has been improved to arbitrary points.  
-\end{frame}
-\fi
 \section{CHY Formula}
 \begin{frame}
     \frametitle{Motivation}
@@ -252,7 +143,7 @@ the relative sign here is just a convention.
 \end{frame}
 \begin{frame}
     \frametitle{Scattering equations}
-    It has benn proposed that there is connection between the scattering data of n massless particles and the n-punctured sphere from a rational map
+    It has been proposed that there is connection between the scattering data of n massless particles and the n-punctured sphere from a rational map
     \begin{equation*}
         k_\mu^a=\frac{1}{2\pi i}\oint_{|z-\sigma_a|}dz\frac{p^\mu(z)}{\prod ^n_{b=1}(z-\sigma_b)}
     \end{equation*}
@@ -314,24 +205,25 @@ the relative sign here is just a convention.
     \end{equation*}
 \end{frame}
 \fi
+
 \begin{frame}
     \frametitle{Attempt to construct S-matrix --- Towards CHY}
     %Thanks to the excellent properties of scattering equations, it is very tempting to propose that the solutions
     %to scattering equations should be used to construct scattering amplitudes.
     The first two constructed are YM and gravity amplitudes in any dimensions
     \begin{align*}
-        M_n^{\mathrm{YM}}(1,2,\dots,n)&=\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)\frac{E_n(\{k,\epsilon,\sigma\})}{\sigma_{12}\dots\sigma_{n1}},\\
+        M_n^{\mathrm{YM}}&=\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)\frac{E_n(\{k,\epsilon,\sigma\})}{\sigma_{12}\dots\sigma_{n1}},
         M_n^{\mathrm{gravity}}&=\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)E_n(\{k,\epsilon,\sigma\})^2
     \end{align*}
     \pause
-    The measure is defined as following
+    The delta function is defined as following
     \begin{equation*}
         \prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}{:}=\sigma_{ij}\sigma_{jk}\sigma_{ki}\prod_{a\neq i,j,k}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}
     \end{equation*}
 \end{frame}
 \begin{frame}
     \frametitle{The form of measure}
-    The measure can be written like %the n-3 integral can be completely determined by n-3 delta function
+    The measure can be computed %the n-3 integral can be completely determined by n-3 delta function
     \begin{equation*}
             \boxed{
             \sum_{\{\sigma\}\in\mathrm{solutions}}\frac{(\sigma_{pq}\sigma_{qr}\sigma_{rp})(\sigma_{ij}\sigma_{jk}\sigma_{ki})}{|\Phi|_{pqr}^{ijk}}}
@@ -397,7 +289,7 @@ the relative sign here is just a convention.
     \end{equation*}}
     Combine the measure and integrand, we conclude the formula for the tree-level S-matrix of Yang-Mills in any dimension
     \begin{equation*}
-        M_n^{\mathrm{YM}}(1,2,\dots,n)=\frac{1}{\mathrm{vol\,SL}(2,\mathbb{C})}\int\frac{d^n\sigma}{\sigma_{12}\cdots\sigma_{n1}}\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\mathrm{Pf}^{\prime}\Psi
+        M_n^{\mathrm{YM}}=\frac{1}{\mathrm{vol\,SL}(2,\mathbb{C})}\int\frac{d^n\sigma}{\sigma_{12}\cdots\sigma_{n1}}\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\mathrm{Pf}^{\prime}\Psi
     \end{equation*}
     and gravity amplitudes by using KLT construcion
     \begin{equation*}
@@ -418,11 +310,12 @@ the relative sign here is just a convention.
     \frametitle{Consistency check}
     \begin{itemize}
         \item \alert{Gauge invariance}\\
+        % The gauge invariance is just the statement that the amplitudes vanishes when we replace any polarization vector by the corressponding momentum vector.
         If we replce the ith polariazation vector $\epsilon_i^\mu$ with momentum $k_i^\mu$, we find that
         \begin{equation*}
             C_{ii}=-\sum_{c\neq i}\frac{\epsilon_i\cdot k_c}{\sigma_i-\sigma_c} \to -\sum_{c\neq i}\frac{k_i\cdot k_c}{\sigma_i-\sigma_c}=0
         \end{equation*}
-        It is easy to discover that the $i$th and $i+n$ th colums become identical, so the determinat and Pfaffian becomes 0.
+        It is easy to discover that the $i$th and $i+n$ th colums become identical, so the determinat becomes 0 and then Pfaffian becomes 0.
         \pause
         \item \alert{Soft limit}\\
         Using a special property of Pfaffian
@@ -436,12 +329,26 @@ the relative sign here is just a convention.
     \end{itemize}
 \end{frame}
 \begin{frame}
-    \frametitle{CHY form of amplitudes}
+    \frametitle{The most general CHY form}
+    In 2013, new formula for tree amplitudes of massless theories has been proposed by Cachazo, He and Yuan:
+    \begin{equation*}
+        \mathcal{A}=\boxed{\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)}\quad \mathcal{I}
+    \end{equation*}
+    \begin{itemize}
+        \item Each particle is represented by a puncture in Riemann sphere.
+        \item This form holds for general D-dimension.
+        \item The boxed part is \alert{universial for all theories}.
+        \item Only the integrand $\mathcal{I}$ determines the particular theory.
+    \end{itemize}
+\end{frame}
+%Since the Yang-Mills and gravity tree-level amplitudes can be written in a compact form, it is tempting to generalize it to other theories.
+\begin{frame}
+    \frametitle{CHY form for 3 specific theory}
     Both formulas above can be written in this simplest form 
     \alert{
         \begin{equation*}
             \!\!\!\!\mathcal{M}^{(s)}\!=\!\!\!\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)
-            \!\!\!\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_3})}{(\sigma_1-\sigma_2)\dots (\sigma_n-\sigma_1)}\right)^{(2-s)}{(\mathrm{Pf}^\prime\Psi)}^s
+            \!\!\!\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_3})}{(\sigma_1-\sigma_2)\dots (\sigma_n-\sigma_1)}\right)^{(2-s)}\!{(\mathrm{Pf}^\prime\Psi)}^s
         \end{equation*}}
     with $s=1$ for Yang-Mills and $s=2$ for gravity.
     \\ \hspace*{\fill}\\
@@ -811,8 +718,9 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
         m_8^{(0)}(I|54376218)=(-1)^6\left(\frac{1}{s_{21}}+\frac{1}{s_{18}}\right)\left(\frac{1}{s_{34}}+\frac{1}{s_{45}}\right)\frac{1}{s_{345}s_{812}s_{67}}
     \end{equation*}
 \end{frame}
-\section{Conclusion and Outlook}
+\section{Summary and Outlook}
 \begin{frame}
+    \frametitle{Summary}
     \begin{itemize}
         \item A compact form of tree-level S-matrix in 3 different theories are introduced
             \begin{equation*}
@@ -824,7 +732,7 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
             \end{equation*}
         \item The CK duality and BCJ double-copy relation can be easily obtained
             \begin{equation*}
-                e_{g_t}=\pm(e_{g_s}-e_{g_u})
+                {\cal M}^{(0)}_n\times{\cal M}^{(2)}_n={{\cal M}^{(1)}_n}^2,\quad e_{g_t}=\pm(e_{g_s}-e_{g_u})
             \end{equation*}
     \end{itemize}
 \end{frame}
@@ -843,6 +751,143 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
 \end{frame}
 
 \section{Appendix}
+\appendix
+\begin{frame}{Gauge theory color structure}
+    At tree level, with particles in the adjoint representaion of gauge group SU(N), the amplitude can be 
+decomposed as
+\textcolor{red}{\begin{equation*}
+    \mathcal{A}_n^{tree}(1,2,3,\dots,n)=\sum _{\mathcal{P}(2,3,\dots,n)}Tr[T^{a_1}T^{a_2}T^{a_3}\dots
+    T^{a_n}]A_n^{tree}[1,2,3,\dots,n]
+\end{equation*}}
+
+here we ommit the coupling constant g, and $A_n^{tree}$ is called tree-level color-ordered partial amplitude.
+Notice that this basis includes \textcolor{red}{$(n-1)!$} independent amplitudes.
+\end{frame}
+\begin{frame}
+    Color-ordered partial amplitudes satisfy a set of well-known properties,
+    \begin{itemize}
+        \item Cyclic:\quad $$A_n^{tree}[1,2,3,\dots,n]=A_n^{tree}[2,3,\dots,n,1]$$
+        \item Reflection: \quad $$A_n^{tree}[1,2,3,\dots,n]=(-1)^nA_n^{tree}[n,\dots,3,2,1]$$
+        \item "photon" decoupling: \quad $$\sum_{\sigma\in \text{cyclic}}A_n^{tree}[1,\sigma(2,3,\dots,n)]=0$$
+        \item KK(Kleiss-Kuijf) relation:\quad $$A_n^{tree}[1,{\alpha},n,{\beta}]=(-1)^{n_\beta}
+        \sum_{\left\{\sigma\right\}_i\in OP(\left\{\alpha\right\},\left\{\beta\right\}^T)}A_n^{tree}[1,\left\{\sigma\right\}_i,n]$$
+    \end{itemize}
+    where the OP means ordered permutaions, that is all permutations of $\left\{\alpha\right\}$$\bigcup$$\left\{\beta\right\}^T$
+    that matains the order of individual elements of each set.
+\end{frame}
+\begin{frame}
+    For example, a five point amplitude $A_n^{tree}(1,\{2,3\},5,\{4\})$, we have
+\begin{equation*}
+    A_n^{tree}[1,2,3,5,4]=-A_n^{tree}[1,2,3,4,5]-A_n^{tree}[1,2,4,3,5]-A_n^{tree}[1,4,2,3,5]
+\end{equation*}
+The other five point relations can be obtained by permuting legs 2,3,4 and using cyclic and reflection properties.
+\\ \hspace*{\fill}\\
+This means that the six amplitudes $A_n^{tree}(1,\mathcal{P}\{2,3,4 \},5 )$ form a basis of remaining five-point partial amplitudes.
+\textcolor{red}{More generally, for multiplicity n, the KK relation can be used to rewrite any color-ordered partial amplitude in terms of only $(n-2)!$
+basis partial amplitudes, where two legs are fixed(usually choose 1 and n).}
+\end{frame}
+\begin{frame}{A Similar Structure}
+    It can be proved that tree level amplitudes can also be decomposed like 
+\begin{equation*}
+    \mathcal{A}_n^\text{tree}=\sum_{\sigma\in S_{n-2}}\tilde{f}^{a_1a_{\sigma_1}b_1}\tilde{f}^{b_1a_{\sigma_2}b_2}\cdots\tilde{f}^{b_{n-3}a_{\sigma_{n-2}}a_n}\tilde{A}_n(1,\sigma_1,\sigma_2,\ldots,\sigma_{n-2},n)
+\end{equation*}
+The basis is called DDM and more convenient in parctice. It is easy to realize that the number of basis amplitudes is also \textcolor{red}{$(n-2)!$} with fiexed particle labels 1 and n.
+\end{frame}
+\begin{frame}
+    \begin{Large}
+        \textcolor{red}{How can we realize the existence of this basis?}
+    \end{Large}
+\\ \hspace*{\fill}\\
+We just need to notice the contribution from ladder diagram
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1\linewidth]{1.png}
+\end{figure}
+And any (three vertex) diagram, by using the Jacobbi identity like 
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=1\linewidth]{2.png}
+\end{figure}
+can be transformed to the ladder diagram. It has been proved that $\textcolor{red}{\tilde{A}_n(\dots)}$ here is identical to $\textcolor{red}{A_n^{tree}[\dots]}$ in the trace basis.
+\end{frame}
+\begin{frame}{Color-Kinematics Duality }
+The Color-Kinematics Duality here is not the complete version, but we can catch some points.
+At four points we have
+\begin{equation*}
+    A_4^{\mathrm{tree}}(1,2,3,4)+    A_4^{\mathrm{tree}}(1,3,2,4)+    A_4^{\mathrm{tree}}(1,4,2,3)=0.
+\end{equation*}
+%The decoupling identity does not rely on the specific polariazation and space-time, so the hold of this equation is 
+%entirely due to the amplitudes' dependence on Mandelstam variables.
+We recognize that the only nontrival way the equation holds accoring to $s+t+u=0$ 
+\begin{align*}
+    &A_4^{\mathrm{tree}}(1,2,3,4)+    A_4^{\mathrm{tree}}(1,3,2,4)+    A_4^{\mathrm{tree}}(1,4,2,3)\\
+\quad&= (s+t+u)\chi=0
+\end{align*} 
+Considering that $A_4^{\mathrm{tree}}(1,2,3,4)$ treats $s$ and $t$ the same, and similar to the other two, we make the identification
+\begin{equation*}
+    A_4^{\mathrm{tree}}(1,2,3,4)=u\chi,\quad   A_4^{\mathrm{tree}}(1,3,2,4)=t\chi,\quad    A_4^{\mathrm{tree}}(1,4,2,3)=s\chi
+\end{equation*}
+\end{frame}
+\begin{frame}
+    We obtain
+    \begin{align*}
+        tA_4^{\mathrm{tree}}(1,2,3,4)=uA_4^{\mathrm{tree}}(1,3,4,2),\\
+        sA_4^{\mathrm{tree}}(1,2,3,4)=uA_4^{\mathrm{tree}}(1,4,2,3),\\
+        tA_4^{\mathrm{tree}}(1,2,3,4)=sA_4^{\mathrm{tree}}(1,3,4,2).\\
+    \end{align*}
+    And in order to obtain the knematic analog of Jacobbi identity, it is convenient to express the amplitudes in terms of poles
+\begin{align*}
+    &A_4^{\mathrm{tree}}(1,2,3,4)\equiv\frac{n_s}{s}+\frac{n_t}{t},\\
+    &A_4^{\mathrm{tree}}(1,3,4,2)\equiv-\frac{n_u}{u}-\frac{n_s}{s},\\
+    &A_4^{\mathrm{tree}}(1,4,2,3)\equiv-\frac{n_t}{t}+\frac{n_u}{u}.
+\end{align*}
+the relative sign here is just a convention.
+\end{frame}
+\begin{frame}
+    Combining the two relation above gives the desired identity
+    \begin{equation*}
+        \alert{n_u=n_s-n_t}
+    \end{equation*}
+    this is exactly the same form of Jacobbi identity for the color factors.
+    The full amplitude can be written like
+\begin{equation*}
+    \mathcal{A}_4^{\mathrm{tree}}=g^2\left(\frac{n_sc_s}{s}+\frac{n_uc_u}{u}+\frac{n_tc_t}{t}\right)
+\end{equation*}
+\end{frame}
+\begin{frame}
+    For the five point case, an example is 
+    \begin{figure}[htb]
+        \centering
+        \includegraphics[width=1\linewidth]{FivePtTwist2.eps}
+    \end{figure}
+    we have the corresponding color factor Jacobbi identities like
+    \begin{equation*}
+        c_3=c_5-c_8
+    \end{equation*}
+    so we need to have the knematic analog
+    \begin{equation*}
+        n_3=n_5-n_8
+    \end{equation*}
+    The explict forms of all these factors can be found in the original paper \textbf{New relations for gauge theory amplituds, PRD 78, 085011}
+\end{frame}
+\begin{frame}
+    Full amplitudes of 5 points are
+    \begin{eqnarray*}
+        \mathcal {A}^\mathrm{tree}_5& = & 
+        g^3\Biggl( {n_1 c_1\over s_{12}s_{45}}+{n_2 c_2\over s_{23}s_{51}}
+        +{n_3 c_3 \over s_{34}s_{12}}+{n_4 c_4\over s_{45}s_{23}}
+        +{n_5 c_5\over s_{51}s_{34}} +{n_{6} c_6\over s_{14}s_{25}}  \\
+        &&\null \hskip .3 cm 
+        + {n_7 c_7\over s_{32}s_{14}}+{n_{8} c_8\over s_{25}s_{43}}
+        +{n_{9} c_9\over s_{13}s_{25}}+{n_{10} c_{10}\over s_{42}s_{13}}
+        +{n_{11} c_{11}\over s_{51}s_{42}}+ {n_{12} c_{12}\over s_{12}s_{35}}  \\
+        &&\null \hskip .3 cm 
+        +{n_{13} c_{13}\over s_{35}s_{24}} 
+        +{n_{14} c_{14}\over s_{14}s_{35}}
+        +{n_{15} c_{15}\over s_{13}s_{45}}\Biggr)\,,
+        \end{eqnarray*}
+    This relation had been proved upto 8 points at the time and I think it has been improved to arbitrary points.  
+\end{frame}
 \begin{frame}{KLT Relation}
     So-called KLT relation, in the language of field theory, refers to the decomposition of \alert{gravity amplitudes} to \alert{two gauge theory amplitues}. 
     \begin{table}[]
@@ -864,7 +909,7 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
         \end{table}
 \end{frame}
 
-\appendix
+
 \begin{frame}{KLT Orthogonality}
     $\bullet$ KLT orthogonality is a striking property of the solutions to scattering equations.
     \begin{block}{Proposition 1}
