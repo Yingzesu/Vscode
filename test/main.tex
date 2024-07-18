@@ -143,6 +143,7 @@
 \end{frame}
 \begin{frame}
     \frametitle{Scattering equations}
+    % In the Witten-RSV formulation, tree-level field theory amplitudes are given as integrals that localize on generic spheres.
     It has been proposed that there is connection between the scattering data of n massless particles and the n-punctured sphere from a rational map
     \begin{equation*}
         k_\mu^a=\frac{1}{2\pi i}\oint_{|z-\sigma_a|}dz\frac{p^\mu(z)}{\prod ^n_{b=1}(z-\sigma_b)}
@@ -152,12 +153,16 @@
     \begin{equation*}
         \mathbb{CP}^1\cong \mathcal{S}^2\cong \mathbb{C}\cup\{\infty\}
     \end{equation*}
-    and n-punctured Riemann sphere can be discribed by $SL(2,\mathbb{C})$ affine coordinates ${\sigma_1,\sigma_2,\ldots,\sigma_n}$, that is to say we have a equvilance relation
-    \begin{align*}
-        \{\sigma_1,\sigma_2,\ldots,\sigma_n\}\sim\{\psi(\sigma_1),\psi(\sigma_2),\ldots,\psi(\sigma_n)\},\\\psi(\sigma):=\frac{\alpha\sigma+\beta}{\gamma\sigma+\delta},\quad\alpha,\beta,\gamma,\delta\in\mathbb{C},\alpha\delta-\beta\gamma=1
-    \end{align*}
-    because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are independent.
+    each $\sigma_a$ represents a puncture located in the Riemann sphere.
+   
 \end{frame}
+\iffalse
+and n-punctured Riemann sphere can be discribed by $SL(2,\mathbb{C})$ affine coordinates ${\sigma_1,\sigma_2,\ldots,\sigma_n}$, that is to say we have a equvilance relation
+\begin{align*}
+    \{\sigma_1,\sigma_2,\ldots,\sigma_n\}\sim\{\psi(\sigma_1),\psi(\sigma_2),\ldots,\psi(\sigma_n)\},\\\psi(\sigma):=\frac{\alpha\sigma+\beta}{\gamma\sigma+\delta},\quad\alpha,\beta,\gamma,\delta\in\mathbb{C},\alpha\delta-\beta\gamma=1
+\end{align*}
+because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are independent.
+\fi
 \begin{frame}
     From this map, we can easily obtain the main ingredients of this report \\
     
@@ -167,7 +172,11 @@
             \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\qquad a\in \{1,\dots,n\}
         \end{equation*}
     \end{block}
-    It has been proved that the number of solutions in any dimension is $\alert{(n-3)!}$, and only \alert{$n-3$} of the equtions are independent, so we can rewrite the scattering equations as following 
+    It can be shown that this equation is invariant under the $SL(2,\mathbb{C})$ transformation, that is to say
+    \begin{align*}
+        \{\sigma_1,\sigma_2,\ldots,\sigma_n\}\sim\{\psi(\sigma_1),\psi(\sigma_2),\ldots,\psi(\sigma_n)\},\\\psi(\sigma):=\frac{\alpha\sigma+\beta}{\gamma\sigma+\delta},\quad\alpha,\beta,\gamma,\delta\in\mathbb{C},\alpha\delta-\beta\gamma=1
+    \end{align*}
+    so only $\alert{n-3}$ of these equations are independent, and it has also been proved that these equations have $\alert{(n-3)!}$ solutions in any dimension. 
     \begin{equation*}
         \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\quad a\in \{4,5,\dots,n\}\quad and\quad  \sigma_1\rightarrow\infty,\sigma_2=0,\sigma_3=1
     \end{equation*}
@@ -219,6 +228,18 @@
     The delta function is defined as following
     \begin{equation*}
         \prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}{:}=\sigma_{ij}\sigma_{jk}\sigma_{ki}\prod_{a\neq i,j,k}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}
+    \end{equation*}
+\end{frame}
+\begin{frame}
+    The reason we need to write down the measure as this form is that under $\mathrm{vol\,SL}(2,\mathbb{C})$
+    \begin{align*}
+        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad&\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\rightarrow\prod_{a}(\gamma\sigma_a+\delta)^{-2}\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\\
+        \quad &d\mu_n\to\prod_{a=1}^n(\gamma\sigma_a+\delta)^{-4}d\mu_n
+    \end{align*}
+    $E_n(\{k,\epsilon,\sigma\})$ itself is permutaion invariant with resprct to $\sigma_a,k_a^\mu$ and $\epsilon_a^\mu$. The $SL(2,\mathbb{C})$ invariance of amplitude also 
+    constraints the form of $E_n(\{k,\epsilon,\sigma\})$
+    \begin{equation*}
+        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad E_n(\{k,\epsilon,\sigma\})\to E_n(\{k,\epsilon,\sigma\})\prod_{a=1}^n(\gamma\sigma_a+\delta)^2
     \end{equation*}
 \end{frame}
 \begin{frame}
