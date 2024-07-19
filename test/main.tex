@@ -230,18 +230,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
         \prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}{:}=\sigma_{ij}\sigma_{jk}\sigma_{ki}\prod_{a\neq i,j,k}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}
     \end{equation*}
 \end{frame}
-\begin{frame}
-    The reason we need to write down the measure as this form is that under $\mathrm{vol\,SL}(2,\mathbb{C})$
-    \begin{align*}
-        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad&\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\rightarrow\prod_{a}(\gamma\sigma_a+\delta)^{-2}\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\\
-        \quad &d\mu_n\to\prod_{a=1}^n(\gamma\sigma_a+\delta)^{-4}d\mu_n
-    \end{align*}
-    $E_n(\{k,\epsilon,\sigma\})$ itself is permutaion invariant with resprct to $\sigma_a,k_a^\mu$ and $\epsilon_a^\mu$. The $SL(2,\mathbb{C})$ invariance of amplitude also 
-    constraints the form of $E_n(\{k,\epsilon,\sigma\})$
-    \begin{equation*}
-        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad E_n(\{k,\epsilon,\sigma\})\to E_n(\{k,\epsilon,\sigma\})\prod_{a=1}^n(\gamma\sigma_a+\delta)^2
-    \end{equation*}
-\end{frame}
+
 \begin{frame}
     \frametitle{The form of measure}
     The measure can be computed %the n-3 integral can be completely determined by n-3 delta function
@@ -282,23 +271,22 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
 \begin{frame}
     %The first important observation is that while the Pfaffian of $\Psi$ is 0, but after removing any rows $i,j$ and colums $i,j$
     %with $1\leq i< j\leq n$, the new matrix $\Psi_{ij}^{ij}$ have nonzero Pfaffian and we define the corresponding reduced Pfaffian as 
-    The Pfaffian of $\Psi$ is 0, but aftering removing any two rows and colums $i,j$ with $1\leq i< j\leq n$, 
-    the new matrix $\Psi_{ij}^{ij}$ have nonzero Pfaffian and we define the corresponding reduced Pfaffian as
+    %The Pfaffian of $\Psi$ is 0, but aftering removing any two rows and colums $i,j$ with $1\leq i< j\leq n$, 
+    %the new matrix $\Psi_{ij}^{ij}$ have nonzero Pfaffian and we define the corresponding reduced Pfaffian as
+    Because the $\mathrm{Pfaffian}$ of $\Psi$ equals to 0, so it is necessary to define the reduced $\mathrm{Pfaffian}$ like 
     \begin{equation*}
             \boxed{
             \mathrm{Pf}^{\prime}\Psi:=\frac{(-1)^{i+j}}{(\sigma_i-\sigma_j)}\mathrm{Pf}(\Psi_{ij}^{ij})}
     \end{equation*}
+    where $1\leq i< j\leq n$.
+    \\ \hspace*{\fill}\\
     It can be proved that the reduced Pfaffian is invariant under permutaion of \alert{particle labels}.
     \pause
-    \begin{alertblock}{Pfaffian}
+    \begin{alertblock}{$\mathrm{Pfaffian}$}
         Pfaffian is defined for antisymmetric matrix, usually in two ways as following
         \begin{itemize}
-            \item \begin{equation*}
-                \mathrm{Pf}(A)^2=\det A
-            \end{equation*}
-            \item \begin{equation*}
-                \mathrm{Pf}(A)=\frac{1}{2^n n!}\sum_{\sigma \in S_{2n}}sgn(\sigma)\prod_{i=1}^n a_{\sigma_{(2i-1)},\sigma(2i)}
-            \end{equation*}
+            \item  $\mathrm{Pf}(A)^2=\det A$
+            \item  $\mathrm{Pf}(A)=\frac{1}{2^n n!}\sum_{\sigma \in S_{2n}}sgn(\sigma)\prod_{i=1}^n a_{\sigma_{(2i-1)},\sigma(2i)}$
         \end{itemize}
     \end{alertblock}
 \end{frame}
@@ -378,7 +366,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
         \mathcal{M}^{(s)} \text{ as \alert{definition of S-matrix for spin s particles}}
     \end{equation*}
     \begin{equation*}
-        s=0\quad\to \quad \text{a corresponding scalar theory}
+        s=0\quad\to \quad \text{There should be a corresponding scalar theory}
     \end{equation*}
 \end{frame}
 \begin{frame}
@@ -402,11 +390,13 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \begin{equation*}
         -f_{abc}\tilde{f}_{a^\prime b^\prime c^\prime}\phi^{aa^\prime}\phi^{bb^\prime}\phi^{cc^\prime}
     \end{equation*}
+    usually called bi-adjoint scalar theory.
+    \\ \hspace*{\fill}\\
     All of above leads to the conclusion that the factors 
     \begin{equation*}
         \mathcal{C}_{U(N)}\equiv \sum_{\sigma\in S_n/Z_n}\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}\right)\quad \mathrm{and} \quad E_\epsilon\equiv\mathrm{Pf}^{'}\Psi(\epsilon)
     \end{equation*}
-    are interchangeable and this is a color-Kinematics corresopondence which is valid for individual solutions to scattering equations.
+    are interchangeable and this is a Color-Kinematics corresopondence which is valid for individual solutions to scattering equations.
    
 \end{frame}
 
@@ -435,7 +425,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
 
 \end{frame}
 \begin{frame}
-    Here we choose a more usual way to write down the amplitudes by using the color basis
+    In practice, it is more convenient to use another color basis 
     \begin{equation*}
         \boxed{\mathbf{c}_\alpha\equiv\sum_{\mathsf{c}_1,...,\mathsf{c}_{n-3}}f_{\mathsf{a}_1\mathsf{a}_{\alpha(2)}\mathsf{c}_1}\cdots f_{\mathsf{c}_{n-3}\mathsf{a}_{\alpha(n-1)}\mathsf{a}_n}}
     \end{equation*}
@@ -484,8 +474,11 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
         &m_5^{(0)}(I|P_3)=-\frac{1}{s_{51}}\left(\frac{1}{s_{23}}+\frac{1}{s_{34}}\right),\quad  m_5^{(0)}(I|P_4)=-\frac{1}{s_{34}s_{51}},\\
         &m_5^{(0)}(I|P_5)=0
     \end{align*}
-    From examples above, it is easy to see that when both permutations in $m_n^{(0)}(\alpha|\beta)$ are the same, then the answer is a sum over all color-orded
-    trivalent diagrams; When the two permutations are different, it gives a subset of terms of $m_n^{(0)}(\alpha|\alpha)$. 
+    From the examples above, it is not hard to discover that 
+    \begin{align*}
+        &\text{if}\quad \alpha=\beta:\quad m_n^{(0)}(\alpha|\alpha)=\sum(\text{all color-orded trivalent diagrams})\\
+        &\text{if}\quad \alpha\neq\beta:\quad m_n^{(0)}(\alpha|\beta)=(\text{subset of}\; m_n^{(0)}(\alpha|\alpha))
+    \end{align*}
     \\ \hspace*{\fill}\\
     More explicitly,
 
@@ -749,6 +742,11 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
     \begin{equation*}
        \mathcal{M}_n^{(s)}=\sum_{\alpha,\beta\in S_{n-2}}e_\alpha e_\beta m^{(0)}(\alpha|\beta)
     \end{equation*}
+    and from the construcion of three type amplitudes, we can obtain
+    \begin{equation*}
+        {\cal M}^{(0)}_n\times{\cal M}^{(2)}_n={{\cal M}^{(1)}_n}^2
+    \end{equation*}
+
 \end{frame}
 \section{Summary and Outlook}
 \begin{frame}
@@ -784,6 +782,18 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
 
 \section{Appendix}
 \appendix
+\begin{frame}
+    The reason we need to write down the measure as this form is that under $\mathrm{vol\,SL}(2,\mathbb{C})$
+    \begin{align*}
+        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad&\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\rightarrow\prod_{a}(\gamma\sigma_a+\delta)^{-2}\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\\
+        \quad &d\mu_n\to\prod_{a=1}^n(\gamma\sigma_a+\delta)^{-4}d\mu_n
+    \end{align*}
+    $E_n(\{k,\epsilon,\sigma\})$ itself is permutaion invariant with resprct to $\sigma_a,k_a^\mu$ and $\epsilon_a^\mu$. The $SL(2,\mathbb{C})$ invariance of amplitude also 
+    constraints the form of $E_n(\{k,\epsilon,\sigma\})$
+    \begin{equation*}
+        \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad E_n(\{k,\epsilon,\sigma\})\to E_n(\{k,\epsilon,\sigma\})\prod_{a=1}^n(\gamma\sigma_a+\delta)^2
+    \end{equation*}
+\end{frame}
 \begin{frame}{Gauge theory color structure}
     At tree level, with particles in the adjoint representaion of gauge group SU(N), the amplitude can be 
 decomposed as
