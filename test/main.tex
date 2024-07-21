@@ -29,7 +29,7 @@
     \end{itemize}
 \end{frame}
 
-\section{Why the S-matrix is so important?}
+\section{Why the scattering amplitude is so important?}
 
 \begin{frame}
     \Large \alert{Scattering amplitude is one of the most important concepts in QFT}
@@ -40,7 +40,6 @@
         \item It reveals various properties of theory, such as Lorentz symmetry, localty and unitarity.
         \pause
         \item Some recent work show that scattering amplitude contains many interesting mathematical structures.
-              Actually, this report introduces one of these structures.
     \end{itemize}
 \end{frame}
 \iffalse
@@ -135,7 +134,7 @@
         \item A special amplitude --- Double partial amplitude
         %Because of the special color structure of this scalar theory, the authors proposed a easy method to compute all scalar tree amplitudes, and then pure Yang-Mills and gravity can also be done using similar methods.
         \item BCJ double copy at tree level
-        %In terms of this construction of amplitudes, it is easy to obtain the BCJ double copy relation. It may give some implications for the construcion of nonpermubative BCJ double copy.
+        %In terms of this construction of amplitudes, it is easy to obtain the BCJ double copy relation.
         \item Related to other theories, such as EYM, EM, NLSM and so on.
         %In the following paper of these authors, by introducing some special operations which performed on the integrand of CHY formula, they give some relations between other theories.   
         \item One-loop corrections to scattering amplitudes of scalars and gauge bosons can be obtained from tree amplitudes in one higher dimension. 
@@ -320,7 +319,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \begin{itemize}
         \item \alert{Gauge invariance}\\
         % The gauge invariance is just the statement that the amplitudes vanishes when we replace any polarization vector by the corressponding momentum vector.
-        If we replce the ith polariazation vector $\epsilon_i^\mu$ with momentum $k_i^\mu$, we find that
+        If we replace the ith polariazation vector $\epsilon_i^\mu$ with momentum $k_i^\mu$, we find that
         \begin{equation*}
             C_{ii}=-\sum_{c\neq i}\frac{\epsilon_i\cdot k_c}{\sigma_i-\sigma_c} \to -\sum_{c\neq i}\frac{k_i\cdot k_c}{\sigma_i-\sigma_c}=0
         \end{equation*}
@@ -409,11 +408,11 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
 \end{frame}
 \begin{frame}
     \frametitle{Double partial amplitudes}
-    Because there are two color indices in this sclar theory, so it can be anticipateed that the amplitude
+    Because there are two color indices in this sclar theory, so it can be anticipated that the amplitude
     have double trace decomposition structure
     \begin{align*}
         \mathcal{M}_n^{(0)}&=\sum_{\alpha\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})M_n^{(0)}(\alpha(1),\alpha(2),\ldots,\alpha(n))\\
-        &=\sum_{\alpha,\beta\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})\text{Tr}(T^{\mathtt{a}_{\beta(1)}}T^{\mathtt{a}_{\beta(2)}}\cdots T^{\mathtt{a}_{\beta(n)}})\\
+        &=\sum_{\alpha,\beta\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})\mathrm{Tr}(T^{\mathtt{a}_{\beta(1)}}T^{\mathtt{a}_{\beta(2)}}\cdots T^{\mathtt{a}_{\beta(n)}})\\
         &\times \alert{m_n^{(0)}(\alpha|\beta)}
     \end{align*} 
     where the last term $m_n^{(0)}(\alpha|\beta)$ is called \alert{double partial amplitude} and can be read off from the full amplitude
@@ -433,7 +432,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \begin{equation*}
         \mathcal{M}_n^{(0)}=\sum_{\alpha,\beta\in S_{n-2}}\mathbf{c_\alpha}\tilde{\mathbf{c_\beta}}m_{n}^{(0)}(\alpha|\beta)
     \end{equation*}
-    In conclusion, the amplitudes of this sclar theory can be written like the multiplication of two color factors and the double partial amplitudes.
+    In conclusion, the amplitudes of this scalar theory can be written like the multiplication of two color factors and the double partial amplitudes.
 \end{frame}
 \begin{frame}
     \frametitle{Examples}
