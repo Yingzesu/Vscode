@@ -23,7 +23,7 @@
     \begin{itemize}
         \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1306.6575
         \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1307.2199
-        \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1309.0885
+        \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1309.0885 (Title)
         \item F. Cachazo, S. He, E.Y. Yuan, arxiv: 1412.3479
         \item Z. Bern, J.J.M. Carrasco, H. Johansson, arxiv: 0805.3993
     \end{itemize}
@@ -171,6 +171,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
             \sum_{b\neq a } \frac{s_{ab}}{\sigma_a-\sigma_{b}}=0,\qquad a\in \{1,\dots,n\}
         \end{equation*}
     \end{block}
+    \pause
     It can be shown that this equation is invariant under the $SL(2,\mathbb{C})$ transformation, that is to say
     \begin{align*}
         \{\sigma_1,\sigma_2,\ldots,\sigma_n\}\sim\{\psi(\sigma_1),\psi(\sigma_2),\ldots,\psi(\sigma_n)\},\\\psi(\sigma):=\frac{\alpha\sigma+\beta}{\gamma\sigma+\delta},\quad\alpha,\beta,\gamma,\delta\in\mathbb{C},\alpha\delta-\beta\gamma=1
@@ -225,6 +226,9 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \end{align*}
     \pause
     The delta function is defined as following
+    \begin{equation*}
+        \frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}{:}=\prod_{c\neq p,q,r}d\sigma_c(\sigma_{pq}\sigma_{qr}\sigma_{rp})
+    \end{equation*}
     \begin{equation*}
         \prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}{:}=\sigma_{ij}\sigma_{jk}\sigma_{ki}\prod_{a\neq i,j,k}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}
     \end{equation*}
@@ -301,7 +305,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \end{equation*}
     and gravity amplitudes by using KLT construcion
     \begin{equation*}
-        M_n^{\mathrm{gravity}}=\frac{1}{\mathrm{vol\,SL}(2,\mathbb{C})}\int d^n\sigma\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\mathrm{Pf}^{\prime}\Psi\mathrm{Pf}^{\prime}\tilde{\Psi}
+        M_n^{\mathrm{gravity}}=\frac{1}{\mathrm{vol\,SL}(2,\mathbb{C})}\int d^n\sigma\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\mathrm{Pf}^{\prime}\Psi\mathrm{Pf}^{\prime}\Psi
     \end{equation*}
 \end{frame}
 \begin{frame}
@@ -319,7 +323,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \begin{itemize}
         \item \alert{Gauge invariance}\\
         % The gauge invariance is just the statement that the amplitudes vanishes when we replace any polarization vector by the corressponding momentum vector.
-        If we replace the ith polariazation vector $\epsilon_i^\mu$ with momentum $k_i^\mu$, we find that
+        If we replace the ith polariazation vector $\epsilon_i^\mu$ by momentum $k_i^\mu$, we find that
         \begin{equation*}
             C_{ii}=-\sum_{c\neq i}\frac{\epsilon_i\cdot k_c}{\sigma_i-\sigma_c} \to -\sum_{c\neq i}\frac{k_i\cdot k_c}{\sigma_i-\sigma_c}=0
         \end{equation*}
@@ -336,19 +340,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
         \end{equation*}
     \end{itemize}
 \end{frame}
-\begin{frame}
-    \frametitle{The most general CHY form}
-    In 2013, new formula for tree amplitudes of massless theories has been proposed by Cachazo, He and Yuan:
-    \begin{equation*}
-        \mathcal{A}=\boxed{\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)}\quad \mathcal{I}
-    \end{equation*}
-    \begin{itemize}
-        \item Each particle is represented by a puncture in Riemann sphere.
-        \item This form holds for general D-dimension.
-        \item The boxed part is \alert{universial for all theories}.
-        \item Only the integrand $\mathcal{I}$ determines the particular theory.
-    \end{itemize}
-\end{frame}
+
 %Since the Yang-Mills and gravity tree-level amplitudes can be written in a compact form, it is tempting to generalize it to other theories.
 \begin{frame}
     \frametitle{CHY form for 3 specific theory}
@@ -356,7 +348,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \alert{
         \begin{equation*}
             \!\!\!\!\mathcal{M}^{(s)}\!=\!\!\!\int\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)
-            \!\!\!\left(\frac{\mathrm{Tr}(T^{a_1}T^{a_2}\dots T^{a_3})}{(\sigma_1-\sigma_2)\dots (\sigma_n-\sigma_1)}\right)^{(2-s)}\!{(\mathrm{Pf}^\prime\Psi)}^s
+            \!\!\!\left(\frac{\mathrm{Tr}(T^{a_1}\dots T^{a_n})}{(\sigma_{12})\dots (\sigma_{n1})}+\dots\right)^{(2-s)}\!{(\mathrm{Pf}^\prime\Psi)}^s
         \end{equation*}}
     with $s=1$ for Yang-Mills and $s=2$ for gravity.
     \\ \hspace*{\fill}\\
@@ -389,7 +381,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \begin{equation*}
         -f_{abc}\tilde{f}_{a^\prime b^\prime c^\prime}\phi^{aa^\prime}\phi^{bb^\prime}\phi^{cc^\prime}
     \end{equation*}
-    usually called bi-adjoint scalar theory.
+    usually called \alert{bi-adjoint} scalar theory.
     \\ \hspace*{\fill}\\
     All of above leads to the conclusion that the factors 
     \begin{equation*}
@@ -413,7 +405,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \begin{align*}
         \mathcal{M}_n^{(0)}&=\sum_{\alpha\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})M_n^{(0)}(\alpha(1),\alpha(2),\ldots,\alpha(n))\\
         &=\sum_{\alpha,\beta\in S_n/Z_n}\mathrm{Tr}(\tilde{T}^{\mathsf{b}_{\alpha(1)}}\tilde{T}^{\mathsf{b}_{\alpha(2)}}\cdots\tilde{T}^{\mathsf{b}_{\alpha(n)}})\mathrm{Tr}(T^{\mathtt{a}_{\beta(1)}}T^{\mathtt{a}_{\beta(2)}}\cdots T^{\mathtt{a}_{\beta(n)}})\\
-        &\times \alert{m_n^{(0)}(\alpha|\beta)}
+        &\quad\times \alert{m_n^{(0)}(\alpha|\beta)}
     \end{align*} 
     where the last term $m_n^{(0)}(\alpha|\beta)$ is called \alert{double partial amplitude} and can be read off from the full amplitude
     \pause
@@ -428,7 +420,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     \begin{equation*}
         \boxed{\mathbf{c}_\alpha\equiv\sum_{\mathsf{c}_1,...,\mathsf{c}_{n-3}}f_{\mathsf{a}_1\mathsf{a}_{\alpha(2)}\mathsf{c}_1}\cdots f_{\mathsf{c}_{n-3}\mathsf{a}_{\alpha(n-1)}\mathsf{a}_n}}
     \end{equation*}
-    where $\alpha \in S_{n-2}$. The amplitude is 
+    where $\alpha \in S_{n-2}$, so in this case we can fix the position of two labels. The amplitude is 
     \begin{equation*}
         \mathcal{M}_n^{(0)}=\sum_{\alpha,\beta\in S_{n-2}}\mathbf{c_\alpha}\tilde{\mathbf{c_\beta}}m_{n}^{(0)}(\alpha|\beta)
     \end{equation*}
@@ -443,7 +435,7 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
         \end{equation*}
         It actually gives the correct answer.
         \pause
-        \item The 4 point case is a little complex. Solving the scattering equations with $\sigma_1=0,\sigma_2=1,\sigma_3=\infty$ gives $\sigma_4=-s_{23}/s_{12}$. Define
+        \item The 4 point case is a little complicated. Solving the scattering equations with $\sigma_1=0,\sigma_2=1,\sigma_3=\infty$ gives $\sigma_4=-s_{23}/s_{12}$. Define
         $s_{12}=s$, $s_{23}=t$, $s_{13}=u$, the color factors are 
         \begin{equation*}
             \mathbf{c_s}=\sum_bf_{a_1a_2b}f_{ba_3a_4},\mathbf{c_t}=\sum_bf_{a_1a_4b}f_{ba_3a_2},\mathbf{c_u}=\sum_bf_{a_1a_3b}f_{ba_2a_4}
@@ -521,13 +513,13 @@ because of the redundancy of $\mathrm{SL}(2,\mathbb{C})$, only $n-3$ of them are
     % Text Node
     \draw (298,133.4) node [anchor=north west][inner sep=0.75pt]    {$+$};
     % Text Node
-    \draw (325.5,172) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+    \draw (325.5,172) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
     % Text Node
-    \draw (325.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {4};
+    \draw (325.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
     % Text Node
-    \draw (405.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
+    \draw (405.5,93) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
     % Text Node
-    \draw (404.5,171) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+    \draw (404.5,171) node [anchor=north west][inner sep=0.75pt]   [align=left] {3};
     
     
     \end{tikzpicture}
@@ -696,7 +688,7 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
 \end{figure}
 \end{frame}
 \begin{frame}
-    We take $m_8^{(0)}(I;18543762)$ as an example to explain how to compute it in an systematic way
+    We take $m_8^{(0)}(I|18543762)$ as an example to explain how to compute it in an systematic way
     
     %\begin{itemize}
     %    \item First step, draw a disk with n nodes sitting on the boundary in the ordering $\alpha$, then link the n nodes with a loop of line segments according to
@@ -739,12 +731,13 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
 \begin{frame}
     Now we can unify the color factor and kinematic factor as e in all three theories, so the full amplitude can be written in a unified form
     \begin{equation*}
-       \mathcal{M}_n^{(s)}=\sum_{\alpha,\beta\in S_{n-2}}e_\alpha e_\beta m^{(0)}(\alpha|\beta)
+       \mathcal{M}_n^{(s)}=\sum_{\alpha,\beta\in S_{n-2}}e_\alpha \tilde{e}_\beta m^{(0)}(\alpha|\beta)
     \end{equation*}
     and from the construcion of three type amplitudes, we can obtain
     \begin{equation*}
         {\cal M}^{(0)}_n\times{\cal M}^{(2)}_n={{\cal M}^{(1)}_n}^2
     \end{equation*}
+    tree-level BCJ double copy relation.
 
 \end{frame}
 \section{Summary and Outlook}
@@ -766,6 +759,19 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
     \end{itemize}
 \end{frame}
 \begin{frame}
+    \frametitle{The most general CHY form}
+    In 2013, new formula for tree amplitudes of massless theories has been proposed by Cachazo, He and Yuan:
+    \begin{equation*}
+        \mathcal{A}=\boxed{\frac{d^n\sigma}{\mathrm{vol\,SL}(2,\mathbb{C})}\prod_a{'}\delta\bigg(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\bigg)}\quad \mathcal{I}
+    \end{equation*}
+    \begin{itemize}
+        \item Each particle is represented by a puncture in Riemann sphere.
+        \item This form holds for general D-dimension.
+        \item The boxed part is \alert{universial for all theories}.
+        \item Only the integrand $\mathcal{I}$ determines the particular theory.
+    \end{itemize}
+\end{frame}
+\begin{frame}
     \frametitle{Connection between other theories}
     \begin{figure}
         \centering
@@ -773,16 +779,21 @@ $\beta$ ordering respectively. To make this expression more clear, see the follo
     \end{figure}
 \end{frame}
 \begin{frame}
-    \begin{figure}
+    \begin{figure}[t]
         \centering
         \includegraphics[width=1\linewidth]{4.png}
     \end{figure}
+    \alert{arxiv: 1412.3479}
 \end{frame}
-
-\section{Appendix}
-\appendix
 \begin{frame}
-    The reason we need to write down the measure as this form is that under $\mathrm{vol\,SL}(2,\mathbb{C})$
+    \centering
+    \Huge Thanks for your attention!
+\end{frame}
+\appendix
+\section{Appendix}
+
+\begin{frame}
+    The reason we need to write down the measure as this form is that under $\mathrm{SL}(2,\mathbb{C})$
     \begin{align*}
         \sigma_a\to\frac{\alpha\sigma_a+\beta}{\gamma\sigma_a+\delta}:\quad&\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\rightarrow\prod_{a}(\gamma\sigma_a+\delta)^{-2}\prod_{a}{}^{\prime}\delta{\left(\sum_{b\neq a}\frac{s_{ab}}{\sigma_{ab}}\right)}\\
         \quad &d\mu_n\to\prod_{a=1}^n(\gamma\sigma_a+\delta)^{-4}d\mu_n
