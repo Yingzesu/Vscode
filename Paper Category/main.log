@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.17)  17 SEP 2024 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.17)  17 SEP 2024 20:36
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -121,33 +121,40 @@ Overfull \hbox (31.31487pt too wide) in paragraph at lines 109--118
  []
 
 
-Overfull \hbox (2.62442pt too wide) in paragraph at lines 138--147
+
+[2]
+Overfull \hbox (2.62442pt too wide) in paragraph at lines 146--155
 \OT1/cmr/m/n/12 Rept. \OT1/cmr/bx/n/12 1083\OT1/cmr/m/n/12 , 1-169 (2024) doi:10.1016/j.physrep.2024.06.002 [arXiv:2306.16488 [hep-
  []
 
-
-
-[2]
-Overfull \hbox (1.01193pt too wide) in paragraph at lines 162--162
-[]\OT1/cmr/bx/n/17.28 Classical grav-i-ta-tional scat-ter-ing ver-sus Quan-tum part 
- []
-
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 166.
+(Font)              <12> on input line 174.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 166.
+(Font)              <8> on input line 174.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 166.
+(Font)              <6> on input line 174.
 
-Overfull \hbox (14.5907pt too wide) in paragraph at lines 165--176
+Overfull \hbox (14.5907pt too wide) in paragraph at lines 173--184
 \OT1/cmr/m/n/12 doi:10.1103/PhysRevLett.129.141102 [arXiv:2205.02809 [hep-th]]. 73 ci-ta-tions counted
  []
 
 
 
 [3]
+Overfull \hbox (14.07713pt too wide) in paragraph at lines 252--259
+\OT1/cmr/m/n/12 Rev. D \OT1/cmr/bx/n/12 108\OT1/cmr/m/n/12 , no.8, 084065 (2023) doi:10.1103/PhysRevD.108.084065 [arXiv:2304.06066
+ []
 
-[4] (./main.aux)
+
+
+[4]
+Overfull \hbox (35.65787pt too wide) in paragraph at lines 273--280
+\OT1/cmr/m/n/12 les-tial holog-ra-phy,'' JHEP \OT1/cmr/bx/n/12 09\OT1/cmr/m/n/12 , 109 (2023) doi:10.1007/JHEP09(2023)109 [arXiv:2302.06661
+ []
+
+
+
+[5] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
@@ -156,16 +163,16 @@ L3 programming layer <2024-05-27>
 Here is how much of TeX's memory you used:
  1055 strings out of 473600
  17812 string characters out of 5732737
- 1935908 words of memory out of 5000000
+ 1934908 words of memory out of 5000000
  23984 multiletter control sequences out of 15000+600000
  562055 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,294b,189s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,5n,65p,294b,192s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (4 pages, 80559 bytes).
+Output written on main.pdf (5 pages, 83812 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
+ 51 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
