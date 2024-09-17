@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.17)  16 SEP 2024 18:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.6.17)  17 SEP 2024 18:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -102,8 +102,8 @@ LaTeX Font Info:    ... okay on input line 5.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Overfull \hbox (2.62442pt too wide) in paragraph at lines 75--84
-\OT1/cmr/m/n/12 Rept. \OT1/cmr/bx/n/12 1083\OT1/cmr/m/n/12 , 1-169 (2024) doi:10.1016/j.physrep.2024.06.002 [arXiv:2306.16488 [hep-
+Overfull \hbox (16.85478pt too wide) in paragraph at lines 63--73
+\OT1/cmr/m/n/12 Lett. \OT1/cmr/bx/n/12 126\OT1/cmr/m/n/12 , no.6, 061602 (2021) doi:10.1103/PhysRevLett.126.061602 [arXiv:2012.02479
  []
 
 
@@ -111,44 +111,61 @@ Overfull \hbox (2.62442pt too wide) in paragraph at lines 75--84
 [1
 
 {d:/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{d:/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (1.01193pt too wide) in paragraph at lines 98--98
-[]\OT1/cmr/bx/n/17.28 Classical grav-i-ta-tional scat-ter-ing ver-sus Quan-tum part 
+Overfull \hbox (24.87881pt too wide) in paragraph at lines 82--91
+\OT1/cmr/m/n/12 from Coulomb to Kerr-Taub-NUT,'' JHEP \OT1/cmr/bx/n/12 05\OT1/cmr/m/n/12 , 055 (2022) doi:10.1007/JHEP05(2022)055
  []
 
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 102.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 102.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 102.
 
-Overfull \hbox (14.5907pt too wide) in paragraph at lines 101--112
-\OT1/cmr/m/n/12 doi:10.1103/PhysRevLett.129.141102 [arXiv:2205.02809 [hep-th]]. 73 ci-ta-tions counted
+Overfull \hbox (31.31487pt too wide) in paragraph at lines 109--118
+\OT1/cmr/m/n/12 Map and the Clas-si-cal Dou-ble Copy,'' JHEP \OT1/cmr/bx/n/12 12\OT1/cmr/m/n/12 , 121 (2020) doi:10.1007/JHEP12(2020)121
+ []
+
+
+Overfull \hbox (2.62442pt too wide) in paragraph at lines 138--147
+\OT1/cmr/m/n/12 Rept. \OT1/cmr/bx/n/12 1083\OT1/cmr/m/n/12 , 1-169 (2024) doi:10.1016/j.physrep.2024.06.002 [arXiv:2306.16488 [hep-
  []
 
 
 
 [2]
+Overfull \hbox (1.01193pt too wide) in paragraph at lines 162--162
+[]\OT1/cmr/bx/n/17.28 Classical grav-i-ta-tional scat-ter-ing ver-sus Quan-tum part 
+ []
 
-[3] (./main.aux)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 166.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 166.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 166.
+
+Overfull \hbox (14.5907pt too wide) in paragraph at lines 165--176
+\OT1/cmr/m/n/12 doi:10.1103/PhysRevLett.129.141102 [arXiv:2205.02809 [hep-th]]. 73 ci-ta-tions counted
+ []
+
+
+
+[3]
+
+[4] (./main.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 1
 L3 programming layer <2024-05-27>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 1054 strings out of 473600
- 17794 string characters out of 5732737
- 1934908 words of memory out of 5000000
- 23983 multiletter control sequences out of 15000+600000
+ 1055 strings out of 473600
+ 17812 string characters out of 5732737
+ 1935908 words of memory out of 5000000
+ 23984 multiletter control sequences out of 15000+600000
  562055 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,5n,65p,265b,189s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,5n,65p,294b,189s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><d:/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (3 pages, 76467 bytes).
+Output written on main.pdf (4 pages, 80559 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 27 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 29 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
