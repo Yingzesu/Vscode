@@ -1,2 +1,2 @@
 # Vscode
-The slide of CHY formula report.
+ This project includes some physical reports, notes and other files. 
