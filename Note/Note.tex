@@ -1,14 +1,20 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{cancel}
 \usepackage{graphicx}
+\setlength{\parskip}{0.3em}
 \setlength{\parindent}{0pt}
 % 使用系统字体，需要 XeLaTeX 或 LuaLaTeX 编译
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \usepackage{xcolor}
+\newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
 \newcommand{\avg}[1]{\left\langle #1 \right\rangle}
 \newcommand{\doubleavg}[2]{\left\langle #1 \right\rangle\!\left\langle #2 \right\rangle}
+\newcommand{\inavg}[2]{\langle #1 \rangle\! [#2]}
+\newcommand{\rinavg}[2]{[#1]\!\langle #2 \rangle}
+\newcommand{\aket}[1]{|#1\rangle}
 \begin{document}
 
 \title{Note for Scattering Amplitude Computation}
@@ -47,7 +53,7 @@ It is still necessary to prove the color-ordered amplitude $A[1,2,3^+,4^+]$ equa
 \end{equation*}
 Here we can utilize the spinor-helicity variable to express polarization vector
 \begin{equation*}
-    \epsilon_2^{+\mu}=\frac{\left <r_1|\gamma^\mu|3\right ]}{\sqrt{2}\avg{r_13}},\qquad \epsilon_4^{+\mu}=\frac{\left <r_2|\gamma^\mu|4\right ]}{\sqrt{2}\avg{r_24}}
+    \epsilon_2^{+\mu}=\frac{\langle r_1 | \gamma^\mu | 3 ]}{\sqrt{2}\avg{r_13}},\qquad \epsilon_4^{+\mu}=\frac{\left <r_2|\gamma^\mu|4\right ]}{\sqrt{2}\avg{r_24}}
 \end{equation*}
 here $r_1$ and $r_2$ represent the reference spinor.
 
@@ -59,5 +65,44 @@ We can freely choose $r_1=r_2=1$ or 2, then $\avg{r_1 2}$,$\avg{r_2 1}$,$\avg{r_
 For the 5-point case, we can utilize the BCFW recursion relation which can help us generate higher point amplitude from lower point on-shell subamplitudes. Here, 
 we always consider the MHV (Maximal helicity violation) amplitude. 
 \par
-Let us begin with the simplest case $A[1,2,3_1^+,4_1^+,5_2^-]$, where the subscript represent which gauge group the particle belongs to. 
+Let us begin with the simplest case $A[1,2,3_1^+,4_1^+,5_2^-]$, where the subscript represent which gauge group the particle belongs to. Because of the property 
+of this kind of gauge theory, the color structure is invariant under the OPP (Order Preserving Permutation), in this case, for example,
+\begin{equation*}
+    (3_1^+,4_1^+,5_2^-)\qquad (3_1^+,5_2^-,4_1^+)\qquad(5_2^-,3_1^+,4_1^+)
+\end{equation*}
+give us the same color factor. So in the process of BCFW recursion, these three order offer the same amplitude.
+\par
+The amplitude equals to
+\begin{align*}
+    A[1,2,3_1^+,4_1^+,5_2^-]&=A[1,2,\hat{I}^+,5^-]\times\frac{1}{s_{34}}\times A[\hat{3}^+,4^+,\hat{I}^-]\\
+    &=\frac{\doubleavg{15}{25}}{\mdavg{1\hat{I}}{2\hat{I}}}\times\frac{1}{s_{34}}\times\frac{[\hat{3}4]^3}{[4\hat{I}][\hat{I}\hat{3}]}\\
+    &=\frac{\mdavg{15}{25}\bcancel{[34]^3}}{\mdavg{14}{23}\avg{43}\bcancel{[43][43][34]}}\\
+    &=\frac{\mdavg{15}{25}}{\mdavg{23}{34}\avg{41}}\\
+    &=\frac{(-1)\avg{2\textcolor{green}{5}}^2\!\avg{1\textcolor{green}{5}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
+\end{align*}
+where we use the fact $|\hat{3}\rangle=|\hat{3}\rangle$ and following identities
+\begin{equation*}
+    \inavg{1\hat{I}}{\hat{I}3}=\inavg{14}{43},\quad \inavg{2\hat{I}}{\hat{I}3}=\inavg{24}{43}
+\end{equation*}
+and also
+\begin{align*}
+    \frac{[\hat{I}3]}{[4\hat{I}]}&=-\frac{\rinavg{3\hat{I}}{\hat{I}2}}{\rinavg{4\hat{I}}{\hat{I}2}}=-\frac{\rinavg{34}{42}}{\rinavg{43}{\hat{3}2}},\quad(\avg{\hat{3}2}=\avg{32}+z\avg{22}=\avg{32})\\
+    &=\frac{\avg{42}}{\avg{32}}
+\end{align*}
+here green refers to the particle with (-) helicity, red refers to particles belong to gauge group 1, red refers to particles belong to gauge group 2.
+\par
+Similarly, it is very easy to obtain another color-ordered amplitude $A[1,2,3_1^+,4_1^-,5_2^+]$
+\begin{align*}
+    A[1,2,3_1^+,4_1^-,5_2^+]=
+    \frac{(-1)\avg{2\textcolor{green}{4}}^2\!\avg{1\textcolor{green}{4}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
+\end{align*}
+and also $A[1,2,3_1^-,4_1^+,5_2^+]$ equals to
+\begin{equation*}
+    A[1,2,3_1^-,4_1^+,5_2^+]=
+    \frac{(-1)\avg{2\textcolor{green}{3}}^2\!\avg{1\textcolor{green}{3}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
+\end{equation*}
+But here we need to emphasize that it is necessary to choose another BCFW shift, like $[1,5 \rangle$, as $[2,3^- \rangle$ is not a valid shift. 
+\section{6-point case}
+Here we consider $(V_2V_2\Phi^\dagger V_1V_1 \Phi)$ case, the corresponding color-ordered amplitude is $A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]$.
+
 \end{document}
