@@ -15,6 +15,8 @@
 \newcommand{\inavg}[2]{\langle #1 \rangle\! [#2]}
 \newcommand{\rinavg}[2]{[#1]\!\langle #2 \rangle}
 \newcommand{\aket}[1]{|#1\rangle}
+\newcommand{\asqu}[1]{{\langle#1\rangle}^2}
+\newcommand{\sket}[1]{|#1]}
 \begin{document}
 
 \title{Note for Scattering Amplitude Computation}
@@ -104,5 +106,57 @@ and also $A[1,2,3_1^-,4_1^+,5_2^+]$ equals to
 But here we need to emphasize that it is necessary to choose another BCFW shift, like $[1,5 \rangle$, as $[2,3^- \rangle$ is not a valid shift. 
 \section{6-point case}
 Here we consider $(V_2V_2\Phi^\dagger V_1V_1 \Phi)$ case, the corresponding color-ordered amplitude is $A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]$.
-
+Similarly, the fowwling orders all give us the same color factor
+\begin{gather*}
+    (3_1^+,4_1^+,5_2^+,6_2^-)\qquad(3_1^+,5_2^+,4_1^+,6_2^-)\qquad (3_1^+,5_2^+,6_2^-,4_1^+)\\
+    (5_2^+,3_1^+,4_1^+,6_2^-)\qquad(5_2^+,3_1^+,6_2^-,4_1^+)\qquad (5_2^+,6_2^-,3_1^+,4_1^+)
+\end{gather*}
+Only two diagrams have semmingly non-zero contributaion,
+\begin{align*}
+    A_1&=\frac{(-1)\asqu{\hat{2}6}\asqu{16}}{\mdavg{25}{56}\!\avg{61}\!\mdavg{\hat{2}\hat{I}}{\hat{I}1}}\times\frac{1}{s_{34}}\times\frac{[\hat{3}4]^3}{[4\hat{I}][\hat{I}\hat{3}]}\\
+    &=\frac{\asqu{26}\avg{16}}{\mdavg{25}{56}\!\mdavg{\hat{2}\hat{I}}{\hat{I}1}}\times\frac{1}{s_{34}}\times\frac{[34]^3}{[4\hat{I}][\hat{I}3]}\\
+    &=\frac{\asqu{26}\avg{16}\bcancel{[34]^3}\bcancel{\avg{42}}}{\mdavg{25}{56}\!\mdavg{41}{32}\!\avg{43}\bcancel{[43][43][34]}\bcancel{\avg{24}}}\\
+    &=\frac{\asqu{26}\!\asqu{16}}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{51}}}
+\end{align*}
+where we have used the fact $\aket{\hat{2}}=\aket{2}$, $\sket{\hat{3}}=\sket{3}$, and the following identities
+\begin{equation*}
+    \inavg{2\hat{I}}{\hat{I}3}=\inavg{24}{43}, \qquad \rinavg{4\hat{I}}{\hat{I}1}=\rinavg{43}{\hat{3}1}
+\end{equation*}
+The point here is that we first $\avg{\hat{3}1}$ which does not appear in 5-point case, so we nned to compute it carefully
+\begin{gather*}
+    \text{pole position}: \quad \hat{P_{34}}^2=0=2P_3\cdot P_4=\inavg{4\hat{3}}{34}\qquad\Rightarrow \qquad \avg{4\hat{3}}=0\\
+    \avg{43}+z\avg{42}=0\qquad \Rightarrow \qquad z=-\frac{43}{42}
+\end{gather*}
+then
+\begin{align*}
+    \avg{\hat{3}1}=\avg{31}+z\avg{21}&=\avg{31}-\frac{\avg{43}}{\avg{42}}\avg{21}\\
+    &=\frac{\mdavg{42}{31}-\mdavg{43}{21}}{42}\\
+    &=\frac{\mdavg{41}{32}}{\avg{42}}
+\end{align*}
+where we have used the Fierz identity
+\begin{equation*}
+    \mdavg{42}{31}+\mdavg{41}{23}+\mdavg{43}{12}=0.
+\end{equation*}
+Simiraly, we can compute the second diagram
+\begin{equation*}
+    A_2=\frac{[\hat{2}5][5\hat{I}]}{[\hat{I}\hat{2}]}\times\frac{1}{s_{25}}\times \frac{(-1)\asqu{16}\asqu{\hat{I}6}}{\mdavg{\hat{I}\hat{3}}{\hat{3}4}
+    \!\mdavg{41}{\hat{I}6}\!\avg{61}}
+\end{equation*}
+but from the pole position
+\begin{equation*}
+    \hat{P_{25}}^2=0=2P_2\cdot P_5=\inavg{52}{\hat{2}5}\qquad\Rightarrow \qquad [\hat{2}5]=0,
+\end{equation*}
+and simiraly
+\begin{equation*}
+    [\hat{2}\hat{I}]=[5\hat{I}]=0.
+\end{equation*}
+Then we can conclude that the left part of the amplitude equals to 0 so $A_2=0$.Finally, we obtain the color-ordered amplitude 
+\begin{equation*}
+    A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=\frac{\asqu{26}\!\asqu{16}}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{51}}}.
+\end{equation*}
+\section{n-point case}
+Here, we first propose a compact formula for the color-ordered amplitude
+\begin{equation*}
+    A
+\end{equation*}
 \end{document}
