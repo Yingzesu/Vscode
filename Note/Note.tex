@@ -9,6 +9,7 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \usepackage{xcolor}
+\usepackage{float}
 \newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
 \newcommand{\avg}[1]{\left\langle #1 \right\rangle}
 \newcommand{\doubleavg}[2]{\left\langle #1 \right\rangle\!\left\langle #2 \right\rangle}
@@ -30,7 +31,7 @@ configuration. There are two feynman diagrams contributing to the color-ordered 
     \centering
     \includegraphics{4pt.eps}
     \caption{4pt.}
-    \label{fig:myfigure}
+    \label{1}
 \end{figure}
 
 For the first diagram, the residue equals to
@@ -67,14 +68,45 @@ We can freely choose $r_1=r_2=1$ or 2, then $\avg{r_1 2}$,$\avg{r_2 1}$,$\avg{r_
 For the 5-point case, we can utilize the BCFW recursion relation which can help us generate higher point amplitude from lower point on-shell subamplitudes. Here, 
 we always consider the MHV (Maximal helicity violation) amplitude. 
 \par
+If there is no special case, we always choose the following BCFW shift
+\begin{gather*}
+    \sket{\hat{2}}=\sket{2}-z\sket{3},\qquad \qquad \aket{\hat{3}}=\aket{3}+z\aket{3}\\
+    \aket{\hat{2}}=\aket{2}, \qquad \sket{\hat{3}}=\sket{3}
+\end{gather*}
+where 2 always refers to antiscalar and 3 refers to gauge boson with + helicity.
+\par
 Let us begin with the simplest case $A[1,2,3_1^+,4_1^+,5_2^-]$, where the subscript represent which gauge group the particle belongs to. Because of the property 
 of this kind of gauge theory, the color structure is invariant under the OPP (Order Preserving Permutation), in this case, for example,
 \begin{equation*}
     (3_1^+,4_1^+,5_2^-)\qquad (3_1^+,5_2^-,4_1^+)\qquad(5_2^-,3_1^+,4_1^+)
 \end{equation*}
-give us the same color factor. So in the process of BCFW recursion, these three order offer the same amplitude.
+give us the same color factor. So in the process of BCFW recursion, these three order offer the same amplitude. We can draw all diagrams contributing to the BCFW process, the first two are following
 \par
-The amplitude equals to
+\begin{figure}[H]
+    \centering
+    \includegraphics{5pt1.eps}
+    \caption{5pt. 1}
+    \label{2}
+\end{figure}
+It is obvious that the second diagram in Figure 2 equals to 0, because there are no interaction between the two gauge bosons.
+\par
+Similarly, another two diagrams equal to 0 for the same reason
+\begin{figure}
+    \centering
+    \includegraphics{5pt2.eps}
+    \caption{5pt. 2}
+    \label{3}
+\end{figure}
+\par
+The last diagram still gives 0 contribution because it includes a subamplitude $A[1,\hat{I},\hat{3}^+,4^+]=0$.
+\par
+\begin{figure}[H]
+    \centering
+    \includegraphics{5pt3.eps}
+    \caption{5pt. 3}
+    \label{4}
+\end{figure}
+Above all. only the first diagram in Figure 1 has non-vanishing contributions, so the full color ordered amplitude equals to
 \begin{align*}
     A[1,2,3_1^+,4_1^+,5_2^-]&=A[1,2,\hat{I}^+,5^-]\times\frac{1}{s_{34}}\times A[\hat{3}^+,4^+,\hat{I}^-]\\
     &=\frac{\doubleavg{15}{25}}{\mdavg{1\hat{I}}{2\hat{I}}}\times\frac{1}{s_{34}}\times\frac{[\hat{3}4]^3}{[4\hat{I}][\hat{I}\hat{3}]}\\
@@ -103,7 +135,7 @@ and also $A[1,2,3_1^-,4_1^+,5_2^+]$ equals to
     A[1,2,3_1^-,4_1^+,5_2^+]=
     \frac{(-1)\avg{2\textcolor{green}{3}}^2\!\avg{1\textcolor{green}{3}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
 \end{equation*}
-But here we need to emphasize that it is necessary to choose another BCFW shift, like $[1,5 \rangle$, as $[2,3^- \rangle$ is not a valid shift. 
+But here we need to emphasize that it is necessary to choose another BCFW shift, like $[1,5^+ \rangle$, as $[2,3^- \rangle$ is not a valid shift. 
 \section{6-point case}
 Here we consider $(V_2V_2\Phi^\dagger V_1V_1 \Phi)$ case, the corresponding color-ordered amplitude is $A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]$.
 Similarly, the fowwling orders all give us the same color factor
@@ -112,6 +144,14 @@ Similarly, the fowwling orders all give us the same color factor
     (5_2^+,3_1^+,4_1^+,6_2^-)\qquad(5_2^+,3_1^+,6_2^-,4_1^+)\qquad (5_2^+,6_2^-,3_1^+,4_1^+)
 \end{gather*}
 Only two diagrams have semmingly non-zero contributaion,
+\par
+\begin{figure}[H]
+    \centering
+    \includegraphics{6pt.eps}
+    \caption{6pt.}
+    \label{5}
+\end{figure}
+so the full color ordered amplitude equals to
 \begin{align*}
     A_1&=\frac{(-1)\asqu{\hat{2}6}\asqu{16}}{\mdavg{25}{56}\!\avg{61}\!\mdavg{\hat{2}\hat{I}}{\hat{I}1}}\times\frac{1}{s_{34}}\times\frac{[\hat{3}4]^3}{[4\hat{I}][\hat{I}\hat{3}]}\\
     &=\frac{\asqu{26}\avg{16}}{\mdavg{25}{56}\!\mdavg{\hat{2}\hat{I}}{\hat{I}1}}\times\frac{1}{s_{34}}\times\frac{[34]^3}{[4\hat{I}][\hat{I}3]}\\
@@ -150,13 +190,18 @@ and simiraly
 \begin{equation*}
     [\hat{2}\hat{I}]=[5\hat{I}]=0.
 \end{equation*}
-Then we can conclude that the left part of the amplitude equals to 0 so $A_2=0$.Finally, we obtain the color-ordered amplitude 
+Then we can conclude that the left part of the amplitude equals to 0 so $A_2=0$. Finally, we obtain the color-ordered amplitude 
 \begin{equation*}
-    A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=\frac{\asqu{26}\!\asqu{16}}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{51}}}.
+    A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=A_1+A_2=\frac{\asqu{26}\!\asqu{16}}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{51}}}.
 \end{equation*}
 \section{n-point case}
 Here, we first propose a compact formula for the color-ordered amplitude
 \begin{equation*}
-    A
+    A=\frac{\asqu{2a}\!\asqu{1a}}{\underbrace{\avg{2\star}\cdots \avg{\star 1}}_{SU(N_1)}\underbrace{\avg{2\ast }\cdots \avg{\ast 1}}_{SU(N_2)}}
 \end{equation*}
+where a refer to the particle with - helicity, whichever gauge group it belongs to. And, `$\star$' refers to the ordering for the first gauge group, `$\ast$'
+refers to the ordering for the second gauge group. We suppose there are $n_1$ gauge boson 1, $n_2$ gauge boson 2, so the n-point means that $n=n_1+n_2+2$.
+\par
+The usual way to prove this kind of compact formula is deduction. First we suppose that all of the amplitudes with external point lower than n satisfy the compact formula.
+And although there are $\frac{(n_1+n_2)!}{n_1!n_2!}$ OPP, we just need to consider some of them. 
 \end{document}
