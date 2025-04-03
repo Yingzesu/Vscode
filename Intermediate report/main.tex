@@ -1,0 +1,114 @@
+\documentclass{beamer}
+\usetheme{Madrid}
+\usefonttheme{professionalfonts}
+\usecolortheme{rose}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{svg}
+\usepackage{graphics}
+\usepackage{appendixnumberbeamer}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\setlist[itemize]{label=\textbullet}
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{arrows.meta}
+\setlength{\parskip}{0.3em}
+\AtBeginSection[]{
+\begin{frame} 
+    \frametitle{Contents}
+    \tableofcontents[currentsection]
+\end{frame}
+}
+\title[Amplication of BCFW]{A complete solution for scattering in a kind of quiver gauge theory}
+\author{Su Yingze}
+\institute{Nagoya University}
+\date[4 21st 2025]{April 21st 2025}
+
+\begin{document}
+\frame{\titlepage}
+\section{Preliminary}
+\begin{frame}
+    \frametitle{A brief introduction to BCFW}
+    BCFW recursion relation is a method to compute scattering amplitude, especially in Yang-Mills theory and gravity.
+    \par
+ \begin{itemize}[label=\textbullet]
+    \item Ruth Britto
+    \item Freddy Cachazo
+    \item Bo Feng
+    \item Edward Witten
+ \end{itemize}
+\end{frame}
+\begin{frame}
+    \frametitle{From real to complex -- Analytic Continuation}
+    \textbf{Why is analytic continuation valid?}
+\begin{itemize}
+  \item Tree level scattering amplitudes are rational functions of Lorentz invariants, such as $\bm{p_{i\mu}p_j^\mu}$, $\bm{p_{i\mu}\epsilon_j^\mu}$.
+  \item \textbf{Locality} tells us that any pole of a tree-level amplitude must correspond to a on-shell propagating particle. 
+  \item There's only single pole, no branch cuts (logs, square roots, etc) at tree level.
+\end{itemize}
+    \begin{center}
+    \tikz{
+      \draw[double equal sign distance, -Implies, line width=1pt] (0,0) -- (0,-1.2);
+    }
+    \end{center}
+\vspace{0.5em}
+\centering
+\textcolor{red}{Ampltudes can be shifted to complex plane}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Momentum Shift in BCFW}
+    \textbf{What did BCFW do to make the shift?}
+
+
+    Here we consider the case in which all particles are massless, $p_i^2 = 0$ for all $i = 1, 2, \dotsc, n$. Then introduce $n$ complex-valued vectors $r_i^\mu$.
+    \begin{enumerate}[label=(\roman*)]
+        \item $\sum_{i=1}^n r_i^\mu=0$,
+        \item $r_i\cdot r_j = 0$ for all $i,j=1, 2, \ldots, n.$ In particular $r_i^2=0$,
+        \item $p_i \cdot r_i =0$ for each i (no sum). 
+    \end{enumerate}
+
+These vectors $r_i$ are used to define n shifted momenta
+\begin{equation*}
+    \hat{p}_i^\mu \equiv p_i^\mu + zr_i^\mu \qquad \text{with} z \in \mathcal{C}
+\end{equation*}
+
+\end{frame}
+\begin{frame}
+Note that,
+    \begin{enumerate}[label=(\Alph*)]
+    \item By property (i), momentum conservation holds for the shifted momenta: $\sum_{i=1}^{n} \hat{p}_i^\mu =0$,
+    \item By (ii) and (iii), we have $\hat{p}_i^2=0$, so each shifted momentum is on-shell,
+    \item For a non-trival subset of generic momenta $\{p_i\}_{i\in I}$, define $P_I^\mu=\sum_{i\in I}p_i^\mu$.
+    \end{enumerate}
+Then, $\hat{P}_I^2$ is \textcolor{red}{linear} in z:
+\begin{equation*}
+    \hat{P}_I^2=\left(\sum_{i\in I} \hat{p}_i \right) ^2 = P_I^2 +2zP_I\cdot R_I \quad \text{with} \quad R_I=\sum_{i\in I} r_i ,
+\end{equation*}
+because the $z^2$ term vanishes by property (ii). We can write 
+\begin{equation*}
+    \hat{P}_I^2 = -\frac{P_I^2}{z_I}(z-z_I) \quad \text{with} \quad z_I=-\frac{P_I^2}{2P_I\cdot R_I}
+\end{equation*}
+\end{frame}
+\begin{frame}
+    \frametitle{Fantasitic result from Cauchy Theorem}
+    As a result of (A) and (B) (momentum conservation and on-shell), we can consider amplitude $A_n$ in terms of shifted momentum $\hat{p}_i^\mu$ instead of
+    original real momentum. 
+    \begin{equation*}
+        A_n \longrightarrow \hat{A}_n(z)
+    \end{equation*}
+    and we have known the possible positions of single poles, $z_I$, different propagators give 
+    us different single poles in the z-plane. 
+    \par
+    \textcolor{red}{$\bigstar$ The most important point is}
+    \begin{equation*}
+        \boxed{\color{red}A_n=\hat{A}_n(0)}
+    \end{equation*}
+\end{frame}
+
+
+
+
+\end{document}
