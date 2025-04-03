@@ -4,6 +4,7 @@
 \usecolortheme{rose}
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
+\usepackage{amsmath}
 \usepackage{bm}
 \usepackage{tikz}
 \usepackage{svg}
@@ -102,9 +103,28 @@ because the $z^2$ term vanishes by property (ii). We can write
     and we have known the possible positions of single poles, $z_I$, different propagators give 
     us different single poles in the z-plane. 
     \par
-    \textcolor{red}{$\bigstar$ The most important point is}
+    If we consider the meromorphic function $\frac{\hat{A}_n(z)}{z}$ in the complex plane, pick a contour that surrounds the simple pole at the origin. 
+    \textcolor{red}{$\bigstar$ The most important point here is that}
     \begin{equation*}
-        \boxed{\color{red}A_n=\hat{A}_n(0)}
+        \boxed{\color{red}Res|_{z=0}\frac{\hat{A}_n(z)}{z}=\hat{A}_n(0)=A_n}
+    \end{equation*}
+    It means that the orignal ampltude equals to the residue at orign.
+\end{frame}
+\begin{frame}
+    From Cauchy Theorem, we can ontain
+    \begin{equation*}
+        A_n=-\sum_{z_I}Res|_{z=z_I}\frac{\hat{A}_n(z)}{z}+B_n,
+    \end{equation*}
+    where $B_n$ is the residue of the pole at $z=\infty$, called boundary term.
+
+    Then, at a $z_I$ pole, the propagator $\hat{P}_I^2$ goes to on-shell. In that limit, the shifted amplitude
+    \textcolor{red}{factorizes} into to on-shell parts (Unitarity)
+    \begin{equation*}
+        \hat{A}_n(z)\quad \xrightarrow{z\,\text{near}\,z_I} \quad \hat{A}_L(z_I)\frac{1}{\hat{P}_I^2}\hat{A}_R(z_I)= - \frac{z_I}{z-z_I}\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)
+    \end{equation*}
+    This makes it easy to evaluate the residue at $z=z_I$
+    \begin{equation*}
+        -Res|_{z=z_I}\frac{\hat{A}_n(z)}{z}=\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)=
     \end{equation*}
 \end{frame}
 
