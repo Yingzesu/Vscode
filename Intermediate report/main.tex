@@ -13,6 +13,7 @@
 \usepackage{mathtools}
 \usepackage{enumitem}
 \usepackage{subcaption}
+\usepackage{comment}
 \usepackage[most]{tcolorbox}
 \tcbset{
   thickitembox/.style={
@@ -46,10 +47,34 @@
 
 \begin{document}
 \frame{\titlepage}
+\section{Why we need new method?}
+\begin{frame}
+    \frametitle{Why we need new method?}
+    Feynman diagram is a brilliant method without doubt, but it also faces many challenges.
+    \begin{itemize}
+        \item How to compute high multiplicity amplitudes, like n gluons scattering.
+        \item Gauge redundancies bring us many structral complications and non-physical degrees of freedom.
+        \item Some symmetries are hidden, like the dual superconformal symmetry for $\mathcal{N}=4$ SYM.
+        \item Is the local field theory the most basic discription for physics?
+    \end{itemize}
+    \includegraphics{Picture1.png}
+\end{frame}
+\begin{frame}
+    \frametitle{From Frynman diagram to On-shell method}
+    On-shell here means that all quantities we use are gauge invariant.
+    Specifically, there are many ingredients under this frame
+    \begin{itemize}
+        \item The analytic continuation for S-matrix.
+        \item The color-ordered amplitudes.
+        \item The BCFW recursion relation.
+        \item The spinor helicity discription for amplitudes.
+    \end{itemize}
+\end{frame}
 \section{Preliminary}
 \begin{frame}
     \frametitle{A brief introduction to BCFW}
-    BCFW recursion relation is a method to compute scattering amplitude, especially in Yang-Mills theory and gravity.
+    BCFW recursion relation is a method to compute scattering amplitude recursively, means that you can 
+    compute higher point amplitudes from lower point.
     \par
  \begin{itemize}[label=\textbullet]
     \item Ruth Britto
@@ -57,6 +82,46 @@
     \item Bo Feng
     \item Edward Witten
  \end{itemize}
+ 
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Flowchart: Connector [id:dp8833995378786028] 
+\draw  [fill={rgb, 255:red, 153; green, 151; blue, 151 }  ,fill opacity=1 ] (100,151.75) .. controls (100,139.19) and (110.41,129) .. (123.25,129) .. controls (136.09,129) and (146.5,139.19) .. (146.5,151.75) .. controls (146.5,164.31) and (136.09,174.5) .. (123.25,174.5) .. controls (110.41,174.5) and (100,164.31) .. (100,151.75) -- cycle ;
+%Straight Lines [id:da4824712234334869] 
+\draw    (72.5,88.5) -- (107,134) ;
+%Straight Lines [id:da012324134018845356] 
+\draw    (146.5,151.75) -- (202.5,151.5) ;
+%Straight Lines [id:da08630319677446052] 
+\draw    (107,169.5) -- (74.5,207.5) ;
+%Right Arrow [id:dp15563446404618686] 
+\draw   (213,146.88) -- (234.3,146.88) -- (234.3,142) -- (248.5,151.75) -- (234.3,161.5) -- (234.3,156.63) -- (213,156.63) -- cycle ;
+%Flowchart: Connector [id:dp3078703826898672] 
+\draw  [fill={rgb, 255:red, 153; green, 151; blue, 151 }  ,fill opacity=1 ] (285,152.75) .. controls (285,140.19) and (295.41,130) .. (308.25,130) .. controls (321.09,130) and (331.5,140.19) .. (331.5,152.75) .. controls (331.5,165.31) and (321.09,175.5) .. (308.25,175.5) .. controls (295.41,175.5) and (285,165.31) .. (285,152.75) -- cycle ;
+%Flowchart: Connector [id:dp8700788921830469] 
+\draw  [fill={rgb, 255:red, 153; green, 151; blue, 151 }  ,fill opacity=1 ] (385,153.75) .. controls (385,141.19) and (395.41,131) .. (408.25,131) .. controls (421.09,131) and (431.5,141.19) .. (431.5,153.75) .. controls (431.5,166.31) and (421.09,176.5) .. (408.25,176.5) .. controls (395.41,176.5) and (385,166.31) .. (385,153.75) -- cycle ;
+%Straight Lines [id:da3777742197603755] 
+\draw    (331.5,152.75) -- (387.5,152.5) ;
+%Straight Lines [id:da01635751939547947] 
+\draw    (253.5,96.5) -- (288,142) ;
+%Straight Lines [id:da6633767687204817] 
+\draw    (287,165.5) -- (254.5,203.5) ;
+%Straight Lines [id:da3605859970876615] 
+\draw    (458.5,101.5) -- (426,139) ;
+%Straight Lines [id:da9887266785867475] 
+\draw    (427,168.5) -- (462.5,202.5) ;
+%Right Arrow [id:dp7496461117394901] 
+\draw   (477,146.88) -- (498.3,146.88) -- (498.3,142) -- (512.5,151.75) -- (498.3,161.5) -- (498.3,156.63) -- (477,156.63) -- cycle ;
+
+% Text Node
+\draw (516,143.4) node [anchor=north west][inner sep=0.75pt]    {$\cdots $};
+
+
+\end{tikzpicture}
+
 \end{frame}
 \begin{frame}
     \frametitle{From real to complex -- Analytic Continuation}
@@ -222,26 +287,165 @@ because the $z^2$ term vanishes by property (ii). We can write
         A_3(g_1^-,g_2^-,g_3^+)=g\frac{\avg{12}^3}{\avg{23}\!\avg{31}}
     \end{equation*}
 \end{frame}
-\section{Color structure in quiver gauge theory}
+\section{Introduction of quiver gauge theory}
 \begin{frame}
-    \frametitle{Introduction to quiver gauge theory}
+    \frametitle{Introduction of Quiver of Moose gauge theory}
+    \begin{itemize}
+        \item Quiver: A container for carring arrows
+        \item Moose: A kind of deer with large horns 
+    \end{itemize}
+    
+
+    In the language of field theories, quiver gauge theories contain gauge fields and fermions, summarized in a pictotial representaion.
+    \begin{figure}
+        \centering
+        \begin{minipage}{0.45\textwidth}
+            \centering
+            \includegraphics[width=0.6\textwidth]{Moosed.jpeg}
+            \caption*{Moose diagram}
+        \end{minipage}
+        \hspace{1em}
+        \begin{minipage}{0.3\textwidth}
+            \begin{gather*}
+                N-\text{sided polygon}\\
+                G: \text{gauge group} \quad SU(m)\\
+                \rightarrow : \text{Unitary scalar fields}\quad \Phi_{ij} 
+            \end{gather*}
+        \end{minipage}
+        
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Why we foucs on quiver gauge theory?}
     The lagrangian can be written like
     \begin{equation*}
-        \mathcal{L}=-\sum_{i=1}^{k}\frac{1}{2}\mathrm{Tr}(F_i)^2+\sum_{i=1}^{k-1}\mathrm{Tr}[(D_\mu\Phi_i)^\dagger(D^\mu\Phi_i)],
+        \mathcal{L}=-\sum_{i=1}^{N}\frac{1}{2}\mathrm{Tr}(F_i)^2+\sum_{i=1}^{k}\mathrm{Tr}[(D_\mu\Phi_i)^\dagger(D^\mu\Phi_i)],
     \end{equation*}
     here $F_i$ refers to the ith gauge field strength, scalar field $\Phi_i$ transformed under the \textcolor{red}{bi-fundamental} representation and the covariant derivative equals to
     \begin{equation*}
         D_\mu \Phi_i=\partial_\mu \Phi_i -ig_iV_{i\mu}\Phi_i+ig_{i+1}\Phi_i V_{i+1\mu}.
     \end{equation*}
-    It is easy to confirm that this theory is invariant under $SU(N_1)\times SU(N_2)\times\cdots\times SU(N_k)$.
-    \begin{figure}
-        \centering
-        \includegraphics{test.eps}
-        \caption{Quiver gauge theory}
-        \label{1}
-    \end{figure}
+    Here, gauge field and scalar field transformed like
+    \begin{equation*}
+        \bm{A_{i\mu}}\rightarrow g_i(x) \bm{A_{i\mu}} g_i^-(x),\qquad \Phi_i\rightarrow g_i(x)\Phi_i g_{i+1}^-(x)
+    \end{equation*}
+    It is easy to confirm that this theory is invariant under $\prod_1^N SU(M)$ gauge group.
 \end{frame}
+\begin{frame}
+    It has been proposed that this model actually discretized a five-dimension gauge theory with gauge group $SU(m)$, where the 
+    only the fifth dimension are latticed.
+    \begin{itemize}
+        \item If $SU(m)_1$ and $SU(m)_N$ are connected $\longrightarrow$ $S^2$ compactification
+        \item If not connected $\longrightarrow$ $\mathrm{Interval}$ compactification
+    \end{itemize}
+    After higgsing, we can obtain a spectrum
+    \begin{equation*}
+        M_k^2=4g^2g_s^2\sin^2\left(\frac{\pi k}{N}\right)
+    \end{equation*}
+    This is precisely the \textcolor{red}{Kaluza-Klein} spectrum under $S^2$ compactification.
+\end{frame}
+\begin{frame}
+    {What is relation to scattering amplitude?}
+    The critical point is \textcolor{red}{locality}. 
+    \begin{itemize}
+        \item Space-Time Locality $\longrightarrow$ local field theories
+        \item Theory Space Locality $\longrightarrow$ Discretized theory space
+    \end{itemize}
+    
 
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{center}
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+        %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+        
+        %Shape: Ellipse [id:dp8504954329776364] 
+        \draw   (104,129.25) .. controls (104,123.31) and (108.57,118.5) .. (114.2,118.5) .. controls (119.84,118.5) and (124.4,123.31) .. (124.4,129.25) .. controls (124.4,135.19) and (119.84,140) .. (114.2,140) .. controls (108.57,140) and (104,135.19) .. (104,129.25) -- cycle ;
+        %Shape: Ellipse [id:dp885507200032482] 
+        \draw   (219.1,129.25) .. controls (219.1,123.31) and (223.66,118.5) .. (229.3,118.5) .. controls (234.93,118.5) and (239.5,123.31) .. (239.5,129.25) .. controls (239.5,135.19) and (234.93,140) .. (229.3,140) .. controls (223.66,140) and (219.1,135.19) .. (219.1,129.25) -- cycle ;
+        %Shape: Ellipse [id:dp7989991915217867] 
+        \draw   (180.38,129.25) .. controls (180.38,123.31) and (184.95,118.5) .. (190.58,118.5) .. controls (196.22,118.5) and (200.79,123.31) .. (200.79,129.25) .. controls (200.79,135.19) and (196.22,140) .. (190.58,140) .. controls (184.95,140) and (180.38,135.19) .. (180.38,129.25) -- cycle ;
+        %Shape: Ellipse [id:dp013562751387628191] 
+        \draw   (142.71,129.25) .. controls (142.71,123.31) and (147.28,118.5) .. (152.92,118.5) .. controls (158.55,118.5) and (163.12,123.31) .. (163.12,129.25) .. controls (163.12,135.19) and (158.55,140) .. (152.92,140) .. controls (147.28,140) and (142.71,135.19) .. (142.71,129.25) -- cycle ;
+        %Straight Lines [id:da15611587109210845] 
+        \draw    (124.4,129.25) -- (142.71,129.25) ;
+        %Straight Lines [id:da9794450917549196] 
+        \draw    (163.12,129.25) -- (181.43,129.25) ;
+        %Straight Lines [id:da4720621582644091] 
+        \draw    (200.79,129.25) -- (219.1,129.25) ;
+        
+        % Text Node
+        \draw (103,93.4) node [anchor=north west][inner sep=0.75pt]    {$G_{1}$};
+        % Text Node
+        \draw (142,94.4) node [anchor=north west][inner sep=0.75pt]    {$G_{2}$};
+        % Text Node
+        \draw (180,94.4) node [anchor=north west][inner sep=0.75pt]    {$G_{3}$};
+        % Text Node
+        \draw (220,94.4) node [anchor=north west][inner sep=0.75pt]    {$G_{4}$};
+        % Text Node
+        \draw (124,140.4) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{1}$};
+        % Text Node
+        \draw (164,140.4) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{2}$};
+        % Text Node
+        \draw (203,141.4) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{3}$};
+        \end{tikzpicture}
+\end{center}
+If we change this to a scattering diagram
+\begin{figure}
+    \centering
+\begin{minipage}{0.4\textwidth}
+
+
+    \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+    \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+    %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+    
+    %Shape: Inductor (Air Core) [id:dp932367781299785] 
+    \draw   (274.98,130.32) -- (281.77,130.32) .. controls (281.87,128.3) and (282.81,126.57) .. (284.14,125.97) .. controls (285.47,125.36) and (286.92,126.01) .. (287.8,127.59) .. controls (288.47,128.82) and (288.75,130.41) .. (288.55,131.96) .. controls (288.55,132.56) and (288.21,133.05) .. (287.8,133.05) .. controls (287.38,133.05) and (287.04,132.56) .. (287.04,131.96) .. controls (286.85,130.41) and (287.12,128.82) .. (287.8,127.59) .. controls (288.58,126.27) and (289.67,125.53) .. (290.81,125.53) .. controls (291.95,125.53) and (293.05,126.27) .. (293.83,127.59) .. controls (294.5,128.82) and (294.78,130.41) .. (294.58,131.96) .. controls (294.58,132.56) and (294.24,133.05) .. (293.83,133.05) .. controls (293.41,133.05) and (293.07,132.56) .. (293.07,131.96) .. controls (292.88,130.41) and (293.16,128.82) .. (293.83,127.59) .. controls (294.61,126.27) and (295.7,125.53) .. (296.84,125.53) .. controls (297.99,125.53) and (299.08,126.27) .. (299.86,127.59) .. controls (300.53,128.82) and (300.81,130.41) .. (300.61,131.96) .. controls (300.61,132.56) and (300.28,133.05) .. (299.86,133.05) .. controls (299.44,133.05) and (299.11,132.56) .. (299.11,131.96) .. controls (298.91,130.41) and (299.19,128.82) .. (299.86,127.59) .. controls (300.73,126.01) and (302.18,125.36) .. (303.52,125.97) .. controls (304.85,126.57) and (305.79,128.3) .. (305.89,130.32) -- (312.67,130.32) ;
+    %Straight Lines [id:da12934086227313735] 
+    \draw    (239.95,129.92) -- (274.98,129.92) ;
+    %Straight Lines [id:da483410968594159] 
+    \draw    (274.98,130.32) -- (275.43,159.86) ;
+    %Shape: Inductor (Air Core) [id:dp1480868197800882] 
+    \draw   (339.72,130.32) -- (346.51,130.32) .. controls (346.6,128.3) and (347.55,126.57) .. (348.88,125.97) .. controls (350.21,125.36) and (351.66,126.01) .. (352.54,127.59) .. controls (353.21,128.82) and (353.48,130.41) .. (353.29,131.96) .. controls (353.29,132.56) and (352.95,133.05) .. (352.54,133.05) .. controls (352.12,133.05) and (351.78,132.56) .. (351.78,131.96) .. controls (351.59,130.41) and (351.86,128.82) .. (352.54,127.59) .. controls (353.32,126.27) and (354.41,125.53) .. (355.55,125.53) .. controls (356.69,125.53) and (357.78,126.27) .. (358.57,127.59) .. controls (359.24,128.82) and (359.52,130.41) .. (359.32,131.96) .. controls (359.32,132.56) and (358.98,133.05) .. (358.57,133.05) .. controls (358.15,133.05) and (357.81,132.56) .. (357.81,131.96) .. controls (357.62,130.41) and (357.89,128.82) .. (358.57,127.59) .. controls (359.35,126.27) and (360.44,125.53) .. (361.58,125.53) .. controls (362.72,125.53) and (363.81,126.27) .. (364.6,127.59) .. controls (365.27,128.82) and (365.55,130.41) .. (365.35,131.96) .. controls (365.35,132.56) and (365.01,133.05) .. (364.6,133.05) .. controls (364.18,133.05) and (363.84,132.56) .. (363.84,131.96) .. controls (363.65,130.41) and (363.92,128.82) .. (364.6,127.59) .. controls (365.47,126.01) and (366.92,125.36) .. (368.26,125.97) .. controls (369.59,126.57) and (370.53,128.3) .. (370.63,130.32) -- (377.41,130.32) ;
+    %Straight Lines [id:da6722655237119544] 
+    \draw    (311.79,129.92) -- (339.72,129.92) ;
+    %Straight Lines [id:da3803917060459867] 
+    \draw    (339.72,130.32) -- (340.17,159.86) ;
+    %Straight Lines [id:da9202776931220129] 
+    \draw    (377.41,130.32) -- (377.86,159.86) ;
+    %Straight Lines [id:da09703581803647143] 
+    \draw    (377.41,129.92) -- (412.44,129.92) ;
+    
+    % Text Node
+    \draw (219.64,120.92) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{1}$};
+    % Text Node
+    \draw (264.87,163) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{1}$};
+    % Text Node
+    \draw (279.95,102.3) node [anchor=north west][inner sep=0.75pt]    {$G_{2}$};
+    % Text Node
+    \draw (311.87,103.11) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{2}$};
+    % Text Node
+    \draw (330.5,163) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{2}$};
+    % Text Node
+    \draw (348.23,102.3) node [anchor=north west][inner sep=0.75pt]    {$G_{3}$};
+    % Text Node
+    \draw (368.63,161.38) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{3}$};
+    % Text Node
+    \draw (413.86,121.72) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{3}$};
+    
+    
+    \end{tikzpicture}
+    
+\end{minipage}
+\hspace{1em}
+\begin{minipage}{0.4\textwidth}
+    \begin{equation*}
+        \sim 1/z^{\textcolor{red}{\textcircled{\textcolor{black}{4}}}}
+    \end{equation*}
+\end{minipage}
+\end{figure}
+\end{frame}
 \begin{frame}
     \frametitle{Classification of scattering amplitude}
     For the simplicity, we started front the two-site gauge theory, means that there are only two gauge fields $V_1$, $V_2$ and one scalar field $\Phi$, $\Phi^\dagger$.
