@@ -61,7 +61,7 @@
 \end{frame}
 \begin{frame}
     \frametitle{From Frynman diagram to On-shell method}
-    On-shell here means that all quantities we use are gauge invariant.
+    On-shell here means that all quantities we use are gauge invariant and satisfy the on-shell condition.
     Specifically, there are many ingredients under this frame
     \begin{itemize}
         \item The analytic continuation for S-matrix.
@@ -125,7 +125,7 @@
 \end{frame}
 \begin{frame}
     \frametitle{From real to complex -- Analytic Continuation}
-    \textbf{Why is analytic continuation valid?}
+    \textbf{Why can we conduct analytic continuation?}
 \begin{itemize}
   \item Tree level scattering amplitudes are rational functions of Lorentz invariants, such as $\bm{p_{i\mu}p_j^\mu}$, $\bm{p_{i\mu}\epsilon_j^\mu}$.
   \item \textbf{Locality} tells us that any pole of a tree-level amplitude must correspond to a on-shell propagating particle. 
@@ -211,37 +211,37 @@ because the $z^2$ term vanishes by property (ii). We can write
 \end{frame}
 
 \begin{frame}
-\frametitle{Little Group}
-    In the context of relativistic QFT, particles are classified according to the unitary irreducible representations of the Poincaré group.
-
-    A crucial concept in this classification is the 
-    \begin{tcolorbox}[thickitembox]
-        \textbf{Little Group:} The subgroup of Lorentz transformations that leaves a given four-momentum invariant.
-    \end{tcolorbox}
+\frametitle{Spinor-helicity formalism}
+    The critical point for Spinor-helicity formalism is that a 4-vector $p_\mu$ in $(\frac{1}{2},\frac{1}{2})$ representation can be equivalently represented by a bispinor in $(\frac{1}{2},0)\bigoplus (0,\frac{1}{2})$ representation.
+    Specifically
     \begin{itemize}
-        \item \textbf{Massless Case}\\
-        For a massless particle with representative momentum 
-        \begin{equation*}
-            p^\mu=(E,0,0,E)
-        \end{equation*}
-        the little group is $SO(2)\simeq U(1)$.\\
-        In terms of spinor-helicity variables, the massless momentum can be written as
-        \begin{equation*}
-            p_{\alpha \dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}
-        \end{equation*}
+        \item $\bm{\text{Massless Case}}$\\
+    \begin{equation*}
+        p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\begin{pmatrix*} 
+            p^0-p^3 & -p^1+ip^2\\
+            -p^1-ip^2 & p^0+p^3
+        \end{pmatrix*}
+    \end{equation*}
+    And $p_{\alpha\dot{\alpha}}$ can be decomposed into product of two Weyl spinors
+    \begin{equation*}
+        p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}[\lambda|
+    \end{equation*}
+    Here we can find that there is a ambiguity for the definition, the momentum is invariant under the following redefinition
+    \begin{equation*}
+        \lambda \rightarrow t^{-1}\lambda, \qquad \tilde{\lambda}\rightarrow t\tilde{\lambda}, \qquad t\in\mathbb{C^*} 
+    \end{equation*}
+    same as 
+    \begin{equation*}
+        \aket{\lambda}\rightarrow t^-\aket{\lambda}, \qquad \sket{\lambda}\rightarrow t\sket{\lambda}
+    \end{equation*}
     \end{itemize}
 \end{frame}
 
 \begin{frame}
     \begin{itemize}
-        \item[] The action of the little group is:
-        \begin{equation*}
-            \lambda \rightarrow t^{-1}\lambda, \qquad \tilde{\lambda}\rightarrow t\tilde{\lambda}, \qquad t\in\mathbb{C^*} 
-        \end{equation*}
-        same as 
-        \begin{equation*}
-            \aket{\lambda}\rightarrow t\aket{\lambda}, \qquad \sket{\lambda}\rightarrow t\sket{\lambda}
-        \end{equation*}
+        \item[]  This redefinition just matches the $U(1)$ little group transformation.
+        \vspace{0.5em}
+        
         The scattering amplitudes should transform covariantly under little group scaling:
         \begin{equation*}
             \color{red} \mathcal{A}_n(\{\aket{1},\sket{1},h_1\},\ldots\{t_i^{-1}\aket{i},t_i\sket{i},h_i\},\ldots )=t_i^{2h_i}\mathcal{A}_n
