@@ -6,6 +6,7 @@
 \setmainfont{Times New Roman}
 \usepackage{amsmath}
 \usepackage{bm}
+\usepackage{booktabs}
 \usepackage{tikz}
 \usepackage{svg}
 \usepackage{graphics}
@@ -57,7 +58,6 @@
         \item Some symmetries are hidden, like the dual superconformal symmetry for $\mathcal{N}=4$ SYM.
         \item Is the local field theory the most basic discription for physics?
     \end{itemize}
-    \includegraphics{Picture1.png}
 \end{frame}
 \begin{frame}
     \frametitle{From Frynman diagram to On-shell method}
@@ -157,6 +157,10 @@ These vectors $r_i$ are used to define n shifted momenta
 \begin{equation*}
     \hat{p}_i^\mu \equiv p_i^\mu + zr_i^\mu \qquad \text{with} z \in \mathcal{C}
 \end{equation*}
+Then, $\hat{P}_I^2$ is \textcolor{red}{linear} in z:
+\begin{equation*}
+    \hat{P}_I^2=\left(\sum_{i\in I} \hat{p}_i \right) ^2 = P_I^2 +2zP_I\cdot R_I \quad \text{with} \quad R_I=\sum_{i\in I} r_i ,
+\end{equation*}
 
 \end{frame}
 \begin{frame}
@@ -206,8 +210,33 @@ because the $z^2$ term vanishes by property (ii). We can write
     \end{equation*}
     This makes it easy to evaluate the residue at $z=z_I$
     \begin{equation*}
-        -Res|_{z=z_I}\frac{\hat{A}_n(z)}{z}=\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)=
+        -Res|_{z=z_I}\frac{\hat{A}_n(z)}{z}=\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)=\raisebox{-1em}{\includegraphics[height=3em]{recrel1.pdf}}   
     \end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Large z behavior}
+    In the BCFW formula, the boundary term $B_n$ affects a lot
+    \begin{equation*}
+        A_n=-\sum_{z_I}Res|_{z=z_I}\frac{\hat{A}_n(z)}{z}+B_n,
+    \end{equation*}
+    In most applications. one assumes or much better, proves $B_n=0$. This is often justified by declaring a stronger condition
+    \begin{equation*}
+        \textcolor{red}{\hat{A}_n(z)\rightarrow 0 \quad \text{for} \quad z\rightarrow \infty} 
+    \end{equation*}
+    Here I show the large z behavior for gluon scattering 
+    \begin{center}
+        \begin{tabular}{lrc}
+            \toprule
+            $[i\, \textbackslash \, j\rangle $ & $+$ & $-$ \\
+            \midrule
+            $+$ & $1/z$ & $z^3$ \\
+            $-$ & $1/z$ & $1/z$ \\
+            \bottomrule
+          \end{tabular}
+    \end{center}
+    
+      
 \end{frame}
 
 \begin{frame}
@@ -232,7 +261,7 @@ because the $z^2$ term vanishes by property (ii). We can write
     \end{equation*}
     same as 
     \begin{equation*}
-        \aket{\lambda}\rightarrow t^-\aket{\lambda}, \qquad \sket{\lambda}\rightarrow t\sket{\lambda}
+        \aket{\lambda}\rightarrow t^{-1}\aket{\lambda}, \qquad \sket{\lambda}\rightarrow t\sket{\lambda}
     \end{equation*}
     \end{itemize}
 \end{frame}
@@ -289,7 +318,7 @@ because the $z^2$ term vanishes by property (ii). We can write
 \end{frame}
 \section{Introduction of quiver gauge theory}
 \begin{frame}
-    \frametitle{Introduction of Quiver of Moose gauge theory}
+    \frametitle{Introduction of Quiver or Moose gauge theory}
     \begin{itemize}
         \item Quiver: A container for carring arrows
         \item Moose: A kind of deer with large horns 
