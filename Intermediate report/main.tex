@@ -35,6 +35,7 @@
 \newcommand{\sket}[1]{|#1]}
 \newcommand{\avg}[1]{\langle #1 \rangle}
 \newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
+\newcommand{\asqu}[1]{{\langle#1\rangle}^2}
 \AtBeginSection[]{
 \begin{frame} 
     \frametitle{Contents}
@@ -146,43 +147,29 @@
     \textbf{What did BCFW do to make the shift?}
 
 
-    Here we consider the case in which all particles are massless, $p_i^2 = 0$ for all $i = 1, 2, \dotsc, n$. Then introduce $n$ complex-valued vectors $r_i^\mu$.
-    \begin{enumerate}[label=(\roman*)]
-        \item $\sum_{i=1}^n r_i^\mu=0$,
-        \item $r_i\cdot r_j = 0$ for all $i,j=1, 2, \ldots, n.$ In particular $r_i^2=0$,
-        \item $p_i \cdot r_i =0$ for each i (no sum). 
-    \end{enumerate}
-
-These vectors $r_i$ are used to define n shifted momenta
-\begin{equation*}
-    \hat{p}_i^\mu \equiv p_i^\mu + zr_i^\mu \qquad \text{with} z \in \mathcal{C}
-\end{equation*}
-Then, $\hat{P}_I^2$ is \textcolor{red}{linear} in z:
-\begin{equation*}
-    \hat{P}_I^2=\left(\sum_{i\in I} \hat{p}_i \right) ^2 = P_I^2 +2zP_I\cdot R_I \quad \text{with} \quad R_I=\sum_{i\in I} r_i ,
-\end{equation*}
+    Here we consider the case in which all particles are massless, $p_i^2 = 0$ for all $i = 1, 2, \dotsc, n$. We choose two momentum to be shifted oppositely 
+    \begin{equation*}
+        p_i\rightarrow\hat{p}_i(z)\equiv p_i-zk,\qquad p_j\rightarrow\hat{p}_j(z)\equiv p_j+zk
+    \end{equation*}
+    satisfying 
+    \begin{equation*}
+        k^2=0,\qquad p_i\cdot k=0,\qquad p_j\cdot k=0
+    \end{equation*}
+    Note that,
+    \begin{itemize}
+        \item Momentum conservation holds for shifted momentum: $\sum_{i=1}^{n}\hat{p}_i^\mu=0$,
+        \item Each shifted momentum is still on-shell: $\hat{p}_i^2=0$
+        \item For a non-trival subset of generic momenta $\{p_i\}_{i\in I}$, define $P_I^\mu=\sum_{i\in I}p_i^\mu$, $\hat{P}_I^2$ is \textcolor{red}{linear} in z:
+              \begin{equation*}
+                \hat{P}_I^2=\left(\sum_{i\in I} \hat{p}_i \right) ^2 = P_I^2 -2zP_I\cdot k=-\frac{P_I^2}{z_I}(z-z_I) \quad \text{with} \quad z_I=\frac{P_I^2}{2P_I\cdot k}
+              \end{equation*}
+    \end{itemize}
 
 \end{frame}
-\begin{frame}
-Note that,
-    \begin{enumerate}[label=(\Alph*)]
-    \item By property (i), momentum conservation holds for the shifted momenta: $\sum_{i=1}^{n} \hat{p}_i^\mu =0$,
-    \item By (ii) and (iii), we have $\hat{p}_i^2=0$, so each shifted momentum is on-shell,
-    \item For a non-trival subset of generic momenta $\{p_i\}_{i\in I}$, define $P_I^\mu=\sum_{i\in I}p_i^\mu$.
-    \end{enumerate}
-Then, $\hat{P}_I^2$ is \textcolor{red}{linear} in z:
-\begin{equation*}
-    \hat{P}_I^2=\left(\sum_{i\in I} \hat{p}_i \right) ^2 = P_I^2 +2zP_I\cdot R_I \quad \text{with} \quad R_I=\sum_{i\in I} r_i ,
-\end{equation*}
-because the $z^2$ term vanishes by property (ii). We can write 
-\begin{equation*}
-    \hat{P}_I^2 = -\frac{P_I^2}{z_I}(z-z_I) \quad \text{with} \quad z_I=-\frac{P_I^2}{2P_I\cdot R_I}
-\end{equation*}
-\end{frame}
+
 \begin{frame}
     \frametitle{Fantasitic result from Cauchy Theorem}
-    As a result of (A) and (B) (momentum conservation and on-shell), we can consider amplitude $A_n$ in terms of shifted momentum $\hat{p}_i^\mu$ instead of
-    original real momentum. 
+    As a result, we can consider amplitude $A_n$ in terms of shifted momentum $\hat{p}_i^\mu$ instead of original real momentum. 
     \begin{equation*}
         A_n \longrightarrow \hat{A}_n(z)
     \end{equation*}
@@ -199,7 +186,7 @@ because the $z^2$ term vanishes by property (ii). We can write
 \begin{frame}
     From Cauchy Theorem, we can ontain
     \begin{equation*}
-        A_n=-\sum_{z_I}Res|_{z=z_I}\frac{\hat{A}_n(z)}{z}+B_n,
+        A_n=-\sum_{z_I}\textrm{Res}|_{z=z_I}\frac{\hat{A}_n(z)}{z}+B_n,
     \end{equation*}
     where $B_n$ is the residue of the pole at $z=\infty$, called boundary term.
 
@@ -255,7 +242,7 @@ because the $z^2$ term vanishes by property (ii). We can write
     \begin{equation*}
         p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}[\lambda|
     \end{equation*}
-    Here we can find that there is a ambiguity for the definition, the momentum is invariant under the following redefinition
+    Here we can notice that there is an ambiguity for the definition, the momentum is invariant under the following redefinition
     \begin{equation*}
         \lambda \rightarrow t^{-1}\lambda, \qquad \tilde{\lambda}\rightarrow t\tilde{\lambda}, \qquad t\in\mathbb{C^*} 
     \end{equation*}
@@ -336,7 +323,7 @@ because the $z^2$ term vanishes by property (ii). We can write
         \hspace{1em}
         \begin{minipage}{0.3\textwidth}
             \begin{gather*}
-                N-\text{sided polygon}\\
+                N\text{-sided polygon}\\
                 G: \text{gauge group} \quad SU(m)\\
                 \rightarrow : \text{Unitary scalar fields}\quad \Phi_{ij} 
             \end{gather*}
@@ -352,16 +339,16 @@ because the $z^2$ term vanishes by property (ii). We can write
     \end{equation*}
     here $F_i$ refers to the ith gauge field strength, scalar field $\Phi_i$ transformed under the \textcolor{red}{bi-fundamental} representation and the covariant derivative equals to
     \begin{equation*}
-        D_\mu \Phi_i=\partial_\mu \Phi_i -ig_iV_{i\mu}\Phi_i+ig_{i+1}\Phi_i V_{i+1\mu}.
+        D_\mu \Phi_i=\partial_\mu \Phi_i -ig_iA_{i\mu}\Phi_i+ig_{i+1}\Phi_i A_{i+1\mu}.
     \end{equation*}
     Here, gauge field and scalar field transformed like
     \begin{equation*}
         \bm{A_{i\mu}}\rightarrow g_i(x) \bm{A_{i\mu}} g_i^-(x),\qquad \Phi_i\rightarrow g_i(x)\Phi_i g_{i+1}^-(x)
     \end{equation*}
-    It is easy to confirm that this theory is invariant under $\prod_1^N SU(M)$ gauge group.
+    It is easy to confirm that this theory is invariant under $\prod_1^N SU(m)$ gauge group.
 \end{frame}
 \begin{frame}
-    It has been proposed that this model actually discretized a five-dimension gauge theory with gauge group $SU(m)$, where the 
+    It has been proposed that this model actually discretized a five-dimension gauge theory with gauge group $SU(m)$, where 
     only the fifth dimension are latticed.
     \begin{itemize}
         \item If $SU(m)_1$ and $SU(m)_N$ are connected $\longrightarrow$ $S^2$ compactification
@@ -418,7 +405,7 @@ because the $z^2$ term vanishes by property (ii). We can write
         \draw (203,141.4) node [anchor=north west][inner sep=0.75pt]    {$\Phi _{3}$};
         \end{tikzpicture}
 \end{center}
-If we change this to a scattering diagram
+If we change this to a scattering diagram, and compute the large-z behavior
 \begin{figure}
     \centering
 \begin{minipage}{0.4\textwidth}
@@ -475,6 +462,7 @@ If we change this to a scattering diagram
 \end{minipage}
 \end{figure}
 \end{frame}
+\section{Scattering amplitudes from BCFW}
 \begin{frame}
     \frametitle{Classification of scattering amplitude}
     For the simplicity, we started front the two-site gauge theory, means that there are only two gauge fields $V_1$, $V_2$ and one scalar field $\Phi$, $\Phi^\dagger$.
@@ -541,7 +529,81 @@ If we change this to a scattering diagram
     \end{column}
     \end{columns}
 \end{frame}
+\begin{frame}
+    \frametitle{Basic building block -- 3-point}
+    From the previous section, we have known that there are only two kinds of 3 point amplitude
+    \begin{gather*}
+        A[1,2,3^+]=\frac{[23][31]}{[12]},\qquad A[1,2,3^-]=\frac{\avg{23}\!\avg{31}}{\avg{12}}\\
+        A[3^+,4^+,5^-]=\frac{[34]^3}{[45][53]},\qquad A[3^-,4^-,5^+]=\frac{\avg{34}^3}{\avg{45}\!\avg{53}}
+    \end{gather*}
+    By using the 3 point building block, we can construct 4 point color-ordered amplitudes from BCFW recursion relation.
+\end{frame}
+\begin{frame}
+    \frametitle{Gauge boson sector}
+    \begin{itemize}
+        \item n$ V_1$ or n$V_2$\\
+        This part is completely the same as the pure gluon amplitude, so we can directly borrow the
+        existing results.
+        \begin{equation*}
+            \boxed{\text{Parke - Talyor Formula}:\quad A[\cdots,i^-,\cdots,j^-,\cdots]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
+        \end{equation*}
+        \textcolor{red}{Notice that this formula only applies for MHV amplitudes, although the NMHV can be completely solved.}
+    \end{itemize}
+\end{frame}
 
+\begin{frame}
+    \frametitle{QCD like sector}
+    \begin{itemize}
+        \item $\Phi^\dagger V_1V_1\Phi$\\
+        Here we compute the color-ordered amplitude $A[1,2,3^+,4^-]$. We choose $[2,3\rangle$ shift
+        \begin{gather*}
+        \hat{\sket{2}}=\sket{2}-z\sket{3},\qquad \hat{\aket{2}}=\aket{2} \\
+        \hat{\sket{3}}=\sket{3},\qquad \hat{\aket{3}}=\aket{3}+z\aket{2}
+        \end{gather*}
+        The amplitudes can be computed 
+        \begin{align*}
+            A[1,2,3^+,4^-]=(-1)\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
+        \end{align*}
+        \item $\Phi^\dagger V_1V_1V_1\Phi$
+            \begin{equation*}
+                A[1,2,3^+,4^+,5^-]=\frac{\avg{15}^2\!\avg{25}^2}{\mdavg{12}{23}\!\mdavg{34}{45}\!\avg{51}}
+            \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item $\Phi^\dagger (nV_1)\Phi$
+            \begin{equation*}
+                A[1,2,\cdots,(n+2)^-]=(-1)^{n+1}\frac{\avg{1,n+2}^2\avg{2,n+2}^2}{\mdavg{12}{23}\cdots\mdavg{n+1,n+2}{n+2,1}}
+            \end{equation*}
+            \textcolor{red}{$\star$ Bonus relation: \begin{equation*}
+                A[1,2,3^+,4^+]=0\quad \Rightarrow  \quad A[1,2,3^+,\cdots,n^+]=0 \end{equation*}}
+        For the amplitude $\Phi (nV_2)\Phi^\dagger$, we can obtain nearly the same expression.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pure 2-site amplitude}
+    \begin{itemize}
+        \item $\Phi V_2 \Phi^\dagger V_1$
+        \begin{equation*}
+            A[1,2,3_1^+,4_2^-]=\frac{\mdavg{14}{24}}{\mdavg{13}{23}}
+        \end{equation*}
+        \item $\Phi V_2 \Phi^\dagger V_1V_1$
+        \begin{equation*}
+            A[1,2,3_1^+,4_1^+,5_2^-]=(-1)\frac{\avg{2\textcolor{green}{5}}^2\!\avg{1\textcolor{green}{5}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
+        \end{equation*}
+        \item $\Phi V_2V_2 \Phi^\dagger V_1V_1$
+        \begin{equation*}
+            A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=\frac{\avg{2\textcolor{green}{6}}^2\!\avg{1\textcolor{green}{6}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{51}}}
+        \end{equation*}
+       
+    \end{itemize}
+\end{frame}
+
+\appendix
+\section{Appendix}
 \begin{frame}
     \frametitle{Color structure}
     \begin{itemize}
@@ -704,8 +766,6 @@ If we change this to a scattering diagram
     \end{equation*}
     These three permutations are different OPP for $(3_1,4_1,5_2)$, so that give us the same color factor.
 \end{frame}
-
-\section{Scattering amplitudes from BCFW}
 \begin{frame}
     \frametitle{Basic building block -- 3-point}
     From the previous section, we have known that there are only two kinds of 3 point amplitude
