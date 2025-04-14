@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.17)  14 APR 2025 23:38
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.17)  15 APR 2025 00:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1197,21 +1197,25 @@ Overfull \hbox (6.97427pt too wide) detected at line 552
 
 ]
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 605.
-
-(./main.toc)
-
 [29
 
 ]
-Overfull \hbox (6.97427pt too wide) detected at line 618
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\translate ' on input line 613.
+
+(./main.toc)
+
+[30
+
+]
+Overfull \hbox (6.97427pt too wide) detected at line 626
 []
  []
 
 
 
-[30
+[31
 
 ]
 File: sch.pdf Graphic file (type pdf)
@@ -1221,15 +1225,11 @@ File: uch.pdf Graphic file (type pdf)
 File: tch.pdf Graphic file (type pdf)
 <use tch.pdf>
 
-Overfull \hbox (3.79285pt too wide) detected at line 651
+Overfull \hbox (3.79285pt too wide) detected at line 659
 \OML/cmm/m/it/10.95 r[] \OT1/cmr/m/n/10.95 = [][^^H[]\OML/cmm/m/it/10.95 T[]T[]\OT1/cmr/m/n/10.95 ^^H[]]\OML/cmm/m/it/10.95 ;  r[] \OT1/cmr/m/n/10.95 = [][^^H[]\OML/cmm/m/it/10.95 T[]T[]\OT1/cmr/m/n/10.95 ^^H[]]\OML/cmm/m/it/10.95 ;  r[] \OT1/cmr/m/n/10.95 = [][^^H[][\OML/cmm/m/it/10.95 T[]; T[]\OT1/cmr/m/n/10.95 ]^^H[]]
  []
 
 
-
-[31
-
-]
 
 [32
 
@@ -1246,11 +1246,15 @@ Overfull \hbox (3.79285pt too wide) detected at line 651
 [35
 
 ]
+
+[36
+
+]
 File: 4pt1.pdf Graphic file (type pdf)
 <use 4pt1.pdf>
 
 
-[36
+[37
 
 ]
 File: 4pt1.1.pdf Graphic file (type pdf)
@@ -1259,11 +1263,11 @@ File: 4pt1.2.pdf Graphic file (type pdf)
 <use 4pt1.2.pdf>
 
 
-[37
+[38
 
 ]
 
-[38
+[39
 
 ]
 \tf@nav=\write7
@@ -1288,12 +1292,12 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 142873E1B315C523964E7B3CEE409DB1;877.
  ) 
 Here is how much of TeX's memory you used:
- 37491 strings out of 474256
- 833049 string characters out of 5746292
+ 37493 strings out of 474256
+ 833067 string characters out of 5746292
  1937560 words of memory out of 5000000
- 59430 multiletter control sequences out of 15000+600000
+ 59432 multiletter control sequences out of 15000+600000
  566047 words of font info for 89 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,15n,123p,1408b,841s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (38 pages).
+Output written on main.pdf (39 pages).
