@@ -15,6 +15,7 @@
 \usepackage{enumitem}
 \usepackage{subcaption}
 \usepackage{comment}
+\usepackage{slashed}
 \usepackage[most]{tcolorbox}
 \tcbset{
   thickitembox/.style={
@@ -42,7 +43,7 @@
     \tableofcontents[currentsection]
 \end{frame}
 }
-\title[Application of BCFW]{A complete solution for scattering in a kind of quiver gauge theory}
+\title[Application of BCFW]{Tree level scattering amplitude in (De)constructed gauge theory}
 \author{Su Yingze}
 \institute{Nagoya University}
 \date[4 21st 2025]{April 21st 2025}
@@ -56,8 +57,9 @@
     \begin{itemize}
         \item How to compute high multiplicity amplitudes, like n gluons scattering.
         \item Gauge redundancies bring us many structral complications and non-physical degrees of freedom.
-        \item Some symmetries are hidden, like the dual superconformal symmetry for $\mathcal{N}=4$ SYM.
-        \item Is the local field theory the most basic discription for physics?
+        \item Some symmetries are not manifest in the lagrangian level, like the dual superconformal symmetry for $\mathcal{N}=4$ SYM, etc.
+        \item The unexpected simplicity of some amplitudes has led to the speculation that local QFT may not 
+        be the most fundamental framework.
     \end{itemize}
 \end{frame}
 \begin{frame}
@@ -85,43 +87,47 @@
  \end{itemize}
  
 
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+\begin{center}
+    
+ \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
 
-%Flowchart: Connector [id:dp8833995378786028] 
-\draw  [fill={rgb, 255:red, 153; green, 151; blue, 151 }  ,fill opacity=1 ] (100,151.75) .. controls (100,139.19) and (110.41,129) .. (123.25,129) .. controls (136.09,129) and (146.5,139.19) .. (146.5,151.75) .. controls (146.5,164.31) and (136.09,174.5) .. (123.25,174.5) .. controls (110.41,174.5) and (100,164.31) .. (100,151.75) -- cycle ;
-%Straight Lines [id:da4824712234334869] 
-\draw    (72.5,88.5) -- (107,134) ;
-%Straight Lines [id:da012324134018845356] 
-\draw    (146.5,151.75) -- (202.5,151.5) ;
-%Straight Lines [id:da08630319677446052] 
-\draw    (107,169.5) -- (74.5,207.5) ;
-%Right Arrow [id:dp15563446404618686] 
-\draw   (213,146.88) -- (234.3,146.88) -- (234.3,142) -- (248.5,151.75) -- (234.3,161.5) -- (234.3,156.63) -- (213,156.63) -- cycle ;
-%Flowchart: Connector [id:dp3078703826898672] 
-\draw  [fill={rgb, 255:red, 153; green, 151; blue, 151 }  ,fill opacity=1 ] (285,152.75) .. controls (285,140.19) and (295.41,130) .. (308.25,130) .. controls (321.09,130) and (331.5,140.19) .. (331.5,152.75) .. controls (331.5,165.31) and (321.09,175.5) .. (308.25,175.5) .. controls (295.41,175.5) and (285,165.31) .. (285,152.75) -- cycle ;
-%Flowchart: Connector [id:dp8700788921830469] 
-\draw  [fill={rgb, 255:red, 153; green, 151; blue, 151 }  ,fill opacity=1 ] (385,153.75) .. controls (385,141.19) and (395.41,131) .. (408.25,131) .. controls (421.09,131) and (431.5,141.19) .. (431.5,153.75) .. controls (431.5,166.31) and (421.09,176.5) .. (408.25,176.5) .. controls (395.41,176.5) and (385,166.31) .. (385,153.75) -- cycle ;
-%Straight Lines [id:da3777742197603755] 
-\draw    (331.5,152.75) -- (387.5,152.5) ;
-%Straight Lines [id:da01635751939547947] 
-\draw    (253.5,96.5) -- (288,142) ;
-%Straight Lines [id:da6633767687204817] 
-\draw    (287,165.5) -- (254.5,203.5) ;
-%Straight Lines [id:da3605859970876615] 
-\draw    (458.5,101.5) -- (426,139) ;
-%Straight Lines [id:da9887266785867475] 
-\draw    (427,168.5) -- (462.5,202.5) ;
-%Right Arrow [id:dp7496461117394901] 
-\draw   (477,146.88) -- (498.3,146.88) -- (498.3,142) -- (512.5,151.75) -- (498.3,161.5) -- (498.3,156.63) -- (477,156.63) -- cycle ;
-
-% Text Node
-\draw (516,143.4) node [anchor=north west][inner sep=0.75pt]    {$\cdots $};
-
-
-\end{tikzpicture}
+ \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+ %uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+ 
+ %Shape: Ellipse [id:dp47704771803228196] 
+ \draw  [fill={rgb, 255:red, 158; green, 158; blue, 158 }  ,fill opacity=1 ] (179.79,126.94) .. controls (179.79,120.82) and (184.73,115.86) .. (190.81,115.86) .. controls (196.89,115.86) and (201.82,120.82) .. (201.82,126.94) .. controls (201.82,133.06) and (196.89,138.02) .. (190.81,138.02) .. controls (184.73,138.02) and (179.79,133.06) .. (179.79,126.94) -- cycle ;
+ %Straight Lines [id:da8859462256956995] 
+ \draw    (163,96.75) -- (182.27,118.91) ;
+ %Straight Lines [id:da980370255241411] 
+ \draw    (201.82,126.94) -- (232.38,126.66) ;
+ %Straight Lines [id:da41368612060172827] 
+ \draw    (182.82,135.52) -- (165.75,153.25) ;
+ %Right Arrow [id:dp6770308298589597] 
+ \draw   (240.37,124.24) -- (254.74,124.24) -- (254.74,121.68) -- (264.32,126.8) -- (254.74,131.92) -- (254.74,129.36) -- (240.37,129.36) -- cycle ;
+ %Shape: Ellipse [id:dp9789947232756657] 
+ \draw  [fill={rgb, 255:red, 158; green, 158; blue, 158 }  ,fill opacity=1 ] (277.26,126.94) .. controls (277.26,120.82) and (282.19,115.86) .. (288.27,115.86) .. controls (294.35,115.86) and (299.28,120.82) .. (299.28,126.94) .. controls (299.28,133.06) and (294.35,138.02) .. (288.27,138.02) .. controls (282.19,138.02) and (277.26,133.06) .. (277.26,126.94) -- cycle ;
+ %Straight Lines [id:da15853752019875] 
+ \draw    (263.22,98.41) -- (279.74,118.91) ;
+ %Straight Lines [id:da28595275955528565] 
+ \draw    (299.28,126.94) -- (329.84,126.66) ;
+ %Straight Lines [id:da7505788363123894] 
+ \draw    (280.29,135.52) -- (263.22,153.25) ;
+ %Shape: Ellipse [id:dp870376485686725] 
+ \draw  [fill={rgb, 255:red, 158; green, 158; blue, 158 }  ,fill opacity=1 ] (351.87,126.66) .. controls (351.87,120.54) and (346.94,115.58) .. (340.86,115.58) .. controls (334.77,115.58) and (329.84,120.54) .. (329.84,126.66) .. controls (329.84,132.78) and (334.77,137.74) .. (340.86,137.74) .. controls (346.94,137.74) and (351.87,132.78) .. (351.87,126.66) -- cycle ;
+ %Straight Lines [id:da5791423310908868] 
+ \draw    (363.43,98.97) -- (349.94,118.91) ;
+ %Straight Lines [id:da5454664407915119] 
+ \draw    (349.43,134.42) -- (365.28,152.14) ;
+ %Right Arrow [id:dp848095583389827] 
+ \draw   (368.11,124.79) -- (382.49,124.79) -- (382.49,122.23) -- (392.07,127.35) -- (382.49,132.48) -- (382.49,129.92) -- (368.11,129.92) -- cycle ;
+ 
+ % Text Node
+ \draw (393.76,120.95) node [anchor=north west][inner sep=0.75pt]    {$\cdots $};
+ 
+ 
+ \end{tikzpicture}
+\end{center}
 
 \end{frame}
 \begin{frame}
@@ -227,51 +233,117 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Spinor-Helicity formalisim}
+In the part of introduction to BCFW
+\begin{figure}
+    \centering
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[height=4em]{recrel1.pdf} 
+    \end{minipage}
+    \hspace{0.01em}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \(
+        \vcenter{\hbox{$\rightarrow$}} \quad \text{No helicity appears here}
+        \)
+    \end{minipage}
+\end{figure}
+
+but the S-matrix is a function of moentum $p_i$ and helicity $h_i$
+\begin{center}
+    
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Shape: Circle [id:dp6973592945628315] 
+\draw  [color={rgb, 255:red, 248; green, 0; blue, 0 }  ,draw opacity=1 ] (302.8,146.93) .. controls (302.81,142.78) and (306.18,139.44) .. (310.32,139.45) .. controls (314.47,139.46) and (317.81,142.83) .. (317.8,146.97) .. controls (317.79,151.11) and (314.42,154.46) .. (310.28,154.45) .. controls (306.14,154.44) and (302.79,151.07) .. (302.8,146.93) -- cycle ;
+%Straight Lines [id:da7518027963985391] 
+\draw [color={rgb, 255:red, 247; green, 18; blue, 18 }  ,draw opacity=1 ]   (310.28,154.45) -- (296.03,178.04) ;
+\draw [shift={(295,179.75)}, rotate = 301.13] [color={rgb, 255:red, 247; green, 18; blue, 18 }  ,draw opacity=1 ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (260.25,137.9) node [anchor=north west][inner sep=0.75pt]    {$\mathcal{M}( p_{i} ,h_{i})$};
+% Text Node
+\draw (173.25,181) node [anchor=north west][inner sep=0.75pt]  [font=\small,color={rgb, 255:red, 247; green, 13; blue, 13 }  ,opacity=1 ] [align=left] {How can we catch the information of helicity?};
+
+
+\end{tikzpicture}
+\end{center}
+The answer is \textbf{Spinor-Helicity formalism} 
+\(
+\xrightarrow{\text{}} 
+\)
+Catch \(p_i\) and \(h_i\) at the same time.
+
+\end{frame}
+\begin{frame}
 \frametitle{Spinor-helicity formalism}
-    The critical point for Spinor-helicity formalism is that a 4-vector $p_\mu$ in $(\frac{1}{2},\frac{1}{2})$ representation can be equivalently represented by a bispinor in $(\frac{1}{2},0)\bigoplus (0,\frac{1}{2})$ representation.
-    Specifically
     \begin{itemize}
-        \item $\bm{\text{Massless Case}}$\\
+        \item $\textbf{\text{Massless Case}}$\\
     \begin{equation*}
-        p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\begin{pmatrix*} 
-            p^0-p^3 & -p^1+ip^2\\
-            -p^1-ip^2 & p^0+p^3
-        \end{pmatrix*}
+        p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}[\lambda|
     \end{equation*}
-    And $p_{\alpha\dot{\alpha}}$ can be decomposed into product of two Weyl spinors
+    There is an ambiguity for the definition, the momentum is invariant under the following redefinition
     \begin{equation*}
-        p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}[\lambda|
-    \end{equation*}
-    Here we can notice that there is an ambiguity for the definition, the momentum is invariant under the following redefinition
-    \begin{equation*}
-        \lambda \rightarrow t^{-1}\lambda, \qquad \tilde{\lambda}\rightarrow t\tilde{\lambda}, \qquad t\in\mathbb{C^*} 
+        \lambda \rightarrow t^{-1}\lambda, \qquad \tilde{\lambda}\rightarrow t\tilde{\lambda}, \qquad t\in\mathbb{C} 
     \end{equation*}
     same as 
     \begin{equation*}
         \aket{\lambda}\rightarrow t^{-1}\aket{\lambda}, \qquad \sket{\lambda}\rightarrow t\sket{\lambda}
     \end{equation*}
+    The scattering amplitudes should transform covariantly under little group scaling:
+    \begin{equation*}
+        \color{red} \mathcal{A}_n(\{\aket{1},\sket{1},h_1\},\ldots\{t_i^{-1}\aket{i},t_i\sket{i},h_i\},\ldots )=t_i^{2h_i}\mathcal{A}_n
+    \end{equation*}
     \end{itemize}
-\end{frame}
-
-\begin{frame}
+\vspace{-2em}
     \begin{itemize}
-        \item[]  This redefinition just matches the $U(1)$ little group transformation.
-        \vspace{0.5em}
-        
-        The scattering amplitudes should transform covariantly under little group scaling:
-        \begin{equation*}
-            \color{red} \mathcal{A}_n(\{\aket{1},\sket{1},h_1\},\ldots\{t_i^{-1}\aket{i},t_i\sket{i},h_i\},\ldots )=t_i^{2h_i}\mathcal{A}_n
-        \end{equation*}
-        \item \textbf{Massive Case}\\
-        It can also be handled in terms of spinor-helicity variable, see also 	arXiv:1709.04891 [hep-th] (Nima Arkani-Hamed, Tzu-Chen Huang, Yu-tin Huang).
+    \item \textbf{Massive Case}\\
+    It can also be handled in terms of spinor-helicity variable, see also 	arXiv:1709.04891 [hep-th] (Nima Arkani-Hamed, Tzu-Chen Huang, Yu-tin Huang).
     \end{itemize}
 \end{frame}
 
-\begin{frame}
-    \frametitle{3-point can be completely determined}
-    $\bullet$ 3-particle special kinematics determines an on-shell 3-point amplitude with massless particles depends only on either angle or square brackets of the external momenta.
 
-    Let us suppose thet it depends only on angle brackets, then we can write down the general ansatz
+\begin{frame}
+    \frametitle{ On-shell 3-point can be completely determined}
+    \textbf{On-shell 3-point for real momentum}
+
+    Because of the constrain from momentum conservation and on-shell condition
+    \begin{equation*}
+        p_1=\kappa p_3, \qquad p_2=(1-\kappa)p_3 \quad(\text{Collinear})
+    \end{equation*}
+    All of the contribution 
+    \begin{equation*}
+        (p_1\cdot p_2),\quad (p_1\cdot p_3),\quad(p_2\cdot p_3)\quad =0  
+    \end{equation*}
+    In terms of Spinor- Helicity variable, we have 
+    \begin{equation*}
+        2p_1\cdot p_2=\avg{12}[21]=0\, \longrightarrow \,\avg{12}=[21]^*=0
+    \end{equation*}
+    \textcolor{red}{You can not obtain any notrvial thing from 3-point!}
+    
+    Of coure, you can introduce non-minimal interaction
+    \begin{equation*}
+        \mathcal{L}_3 \ni \frac{1}{\Lambda^2}\bar{\Psi}\slashed{D}(\Box \Psi)
+    \end{equation*}
+    but it still equals to 0 in the on-shell case.
+\end{frame}
+
+\begin{frame}
+    \textbf{Another necessarity to introduce complex momentum}
+
+    If the momentum is complexed, we have 
+    \begin{equation*}
+        \avg{12}\neq[21]^*
+    \end{equation*}
+    Then we can obtain
+    \begin{equation*}
+        \aket{1}\propto \aket{2}\propto \aket{3} \qquad or \qquad \sket{1}\propto \sket{2}\propto \sket{3}
+    \end{equation*}
+    It means that 3-point amplitude depends only on angle brackets or squar brackets. Here I choose the first case to give an example
     \begin{equation*}
         A_3(1^{h_1},2^{h_2},3^{h_3})=c\avg{12}^{x_{12}}\avg{13}^{x_{13}}\avg{23}^{x_{23}},
     \end{equation*}
@@ -283,25 +355,36 @@
     \begin{equation*}
         2h_1=-x_{12}-x_{13}
     \end{equation*}
-\end{frame}
-
-\begin{frame}
     Similarly, we can also obtain
     \begin{equation*}
         2h_2=-x_{12}-x_{23},\qquad 2h_3=-x_{13}-x_{23}.
     \end{equation*}
+\end{frame}
+
+\begin{frame}
     Then all index can be solved from this system of equations, so that
-    \begin{equation*}
-        A_3^{h_1h_2h_3}=c\avg{12}^{h_3-h_1-h_2}\avg{31}^{h_2-h_1-h_3}\avg{23}^{h_1-h_2-h_3}\quad h_1+h_2+h_3<0.
-    \end{equation*}
-    Also for square brackets case, we can obtain
-    \begin{equation*}
-        A_3^{h_1h_2h_3}=c^{'}[12]^{h_1+h_2-h_3}[23]^{h_2+h_3-h_1}[31]^{h_3+h_1-h_2}\quad h_1+h_2+h_3>0.
-    \end{equation*}
+    \[
+    \boxed{
+    \begin{aligned}
+        A_3^{h_1h_2h_3} &= c\avg{12}^{h_3-h_1-h_2}\avg{31}^{h_2-h_1-h_3}\avg{23}^{h_1-h_2-h_3}
+        \quad & h_1+h_2+h_3 < 0 \\[0.5em]
+        A_3^{h_1h_2h_3} &= c' [12]^{h_1+h_2-h_3}[23]^{h_2+h_3-h_1}[31]^{h_3+h_1-h_2}
+        \quad & h_1+h_2+h_3 > 0
+    \end{aligned}
+        }
+    \]
+
+    \textbf{\textcolor{red}{$\star$\,All massless 3-point ampltides are completely determined by little froup scalling!}}
+    
     \textbf{Example}: 3-gluon amplitude\\
     \begin{equation*}
         A_3(g_1^-,g_2^-,g_3^+)=g\frac{\avg{12}^3}{\avg{23}\!\avg{31}}
     \end{equation*}
+    There's another possibility 
+    \begin{equation*}
+        A_3(g_1^-,g_2^-,g_3^+)=g'\frac{[13][23]}{[12]^3}
+    \end{equation*}
+    but actually it comes from the \textcolor{red}{non-local} interaction $g'AA\frac{\partial}{\square}A$, so we discard it.
 \end{frame}
 \section{Introduction of quiver gauge theory}
 \begin{frame}
@@ -607,6 +690,15 @@ If we change this to a scattering diagram, and compute the large-z behavior
         \begin{equation*}
             A=\frac{\asqu{2\textcolor{green}{a}}\!\asqu{1\textcolor{green}{a}}}{\underbrace{\avg{2\textcolor{blue}{\star}}\cdots \avg{\textcolor{blue}{\star}1}}_{SU(N_1)}\underbrace{\avg{2\textcolor{red}{\ast} }\cdots \avg{\textcolor{red}{\ast} 1}}_{SU(N_2)}}
         \end{equation*} 
+        \begin{minipage}{0.7\textwidth}
+            \raggedright  % 或者 \centering 或 \raggedleft
+            \textcolor{green}{Green:} \,Particle with $-$ helicity\\
+            \textcolor{blue}{Blue:}\, Particle belongs to the first gauge group\\
+            \textcolor{red}{Red:}\, Particle belongs to the second gauge group\\
+            $\star$: \,Order for gauge group 1\\
+            $\ast$: \,Order for gauge group 2 
+            \end{minipage}
+       
     \end{itemize}
 \end{frame}
 
