@@ -10,8 +10,9 @@
 \setmainfont{Times New Roman}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{caption}
 \newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
-\newcommand{\avg}[1]{\left\langle #1 \right\rangle}
+\newcommand{\avg}[1]{\langle #1 \rangle}
 \newcommand{\doubleavg}[2]{\left\langle #1 \right\rangle\!\left\langle #2 \right\rangle}
 \newcommand{\inavg}[2]{\langle #1 \rangle\! [#2]}
 \newcommand{\rinavg}[2]{[#1]\!\langle #2 \rangle}
@@ -23,6 +24,140 @@
 \title{Note for Scattering Amplitude Computation}
 \author{Su Yingze}
 \maketitle
+
+\section{3-point building block}
+We have known that the on-shell 3-point amplitudes can be completely determined by the little group scaling, according to the following formulas
+\begin{align*}
+    A_3^{h_1h_2h_3} &= c\avg{12}^{h_3-h_1-h_2}\avg{31}^{h_2-h_1-h_3}\avg{23}^{h_1-h_2-h_3}
+    \quad & h_1+h_2+h_3 < 0 \\[0.5em]
+    A_3^{h_1h_2h_3} &= c' [12]^{h_1+h_2-h_3}[23]^{h_2+h_3-h_1}[31]^{h_3+h_1-h_2}
+    \quad & h_1+h_2+h_3 > 0
+\end{align*}
+Because of the specialty of this kind of 2 site gauge theory, there are no direct interaction between gauge boson and scalar, so there are only two kinds of 3-point amplitudes.
+\begin{itemize}
+    \item 2 scalar 1 gauge boson
+    \begin{equation*}
+        A[1,2,3^+]=\frac{[23][31]}{[12]},\qquad A[1,2,3^-]=\frac{\mdavg{23}{31}}{\avg{12}}
+    \end{equation*}
+    \item 3 gauge boson
+    \begin{equation*}
+        A[3^+,4^+,5^-]=\frac{[34]^3}{[45][53]},\qquad A[3^-,4^-,5^+]=\frac{\avg{34}^3}{\mdavg{45}{53}}
+    \end{equation*}
+\end{itemize}
+If there are no exceptions, 1 and 2 always represent the antiscalar and scalar respectively, other number represent the gauge boson.  
+
+
+\section{Gauge boson sector}
+In this section, we will show how to build the gauge boson scattering. Because there's no direct interaction between gauge boson 1 and gauge boson 2, so we only need to compute one of them.
+And although we have already known the formulas for MHV color-ordered amplitudes for gluon scattering -- Parke-Talyor Formula 
+\begin{equation*}
+    A[\cdots,i^-,\cdots,j^-,\cdots]=\frac{\avg{ij}^4}{\mdavg{12}{23}\cdots\mdavg{n-1,n}{n1}}
+\end{equation*}
+also for the anti-MHV amplitudes
+\begin{equation*}
+    A[\cdots,i^+,\cdots,j^+,\cdots]=\frac{[ij]^4}{[12][34]\cdots[n-1,n][n1]}
+\end{equation*}
+Here, we will give an concrete example to show how to use BCFW to compute the 4-point amplitudes $A[3^+,4^+,5^-,6^-]$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics{4ptg.pdf}
+    \caption*{4pt gluon}
+\end{figure}
+We choose the $[3,4\rangle$ shift, and it has been proved that $[+,+\rangle$ shift is valid
+\begin{gather*}
+    \sket{\hat{3}}=\sket{3}-z\sket{4},\qquad \qquad \aket{\hat{4}}=\aket{4}+z\aket{3}\\
+    \aket{\hat{3}}=\aket{3}, \qquad \sket{\hat{4}}=\sket{4}.
+\end{gather*}
+The first diagram can be evaluated 
+\begin{equation*}
+    A_1=\frac{[\hat{3}\hat{I}]^3}{[\hat{I}6][6\hat{3}]}\times\frac{1}{s_{36}}\times\frac{\avg{5\hat{I}}^3}{\mdavg{\hat{I}\hat{4}}{\hat{4}5}}
+\end{equation*}
+The point here is that 
+\begin{equation*}
+    \text{Pole position}:\quad \hat{P}_{34}^2=0=\avg{36}[6\hat{3}]\quad \Rightarrow  \quad [6\hat{3}]=0,
+\end{equation*}
+for the similar reason, we can obtain $[\hat{I}6]=[6\hat{3}]=0$, so we conclude that the left part
+\begin{equation*}
+    \frac{[\hat{3}\hat{I}]^3}{[\hat{I}6][6\hat{3}]}=0
+\end{equation*}
+so the first channel is vanishing.
+
+The second diagram can be similarly evaluated
+\begin{align*}
+    A_2&=\frac{\avg{\hat{I}6}^3}{\mdavg{6\hat{3}}{\hat{3}\hat{I}}}\times\frac{1}{s_{36}}\times\frac{[\hat{I}\hat{4}]^3}{[\hat{4}5][5\hat{I}]}\\
+       &=\frac{[34]^3}{[34][45][56][61]}
+\end{align*}
+From this, we can conclude that the color-ordered amplitude equals to
+\begin{equation*}
+    A[3^+,4^+,5^-,6^-]=\frac{[34]^3}{[34][45][56][63]}.
+\end{equation*}
+and it can also be expressed by angle brackets interchangeably
+\begin{equation*}
+    A[3^+,4^+,5^-,6^-]=\frac{\avg{56}^3}{\mdavg{34}{45}\!\mdavg{56}{63}}
+\end{equation*}
+Then, 5-point , 6-point can be recursively computed by using BCFW recursion relation. 
+
+\section{SQCD like sector}
+First we explain the color decomposition in this sector by 4 point amplitude $\Phi^\dagger V_1V_1\Phi$
+    \begin{figure}[htbp]
+        \centering
+        \begin{minipage}[t]{0.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{sch.pdf}
+            \caption*{s channel}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{uch.pdf}
+            \caption*{u channel}
+        \end{minipage}
+        \hfill
+        \begin{minipage}[t]{0.32\textwidth}
+            \centering
+            \includegraphics[width=\linewidth]{tch.pdf}
+            \caption*{t channel}
+        \end{minipage}
+    \end{figure}
+
+    The color factor can be written respectively as following
+    \begin{equation*}
+        r_s=\mathrm{Tr}[\Phi_2^\dagger T^{a_3}T^{a_4}\Phi_1],\,r_u=\mathrm{Tr}[\Phi_2^\dagger T^{a_4}T^{a_3}\Phi_1],\,
+        r_t=\mathrm{Tr}[\Phi_2^\dagger [T^{a_3},T^{a_4}]\Phi_1]
+    \end{equation*}
+    We can easily obtain a similar Jacobbi relation
+    \begin{equation*}
+        r_t=r_s-r_u
+    \end{equation*}
+    Then we can accomplish the color decomposition and define the corressponding color-ordered amplitudes.
+
+    For example, in the 4pt. case, the full amplitude can be decomposed to the following form
+        \begin{align*}
+            \mathcal{A}_4(\Phi^\dagger V_1V_1\Phi)&=A_s r_s+A_u r_u+A_t r_t\\
+            &=A_s r_s+A_u r_u+A_t(r_s-r_u)\\
+            &=(A_s+A_t)r_s+(A_u-A_t)r_u
+        \end{align*}
+        The two subamplitudes can be defined as color-ordered amplitude with order \textcolor{red}{[1,2,3,4]} and 
+        \textcolor{red}{[1,2,4,3]} respectively.
+        Of course, for the type $\Phi^\dagger(nV_1)\Phi$ and $\Phi (nV_2) \Phi^\dagger$, we can do the same thing to define the color-ordered amplitudes.
+
+    We start from the 4-point color-ordered $A[1,2,3^+,4^-]$ again
+    \begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \begin{align*}
+        A[1,2,3^+,4^-] &= \sum_{h}
+        \end{align*}
+        \end{minipage}
+        \hspace{-3em}
+        \begin{minipage}{0.45\textwidth}
+        \raisebox{-1em}{\scalebox{0.8}{\includegraphics{4pt1.pdf}}}
+        \end{minipage}
+    \end{center}
+
+    $\hspace{13.7em} =\raisebox{-2.5em}{\scalebox{0.7}{\includegraphics{4pt1.1.pdf}}}+\raisebox{-2.5em}{\scalebox{0.7}{\includegraphics{4pt1.2.pdf}}}$
+
+
 
 \section{4-point case}
 For the four point case $\mathcal{A}(V_2\Phi^\dagger V_1 \Phi )$, we can construct the color-ordered amplitude from the residue. First, we consider the $(+,-)$ helicity
