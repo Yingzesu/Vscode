@@ -2,6 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
 \usepackage{cancel}
+\usepackage{tikz}
 \usepackage{graphicx}
 \setlength{\parskip}{0.3em}
 \setlength{\parindent}{0pt}
@@ -19,6 +20,8 @@
 \newcommand{\aket}[1]{|#1\rangle}
 \newcommand{\asqu}[1]{{\langle#1\rangle}^2}
 \newcommand{\sket}[1]{|#1]}
+\newcommand{\cbrak}[2]{\avg{#1}\![#2]}
+\newcommand{\acbrak}[2]{[#1]\!\avg{#2}}
 \begin{document}
 
 \title{Note for Scattering Amplitude Computation}
@@ -99,6 +102,7 @@ and it can also be expressed by angle brackets interchangeably
 Then, 5-point , 6-point can be recursively computed by using BCFW recursion relation. 
 
 \section{SQCD like sector}
+\subsection{4-point case}
 First we explain the color decomposition in this sector by 4 point amplitude $\Phi^\dagger V_1V_1\Phi$
     \begin{figure}[htbp]
         \centering
@@ -157,9 +161,150 @@ First we explain the color decomposition in this sector by 4 point amplitude $\P
 
     $\hspace{13.7em} =\raisebox{-2.5em}{\scalebox{0.7}{\includegraphics{4pt1.1.pdf}}}+\raisebox{-2.5em}{\scalebox{0.7}{\includegraphics{4pt1.2.pdf}}}$
 
+    For the same reason, the contribution from the second diagram is vanishing, so we only need to compute the firt one
+    \begin{align*}
+        A_1&=\frac{\avg{\hat{2}\hat{I}}\avg{\hat{I}1}}{\avg{1\hat{I}}}\times \frac{1}{s_{12}}\times \frac{[\hat{I}\hat{3}]^3}{[\hat{3}4][4\hat{I}]}\\
+        &=(-1)\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
+    \end{align*}
+    where we use the fact $\aket{\hat{2}}=\aket{2}$, $\sket{\hat{3}}=\sket{3}$, and the \textcolor{red}{Fierz Identity}
+    \begin{equation*}
+        [ij][kl]+[il][jk]+[ik][lj]=0
+    \end{equation*}
+    
+    Here we can prove a nonus relation $\textcolor{red}{A[1,2,3^+,4^+]=0}$. Because of the vanishing of 3 gluon amplitude $A[+,+,+]$, so we only have one channel
+    \begin{figure}[H]
+        \centering
+        \includegraphics{4pt+.pdf}
+        \caption*{all plus}
+    \end{figure}
+
+    Similarly, beacuse of the on-shell pole, we obtain
+    \begin{equation*}
+        [\hat{2}\hat{I}]=[\hat{I}1]=[1\hat{2}]=0,
+    \end{equation*}
+    so the contributaion from the left part
+    \begin{equation*}
+        \frac{[\hat{2}\hat{I}][\hat{I}1]}{[1\hat{2}]}=0,
+    \end{equation*}
+    then we can conclude that
+    \begin{equation*}
+        \textcolor{red}{A[1,2,3^+,4^+]=0}
+    \end{equation*}
+\subsection{5-point case}
+Still, from the 4-point amplitude, we can first obtain 
+\begin{equation*}
+    \textcolor{red}{A[1,2,3^+,4^+,5^+]}.
+\end{equation*}
+For the 5-point MHV case, here we only consider the $(+,+,-)$ case. 
+\begin{align*}
+    A[1,2,3^+,4^+,5^+]&=\raisebox{-3em}{\scalebox{0.8}{\includegraphics{5pt1.1.pdf}}}+\raisebox{-3em}{\scalebox{0.8}{\includegraphics{5pt1.2.pdf}}}\\
+    &=0+\frac{\avg{2\hat{5}}^2\avg{15}}{\avg{12}\!\mdavg{2\hat{I}}{\hat{I}5}}\times\frac{1}{s_{34}}\times\frac{[\hat{3}4]^3}{[4\hat{I}][\hat{I}3]}
+\end{align*}
+then we use
+\begin{equation*}
+    \cbrak{2\hat{I}}{\hat{I3}}=\cbrak{24}{43},\quad \acbrak{4\hat{I}}{\hat{I}5}=\acbrak{43}{\hat{3}5}
+\end{equation*}
+from the pole position
+\begin{gather*}
+    \hat{P}_{34}^2=0=\cbrak{\hat{3}4}{43}\quad \Rightarrow \quad \avg{\hat{3}4}=0\\
+    \avg{34}+z\avg{24}=0\qquad\Rightarrow\quad z=-\frac{\avg{34}}{\avg{24}}
+\end{gather*}
+so
+\begin{equation*}
+    \avg{\hat{3}5}=\frac{\mdavg{32}{54}}{\avg{24}}
+\end{equation*}
+Then the color-ordered amplitude equals to 
+\begin{equation*}
+    A[1,2,3^+,4^+,5^+]=\frac{\avg{15}^2\avg{25}^2}{\mdavg{12}{23}\!\mdavg{34}{45}\!\avg{51}}
+\end{equation*}
+\subsection{n-point case}
+It is not so hard to generallize these results to general case, here we only provide the compact formula, and the negligible sign are neglected
+\begin{equation*}
+    A[1,2,\cdots,n^-]=\frac{\avg{1,n}^2\avg{2,n}^2}{\mdavg{12}{23}\cdots\mdavg{n-1,1}{n,1}}
+\end{equation*} 
+\section{Pure 2-site sector}
+\subsection{4-point case}
+The color structure for this kind of amplitude has special form, like
+\begin{equation*}
+    (T_1^a)_{ij}(T_2^b)_{\bar{j}\bar{i}}
+\end{equation*}
+It is more straightforward to observe the color structure in terms of double line notation as follows 
+\vspace{0.5em}
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+\begin{center}
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da7604191870446242] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (100,100) -- (150,100) ;
+%Straight Lines [id:da7895005569652712] 
+\draw [color={rgb, 255:red, 0; green, 110; blue, 237 }  ,draw opacity=1 ]   (100,110) -- (190,110) ;
+%Straight Lines [id:da19217218880843812] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (150,50) -- (150,100) ;
+%Straight Lines [id:da7866299736623521] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (160,50) -- (160,100) ;
+%Straight Lines [id:da5667542352395977] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (190,110) -- (190,160) ;
+%Straight Lines [id:da33701635654582174] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (200,110) -- (200,160) ;
+%Straight Lines [id:da7076492571881566] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (299,100) -- (389,100) ;
+%Straight Lines [id:da3803886589182971] 
+\draw [color={rgb, 255:red, 0; green, 113; blue, 255 }  ,draw opacity=1 ]   (200,110) -- (250,110) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (128,103.83) -- (120,100.45) -- (127.97,96.99) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (153.28,70.33) -- (150.12,78.42) -- (146.44,70.55) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (156.49,77.35) -- (160.07,69.44) -- (163.33,77.49) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (340,102.83) -- (332,99.45) -- (339.97,95.99) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (120.93,107.08) -- (128.98,110.35) -- (121.06,113.93) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (193.4,129.42) -- (190,137.42) -- (186.55,129.45) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (196.55,138.41) -- (200,130.44) -- (203.4,138.44) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (220.93,107.08) -- (228.98,110.35) -- (221.06,113.93) ;
+%Straight Lines [id:da696489944746132] 
+\draw [color={rgb, 255:red, 0; green, 113; blue, 255 }  ,draw opacity=1 ]   (300,110) -- (350,110) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (321,107) -- (329.05,110.27) -- (321.13,113.84) ;
+%Straight Lines [id:da24340791537710427] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (350,110) -- (350,160) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (353.4,129.42) -- (350,137.42) -- (346.55,129.45) ;
+%Straight Lines [id:da7298898466192736] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (360,110) -- (360,160) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (356.55,138.41) -- (360,130.44) -- (363.4,138.44) ;
+%Straight Lines [id:da3460055698725] 
+\draw [color={rgb, 255:red, 0; green, 110; blue, 237 }  ,draw opacity=1 ]   (360,110) -- (450,110) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (380.93,107.08) -- (388.98,110.35) -- (381.06,113.93) ;
+%Straight Lines [id:da4507056480848969] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (389,50) -- (389,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (393.28,70.33) -- (390.12,78.42) -- (386.44,70.55) ;
+%Straight Lines [id:da6544383915955476] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (399,50) -- (399,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (395.49,77.35) -- (399.07,69.44) -- (402.33,77.49) ;
+%Straight Lines [id:da03624471669725382] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (399,100) -- (449,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (427,103.83) -- (419,100.45) -- (426.97,96.99) ;
+%Straight Lines [id:da34280653261510274] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (160,100) -- (250,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (201,102.83) -- (193,99.45) -- (200.97,95.99) ;
+
+% Text Node
+\draw (255,97) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (81,97) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+% Text Node
+\draw (165,46.4) node [anchor=north west][inner sep=0.75pt]    {$V_{1}$};
+% Text Node
+\draw (325,143.4) node [anchor=north west][inner sep=0.75pt]    {$V_{2}$};
+% Text Node
+\draw (407,47.4) node [anchor=north west][inner sep=0.75pt]    {$V_{1}$};
+% Text Node
+\draw (285,97) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+% Text Node
+\draw (454,95) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (166,142.4) node [anchor=north west][inner sep=0.75pt]    {$V_{2}$};
 
 
-\section{4-point case}
+\end{tikzpicture}
+\end{center}
 For the four point case $\mathcal{A}(V_2\Phi^\dagger V_1 \Phi )$, we can construct the color-ordered amplitude from the residue. First, we consider the $(+,-)$ helicity
 configuration. There are two feynman diagrams contributing to the color-ordered amplitude.\\
 \begin{figure}[htbp]
@@ -199,7 +344,7 @@ We can freely choose $r_1=r_2=1$ or 2, then $\avg{r_1 2}$,$\avg{r_2 1}$,$\avg{r_
 \begin{equation*}
     A[1,2,3^+,4^+]=0
 \end{equation*}
-\section{5-point case}
+\subsection{5-point case}
 For the 5-point case, we can utilize the BCFW recursion relation which can help us generate higher point amplitude from lower point on-shell subamplitudes. Here, 
 we always consider the MHV (Maximal helicity violation) amplitude. 
 \par
@@ -271,7 +416,7 @@ and also $A[1,2,3_1^-,4_1^+,5_2^+]$ equals to
     \frac{(-1)\avg{2\textcolor{green}{3}}^2\!\avg{1\textcolor{green}{3}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
 \end{equation*}
 But here we need to emphasize that it is necessary to choose another BCFW shift, like $[1,5^+ \rangle$, as $[2,3^- \rangle$ is not a valid shift. 
-\section{6-point case}
+\subsection{6-point case}
 Here we consider $(V_2V_2\Phi^\dagger V_1V_1 \Phi)$ case, the corresponding color-ordered amplitude is $A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]$.
 Similarly, the fowwling orders all give us the same color factor
 \begin{gather*}
@@ -329,7 +474,7 @@ Then we can conclude that the left part of the amplitude equals to 0 so $A_2=0$.
 \begin{equation*}
     A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=A_1+A_2=\frac{\asqu{26}\!\asqu{16}}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{51}}}.
 \end{equation*}
-\section{n-point case}
+\subsection{n-point case}
 Here, we first propose a compact formula for the color-ordered amplitude
 \begin{equation*}
     A=\frac{\asqu{2a}\!\asqu{1a}}{\underbrace{\avg{2\star}\cdots \avg{\star 1}}_{SU(N_1)}\underbrace{\avg{2\ast }\cdots \avg{\ast 1}}_{SU(N_2)}}
