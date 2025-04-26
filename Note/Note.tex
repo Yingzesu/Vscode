@@ -145,6 +145,13 @@ First we explain the color decomposition in this sector by 4 point amplitude $\P
         The two subamplitudes can be defined as color-ordered amplitude with order \textcolor{red}{[1,2,3,4]} and 
         \textcolor{red}{[1,2,4,3]} respectively.
         Of course, for the type $\Phi^\dagger(nV_1)\Phi$ and $\Phi (nV_2) \Phi^\dagger$, we can do the same thing to define the color-ordered amplitudes.
+    
+    If there is no special case, we always choose the following BCFW shift
+        \begin{gather*}
+            \sket{\hat{2}}=\sket{2}-z\sket{3},\qquad \qquad \aket{\hat{3}}=\aket{3}+z\aket{3}\\
+            \aket{\hat{2}}=\aket{2}, \qquad \sket{\hat{3}}=\sket{3}
+        \end{gather*}
+    where 2 always refers to antiscalar and 3 refers to gauge boson with + helicity.
 
     We start from the 4-point color-ordered $A[1,2,3^+,4^-]$ again
     \begin{center}
@@ -305,7 +312,7 @@ It is more straightforward to observe the color structure in terms of double lin
 
 \end{tikzpicture}
 \end{center}
-For the four point case $\mathcal{A}(V_2\Phi^\dagger V_1 \Phi )$, we can construct the color-ordered amplitude from the residue. First, we consider the $(+,-)$ helicity
+For the 4-point case $\mathcal{A}(V_2\Phi^\dagger V_1 \Phi )$, we can construct the color-ordered amplitude from the residue. First, we consider the $(+,-)$ helicity
 configuration. There are two feynman diagrams contributing to the color-ordered amplitude.\\
 \begin{figure}[htbp]
     \centering
@@ -314,13 +321,24 @@ configuration. There are two feynman diagrams contributing to the color-ordered 
     \label{1}
 \end{figure}
 
-For the first diagram, the residue equals to
+Because we choose $[2,3\rangle$ shift here, so there is only one valid BCFW channel
+\begin{align*}
+    A[1,2,3_1^+,4_2^-]&=\frac{\mdavg{\hat{2}4}{4\hat{I}}}{\avg{\hat{I}\hat{2}}}\times\frac{1}{s_{24}}\times\frac{[\hat{I}\hat{3}][\hat{3}1]}{[1\hat{I}]}\\
+    &=\frac{[13][23]}{[14][24]}
+\end{align*}
+it seems that this amplitude is different from others before, because it is expressed solely in terms of angle brackets, but of course it can be rewritten to another form.
+\begin{align*}
+    \frac{[13][23]}{[14][24]}&=\frac{\cbrak{23}{31}}{\cbrak{23}{41}}\times \frac{\acbrak{23}{31}}{\acbrak{24}{31}}\\
+    &=-\frac{\cbrak{24}{\bcancel{41}}}{\avg{23}\bcancel{[41]}}\times(-1)\frac{\bcancel{[24]}\avg{41}}{\bcancel{[24]}\avg{31}}\\
+    &=\frac{\mdavg{14}{24}}{\mdavg{13}{23}}
+\end{align*}
+Also, we can compute it from direct gluing. For the first diagram, the residue equals to
 \begin{equation*}
-    \mathcal{R}es|_{s_{12}=0}=\frac{[3 I ] [23]}{[I2]}\times \frac{\avg{I4}\avg{41}}{\avg{1I}}=\frac{\avg{24}[31]\avg{41}[23]}{[42]\avg{24}}
+    \mathrm{Res}|_{s_{12}=0}=\frac{[3 I ] [23]}{[I2]}\times \frac{\avg{I4}\avg{41}}{\avg{1I}}=\frac{\avg{24}[31]\avg{41}[23]}{[42]\avg{24}}
 \end{equation*}
 Similarly, the second one is
 \begin{equation*}
-    \mathcal{R}es|_{s_{13}=0}=\frac{\avg{4I}\avg{24}}{\avg{I2}}\times \frac{[31] [I3]}{[1I]}=\frac{\avg{24}[31]\avg{41}[23]}{\avg{32}[23]}
+    \mathrm{Res}|_{s_{13}=0}=\frac{\avg{4I}\avg{24}}{\avg{I2}}\times \frac{[31] [I3]}{[1I]}=\frac{\avg{24}[31]\avg{41}[23]}{\avg{32}[23]}
 \end{equation*}
 
 Then we can conclude that the four-point color-ordered amplitude $A[1,2,3^+,4^-]$ equals to
@@ -347,14 +365,7 @@ We can freely choose $r_1=r_2=1$ or 2, then $\avg{r_1 2}$,$\avg{r_2 1}$,$\avg{r_
 \subsection{5-point case}
 For the 5-point case, we can utilize the BCFW recursion relation which can help us generate higher point amplitude from lower point on-shell subamplitudes. Here, 
 we always consider the MHV (Maximal helicity violation) amplitude. 
-\par
-If there is no special case, we always choose the following BCFW shift
-\begin{gather*}
-    \sket{\hat{2}}=\sket{2}-z\sket{3},\qquad \qquad \aket{\hat{3}}=\aket{3}+z\aket{3}\\
-    \aket{\hat{2}}=\aket{2}, \qquad \sket{\hat{3}}=\sket{3}
-\end{gather*}
-where 2 always refers to antiscalar and 3 refers to gauge boson with + helicity.
-\par
+
 Let us begin with the simplest case $A[1,2,3_1^+,4_1^+,5_2^-]$, where the subscript represent which gauge group the particle belongs to. Because of the property 
 of this kind of gauge theory, the color structure is invariant under the OPP (Order Preserving Permutation), in this case, for example,
 \begin{equation*}
