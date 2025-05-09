@@ -1,0 +1,202 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage{amsmath, amssymb}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{lmodern}  % 可选：提高 PDF 输出质量
+\usepackage{indentfirst}
+\usepackage{cancel}
+\numberwithin{equation}{section}
+\newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
+\newcommand{\avg}[1]{\langle #1 \rangle}
+\newcommand{\aket}[1]{|#1\rangle}
+\newcommand{\asqu}[1]{{\langle#1\rangle}^2}
+\newcommand{\sket}[1]{|#1]}
+\newcommand{\cbrak}[2]{\avg{#1}\![#2]}
+\newcommand{\acbrak}[2]{[#1]\!\avg{#2}}
+\onehalfspacing
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+
+    {\LARGE \textbf{Tree Level Scattering Amplitudes in (De)Constructed Gauge Theory}}\\[1.5cm]
+
+    \textbf{Author:} \\
+    {\Large Su Yingze} \\[1cm]
+
+    \textbf{Affiliation:} \\
+    Department of Physics, Faculty of Science \\
+    Nagoya University \\[1cm]
+
+    \textbf{Major:} \\
+    Theoretical Physics \\[1cm]
+
+    \textbf{Degree:} \\
+    Master of Science \\[1cm]
+
+    \textbf{Submitted on:} \\
+    June 2025 \\[2cm]
+
+    \vfill
+\end{titlepage}
+\newpage
+\begin{abstract}
+\normalsize
+This paper mainly show the computation for scattering amplitudes in a kind of (De)Constructed gauge theory, by using the so called on shell method. As we have known,
+under the conventional quantum field theory frame, Feynman proposed a brilliant method -- Feynman diagrams, to help us perturbatively compute scattering amplitude by a
+diagrammatic method. However, this method faces many challenges during the improvements of physical theory and complexity of construction for model building, there are many
+amplitudes hard to compute by hand or even impossible to compute. Hence, it is quite necessary to introduce a new method.      
+\end{abstract}
+\newpage
+\tableofcontents
+\newpage
+\section{Introduction}
+As we have known,
+under the conventional quantum field theory frame, Richard Feynman proposed a brilliant method -- Feynman diagrams, to help us perturbatively compute scattering amplitude by a
+diagrammatic method. However, this method faces many challenges during the improvements of physical theory and complexity of construction for model building, there are many
+amplitudes hard to compute by hand or even impossible to compute. In gauge theory, there are huge number of gauge redundancies, making the computation quite complicated.
+We need to address with this kind of unphysical degree of freedom, otherwise we can not obtain the correct physical quantities. Also, we have to address with kinematic factor and color factor simultaneously in the nonabelian gauge theory.
+And it has been known that the amplitudes in $\mathcal{N}=4$ super Yang-Mills theory obtain the symmetry -- dual superconformal symmetry\cite{Drummond:2008vq}, which is not reflected in conventional Feynman diagram method. 
+
+Hence, all of these factors impetus physicists to propose something new, then the BCFW recursion relation is the first product as a new method to compute amplitudes . Historically, the original recursion relation is for gluon scattering amplitudes, coming from Britto, Cachazo and Feng \cite{Britto:2004ap},
+and it can be seen as the first breakthrough for modern amplitude method. They explored the analytic properties of amplitudes when extended into complex momentum space. In particular, they considered deforming two external momenta by a complex parameter z, in such a way that the on-shell conditions and momentum conservation are preserved.
+Through this deformation, they observed that tree-level amplitudes exhibit simple pole structures in the complex 
+z-plane, corresponding to internal propagators going on-shell. This analytic structure allowed them to derive a recursion relation that expresses an 
+n-point amplitude in terms of lower-point amplitudes. Edward Witten subsequently noticed that his Twistor String Theory\cite{Witten:2003nn}, which reveals the hidden symmetry and geometry structure of amplitude, implied that the scattering amplitudes has stronger 
+analytic property. Their collaboration led to a general formulation of the recursion relations, now known as the BCFW recursion relations\cite{Britto:2005fq}, named after Ruth Britto, Freddy Cachazo, Bo Feng, and Edward Witten.
+In particular, Witten helped clarify the large -- z behavior of the amplitudes under complex momentum shifts --- a crucial condition ensuring the validity of the recursion. 
+
+The starting point comes from the precise cancellation in scattering for longitudinal modes of massive spin-2 Kaluza-Klein(KK) states. While individual contributions grow as $\mathcal{O}(s^5)$, $\mathcal{O}(s^4)$, $\mathcal{O}(s^3)$ and $\mathcal{O}(s^2)$, it has been proved that these contributions are cancelled with
+each other in a quite intricate way\cite{SekharChivukula:2019yul}, and the final results only grow as $\mathcal{O}(s)$. But it is quite difficult to compute this kind of scattering amplitudes, so if we can obtain some clues for this KK scattering amplitudes from other aspects, it may help us to
+understand this cancellation in another way. This paper is motivated by a kind of (De)constructed gauge theory, proposed by Nima, Cohen and Georgi\cite{Arkani-Hamed:2001kyx}. They constructed a renormalizable, asymptotically free, four dimension gauge theories that dynamically generate a fifth dimension. 
+In this paper, the authors proposed that the “ Condensed '' theory actually discretized a five dimension gauge theory with gauge group $SU(m)$. After higgsing, the Kaluza-Klein spectrum for $S^1$ compactification appears. It encourages to compute scattering amplitudes in this model. This paper mainly contributes to the 
+computation for scattering amplitudes in the simplest 2-site model by utilizing BCFW recursion relation and other related method, such as color-ordered amplitudes, spinor-helicity formalism, etc.
+
+\section{Review of BCFW recursion relation and others}
+Traditionally, one relies on Feynman diagrams to calculate scattering amplitudes. Feynman diagrams
+provide a clear picture of physics and a systematic procedure of calculations. They are in textbooks
+and widely used. But Feynman diagrams are not efficient in complicated calculations for high energy physics. Increasing
+the number of particles in a scattering, the number of Feynman diagrams increase exponentially. If gauge
+fields are involved, one easily encounters thousands of diagrams. For example, for pure gluon case, the number
+of Feynman diagrams for n-gluons at tree-level is given by
+\begin{table}[htbp]
+    \centering
+\begin{tabular}{|c|c|c|c|c|c|c|c|}
+    \hline
+    n= & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+    \hline
+       & 4 & 25 & 220 & 2485 & 34300 & 559405 & 10525900   \\
+    \hline
+    \end{tabular}
+\end{table}
+
+\noindent
+{
+(These numbers are counted with the inclusion of 4 point interaction.)}
+
+Not only with huge number
+of diagrams, the expression for a single Feynman diagram can also be very complicated. For example, the
+three-graviton vertex has almost 100 terms. It is almost impossible to calculate scattering amplitudes of
+gravitons directly from Feynman diagrams. For gauge theories, single Feynman diagram usually depends
+on the gauge. Many terms cancel with each other at the end of process of calculation. In practice, one does not
+even know where to start most times.
+
+BCFW are devised to solve some of these problems. So in the following part, I will give a systematic introduction to BCFW
+recursion relation and other necessary tools. This section is mainly based on the excellent review by Elvang and Huang \cite{Elvang:2013cua}.
+\subsection{Spinor-Helicity Formalisim for Massless Particles}
+The spinor-helicity formalism just told us that a light-like Lorentz 4-vector can be decomposed to the product of 
+two Weyl spinor. It is quite natural to see it from the representation of Lorentz group. A Lorentz 4-vector lives in $(\frac{1}{2},\frac{1}{2})$ representation,
+which can be decomposed to $(\frac{1}{2},0)\bigoplus (0,\frac{1}{2})$. We have known that the $(\frac{1}{2},0)$ and $(0,\frac{1}{2})$ correspond to left handed Weyl spinor and 
+right handed Weyl spinor respectively.
+
+Given a null momentum $p_\mu$ in four dimension spacetime, we can define a $2\times2$ matrix by sigma matrix 
+\begin{equation*}
+    p_{\alpha\dot{\alpha}}=p_\mu\sigma^\mu=\begin{pmatrix}
+        p^0-p^3 & -p^1+ip^2\\
+        -p^1-ip^2 & p^0+p^3
+    \end{pmatrix}
+\end{equation*}
+note that det$p_{\alpha\dot{\alpha}}=0$ for massless particles, so it is always possible find two Weyl spinor(two components quantity) satsfying the following equation
+\begin{equation}
+    p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}[\lambda|
+    \label{2.1}
+\end{equation}
+For general complex momenta, the $\lambda_\alpha$ and $\tilde{\lambda}_{\dot{\alpha}}$ are independent two dimensional complex vectors. For real momenta, the matrix is Hermitian and 
+so we have $\tilde{\lambda}_{\dot{\alpha}}=(\pm)(\lambda_\alpha)^*$.
+
+Thet satisfy the following Weyl equation
+\begin{equation}
+    p_{\alpha\dot{\alpha}}\sket{p}^{\dot{\alpha}}=0,\quad [p|_{\dot{\alpha}}p^{\dot{\alpha}\alpha}=0,\quad p^{\dot{\alpha}\alpha}\aket{p}_\alpha,\quad \langle p|^\alpha p_{\alpha\dot{\alpha}}=0
+\end{equation}
+and we can use two-dimension antisymmetric tensor to raise or lower the indices
+\begin{equation}
+    [p|_{\dot{\alpha}}=\varepsilon _{\dot{\alpha}\dot{\beta}}\sket{p}^{\dot{\beta}},\qquad \langle p|^\alpha=\varepsilon^{\alpha\beta}\aket{p}_{\beta}
+\end{equation}
+\noindent
+Then,
+
+\boxed{\text{The angle and square spinors are the core of \textbf{spinor-helicity formalism}}.}
+
+\vspace{1em}
+Here, it is also necessary to introduce the \textbf{angle spinor bracket} $\avg{pq}$ and \textbf{square spinor bracket} $[pq]$, it is the key ingredient for writing amplitudes in terms of spinor-helicity variable.
+\begin{equation}
+    \avg{pq}=\langle p|^\alpha \aket{q}_\alpha,\qquad [pq]=[p|_{\dot{\alpha}}|q]^{\dot{\alpha}}.
+\end{equation}
+Since the indices are raised and lowed by antisymmetric tensor, so the brackets are antisymmetric:
+\begin{equation}
+    \avg{pq}=-\avg{qp},\qquad [pq]=-[qp].
+\end{equation}
+There are no $\langle pq]$ brackets, because the indices cannot contract with each other to form a Lorentz scalar.
+
+It is very easy to derive the following important relation:
+\begin{equation}
+    \cbrak{pq}{pq}=2p\cdot q= (p+q)^2
+\end{equation}
+by using \eqref{2.1} and 
+\begin{equation*}
+    \mathrm{Tr}(\sigma^\mu \bar{\sigma}^\nu)=2\eta^{\mu\nu}.
+\end{equation*}
+
+In amplitude calculations, \textbf{momentum conservation} is imposed on n particles as $\sum_{i=1}^{n}p_i^\mu=0$(here we consider all particles ingoing). Translating by 
+spinor-helicity variable, it becomes
+\begin{equation}
+   \sum_{i=1}^{n}\aket{i}[i|=0,\quad \text{i.e.}\quad \sum_{i=1}^{n}\cbrak{qi}{ik}=0,
+\end{equation}
+here q and k are arbitrary light-like vectors.
+
+We end this subsection by introducing one more identity: \textbf{Schouten Identity}. It comes from a rather trivial fact: there are no three independent 2-dimensional vectors. So if we have three 2 components angle spinors $\aket{i}$, $\aket{j}$ and $\aket{k}$, we can write one of them as a linear combination of two others
+\begin{equation}
+    \aket{k}=a\aket{i}+b\aket{j},\qquad \text{for complex a and b}.
+    \label{2.8}
+\end{equation} 
+One can contract a $\aket{i}$ and a $\aket{b}$ with the both sides, then a,b can be solved. \eqref{2.8} can be cast to the form
+\begin{equation}
+    \aket{i}\avg{jk}+\aket{k}\avg{ij}+\aket{j}\avg{ki}=0,
+\end{equation}
+This is Schouten identity and often written with a fourth spinor $\langle r|$
+\begin{equation}
+    \mdavg{ri}{jk}+\mdavg{rk}{ij}+\mdavg{rk}{ki}=0.
+\end{equation}
+We have a similar Schouten identity holding for square spinors
+\begin{equation}
+    [ri][jk]+[rk][ij]+[rj][ki]=0.
+\end{equation}
+
+\subsection{BCFW recursion relation}
+
+
+
+
+
+
+
+\bibliographystyle{unsrt}
+\bibliography{reference.bib}
+
+
+\end{document}
