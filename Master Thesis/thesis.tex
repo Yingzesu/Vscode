@@ -109,6 +109,7 @@ even know where to start most times.
 BCFW are devised to solve some of these problems. So in the following part, I will give a systematic introduction to BCFW
 recursion relation and other necessary tools. This section is mainly based on the excellent review by Elvang and Huang \cite{Elvang:2013cua}.
 \subsection{Spinor-Helicity Formalisim for Massless Particles}
+\subsubsection{Brief introduction of spinor-helicity formalism}
 The spinor-helicity formalism just told us that a light-like Lorentz 4-vector can be decomposed to the product of 
 two Weyl spinor. It is quite natural to see it from the representation of Lorentz group. A Lorentz 4-vector lives in $(\frac{1}{2},\frac{1}{2})$ representation,
 which can be decomposed to $(\frac{1}{2},0)\bigoplus (0,\frac{1}{2})$. We have known that the $(\frac{1}{2},0)$ and $(0,\frac{1}{2})$ correspond to left handed Weyl spinor and 
@@ -180,13 +181,115 @@ One can contract a $\aket{i}$ and a $\aket{b}$ with the both sides, then a,b can
 \end{equation}
 This is Schouten identity and often written with a fourth spinor $\langle r|$
 \begin{equation}
-    \mdavg{ri}{jk}+\mdavg{rk}{ij}+\mdavg{rk}{ki}=0.
+    \cbrak{ri}{jk}+\mdavg{rk}{ij}+\mdavg{rk}{ki}=0.
 \end{equation}
 We have a similar Schouten identity holding for square spinors
 \begin{equation}
     [ri][jk]+[rk][ij]+[rj][ki]=0.
 \end{equation}
 
+There is also a important result can be obtained, the \textbf{3-particle soecial kinematics}. If we have three light-like vectors satisfying momentum conservation
+$p_1^\mu+p_2^\mu+p_3^\mu=0$. Then
+\begin{equation}
+    \mdavg{12}{21}=2p_1\cdot p_2=(p_1+p_2)^2=p_3^2=0,
+\end{equation}
+so either $\avg{12}$ or $[12]$ equals to 0. If we suppose $\avg{12}\neq0$, then from $\avg{12}[23]=\langle 1|p_2|3]=-\langle 1|p_1+p_3|3]=0$, we can conclude that
+$[23]=0$. Similarly, we can also obtain $[31]=0$. Thus, $[12]=[23]=[31]=0$, which means that the three square spinors are proportional with each other
+\begin{equation}
+    |1] \propto |2] \propto |3]
+\end{equation}
+or another possibility
+\begin{equation}
+    \aket{1}\propto\aket{2}\propto\aket{3}.
+\end{equation}
+As a consequence,
+\begin{enumerate}
+    \item A non-vanishing on-shell 3-particle amplitude depends only on square brackets or angle brackets.
+    \item Since for real momenta, angle brackets are complex conjugated with square brackets, so \textit{on-shell 3 point amplitudes are only meanful for complex momenta}(unless it is a constant, like $\phi^3$ theory).
+\end{enumerate}
+\subsubsection{Yang-Mills and Color-ordering}
+Let us consider the Yang-Mills lagrangian
+\begin{equation}
+    \mathcal{L}=-\frac{1}{4}F_{\mu\nu}F^{\mu\nu},
+\end{equation}
+with field strength $F_{\mu\nu}=\partial_\mu A_\nu -  \partial_\nu A_\mu - \frac{ig}{\sqrt{2}}[A_\mu,A_\nu]$, and $A_\mu=A_\mu^a T^a$. Gauge fields belong to adjoint representation, so the index a runs over $1,2 \cdots N^2-1$ in $SU(N)$ case. The generators are normalized like $\textrm{Tr}[T^aT^b]=\delta^{ab}$ and $[T^a,T^b]=i\tilde{f}^{abc}T^c$\footnote{In the usual QFT textbook,
+$\textrm{Tr}[T^aT^b]=\frac{1}{2}\delta^{ab}$ and $[T^a,T^b]=if^{abc}T^c$, with $\tilde{f}^{abc}=\sqrt{2}f^{abc}$ are common choice.  }. 
+
+The amplitude-friendly gauge choice is \textit{Gervais-Neveu gauge } with gauge fixing term $\mathcal{L}_{gf}=-\frac{1}{2}\mathrm{Tr}(H_\mu^\mu)=0$, here $H_{\mu\nu}=\partial_\mu A_nu - \frac{ig}{\sqrt{2}}A_\mu A_\nu$.
+After gauge fixing, the lagrangian becomes 
+\begin{equation}
+    \mathcal{L}=\mathrm{Tr} \left(-\frac{1}{2}\partial_\mu A_\nu \partial^\mu A^\nu - i\sqrt{2}g\partial^\mu A^\nu A_\nu A_\mu+\frac{g^2}{4}A^\mu A^\nu A_\mu A_\nu \right)
+\end{equation}
+The 3- and 4-gluon vertices involve $\tilde{f}^{abc}$ and $\tilde{f}^{abi}\tilde{f}^{icd}$+permutations, respectively, each dressed up with kinematic factors.
+The amplitudes constructed from these rules can be organized into
+different group theory structures. For example, the
+color factors of the s-, t-, and u-channel diagram of the 4-gluon tree amplitude are
+\begin{equation}
+    c_s=\tilde{f}^{a_1a_2b}\tilde{f}^{ba_3a_4},\quad c_t=\tilde{f}^{a_4a_1b}\tilde{f}^{ba_2a_3},\quad c_u=\tilde{f}^{a_1a_3b}\tilde{f}^{ba_2a_4}
+\end{equation}
+and the four point interaction just gives a sum of contributions from $c_s$, $c_t$ and $c_u$. And because of the Jacobi identity, we have
+\begin{equation}
+    c_s=c_t+c_u.
+\end{equation}
+
+And the color factor can be written by the trace of product of generators
+\begin{equation}
+    i\tilde{f}^{abc}=\mathrm{Tr}([T^a,T^b]T^c),
+\end{equation}
+where $T^a$ are generators of fundamental representation. Moreover, in $SU(N)$, we have a Fierz identity
+\begin{equation}
+    \sum_{a}T^a_{ij}T^a_{kl}=\delta_{il}\delta_{kj}-\frac{1}{N}\delta_{ij}\delta_{kl}.
+\end{equation}
+This identity is easier understood as matrix form like 
+\begin{equation}
+    \mathrm{Tr}\{T^aA\}\mathrm{Tr}\{T^aB\}=\mathrm{Tr}\{AB\}-\frac{1}{N}\{A\}\mathrm{Tr}\{B\},
+\end{equation}
+and
+\begin{equation}
+    \mathrm{Tr}\{AT^aBT^a\}=\mathrm{Tr}\{A\}\mathrm{Tr}\{B\}-\frac{1}{N}\mathrm{Tr}\{AB\}.
+\end{equation}
+Then it can be used to simplify the calculation.
+
+For example, the 4 gluon s-channel gives us
+\begin{equation}
+    \tilde{f}^{a_1a_2b}\tilde{f}^{ba_3a_4}=\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}{a_4})-\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_3}{a_4})-\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_4}{a_3})+\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_4}{a_3}).
+\end{equation}
+Similarly, three other diagrams can also be written in terms of single trace. Therefore, the full 4-point amplitude can be rewritten like
+\begin{equation}
+    \mathcal{A}_{4,\text{tree}}=g^2(A_4[1234]\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}{a_4})+\text{perms of } (234) )
+\end{equation}
+here the subamplitudes $A_4[1234],A_4[1243]$, etc. are called \textbf{color-ordereed ampltitudes}. This concept can be easily generalized to tree-level n-point case
+\begin{equation}
+    \mathcal{A}_{n,\text{tree}}=g^{n-2}\sum_{\sigma}A_n[1,\sigma(2,3\cdots n)]\mathrm{Tr}(T^{a_1}T^{\sigma(a_2\cdots}T^{a_n)})
+\end{equation}
+where the sun is taken over the $(n-1)!$ trace basis (considering the cyclic property of trace). Actually, the number of independent basis can be reduced to $(n-3)!$, called Del Duca-Dixon-Maltoni (DDM) color decomposition\cite{DelDuca:1999rs}. But it has no tight relation with this paper, so here we do not offer more detailed explanation for it. 
+
+The color-ordered amplitude $A_n[1,2 ... n]$ is calculated in terms of diagrams with no lines crossing(planar diagrams) and the ordering of the external lines fixed as given 1, 2, 3,..., n. Here, we directly give the final result for 3-point color-ordered amplitudes without any intermediate calculating process. And in this full paper, we mainly consider the helicity amplitudes which will be explained later, so we need to clarify the helicity configuration.
+
+For 3-point, there are only two non-vanishing configurations
+\begin{equation}
+    A_3[1^-,2^-,3^+]=\frac{\avg{12}^3}{\mdavg{23}{31}}
+\end{equation}
+and 
+\begin{equation}
+    A_3[1^+,2^+,3^-]=\frac{[12]^3}{[23][31]}.
+\end{equation}
+
+It has been known that there is a compact formula for n-point gluon color-ordered amplitudes --- \textbf{\textit{Parke - Talyor Formula}}
+\begin{equation}
+    A_n[1^+\cdots i^-\cdots j^- \cdots n^+]=\frac{\avg{ij}^4}{\mdavg{12}{23}\cdots\avg{n1}}.
+\end{equation}
+We will prove this formula in the next subsection.
+
+The color-ordered amplitudes have a number of properties
+\begin{enumerate}
+    \item \textit{Cyclic}: It follows from the cyclic property for trace that $A_n[12\cdots n]=A_n[2n\cdots 1]$
+    \item \textit{Reflection}: $A_n[12\cdots n]=(-1)^nA_[n\cdots 21]$
+    \item The $U(1)$ \textit{decoupling identity}: 
+    \begin{equation}
+        A_n[123\cdots n]+A_n[213\cdots n]+A_n[231\cdots n]+\cdots + A_n[23\cdots 1n]=0
+    \end{equation}
+\end{enumerate}
 \subsection{BCFW recursion relation}
 
 
