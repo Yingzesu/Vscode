@@ -8,6 +8,7 @@
 \usepackage{lmodern}  % 可选：提高 PDF 输出质量
 \usepackage{indentfirst}
 \usepackage{cancel}
+\usepackage{xcolor}
 \numberwithin{equation}{section}
 \newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
 \newcommand{\avg}[1]{\langle #1 \rangle}
@@ -16,6 +17,7 @@
 \newcommand{\sket}[1]{|#1]}
 \newcommand{\cbrak}[2]{\avg{#1}\![#2]}
 \newcommand{\acbrak}[2]{[#1]\!\avg{#2}}
+\newcommand{\tif}[1]{\textit{\textbf{#1}}}
 \onehalfspacing
 
 \begin{document}
@@ -24,7 +26,7 @@
     \centering
     \vspace*{2cm}
 
-    {\LARGE \textbf{Tree Level Scattering Amplitudes in (De)Constructed Gauge Theory}}\\[1.5cm]
+    {\LARGE \textbf{On-Shell Methods for Tree-Level Amplitudes in (De)Constructed Gauge Theory}}\\[1.5cm]
 
     \textbf{Author:} \\
     {\Large Su Yingze} \\[1cm]
@@ -127,6 +129,10 @@ note that det$p_{\alpha\dot{\alpha}}=0$ for massless particles, so it is always 
     p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}[\lambda|
     \label{2.1}
 \end{equation}
+and similarly we can obtain define
+\begin{equation}
+    p_\mu \bar{\sigma}^\mu=p^{\dot{\alpha}\alpha}=\tilde{\lambda}^{\dot{\alpha}}\lambda^\alpha=\sket{\lambda} \langle \lambda |,
+\end{equation}
 For general complex momenta, the $\lambda_\alpha$ and $\tilde{\lambda}_{\dot{\alpha}}$ are independent two dimensional complex vectors. For real momenta, the matrix is Hermitian and 
 so we have $\tilde{\lambda}_{\dot{\alpha}}=(\pm)(\lambda_\alpha)^*$.
 
@@ -157,12 +163,22 @@ There are no $\langle pq]$ brackets, because the indices cannot contract with ea
 It is very easy to derive the following important relation:
 \begin{equation}
     \cbrak{pq}{pq}=2p\cdot q= (p+q)^2
+    \label{2.7}
 \end{equation}
 by using \eqref{2.1} and 
 \begin{equation*}
     \mathrm{Tr}(\sigma^\mu \bar{\sigma}^\nu)=2\eta^{\mu\nu}.
 \end{equation*}
-
+Here, we list other identities without any provement
+\begin{align}
+    &[k|\gamma^\mu\aket{p}=\langle p|\gamma^\mu |k],\\
+    &{[k|\gamma^\mu\aket{p}}^*=[p|\gamma^\mu\aket{k} \qquad \text{(for real moemnta)}.
+\end{align}
+and \textbf{Fierz identity}
+\begin{equation}
+    \langle 1|\gamma^\mu |2]\langle 3|\gamma_\mu |4]=2\cbrak{13}{24}
+\end{equation}
+will be used in several times.
 In amplitude calculations, \textbf{momentum conservation} is imposed on n particles as $\sum_{i=1}^{n}p_i^\mu=0$(here we consider all particles ingoing). Translating by 
 spinor-helicity variable, it becomes
 \begin{equation}
@@ -252,15 +268,16 @@ Then it can be used to simplify the calculation.
 
 For example, the 4 gluon s-channel gives us
 \begin{equation}
-    \tilde{f}^{a_1a_2b}\tilde{f}^{ba_3a_4}=\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}{a_4})-\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_3}{a_4})-\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_4}{a_3})+\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_4}{a_3}).
+    \tilde{f}^{a_1a_2b}\tilde{f}^{ba_3a_4}=\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}T^{a_4})-\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_3}T^{a_4})-\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_4}T^{a_3})+\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_4}T^{a_3}).
 \end{equation}
 Similarly, three other diagrams can also be written in terms of single trace. Therefore, the full 4-point amplitude can be rewritten like
 \begin{equation}
-    \mathcal{A}_{4,\text{tree}}=g^2(A_4[1234]\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}{a_4})+\text{perms of } (234) )
+    \mathcal{A}_{4,\text{tree}}=g^2(A_4[1234]\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}T^{a_4})+\text{perms of } (234) )
 \end{equation}
 here the subamplitudes $A_4[1234],A_4[1243]$, etc. are called \textbf{color-ordereed ampltitudes}. This concept can be easily generalized to tree-level n-point case
 \begin{equation}
     \mathcal{A}_{n,\text{tree}}=g^{n-2}\sum_{\sigma}A_n[1,\sigma(2,3\cdots n)]\mathrm{Tr}(T^{a_1}T^{\sigma(a_2\cdots}T^{a_n)})
+    \label{2.29}
 \end{equation}
 where the sun is taken over the $(n-1)!$ trace basis (considering the cyclic property of trace). Actually, the number of independent basis can be reduced to $(n-3)!$, called Del Duca-Dixon-Maltoni (DDM) color decomposition\cite{DelDuca:1999rs}. But it has no tight relation with this paper, so here we do not offer more detailed explanation for it. 
 
@@ -290,11 +307,214 @@ The color-ordered amplitudes have a number of properties
         A_n[123\cdots n]+A_n[213\cdots n]+A_n[231\cdots n]+\cdots + A_n[23\cdots 1n]=0
     \end{equation}
 \end{enumerate}
+
+The trace basis \eqref{2.29} is overcomplete implies that there are further linear relations among these subamplitudes, which are called 
+\textit{\textbf{Kleiss - Kuiff(KK) relations}} 
+\begin{equation}
+    A_n[1,\{\alpha\},n,\{\beta\}]=(-1)^{|\beta|}\sum_{\sigma\in \text{OP}(\{\alpha\},\{\beta^T\}) }A_n[1,\sigma,n]
+\end{equation}
+where $\beta^T$ denotes the reverse ordering of the labels $\{\beta\}$  and the sum is over ordered
+permutations “OP”, means permutations of the labels in the joined set $\{\alpha\}\cup \{\beta^T\}$ in which 
+the ordering within $\{\alpha\}$ and $\{\beta\}^T$ is preserved. 
+
+Consider a 5-point case as an example. Taking the LHS to be $A_5[1,\{2\},5,\{3,4\}]$, we have $\{\alpha\}\cup \{\beta^T\}=\{2\}\cup \{4,3\}$, so the 
+ordered permutations $\sigma$ refers to $\{243\},\{423\},\{432\}$. Thus the KK relation reads
+\begin{equation}
+    A_5[12534]=A_5[12435]+A_5[14235]+A_5[114325].
+\end{equation}
+
+The KK relations combine with cyclic, reflection, and $U(1)$ decoupling identities reduce the number of independent
+basis to $(n-2)!$. However, there are further linear relations called $\textit{\textbf{BCJ relations}}$ -- named after Bern, Carrasco and Johansson, which further
+reduce the number to $(n-3)!$. 
+
+Although I will not show the derivation of BCJ relations, I would like to give some examples
+\begin{gather}
+    s_{14}A_4[1234]-s_{13}A_4[1243]=0,\\
+    s_{12}A_5[21345]s_{23}A_5[13245]-(s_{23}+s_{24})A_5[13425]=0.
+\end{gather}
+\subsection{Little group scalling}
+The rich structure of scattering amplitudes can be originated from a fundamental question — “What is a particle?” — which relates directly to Wigner’s Little group notation,
+characterizing how particles transform under Lorentz symmetry. Following this thought, we think particle as a unitary representation of 
+Poincar$\acute{e}$ group, which is the symmetry group of our spacetime. We use two labels to denote a one-particle state, one is the momentum $p^\mu$, another is $\sigma$ representing
+other labels the particle ca carry. 
+
+We start from a one-particle state $\aket{k;\sigma}$ with reference momentum $k$. Another momentum $p$ is related by the lorentz transformation $L(p;k)$, $p=L(p;k)k$. Obviously, this Lorentz transformation is
+not unique because there exist Lorentz transformations keeping p invariant, called ``Little group transformation''.  We assume that there exist a 
+unitary representation for the Lorentz group, the operator in Hillbert space are denoted like $U(\Lambda)$. 
+
+Then we simply \textit{define} the one-particle state with momentum p as 
+\begin{equation}
+    \aket{p;\sigma}=U(L(p;k))\aket{k;\sigma}.
+\end{equation}
+Having made this definition, we can compute how the state transformed under a general Lorentz transformation
+\begin{equation}
+    U(\Lambda)|p,\sigma\rangle = U(\Lambda) U(L(p;k))|k,\sigma \rangle = U(L(\Lambda p;k)) U(L^{-1}(\Lambda p;k) \Lambda L(p;k)) |k,\sigma \rangle\,.
+\end{equation}
+here we use the fact $U(\Lambda_1\Lambda_2)=U(\Lambda_1)U(\Lambda_2)$.
+Notice that $W(\Lambda,p,k)$ is not a general transformation but keep the momentum k invariant $Wk=k$. This subgroup of Lorentz group is called little group.
+Thus we must have 
+\begin{equation}
+    U(W(\Lambda,p,k))\aket{k;\sigma}=D_{\sigma\sigma^{'}}(W(\Lambda,p,k))\aket{k,\sigma^{'}},
+\end{equation} 
+where $D_{\sigma\sigma^{'}}$ is the representation for little group. Then, p should transformed like
+\begin{equation}
+     U(\Lambda)|p,\sigma\rangle=D_{\sigma\sigma^{'}}(W(\Lambda,p,k))\aket{\Lambda p,\sigma^{'}}
+\end{equation}
+
+The scattering amplitudes for n particle should keep invariant under Poincar$\acute{e}$ transformation -- translation invariance and Lorentz invariance
+\begin{gather}
+    \mathcal{M}(p_a,\sigma_a)=\delta^D(p_1^\mu+\cdots +p_n^\mu)\mathcal{M}(p_a,\sigma_a)\\
+    \mathcal{M}^\Lambda(p_a,\sigma_a)=\prod_{a}(D_{\sigma\sigma^{'}})\mathcal{M}((\Lambda p)_a,\sigma_a^{'})
+    \label{2.43}
+\end{gather}
+
+In D spacetime dimensions, the little group for massive particles is $SO(D-1)$. For massless
+particles the little group is the the group of Euclidean symmetries in (D−2) dimensions, which
+is $SO(D-2)$.In this article, we mainly discuss massless particles scattering in 4 dimension spacetime, so the little group is $SO(2)\backsimeq U(1)$.
+
+Then from the definition of spinor-helicity variable\eqref{2.1}, we can notice that there is an ambiguity here.
+The momentum is invariant under the following redefinition
+    \begin{equation}
+        \lambda \rightarrow t^{-1}\lambda, \qquad \tilde{\lambda}\rightarrow t\tilde{\lambda}, \qquad t\in\mathbb{C} 
+    \end{equation}
+    same for
+    \begin{equation}
+        \aket{\lambda}\rightarrow t^{-1}\aket{\lambda}, \qquad \sket{\lambda}\rightarrow t\sket{\lambda}
+    \end{equation}.
+This scale perfectly matches the $U(1)$ little group transformation, so we can identify this rescale as the little group transformation.
+The scattering amplitudes should transform \textcolor{red}{covariantly} under little group scaling like \eqref{2.43}, so
+\begin{equation}
+    \color{red} \mathcal{A}_n(\{\aket{1},\sket{1},h_1\},\ldots\{t_i^{-1}\aket{i},t_i\sket{i},h_i\},\ldots )=t_i^{2h_i}\mathcal{A}_n
+    \label{2.46}
+\end{equation}
+where $h_i$ refers to the helicity of particles.
+As an example, consider the QED amplitude, $A_3(f^-\bar{f}^+\gamma^-)=e\frac{\avg{13}^2}{\avg{12}}$. For the negative helicity photon (particle 3), we obtain $t_3^{-2}=t_3^{2(-1)}$.
+We will see that little group scaling plays a significant role in 3-particle amplitudes.
+
+\noindent
+\textbf{3-particle amplitudes}
+
+\noindent
+By 3-particle special kinematics, we have known that on-shell 3-point amplitudes depends on either square brackets or
+angle brackets. We suppose that it only depends on angle brackets. We can write down the general ansatz
+\begin{equation}
+     A_3(1^{h_1},2^{h_2},3^{h_3})=c\avg{12}^{x_{12}}\avg{13}^{x_{13}}\avg{23}^{x_{23}},
+\end{equation}
+where c is just a constant. Little group scaling \eqref{2.46} tell us that
+\begin{equation}
+    t_1^{2h_1} A_3(1^{h_1},2^{h_2},3^{h_3})=ct_1^{-x_{12}}t_1^{-x_{13}}\avg{12}^{x_{12}}\avg{13}^{x_{13}}\avg{23}^{x_{23}}.
+\end{equation}
+We can obtain
+    \begin{equation}
+        2h_1=-x_{12}-x_{13}
+    \end{equation}
+    Similarly, we can also obtain
+    \begin{equation}
+        2h_2=-x_{12}-x_{23},\qquad 2h_3=-x_{13}-x_{23}.
+    \end{equation}
+    Then all index can be solved from this system of equations, so that
+ \begin{align}
+    A_3^{h_1h_2h_3} &= c\langle12\rangle^{h_3-h_1-h_2} \langle31\rangle^{h_2-h_1-h_3} \langle23\rangle^{h_1-h_2-h_3}
+    && \quad h_1 + h_2 + h_3 < 0 \label{2.51}\\[0.5em] 
+    A_3^{h_1h_2h_3} &= c' [12]^{h_1+h_2-h_3}[23]^{h_2+h_3-h_1}[31]^{h_3+h_1-h_2}
+    && \quad h_1 + h_2 + h_3 > 0 \label{2.52}
+\end{align}
+This means that \textit{\textbf{all massless 3-point amplitudes are completely fixed by little group scaling!}}
+
+We have shown the 3-point QED amplitudes. So now we can consider something different -- 3-point gluon amplitudes with 2 same helicities and 1 different helicity.
+Then we can determine the amplitudes from \eqref{2.51} \eqref{2.52}
+\begin{equation}
+    A_3(g_1^-,g_2^-,g_3^+)=g\frac{\avg{12}^3}{\avg{23}\!\avg{31}}, \quad A_3(g_1^+,g_2^+,g_3^-)=g\frac{[12]^3}{[23][31]} \label{2.53}
+\end{equation}
+
+Here it need some efforts to explain about the condition after equation \eqref{2.51} and \eqref{2.52}.If we assume the amplitude
+$A_3(g_1^-,g_2^-,g_3^+)$ depending on square brackets, so can obtain a different expression
+\begin{equation}
+    A_3(g_1^-,g_2^-,g_3^+)=g^{'}\frac{[31][23]}{[12]^3},
+    \label{2.54}
+\end{equation}
+to distinguish these two possibilities, we need to use \textbf{dimension analysis}. From \eqref{2.7}, we can know that both square brackets and angle brackets have mass-dimension 1. 
+Thus the kinematic factor of amplitude \eqref{2.53} has mass-dimension 1, compatible with the interaction term $AA\partial A$ in $\mathrm{Tr}F_{\mu\nu}F^{\mu\nu}$. But the mass-dimension 
+of kinematic factor in \eqref{2.54} is (-1), so it should come from the interaction term like $g^{'}AA\frac{1}{\square }A$. Here, we only consider the local field theory, so this kind of interaction
+should be discarded.
+
+The combination of \tif{little group scaling} and \tif{locality} uniquely fixes the massless 3-point amplitudes. In general, 
+\begin{equation}
+    \text{An n-point amplitude in D=4 spacetime have mass-dimension 4 - n.}
+\end{equation}
+Although we discard the amplitude \eqref{2.54}, the coupling s¥constant $g^{'}$ have mass-dimension 2, so \eqref{2.54} has the correct mass-dimension as \eqref{2.53}.
+
+How about the gluon amplitude with all minus helicities? The formula \eqref{2.51} immediately tells that it should equal to
+\begin{equation}
+    A_3(g_1^-,g_2^-,g_3^-)=g^{''}\mdavg{12}{23}\!\avg{31}.
+\end{equation}
+The kinematic part has mass-dimension 3 and reveals that: 
+\begin{enumerate}
+    \item The coupling constant $g^{''}$ must have mass-dimension -2.
+    \item This must come from an interaction term with 3 derivatives like $(\partial A)^3$.
+\end{enumerate}
+Furthermore, kinematic part has the antisymmetry under the exchange of gluon momenta, so the coupling constant should 
+also have this antisymmetry in order to satisfy the Bose statics as is of course the pure Yang-Mills case. 
+The natural candidate of this amplitude is a dimension 6 operator $\mathrm{Tr}F^\mu_\nu F^\nu_\lambda F^\lambda _\mu$. 
+
+\subsection{MHV Classification}
+It has been well known that the all-plus tree-level gluon amplitudes vanish
+\begin{equation}
+    \text{tree-level gluon amplitues}: \quad A_n[1^+,2^+,\cdots,n^+]=0 \quad\text{and}\quad A_n[1^+,2^+,\cdots,n^-]=0
+\end{equation}
+This conclusion holds for the case with all helicities flipped:
+\begin{equation}
+    \text{tree-level gluon amplitues}: \quad A_n[1^-,2^-,\cdots,n^-]=0 \quad\text{and}\quad A_n[1^-,2^-,\cdots,n^+]=0
+\end{equation}
+In supersymmetric Yang-Mills theories, these results hold for all loop order, so actually it is a special case for SYM.
+
+If we flip one more helicit, the situation becomes quite different. Amplitudes $A_n[1^-,2^-,3^+,\cdots,n^+]$ does not equal to 0 and is quite important called \textbf{MHV amplitudes}.
+The gluon amplitudes with two negative helicities and n - 2 positive helicities are called
+\tif{maximally helicity violating} – or simply \tif{MHV} for short. The concept ``maximally helicity violating'' comes from thinking a $2\rightarrow n-2$ scattering process. 
+Because of crossing symmetry, the outgoing particle with positive(negtive) helicity is equivalent with an ingoing particle with negative(positive) helicty. So if we consider the process $A_n[1^+,2^+,\cdots,n^+]$ with 
+all particle ingoing. It crosses over to $1^+2^-+\rightarrow 3^-\cdots n^-$ with two ingoing particles and n-2 outgoing particles, that's the reason we call it ``helicity violating''. We have known that the process in which the most we can violate helicity
+is $1^+2^+\rightarrow 3^+4^+5^-\cdots n^-$, which is equivalent to amplitudes $A_n[1^+2^+3^-4^-5^+\cdots n^+]$, therefore it is the \textit{maximally helicity violating} process.
+
+As we have shown in the last subsection, the MHV gluon tree amplitudes are given by Parke - Talyor formula
+\begin{equation}
+    A_n[1^+\cdots i^-\cdots j^- \cdots n^+]=\frac{\avg{ij}^4}{\mdavg{12}{23}\cdots\avg{n1}}
+\end{equation}
+The MHV amplitudes are the important blocks for scattering amplitudes in (super)Yang-Mills theory. They are simplest amplitudes, and the next-to simplest
+are called \textbf{Next-to-MHV} amplitudes, or just \textbf{NMHV}. This refers to scattering process for which two 2 positive gluons scatter into 3 positive gluons and n-5 negative gluons. 
+Similarly, we can define \textbf{$N^k$MHV} amplitudes. For anti-MHV amplitudes with all helicities flipping, we have a formula
+\begin{equation}
+    A_n[1^-\cdots i^+\cdots j^+ \cdots n^-]=\frac{[ij]^4}{[12][23]\cdots[n1]}.
+\end{equation}
 \subsection{BCFW recursion relation}
+The BCFW recursion relation was introduced in 2005 by Britto, Cachazo, and Feng, and later extended with Witten. It provided a novel way to compute tree-level scattering amplitudes by 
+analytically continuing external momenta into the complex plane and expressing higher-point amplitudes recursively in terms of lower-point ones. This on-shell approach uncovered surprising 
+simplicity in gauge theory amplitudes and offered an alternative to the traditional Feynman diagram expansion. The method was inspired in part by Witten's twistor string theory and the MHV 
+diagram program. In parallel, off-shell recursion relations were also being explored, especially in background field methods and Berends-Giele recursion, which organize amplitudes based on 
+off-shell currents. While off-shell methods remain useful in certain computational frameworks, the BCFW recursion highlighted the power of staying strictly on-shell, leading to a deeper understanding 
+of symmetry, analyticity, and the geometry of scattering processes. It has since become a cornerstone of modern amplitude research.
 
+Beyond BCFW, other on-shell recursion relations have also emerged—for instance, the KLT relations linking gauge and gravity amplitudes, and the double copy structure as well as recursion 
+for theories with special helicity configurations or massive particles. Together, these developments form the foundation of modern amplitude methods, emphasizing physical principles like unitarity, analyticity, 
+and factorization over traditional Lagrangian-based techniques.
 
+\subsubsection{Complex shift and Relation from Simple Cauchy's Theorem}
+An on-shell amplitude(each external leg satisfies on-shell condition) is labeled by their external momentum $p_\mu$ and hilicity $h_i$.
+Here we only consider the massless particles $p_i^2=0$, for $i=1,2,\cdots,n$. And momentum conservation $\sum_{i=1}^{n}p_i^\mu=0$ should hold.
 
-
+First, let us consider the most general case. We need to introduce n complex-valued vectors $r_i^\mu$ subject to 
+\begin{itemize}
+    \item $\sum_{i=1}^{n}r_i^\mu=0$,
+    \item $r_i\cdot r_j=0$ for all $i,j=1,2,\cdots ,n$. In particular, $r_i^2=0$,
+    \item $p_i\cdot r_i=0$ for each i(no sum).
+\end{itemize}
+These vectors $r_i$ are used to define n shifted momentum
+\begin{equation}
+    \hat{p}_i^\mu\equiv p_i^\mu+zr_i^\mu\quad \text{with}\quad z\in \mathcal{C}
+\end{equation}
+Note that, by imposing these constraints,
+\begin{itemize}
+    \item Momentum conservation holds for the shifted momentum:
+\end{itemize}
 
 
 

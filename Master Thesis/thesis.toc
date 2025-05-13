@@ -3,4 +3,7 @@
 \contentsline {subsection}{\numberline {2.1}Spinor-Helicity Formalisim for Massless Particles}{4}{subsection.2.1}%
 \contentsline {subsubsection}{\numberline {2.1.1}Brief introduction of spinor-helicity formalism}{4}{subsubsection.2.1.1}%
 \contentsline {subsubsection}{\numberline {2.1.2}Yang-Mills and Color-ordering}{7}{subsubsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.2}BCFW recursion relation}{9}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.2}Little group scalling}{10}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}MHV Classification}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}BCFW recursion relation}{14}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Complex shift and Relation from Simple Cauchy's Theorem}{14}{subsubsection.2.4.1}%
