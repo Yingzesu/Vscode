@@ -9,6 +9,7 @@
 \usepackage{indentfirst}
 \usepackage{cancel}
 \usepackage{xcolor}
+\usepackage{float}
 \numberwithin{equation}{section}
 \newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
 \newcommand{\avg}[1]{\langle #1 \rangle}
@@ -369,7 +370,7 @@ The scattering amplitudes for n particle should keep invariant under Poincar$\ac
 \end{gather}
 
 In D spacetime dimensions, the little group for massive particles is $SO(D-1)$. For massless
-particles the little group is the the group of Euclidean symmetries in (D−2) dimensions, which
+particles the little group is the the group of Euclidean symmetries in (D - 2) dimensions, which
 is $SO(D-2)$.In this article, we mainly discuss massless particles scattering in 4 dimension spacetime, so the little group is $SO(2)\backsimeq U(1)$.
 
 Then from the definition of spinor-helicity variable\eqref{2.1}, we can notice that there is an ambiguity here.
@@ -513,11 +514,158 @@ These vectors $r_i$ are used to define n shifted momentum
 \end{equation}
 Note that, by imposing these constraints,
 \begin{itemize}
-    \item Momentum conservation holds for the shifted momentum:
+    \item Momentum conservation holds for the shifted momentum: $\sum_{i=1}^{n}\hat{p}_i^\mu=0$,
+    \item We have $\hat{p}_i^2=0$, so each shifted momentum still keep on-shell
+    \item For a non-trival \footnote{non-trival here means at least two and no more than n-2 such that $P_I^2\neq 0$} subset of momentum $\{p_i\}_{i\in I}$,
+    define $P_i^\mu=\sum_{i\in I}p_i^\mu$. Then $\hat{P}_I^2$ is \textbf{linear} in z:
+    \begin{equation}
+        \hat{P}_I^2=P_I^2 -2zP_I\cdot k=-\frac{P_I^2}{z_I}(z-z_I)
+    \end{equation}
+    beacuse the $z^2$ term vanishes. We can write 
+    \begin{equation}
+        \hat{P}_I^2=-\frac{P_I^2}{z_I}(z-z_I)\quad \text\quad {with} z_I=\frac{P_I^2}{2P_I\cdot k}
+        \label{2.63}
+    \end{equation}
 \end{itemize}
+If we consider the original amplitude $A_n$ in terms of the shifted momentum $\hat{p}_i^\mu$ instead of original momentum. Then the amplitude can be seen as 
+a holomorphic function of z. Actually, if we set $z=0$, we can obtain the origin ampltide $A_n=\hat{A}_n(z=0)$.
+
+In this paper, we only focus on the tree-level scatterung amplitudes, in which case the analytic structure becomes quite simple. The tree amplitudes does not have any branch cuts -- there are no 
+logs, no square roots, etc.. The tree-level amplitude is a rational function of Lorentz invariant kinematic quantities, like the contraction between momentum or momentum and polarization vector. 
+Therefore, the analytic structure can be completely captured by its single poles in the complex z plane. To see that all of the poles are single, we just need to notice 
+that we can only ontain poles from propagators. But we have seen that all of the poles can be dertermined by  \eqref{2.63}. 
+So $1/\hat{P}_I^2$ gives a single pole at $z_I$, and for generic momentum, $P_I^2\neq 0$(propagator is off-shell) so $z_I\neq 0$. Hence, 
+$\hat{A}_n(z)$ only has single poles away from the orignal poine $z=0$.\footnote{Here we need to impose locality to ensure all of the poles can be determined by the propagators.} 
+
+Then let us turn to define a new holomorphic function $\frac{\hat{A}_n(z)}{z}$ in the complex plane. We can pick a contour surrounding the original point 
+$z=0$ which is a single pole of this function. The residue of this single pole can be easily computed
+\begin{equation}
+    \mathrm{Res}|_{z=0}\frac{\hat{A}_n(z)}{z}=\hat{A}_n(z=0)=A_n,
+\end{equation}
+It is just the unshifted amplitude what we want to compute at the begining. 
+
+Also, we can choose another countour surrounding all single poles, then Cauchy's theorem just tell us 
+\begin{equation}
+    A_n = - \sum_{z_I} \mathrm{Res}_{z=z_I} \frac{\hat{A}_n(z)}{z}  + B_n\,,
+\end{equation}
+where the $B_n$ is the residue at $z=\infty$ infinity, called bounday term. By taking $z\rightarrow 1/\omega$, it is easy to notice that
+$B_n$ is the $O(z^0)$ term in the $z\rightarrow \infty$ expansion of $A_n$.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Cau.png} % 调整为所需大小
+    \caption{Cauchy Theorem}
+\end{figure}
+
+Now, at the position of $z_I$ pole, the propagator $1/\hat{P}_I^2$ gose on-shell. The unitarity has a tight relation with I poles in the S-matrix with on-shell intermediate
+states.
+\begin{equation}
+    G_n(p_1, \ldots, p_n) = (2\pi)^4 \, \delta^4\left(\sum p\right) 
+\frac{i}{p_\Psi^2 - m_\Psi^2 + i\varepsilon} 
+\mathcal{M}_\Psi^{1,r} \, \mathcal{M}_\Psi^{r+1,n\dagger} + \text{extra}
+\end{equation}
+where “extra” refers to anything else that contributes. This equation says that Green’s
+functions always have poles when on-shell intermediate particles can be produced. 
+
+Then, in the on-shell limit, the shifted amplitude \textit{factorizes} into two on-shell parts
+\begin{equation}
+     \hat{A}_n(z)\quad \xrightarrow{z\,\text{near}\,z_I} \quad \hat{A}_L(z_I)\frac{1}{\hat{P}_I^2}\hat{A}_R(z_I)= - \frac{z_I}{z-z_I}\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)
+\end{equation}
+
+This makes it easy to compute the residue at $z=z_I$
+\begin{equation}
+    -\mathrm{Res}|_{z=z_I}\frac{\hat{A}_n(z)}{z}=-(z-z_I)\frac{z_I}{z(z-z_I)}|_{z=z_I}\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)=\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)
+\end{equation}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{recrel1.pdf} % 调整为所需大小
+    \caption{factorization}
+\end{figure}
+
+Note that, as opposed to Feynman diagrams for which the intermediate propagator does not equal to 0, here the intertal line $\hat{P}_I^2$ of Figure 2 does equal to 0.
+And the blobs which refer to subamplitudes are \tif{on-shell amplitudes}. In the diagrammatic representation Figure 2, the internal line is assigned the usual scalar propagator 
+$1/P_I^2$, evaluated using unshifted momenta. Since each subamplitude involves fewer than 
+n external particles, all the residues at finite z can be expressed entirely in terms of lower-point on-shell amplitudes. 
+This fundamental idea underlies the construction of the recursion relations.
+
+The contribution $B_n$ does affect a lot, and it has no similar general expression in trems of lower-point amplitudes. Although in some cases, the boundary term
+$B_n$ can be computed, but there is not a general method to compute it. Thus, in most applications, we always assumes, or better, prove that $B_n=0$. This is often modified
+by demonstrating stronger statement that 
+\begin{equation}
+    \hat{A}_n(z) \to 0 ~~~~ \text{for} ~~~~ z \to \infty. 
+    \label{2.69}
+\end{equation}
+If \eqref{2.69} holds, we state the shift is \tif{valid}.
+
+For a valid shift, the n-point amplitudes can be recursively computed interms of lower-point amplitude
+\begin{equation}
+     A_n ~= \sum_{\text{diagrams}~I} \hat{A}_\text{L}(z_I) 
+    \,\frac{1}{P_I^2}\,
+    \hat{A}_\text{R}(z_I)
+       ~~=
+   \sum_{\text{diagrams}~I}
+   \raisebox{-5.5mm}{\includegraphics[height=1.4cm]{recrel1}}
+   \,.
+\end{equation}
+where I means all possible factorization channels. We did not use any $D=4$ spacetime property, so this recursion relation can be 
+utilized to general D dimension spacetime.
+
+\subsubsection{BCFW recursion relation}
+In the last section, we introduce the recursion relation with all momentum shifted. But actually, some of the shift vectors $r_i^\mu$ can be choose to 0.
+The BCFW shift is a kind of special shift for which only two momentum are shifted, called i and j. In D=4 spacetime diension, the shift is implemented 
+\begin{equation}
+    \hat{p}_i(z)=p_i-zq,\qquad \hat{p}_j(z)=p_j+zq
+    \label{2.71}
+\end{equation}
+so momentum conservation is kept and the hold for on-shell condition require ot impose
+\begin{equation}
+    q^2=q\cdot p_i=q\cdot p_j=0 \, .
+\end{equation}
+This shift can be implemented in terms of spinor-helicity variable as
+\begin{equation}
+    |\hat{i}] = |i] - z\,|j]\,,   
+  ~~~~~~
+  |\hat{j}] = |j]\,,   
+  ~~~~~~
+  |\hat{i}\rangle = |i\rangle\,,
+  ~~~~~~
+  |\hat{j}\rangle = |j\rangle + z |i\rangle \,.
+\end{equation}
+No other spinors are shifted, this kind of shift are called $[i,j\rangle$ shift(it is worth to mention that $[i,j\rangle$ shift 
+is completely different with $[j,i\rangle$ shift). In the literature, the BCFW
+deformation is usually written in the above spinor form. However, the momentum form \eqref{2.71} provides
+another perspective.
+
+The BCFW recursion relation takes the form
+\begin{equation}
+     A_n ~= \sum_{\text{diagrams}~I} \hat{A}_\text{L}(z_I) 
+    \,\frac{1}{P_I^2}\,
+    \hat{A}_\text{R}(z_I)
+       ~~=
+   \sum_{\text{diagrams}~I}
+   \raisebox{-5.8mm}{\includegraphics[height=1.4cm]{recrel.2.png}}
+   \,.
+\end{equation}
+
+Beforing going into the apllication of BCFW, let us first consider the large-z behavior. 
+In pure Yang-Mills case, it has been proved that the color-ordered gluon tree-level amplitudes behave like the following manner\cite{Arkani-Hamed:2001kyx}
+$$ 
+\begin{array}{cccccc}
+   [i,j\rangle & [-,-\rangle & [-,+\rangle & [+,+\rangle & [+,-\rangle &
+   \\[2mm]
+   \hat{A}_n(z) \sim 
+   &  \frac{1}{z} &  \frac{1}{z} &  \frac{1}{z} & z^3
+   \end{array}
+$$
+If i,j are not adjacent, one obtains an extra $1/z$ in each case. Thus any one of shifts $,[-,-\rangle,[-,+\rangle,[+,+\rangle$ are valid
+but $[+,-\rangle$ is not valid. This is a quite non-trival result.
 
 
 
+
+
+\newpage
 \bibliographystyle{unsrt}
 \bibliography{reference.bib}
 
