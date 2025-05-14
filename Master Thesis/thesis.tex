@@ -10,6 +10,8 @@
 \usepackage{cancel}
 \usepackage{xcolor}
 \usepackage{float}
+\usepackage{tikz}
+\usepackage{bm}
 \numberwithin{equation}{section}
 \newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
 \newcommand{\avg}[1]{\langle #1 \rangle}
@@ -633,7 +635,9 @@ This shift can be implemented in terms of spinor-helicity variable as
   |\hat{j}\rangle = |j\rangle + z |i\rangle \,.
 \end{equation}
 No other spinors are shifted, this kind of shift are called $[i,j\rangle$ shift(it is worth to mention that $[i,j\rangle$ shift 
-is completely different with $[j,i\rangle$ shift). In the literature, the BCFW
+is completely different with $[j,i\rangle$ shift).Note that $[\hat{i}k]$ and $\avg{\hat{j}k}$ are linear in $z$ for $k \neq i, j$, while 
+$\avg{\hat{i}\hat{j}}=\avg{ij}$, $[\widehat{i}\, \widehat{j}] = [ij]$, 
+$\avg{\hat{i}k}=\avg{ik}$, and $[\hat{j}k] = [jk]$ remain unshifted. In the literature, the BCFW
 deformation is usually written in the above spinor form. However, the momentum form \eqref{2.71} provides
 another perspective.
 
@@ -660,12 +664,277 @@ $$
 $$
 If i,j are not adjacent, one obtains an extra $1/z$ in each case. Thus any one of shifts $,[-,-\rangle,[-,+\rangle,[+,+\rangle$ are valid
 but $[+,-\rangle$ is not valid. This is a quite non-trival result.
+If we consider more general case\cite{Feng:2011np}
+\begin{equation*}
+\begin{aligned}
+p_i(z) &= p_i + z \lambda_i \tilde{\lambda}_j, \quad
+p_j(z) = p_j - z \lambda_i \tilde{\lambda}_j, 
+\Rightarrow
+\begin{cases}
+A(z) \to z^{-2}, & i, j \text{ not nearby} \\
+A(z) \to z^{-1}, & i, j \text{ nearby}
+\end{cases} \\
+\\
+p_i(z) &= p_i + z \lambda_i \tilde{\lambda}_k \ (k \neq j), \quad
+p_k(z) = p_k - z \lambda_i \tilde{\lambda}_k,
+\Rightarrow
+\begin{cases}
+A(z) \to z^{-2}, & i, k \text{ not nearby} \\
+A(z) \to z^{-1}, & i, k \text{ nearby}
+\end{cases}
+\end{aligned}
+\end{equation*}
+\begin{equation}
+\begin{aligned}
+p_i(z) &= p_i + z \lambda_k \tilde{\lambda}_i \ (k \neq j), \quad
+p_k(z) = p_k - z \lambda_k \tilde{\lambda}_i,
+\Rightarrow
+\begin{cases}
+A(z) \to z^2, & i, k \text{ not nearby} \\
+A(z) \to z^3, & i, k \text{ nearby}
+\end{cases} \\
+\\
+p_k(z) &= p_k + z \lambda_l \tilde{\lambda}_k, \quad
+p_l(z) = p_l - z \lambda_l \tilde{\lambda}_k, \quad
+k, l \neq i,j
+\Rightarrow
+\begin{cases}
+A(z) \to z^{-2}, & l, k \text{ not nearby} \\
+A(z) \to z^{-1}, & l, k \text{ nearby}
+\end{cases}
+\end{aligned}
+\end{equation}
+where $i,j$ are negetive helicities. Then we can go forward to the provement of Parke - Talyor formula by using BCFW recursion relation. First, we can notice that the formula
+\begin{equation}
+    A_n[1^+\cdots i^-\cdots j^- \cdots n^+]=\frac{\avg{ij}^4}{\mdavg{12}{23}\cdots\avg{n1}}
+    \label{2.76}
+\end{equation}
+holds for $n=3$ case, and we start the provement by induction from 3-point. For specific n, we suppose \eqref{2.76} holds for amplitudes with external legs less than n. Then we can writte down the n-point amplitude $A_n[1^-2^-3^+\cdots n^-]$ with BCFW shift $[1,2\rangle$
+\begin{align}
+    A_n[1^-2^-3^+\dots n^+] 
+    &= 
+        \sum_{k=4}^{n}~~
+        \raisebox{-6.5mm}{\includegraphics[height=1.6cm]{recrel2}} \notag \\[1ex]
+    &= \sum_{k=4}^{n} \sum_{h_I = \pm} 
+        \hat{A}_{n-k+3}\big[ \hat{1}^-, \hat{P}_I^{h_I} , k^+ \ldots , n^+\big] 
+        \,\frac{1}{P_I^2} \notag \\[0.5ex]
+    &\quad\quad \times \hat{A}_{k-1}\big[ -\hat{P}_I^{-h_I} ,  \hat{2}^-, 3^+ \ldots , (k-1)^+\big] \,.
+    \label{2.77}
+\end{align}
+The internal momentum can be evaluated as $P_I=p_2+p_3+\cdots+p_{k-1}$ and $\hat{P}_I=\hat{p}_2+p_3+\cdots +p_{k-1}$ if we choos $k=4,5,\cdots,n$. Notice that there are no such diagrams in which the $\hat{p_1}$ and $\hat{p}_2$ locate at the same side, whereby there are no z independence, so that we can not obtain any single pole in the complex plane. And because we are computing the color-ordered amplitudes, only diagrams that preserve the color-ordering of the external states are included. Note that we explicitly include the sum over all possible helicity assignments for the particle exchanged on the on-shell internal line. Specifically, if the exchanged gluon appears as an outgoing particle with negative helicity in the left subamplitude, it will correspondingly appear as an outgoing gluon with positive helicity in the right subamplitude.
+
+We have known that the color-amplitudes $A_n[-++c\cdots+]$ equals to 0, except for $n=3$ case. So \eqref{2.77} can be computed like
+\begin{align}
+    A_n[1^- 2^- 3^+ \ldots n^+]
+      &= 
+        \raisebox{-6.7mm}{\includegraphics[height=1.6cm]{recrel3a}}
+        ~~+~~
+        \raisebox{-6.9mm}{\includegraphics[height=1.6cm]{recrel3b}} 
+        \notag \\[2mm]
+      &=
+        \hat{A}_{3}\big[ \hat{1}^-, -\hat{P}_{1n}^{+}, n^+\big] 
+        \,\frac{1}{P_{1n}^2}\,
+        \hat{A}_{n-1}\big[ \hat{P}_{1n}^{-},  \hat{2}^-, 3^+ \ldots (n-1)^+\big] 
+        \notag \\[1mm]
+      &\quad
+        +~
+        \hat{A}_{n-1}\big[ \hat{1}^-, \hat{P}_{23}^{-}, 4^+ \ldots , n^+\big] 
+        \,\frac{1}{P_{23}^2}\,
+        \hat{A}_{3}\big[ -\hat{P}_{23}^{+},  \hat{2}^-, 3^+\big] \,.
+        \label{2.78}
+\end{align}
+Notice that in the first diagram of \eqref{2.78}, there is a 3-point subamplitude
+\begin{equation}
+    \hat{A}_{3}\big[ \hat{1}^-, -\hat{P}_{1n}^{+}\, , n^+\big]
+   ~=~ \frac{[\hat{P}_{1n} \,n]^3}{[n \hat{1}][\hat{1} \hat{P}_{1n}]} \,.
+   \label{2.79}
+\end{equation}
+here we take the convention of analytic continuation like
+\begin{equation}
+   \aket{-p}=-\aket{p},\qquad \sket{-\!p}=+\sket{p}.
+\end{equation}
+Because the propagator satisfies the on-shell condition, so we can obtain
+\begin{equation}
+    \hat{P}_{1n}^2=0=2\hat{p}_1\cdot p_n=\cbrak{\hat{1}n}{n\hat{1}},
+\end{equation}
+because we take the $[1,2\rangle$ shift, so that $\aket{\hat{1}}=\aket{1}$. And the angle bracket $\avg{1n}$ can not equal to 0, so that
+\begin{equation}
+    [\hat{1}n]=0 \qquad \Longrightarrow \qquad z=\frac{[1n]}{[2n]},
+\end{equation}
+so the potion of pole is determined by the on-shell propagator. Also, we can compute like
+\begin{equation}
+    \aket{\hat{P}_{1n}} [  \hat{P}_{1n}\,n] = -\hat{P}_{1n}|n] \,=\, -(\hat{p}_1 + p_n) |n] \,=\, \aket{1} [\hat{1}n] \,=\, 0\, , 
+\end{equation}
+we can conclude $ [  \hat{P}_{1n}\,n]=0$ because of $[\hat{1}n]=0$ and $\aket{\hat{P}_{1n}}\neq 0$. So the 3-point amplitude \eqref{2.79} has both a vanishing numerator and denominator, with the numerator vanishing one order faster. We conclude that
+special 3-point kinematics force $\hat{A}_{3}\big[ \hat{1}^-, -\hat{P}_{1n}^{+}\, , n^+\big]$. So the contribution from the first
+diagram in \eqref{2.78}vanishes.
+
+For the second diagram in \eqref{2.78}, we will not obtain the vanishing result, because it is an anti-MHV amplitude with angle spinor $\aket{2}$ shifted. Henceforth, the seemingly complicated summation \eqref{2.78} redeuce to a single diagram. This is one merit of BCFW recursion relation. 
+Then the amplitude can be evaluated like
+\begin{align}
+A_n[1^- 2^- 3^+ \ldots n^+]
+  &= 
+    \raisebox{-6.9mm}{\includegraphics[height=1.6cm]{recrel3b}} \notag \\[1mm]
+  &=
+    \hat{A}_{n-1}\big[ \hat{1}^-, \hat{P}_{23}^{-}, 4^+, \ldots , n^+\big] 
+    \,\frac{1}{P_{23}^2}\,
+    \hat{A}_{3}\big[ -\hat{P}_{23}^{+},  \hat{2}^-, 3^+\big]\,.
+\end{align}
+By using the lower point Parke - Talyor formula which assune to hold, the amplitude can be written like
+\begin{equation}
+    A_n[1^- 2^- 3^+ \ldots n^+]
+  ~=~
+  \frac{\avg{\hat{1}\hat{P}_{23}}^4}{\avg{\hat{1}\hat{P}_{23}}\avg{\hat{P}_{23}\, 4}\avg{45}\cdots\avg{n\hat{1}}}
+  \times\frac{1}{\avg{23}[23]}\times
+  \frac{[3 \hat{P}_{23}]^3}{[\hat{P}_{23}\,\hat{2}][\hat{2} 3]}\,.
+\end{equation}
+This formula can be further simplified by using 
+\begin{equation}
+    \cbrak{\hat{1}\hat{P}_{23}}{3\hat{P}_{23}}=-\cbrak{\hat{1}\hat{P}_{23}}{\hat{P}_{23}3}=-\langle 1|\hat{p}_2+p_3|3]=-\langle 1|\hat{p}_2|3]=\cbrak{12}{32}
+\end{equation}
+here we use the fact $\aket{\hat{1}}=\aket{1}$ and $\avg{1\hat{2}}=\avg{12}$.
+And similarly , for the demoninator we have the similar result
+\begin{equation}
+    \avg{\hat{P}_{23}4}[\hat{P}_{23}\hat{2}]=-\avg{4\hat{P}_{23}}[\hat{P}_{23}\hat{2}]=-\langle 4|\hat{p}_2+p_3|2]=\cbrak{34}{32}
+\end{equation}
+here we use the fact $\sket{\hat{2}}=\sket{2}$.
+
+Then the full amplitude equals to
+\begin{align}
+    A_n[1^- 2^- 3^+ \ldots n^+]&=\frac{\avg{12}^3[32]^3}{\cbrak{34}{32}\cbrak{23}{23}[23]\avg{45}\cdots \avg{n1}}\\
+    &=\frac{\avg{ij}^4}{\mdavg{12}{23}\cdots\avg{n1}}
+\end{align}
+so we finish the provement of Parke - Talyor formula by utlizing BCFW recursion relation. 
+
+Notice that this formula only holds for MNH anplitudes. For NMHV amplitudes, of coure we can still use BCFW recusion relation to similarly compute them. Here, I only show the result of 6-gluon NMHV tree amplitude. 
+\begin{align}
+    A_6[1^- 2^- 3^- 4^+ 5^+ 6^+]
+  ~&=~
+    \raisebox{-8.5mm}{\includegraphics[height=1.8cm]{recrel-6pt-A1}}
+  ~~~+~~~
+  \raisebox{-8.5mm}{\includegraphics[height=1.8cm]{recrel-6pt-A2}} \\
+  ~&=~ \frac{\langle 3|1+2|6]^3}{P_{126}^2[21][16]\mdavg{34}{45}\langle 5|1+6|2]}+\frac{\langle 1|5+6|4]^3}{P_{156}^2[23][34]\mdavg{56}{62}\langle 5|1+6|2]}
+\end{align}
+Color-ordered tree amplitudes can exhibit physical poles only when the sum of momenta of adjacent external lines goes on-shell. As previously noted, MHV gluon amplitudes feature only two-particle poles and do not possess multi-particle poles. In contrast, you have now seen that six-gluon NMHV amplitudes contain both two- and three-particle poles. Interestingly, in the BCFW representation, each diagram contributes a peculiar denominator factor of the form $\langle 5|1+6|2]$. This term does not correspond to any physical pole of the scattering amplitude—it is known as a \tif{spurious pole}. The residue associated with this unphysical pole must vanish, and indeed it does: the spurious contributions cancel out when summing over all relevant BCFW diagrams.
+
+\noindent
+\textbf{When does it work?}
+\begin{itemize}
+    \item Yang - Mills theory and gluon scattering.
+    \item Scalar - QED. 
+    \item Scalar theory $\lambda \phi^4$.
+    \item $\mathcal{N} =4$ super Yang - Mills theory.
+    \item Gravity. 
+\end{itemize}
+
+\section{(De)Constructed Gauge Theory}
+\subsection{Motivation}
+Our four-dimensional description of spacetime may only be an effective low-energy approximation. While the observable universe appears four-dimensional — with one time and three spatial directions — it is possible that additional spatial dimensions exist but are hidden at quite small scales beyond our current experimental realm. A simple and widely reasearched realization of this thought involves compact extra dimensions, where fields propagate on a higher-dimensional spacetime with some dimensions compactified to small radius. At energies much lower than the compactification scale, such theories reduce to four-dimensional physics as an effetive theory, but at higher energies, the influence of these extra dimensions become manifest, for example, the appearance of Kaluza - Klein excitations(KK modes).
+
+Theoretical interest in extra dimensions arises not only from string theory but also from the desire to better understand the ultraviolet behavior of field theories. Unfortunately, traditional higher-dimensional field theories are nonrenormalizable and contain dimensionful couplings, requiring a cutoff and becoming strongly coupled in the UV. This poses a major obstacle to fully understanding their high-energy behavior.
+
+In response to this, Arkani-Hamed, Cohen, and Georgi proposed the idea of (De)constructed dimensions, in which higher-dimensional behavior emerges dynamically from a renormalizable four-dimensional theory. Their construction discretizes the extra dimension using a chain of gauge groups and link fields, producing a low-energy spectrum that mimics a compactified fifth dimension. Crucially, the theory remains perturbative and controllable in the UV, making it an ideal framework to study phenomena associated with extra dimensions—such as KK mode scattering—without running into the usual ultraviolet issues.
+
+This paper is motivated by this (De)constructed approach. We focus on computing tree-level scattering amplitudes in the simplest two-site model, employing modern amplitude techniques such as the BCFW recursion relation, spinor-helicity formalism, and color ordering.
+\subsection{$SU(m)\times SU(n)$ \textit{Moose}}
+At first, we consider four-dimensional field theories that contain gauge fields and fermions. These theories can be conveniently illustrated using a type of diagram known as a “moose” or “quiver” diagram\footnote{Sorry for the ambiguity of different terminology. In this paper, the term ``quiver'', ``moose'' and ``(De)construction'' mainly represent the same meaning}. In such diagrams, gauge groups are represented by open circles, and fermions are shown as single arrows (directed lines) attached to those circles.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{The-quiver-diagram-for-the-2d-N-0-2-theory-corresponds-to-the-surface-defect-S-r.jpg}
+    \caption{Example of quiver diagram}
+\end{figure}
+
+
+
+An arrow pointing away from a circle represents a set of Weyl fermions transforming under the fundamental representation of that gauge group. Conversely, an arrow pointing toward a circle corresponds to fermions transforming in the complex conjugate of fundamental representation.
+
+We will focus on a specific example: a moose diagram shaped like an N-sided polygon, where each node and connection encodes the field content and gauge structure of the theory with gauge group $SU(m)^N\times SU(n)^N$
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Moose.png}
+    \caption{Moose diagram}
+\end{figure}
+
+We impose a \textit{cyclic symmetry} on the theory so that all $SU(m)$ gauge couplings are set equal to a common value $g$, and all $SU(n)$ gauge couplings are set equal to $g_s$. Through \textit{dimensional transmutation}, the theory can equivalently be described by two corresponding \textit{dimensionful parameters}, $\Lambda$ and $\Lambda_s$, which characterize the strong coupling scales of the respective gauge groups.
+
+Each \textit{side of the polygon} in the moose diagram represents two types of fermions, each transforming under the three gauge groups associated with that side: $SU_i(m) \times SU_i(n) \times SU_{i+1}(m)$.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Side.png}
+\end{figure}
+\begin{gather}
+    \chi_{i,i}\qquad \text{transformed under}\quad (m,\bar{n},1)\\
+    \psi_{i,i+1}\qquad \text{transformed under}\quad (1,n,\bar{m}) 
+\end{gather}
+where $m,n$ refer to the fundamental representation of gauge group $SU(m)$ and $Su(n)$, $\bar{m},\bar{n}$ refer to the conjugate of fundamental representation, and $1$ just represent the trival representation.
+
+\paragraph{Low-energy behavior.}
+
+\textbf{What does the theory look like at longer distances?} In the regime where $\Lambda_s \gg \Lambda$, the low-energy behavior of the theory becomes relatively simple. At energy scales around $\Lambda_s$, the $SU(m)$ gauge couplings remain weak and can be treated perturbatively. In contrast, each $SU(n)$ gauge group becomes strongly coupled at this scale, leading to \tif{fermion condensation}.
+
+Specifically, pairs of fermions associated with each strong gauge group condense, forming nonzero vacuum expectation values:
+\[
+\avg{\chi_{i,i} \psi_{i,i+1}} \sim 4\pi f^3\, U_{i,i+1}, \quad i = 1,\dots, N
+\]
+Here, $f \sim \Lambda_s / (4\pi)$ is the characteristic scale of the condensate, and $U_{i,i+1}$ is an $m \times m$ unitary matrix that encodes the orientation of the condensate in field space. And in thefollowing part, we will focus on the model after condensation. 
+
+We use a similar condensed - moose diagram to represent this condensed theory:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{Moosed.jpeg}
+    \caption{Condensed Moosed diagram}
+\end{figure}
+It is described by the following Lagrangian
+\begin{equation}
+    \mathcal{L}=-\sum_{i=1}^{N}\frac{1}{2}\mathrm{Tr}(F_i)^2+\sum_{i=1}^{N}\mathrm{Tr}[(D_\mu\Phi_i)^\dagger(D^\mu\Phi_i)],
+    \label{3.3}
+\end{equation}
+here $F_i$ refers to the ith gauge field strength, scalar field $\Phi_i$ transformed under the \textcolor{red}{bi-fundamental} representation and the covariant derivative equals to
+    \begin{equation}
+        D_\mu \Phi_i=\partial_\mu \Phi_i -ig_iA_{i\mu}\Phi_i+ig_{i+1}\Phi_i A_{i+1\mu}.
+    \end{equation}
+    Here, gauge field and scalar field transformed like
+    \begin{equation}
+        \bm{A_{i\mu}}\rightarrow U_i(x) \bm{A_{i\mu}} U_i^-(x)-\frac{i}{g_i}(\partial_\mu U)U^{-1},\qquad \Phi_i\rightarrow U_i(x)\Phi_i U_{i+1}^-(x)
+    \end{equation}
+    It is easy to confirm that this theory is invariant under $\prod_1^N SU(m)$ gauge group.
+
+    The action is similar to the non-linear sigma model, in which the non-lenear sigma fields effectively connects gauge fields at neighboring sites. In fact, equation \eqref{3.3} can be interpreted as a discretized version of a five-dimensional gauge theory with gauge group $SU(m)$, where only the fifth dimension is latticized. The non-linear sigma model fields play the role of \tif{link variables} in a lattice gauge theory, and the condensed moose diagram effectively represents the fifth dimension.
+
+    It is quite striking that the moose diagram, which was originally just a tool to keep track of fields and interactions in a four-dimensional theory, \tif{takes on a new physical meaning at low energies}: it effectively describes an extra spatial dimension.
+
+We can higgs the scalar field $U_{i,i+1}$ making the gauge group down to the diagonal subgroup. Its eigenvalues can be easily computed, yielding a discrete mass spectrum labeled by an integer $k$ satisfying $-N/2 < k \leq N/2$. The mass of each mode is given by:
+\begin{equation}
+M_k^2 = 4g^2 f_s^2 \sin^2\left( \frac{\pi k}{N} \right)
+\equiv \left( \frac{2}{a} \right)^2 \sin^2\left( \frac{p_5 a}{2} \right),
+\end{equation}
+where $p_5 \equiv 2\pi k / R$ is the discretized momentum along the fifth dimension. The corresponding eigenvectors take the form $\psi^m \sim \exp(i m p_5 a)$.
+
+In the regime $|k| \ll N/2$, the spectrum becomes approximately linear, and the masses simplify to:
+\begin{equation}
+M_k \simeq |p_k| = \frac{2\pi |k|}{R}.
+\end{equation}
+
+This exactly matches the \tif{Kaluza-Klein spectrum} for a five-dimensional gauge boson compactified on a circle of circumference $R$. The effective four-dimensional gauge coupling of the diagonal subgroup is given by $g_4^2 = g^2 / N$. Using the earlier relation in equation (2.7), this implies:
+\begin{equation}
+\frac{1}{g_4^2} = \frac{R}{g_5^2},
+\end{equation}
+which is the standard relation between the gauge couplings in five and four dimensions.
+
+\subsection{2\,-\,site model}
+For simplicity, in this paper we only focus on the smallest block in this condensed moose theory -- 2-site model, which can be represented by the following diagram 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.3\textwidth]{2-site.png}
+    \caption{2-site model}
+\end{figure}
+\noindent
+Here we choose a slightly different model, of which the two gauge group are different.  
 
 
 
 
 
-\newpage
 \bibliographystyle{unsrt}
 \bibliography{reference.bib}
 

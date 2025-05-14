@@ -8,3 +8,8 @@
 \contentsline {subsection}{\numberline {2.4}BCFW recursion relation}{14}{subsection.2.4}%
 \contentsline {subsubsection}{\numberline {2.4.1}Complex shift and Relation from Simple Cauchy's Theorem}{14}{subsubsection.2.4.1}%
 \contentsline {subsubsection}{\numberline {2.4.2}BCFW recursion relation}{17}{subsubsection.2.4.2}%
+\contentsline {section}{\numberline {3}(De)Constructed Gauge Theory}{22}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Motivation}{22}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}$SU(m)\times SU(n)$ \textit {Moose}}{23}{subsection.3.2}%
+\contentsline {paragraph}{Low-energy behavior.}{24}{section*.2}%
+\contentsline {subsection}{\numberline {3.3}2\,-\,site model}{26}{subsection.3.3}%
