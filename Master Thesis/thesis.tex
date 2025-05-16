@@ -513,6 +513,7 @@ First, let us consider the most general case. We need to introduce n complex-val
 These vectors $r_i$ are used to define n shifted momentum
 \begin{equation}
     \hat{p}_i^\mu\equiv p_i^\mu+zr_i^\mu\quad \text{with}\quad z\in \mathcal{C}
+    \label{2.61}
 \end{equation}
 Note that, by imposing these constraints,
 \begin{itemize}
@@ -1203,7 +1204,41 @@ Finally, we can conclude that
     &=(-1)\frac{\avg{26}^2\avg{61}^2}{\mdavg{12}{23}\!\mdavg{34}{45}\!\mdavg{56}{61}}.
 \end{align}
 
-Here, we need to notice that in 6-point case, we will first meet the NMHV amplitudes like $A_6[1,2,3^+,4^+,5^-,6^-]$. Although we can still compute it by samely utlizing BCFW recursion relaiton, but it is quite messy. 
+Here, we need to notice that in 6-point case, we will first meet the NMHV amplitudes like $A_6[1,2,3^+,4^+,5^-,6^-]$. Although we can still compute it by samely utlizing BCFW recursion relaiton, but it is quite messy. So it is better to introduce another method named CSW expansion. 
+
+We introduce the general shift in section 2.4.1 like \eqref{2.61} and specialize to BCFW shift in section 2.4.2 like \eqref{2.71}. Here, I will introduce another kind of recursion relation. Consider a shift which is implemented by a ``holomorphic'' square spinor shift:
+\begin{equation}
+    \sket{\hat{i}}=\sket{i}+zc_i\sket{X},\qquad \aket{i}=\aket{i},
+    \label{4.37}
+\end{equation}
+Here $\sket{X}$ is an arbitrary reference spinor and the coefficients $c_i$ satisfy $\sum_{i=1}^{n}c_i\aket{i}=0$. Notice that this equation can be always solved and the shift spinors also satisfy momentum conservation and on-shell condition. 
+
+We consider here a situation where all $c_i \neq 0$ so that all momentum lines are shifted via\eqref{4.37} – this is an all-line shift. And the large - z behavior of all-line shift can be found in this paper\cite{Cohen:2010mi}.
+As shown in \cite{Elvang:2008vz}, N$^{K}$MHV gluon tree amplitudes fall off as $1/z^K$ under an all-line shift in the large-$z$ limit. This implies that all tree-level gluon amplitudes---except the MHV case with $K = 0$---can be fully constructed using the all-line shift recursion relations. 
+
+The critical point here is that the MHV amplitudes depend only on angle spinors, so the only way we can know about the square-spinor
+shift is arrording to the internal line angle spinors $\aket{\hat{P}_I}$, and this $\aket{\hat{P}_I}$ can be written in a wise manner
+\begin{equation}
+    \aket{\hat{P}_I}\frac{[\hat{P}_I X]}{[\hat{P}_I X]}=\hat{P}_I\sket{X}\frac{1}{[\hat{P}_IX]}=P_I\sket{X}\frac{1}{[\hat{P}_IX]},
+\end{equation}
+where we can drop the hat upon the shifted momentum $\hat{P}_I$ because the shift is proportional to $\sket{X}$, so that it will become 0 when contracting with itself. And other point is there are same number of $\aket{P}_I$ appearing in the numerator and demoninator as there's no helicity dependence on internal propagator, so that all of $\frac{1}{[\hat{P}_IX]}$ can be canceled with other. 
+
+Then for each diagram we can use the following prescription
+\begin{equation}
+    \aket{P}_I \quad \rightarrow \quad P_I\sket{X}, 
+\end{equation}
+
+For example
+\begin{equation}
+    \raisebox{-5.5mm}{\includegraphics[height=1.5cm]{csw-6pt-A2}}
+   ~=~ 
+\frac{\langle 1|P_{156}|X]^4}{\langle 1|P_{156}|X]\langle 5|P_{156}|X]\langle 56\rangle \langle 61\rangle}
+\cdot \frac{1}{P_{156}^2}
+\cdot \frac{\langle 23\rangle^4}{\langle 23\rangle \langle 34\rangle \langle 4|P_{156}|X]\langle 2|P_{156}|X]}
+\end{equation}
+
+In general, individual diagrams exhibit an explicit dependence on the reference spinor $\sket{X}$. However, the full tree-level amplitude must remain independent of this arbitrary choice.The expansion of amplitudes using MHV vertex diagrams extends naturally beyond the NMHV level. More generally, an N$^K$MHV tree-level amplitude can be expressed as a sum over all tree diagrams containing exactly $K + 1$ MHV vertices.
+Henceforth, this method is called \tif{MHV vertex expansion}. But actually, this method was discovered by Cachazo, Svrcek, and Witten \cite{Cachazo:2004kj} befor introducing complex shift, so it is also named \tif{CSW expansion}. 
 \subsubsection{n-point case}
 It is not so hard to generallize these results to general case, here we only provide the compact formula, and the negligible sign are neglected
 \begin{equation*}
@@ -1417,7 +1452,63 @@ Similarly, the fowwling orders all give us the same color factor
     (3_1^+,4_1^+,5_2^+,6_2^-)\qquad(3_1^+,5_2^+,4_1^+,6_2^-)\qquad (3_1^+,5_2^+,6_2^-,4_1^+)\notag\\
     (5_2^+,3_1^+,4_1^+,6_2^-)\qquad(5_2^+,3_1^+,6_2^-,4_1^+)\qquad (5_2^+,6_2^-,3_1^+,4_1^+)
 \end{gather}
-Only two diagrams have semmingly non-zero contribution,
+Evey OPP corresponds different BCFW diagrams, here for concreteness, we list all of the diagrams as following 
+\begin{itemize}
+    \item $(3_1^+,4_1^+,5_2^+,6_2^-)$
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt1_1.pdf}
+        \caption{Order $(3_1^+,4_1^+,5_2^+,6_2^-)$}
+    \end{figure}
+    \item $(3_1^+,5_2^+,4_1^+,6_2^-)$
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt1_2.pdf}
+        \caption{Order $(3_1^+,5_2^+,4_1^+,6_2^-$}
+    \end{figure}
+    \item $(3_1^+,5_2^+,6_2^-,4_1^+)$
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt1_3.pdf}
+        \caption{Order $(3_1^+,5_2^+,6_2^-,4_1^+)$}
+    \end{figure}
+    \item $(5_2^+,3_1^+,4_1^+,6_2^-)$
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt1_4_1.pdf}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt_1_4_2.pdf}
+        \caption{Order $(5_2^+,3_1^+,4_1^+,6_2^-)$}
+    \end{figure}
+    \item $(5_2^+,3_1^+,6_2^-,4_1^+)$
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt1_5_1.pdf}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt1_5_2.pdf}
+        \caption{Oredr $(5_2^+,3_1^+,6_2^-,4_1^+)$}
+    \end{figure}
+    \item $(5_2^+,6_2^-,3_1^+,4_1^+)$
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt_1_6_1.pdf}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt_1_6_2.pdf}
+    \end{figure}
+    \begin{figure}[H]
+        \centering
+        \includegraphics{6pt_1_6_3.pdf}
+        \caption{Order $(5_2^+,6_2^-,3_1^+,4_1^+)$}
+    \end{figure}
+\end{itemize}
+
+Most of them equal to 0 because of there are no interaction between two gauge bosons or special helicity configuration. And some of the nonvanishing diagrams have same structure under OPP so they conly contribute once. Finally, only two diagrams have semmingly non-zero contribution,
 \par
 \begin{figure}[H]
     \centering

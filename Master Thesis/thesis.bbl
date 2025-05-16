@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
 \bibitem{Drummond:2008vq}
 J.~M. Drummond, J.~Henn, G.~P. Korchemsky, and E.~Sokatchev.
@@ -44,5 +44,20 @@ Vittorio Del~Duca, Lance~J. Dixon, and Fabio Maltoni.
 Bo~Feng and Mingxing Luo.
 \newblock {An Introduction to On-shell Recursion Relations}.
 \newblock {\em Front. Phys. (Beijing)}, 7:533--575, 2012.
+
+\bibitem{Cohen:2010mi}
+Timothy Cohen, Henriette Elvang, and Michael Kiermaier.
+\newblock {On-shell constructibility of tree amplitudes in general field theories}.
+\newblock {\em JHEP}, 04:053, 2011.
+
+\bibitem{Elvang:2008vz}
+Henriette Elvang, Daniel~Z. Freedman, and Michael Kiermaier.
+\newblock {Proof of the MHV vertex expansion for all tree amplitudes in N=4 SYM theory}.
+\newblock {\em JHEP}, 06:068, 2009.
+
+\bibitem{Cachazo:2004kj}
+Freddy Cachazo, Peter Svrcek, and Edward Witten.
+\newblock {MHV vertices and tree amplitudes in gauge theory}.
+\newblock {\em JHEP}, 09:006, 2004.
 
 \end{thebibliography}
