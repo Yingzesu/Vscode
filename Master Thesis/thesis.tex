@@ -21,6 +21,7 @@
 \newcommand{\cbrak}[2]{\avg{#1}\![#2]}
 \newcommand{\acbrak}[2]{[#1]\!\avg{#2}}
 \newcommand{\tif}[1]{\textit{\textbf{#1}}}
+\newcommand{\asbra}[3]{\langle #1 | #2 |#3 ]}
 \onehalfspacing
 
 \begin{document}
@@ -52,10 +53,17 @@
 \newpage
 \begin{abstract}
 \normalsize
-This paper mainly show the computation for scattering amplitudes in a kind of (De)Constructed gauge theory, by using the so called on shell method. As we have known,
-under the conventional quantum field theory frame, Feynman proposed a brilliant method -- Feynman diagrams, to help us perturbatively compute scattering amplitude by a
-diagrammatic method. However, this method faces many challenges during the improvements of physical theory and complexity of construction for model building, there are many
-amplitudes hard to compute by hand or even impossible to compute. Hence, it is quite necessary to introduce a new method.      
+This thesis explores tree-level scattering amplitudes in (De)constructed gauge theories using modern on-shell methods. Traditional Feynman diagram techniques, though systematic, become increasingly cumbersome in theories with gauge redundancies and high multiplicity. Motivated by these limitations, we adopt a framework based on analyticity, factorization, and gauge invariance, applying the BCFW recursion relation and related spinor-helicity techniques.
+
+Our analysis focuses on the two-site model, the simplest (De)constructed scenario, which provides a renormalizable four-dimensional realization of dimensional deconstruction and naturally generates Kaluza-Klein (KK)-like spectra. Tree-level color-ordered amplitudes involving massive and massless vector bosons are computed using the BCFW recursion, revealing significant simplifications and cancellation patterns, especially in longitudinal gauge boson scattering. To access non-MHV sectors, we further employ the Cachazo-Svrček-Witten (CSW) expansion, which efficiently constructs NMHV amplitudes from MHV vertices, offering a complementary perspective to BCFW recursion.
+
+Our results demonstrate that on-shell methods remain powerful even in semi-realistic settings with broken gauge symmetry and massive states. The structural simplicity of the resulting amplitudes suggests potential geometric interpretations and invites extensions to loop-level processes.
+
+Future directions include applying generalized unitarity and BCFW-based recursion at loop level, incorporating double-copy constructions to study gravitational analogues, and exploring formulations via the CHY formalism, scattering forms, or positive geometry such as the amplituhedron. These approaches promise deeper insight into the unifying principles behind quantum field theories and the emergence of higher-dimensional behavior from four-dimensional dynamics.
+
+\textbf{Keywords:} scattering amplitudes, on-shell methods, BCFW recursion,  (De)constructed gauge theory
+
+    
 \end{abstract}
 \newpage
 \tableofcontents
@@ -817,6 +825,7 @@ Notice that this formula only holds for MNH anplitudes. For NMHV amplitudes, of 
   ~&=~ \frac{\langle 3|1+2|6]^3}{P_{126}^2[21][16]\mdavg{34}{45}\langle 5|1+6|2]}+\frac{\langle 1|5+6|4]^3}{P_{156}^2[23][34]\mdavg{56}{62}\langle 5|1+6|2]}
 \end{align}
 Color-ordered tree amplitudes can exhibit physical poles only when the sum of momenta of adjacent external lines goes on-shell. As previously noted, MHV gluon amplitudes feature only two-particle poles and do not possess multi-particle poles. In contrast, you have now seen that six-gluon NMHV amplitudes contain both two- and three-particle poles. Interestingly, in the BCFW representation, each diagram contributes a peculiar denominator factor of the form $\langle 5|1+6|2]$. This term does not correspond to any physical pole of the scattering amplitude—it is known as a \tif{spurious pole}. The residue associated with this unphysical pole must vanish, and indeed it does: the spurious contributions cancel out when summing over all relevant BCFW diagrams.
+More wisely, Hodges introduced the momentum twistor formalism to eliminate spurious poles \cite{Hodges:2009hk} and the introduction of momentum twistors laid the foundation for the development of the amplituhedron \cite{Arkani-Hamed:2013jha}, providing a natural coordinate system for its geometric formulation.
 
 \noindent
 \textbf{When does it work?}
@@ -1237,6 +1246,22 @@ For example
 \cdot \frac{\langle 23\rangle^4}{\langle 23\rangle \langle 34\rangle \langle 4|P_{156}|X]\langle 2|P_{156}|X]}
 \end{equation}
 
+Here, for the 6-point amplitude $A_6[1,2,3^+,4^-,5^+,6^-]$, we can computing by this method 
+\begin{align}
+    A_6[1,2,3^+,4^-,5^+,6^-] = &\frac{\avg{24}^2\langle 4|P_{234}|X]}{\langle 2|P_{234}|X]\mdavg{23}{34}}\times \frac{1}{s_{12}}\times \frac{\langle 6|P_{156}|x]^2\avg{61}}{\langle 1|P_{156}|x]\mdavg{25}{56}}\notag \\
+    &+\frac{\avg{24}^2\asbra{4}{P_{61}}{X}^2}{\asbra{5}{P_{61}}{X}\asbra{2}{P_{61}}{X}\mdavg{23}{34}\!\avg{45}}\times\frac{1}{s_{61}}\times\frac{\avg{61}\asbra{6}{P_{61}}{X}}{\asbra{1}{P_{61}}{X}}\notag \\
+    &+\frac{\asbra{1}{P_{123}}{X}^2\asbra{2}{P_{123}}{X}}{\asbra{3}{P_{123}}{X}\mdavg{13}{21}}\times\frac{1}{s_{123}}\times \frac{\avg{46}^4}{\asbra{4}{P_{456}}{X}\asbra{6}{P_{456}}{X}\mdavg{45}{56}}\notag \\
+    &+\frac{\avg{14}^2\avg{24}^2}{\asbra{4}{P_{56}}{X}\asbra{1}{P_{56}}{X}\mdavg{23}{34}}\times \frac{1}{s_{56}}\times\frac{\asbra{6}{P_{56}}{X}^3}{\asbra{5}{P_{56}}{X}\avg{56}}
+\end{align}
+
+In principle, there is another diagram contributing to this amplitude
+\begin{figure}[H]
+    \centering
+    \includegraphics{sqcd6.pdf}
+    \caption{MHV $\times$ anti-MHV}
+\end{figure}
+but because of the 3 particle special kinematics, the 3-point anti-MHV part gives vanishing contributtion, this diagram actually equals to 0. This is why we called this method MHV expansion in the following.
+
 In general, individual diagrams exhibit an explicit dependence on the reference spinor $\sket{X}$. However, the full tree-level amplitude must remain independent of this arbitrary choice.The expansion of amplitudes using MHV vertex diagrams extends naturally beyond the NMHV level. More generally, an N$^K$MHV tree-level amplitude can be expressed as a sum over all tree diagrams containing exactly $K + 1$ MHV vertices.
 Henceforth, this method is called \tif{MHV vertex expansion}. But actually, this method was discovered by Cachazo, Svrcek, and Witten \cite{Cachazo:2004kj} befor introducing complex shift, so it is also named \tif{CSW expansion}. 
 \subsubsection{n-point case}
@@ -1559,6 +1584,15 @@ Then we can conclude that the left part of the amplitude equals to 0 so $A_2=0$.
 \begin{equation}
     A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=A_1+A_2=\frac{\asqu{26}\!\asqu{16}}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{51}}}.
 \end{equation}
+
+For the NMHV ampitudes $A[1,2,3_1^+,4_1^-,5_2^+,6_2^-]$, we can obtain the following equation
+\begin{align}
+    A[1,2,3_1^+,4_1^-,5_2^+,6_2^-] =& \frac{\avg{24}\asbra{4}{P_{234}}{X}}{\avg{24}\asbra{3}{P_{234}}{X}}\times\frac{1}{s_{234}}\times\frac{\avg{61}\asbra{6}{P_{156}}{X}}{\avg{51}\asbra{5}{P_{156}}{X}}\notag\\
+    &+\frac{\avg{26}\asbra{6}{P_{256}}{X}}{\avg{25}\asbra{5}{P_{256}}{X}}\times\frac{1}{s_{256}}\times\frac{\avg{14}\asbra{4}{P_{134}}{X}}{\avg{13}\asbra{3}{P_{134}}{X}}\notag\\
+    &+\frac{\avg{26}^2\avg{61}}{\mdavg{25}{56}\asbra{2}{P_{34}}{X}\asbra{1}{P_{34}}{X}}\times\frac{1}{s_{34}}\times\frac{\asbra{4}{P_{34}}{X}^3}{\avg{34}\asbra{3}{P_{34}}{X}}\notag\\
+    &+\frac{\avg{24}^2\avg{41}}{\mdavg{23}{36}\asbra{2}{P_{56}}{X}\asbra{1}{P_{56}}{X}}\times\frac{1}{s_{56}}\times\frac{\asbra{6}{P_{56}}{X}^3}{\avg{56}\asbra{5}{P_{56}}{X}}.
+\end{align}
+
 \subsection{n-point case}
 Here, we first propose a compact formula for the color-ordered amplitude
 \begin{equation}
@@ -1571,14 +1605,34 @@ The usual way to prove this kind of compact formula is induction. First we suppo
 
 
 \section{Summary and Outlook}
-
-In this paper, we have explored scattering amplitudes within the framework of (De)construc-ted gauge theories, focusing specifically on the simplest 2 - site model. Considering the well-known limitations of conventional Feynman diagram methods — particularly their complexity in handling huge number of gauge redundancies and their failure to naturally exhibit hidden symmetries like dual conformal invariance, so that modern amplitude techniques, such as the BCFW recursion relation, provide powerful alternatives. By leveraging complex momentum shifts, BCFW recursion effectively reduces higher-point scattering amplitudes to simpler lower-point amplitudes, offering substantial analytical and computational simplifications.
+In this paper, we have explored scattering amplitudes within the framework of (De)constructed gauge theories, focusing specifically on the simplest 2-site model. Considering the well-known limitations of conventional Feynman diagram methods — particularly their complexity in handling the vast gauge redundancies and their failure to naturally exhibit hidden symmetries such as dual conformal invariance — modern amplitude techniques, such as the BCFW recursion relation, provide powerful alternatives. By leveraging complex momentum shifts, BCFW recursion effectively reduces higher-point scattering amplitudes to simpler lower-point amplitudes, offering substantial analytical and computational simplifications.
 
 Our work applied the BCFW recursion relation alongside related modern amplitude methods, including color-ordering and spinor-helicity formalisms, to investigate tree-level scattering processes within this simplest two-site scenario. This model serves as an ideal testing ground due to its renormalizability and clear connection to higher-dimensional physics, specifically Kaluza-Klein (KK) modes emerging dynamically through dimensional deconstruction.
 
-Looking forward, several promising directions arise naturally from our current study. Firstly, it is compelling to extend the two-site model analysis systematically to more intricate configurations, such as three-site or general $n$-site models. Increasing the number of sites allows for richer dynamical behavior and a more realistic representation of higher-dimensional gauge theories. Introducing massive scalar or gauge bosons into the model could further enhance realism, closely mimicking genuine KK spectra as encountered in phenomenological models of compactified extra dimensions.
+In addition to BCFW recursion, we have also incorporated the Cachazo-Svrček-Witten (CSW) expansion to compute next-to-maximally helicity-violating (NMHV) amplitudes. The CSW approach, based on the MHV vertex expansion, re-expresses amplitudes as connected diagrams built from on-shell MHV amplitudes and scalar propagators, offering an efficient alternative to traditional Feynman rules for nontrivial helicity sectors. Within our (De)constructed setup, the CSW framework enables a transparent decomposition of NMHV tree amplitudes and facilitates comparison with results obtained from BCFW, serving as a valuable complementary computational tool.
+
+Looking forward, several promising directions arise naturally from our current study. Firstly, it is compelling to extend the two-site model analysis systematically to more intricate configurations, such as three-site or general \( n \)-site models. Increasing the number of sites allows for richer dynamical behavior and a more realistic representation of higher-dimensional gauge theories. Introducing massive scalar or gauge bosons into the model could further enhance realism, closely mimicking genuine KK spectra as encountered in phenomenological models of compactified extra dimensions.
 
 Another intriguing avenue of future research involves incorporating gravity into this (De)constructed framework. Developing a gravitational analogue through a similar deconstruction procedure, or applying the double-copy technique to our existing gauge-theoretic amplitudes, could yield novel gravitational amplitudes. Such gravitational models would enable the investigation of analogous cancellations observed in KK scattering, potentially offering insights into the intricate interplay between gauge theories and gravity.
+
+Within the broader landscape of modern amplitude methods and higher-dimensional theories, various directions remain to be explored.
+
+First, one natural extension is to apply on-shell techniques beyond the tree level. Loop amplitudes in gauge and gravity theories present formidable computational challenges when approached via traditional Feynman methods. However, modern on-shell approaches — such as generalized unitarity and integrand reduction — have proven to be powerful tools in reconstructing loop integrands from on-shell tree amplitudes~\cite{Bern:1994zx}. Notably, certain extensions of BCFW recursion relations have also been proposed for one-loop amplitudes~\cite{Kharel:2011vz}, where under carefully chosen complex momentum shifts, the integrands of loop-level diagrams can be constructed recursively using forward limits of tree amplitudes. These developments not only enable efficient computation but also reveal hidden structures in multi-loop amplitudes, such as iterative patterns and dual conformal invariance.
+
+
+Secondly, the double-copy correspondence between gauge and gravity theories~\cite{Bern:2010ue} opens a compelling avenue for constructing gravitational amplitudes from gauge-theoretic data. Applying double-copy techniques to (De)constructed gauge amplitudes may allow the generation of corresponding gravitational amplitudes, potentially illuminating novel relations between dimensional deconstruction and the emergence of semi-classical gravity.
+
+Another important frontier is the celestial amplitude program~\cite{Pasterski:2017kqt}, which reinterprets flat-space S-matrix elements as conformal correlators on the celestial sphere. Translating amplitudes from our (De)constructed framework into this basis may uncover new conformal structures and clarify connections to soft theorems and asymptotic symmetries, particularly in the context of dimensional emergence.
+
+On-shell techniques have also begun to play a central role in understanding the classical dynamics of gravitating systems. Recent studies have demonstrated how scattering amplitudes can be used to compute classical observables, such as deflection angles and radiation profiles, in black hole encounters~\cite{Guevara:2019fsj,Neill:2013wsa}. In particular, the use of amplitude-based methods to study black hole mergers and angular momentum transfer has gained traction~\cite{Aoki:2024boe}. Extending our methods to incorporate spinning particles or KK black hole analogs within (De)constructed frameworks may provide novel insights into the classical gravitational limit of higher-dimensional gauge systems.
+
+Beyond computational techniques, recent advances have revealed that scattering amplitudes possess remarkably rich mathematical structures that transcend their Feynman diagram origins. The Cachazo-He-Yuan (CHY) formalism~\cite{Cachazo:2013gna}~\cite{Cachazo:2013hca}~\cite{Cachazo:2013iea} reformulates tree-level amplitudes in a variety of theories — including gauge theory, gravity, and scalar theory — as contour integrals over the moduli space of punctured Riemann spheres, localized on solutions to the so-called scattering equations. This approach unifies diverse theories into a single geometric framework and suggests a deep connection between worldsheet models and field theory amplitudes.
+
+Building on such geometric insights, the notion of scattering forms~\cite{Arkani-Hamed:2017mur} encodes amplitudes as differential forms on kinematic spaces or moduli spaces. These forms have logarithmic singularities only on physical poles, and their residues capture consistent factorization properties. Scattering forms provide a natural language for organizing amplitudes independently of specific Feynman representations, with close ties to positive geometry and canonical forms.
+
+Most strikingly, in planar \( \mathcal{N}=4 \) super Yang-Mills theory, the amplituhedron offers a geometric reformulation in which the integrand of scattering amplitudes is interpreted as the canonical form on a positive region of the Grassmannian. This picture bypasses locality and unitarity as input, instead deriving them from global geometric consistency. These developments highlight a profound shift: scattering amplitudes may ultimately be understood as emergent from geometry and combinatorics, rather than traditional Lagrangian dynamics.
+
+Altogether, these directions — from higher-loop gauge and gravity amplitudes, to celestial reformulations, to classical black hole dynamics — point to a broad and rich landscape where modern amplitude techniques can deepen our understanding of spacetime, duality, and quantum gravity. The present work lays foundational steps toward the future goals within the context of (De)constructed quantum field theories or another different directions. 
 
 In conclusion, the results presented here set the foundation for future explorations into more complex (De)constructed models and their gravitational counterparts. These studies promise to deepen our understanding of amplitude structures, dimensional emergence, and the broader implications of gauge-gravity dualities.
 

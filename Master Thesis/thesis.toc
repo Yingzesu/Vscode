@@ -19,10 +19,10 @@
 \contentsline {subsubsection}{\numberline {4.3.1}4-point case}{29}{subsubsection.4.3.1}%
 \contentsline {subsubsection}{\numberline {4.3.2}5-point case}{31}{subsubsection.4.3.2}%
 \contentsline {subsubsection}{\numberline {4.3.3}6 - point case}{32}{subsubsection.4.3.3}%
-\contentsline {subsubsection}{\numberline {4.3.4}n-point case}{34}{subsubsection.4.3.4}%
-\contentsline {subsection}{\numberline {4.4}Pure 2-site sector}{34}{subsection.4.4}%
-\contentsline {subsubsection}{\numberline {4.4.1}4-point case}{34}{subsubsection.4.4.1}%
-\contentsline {subsubsection}{\numberline {4.4.2}5-point case}{36}{subsubsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.3.4}n-point case}{35}{subsubsection.4.3.4}%
+\contentsline {subsection}{\numberline {4.4}Pure 2-site sector}{35}{subsection.4.4}%
+\contentsline {subsubsection}{\numberline {4.4.1}4-point case}{35}{subsubsection.4.4.1}%
+\contentsline {subsubsection}{\numberline {4.4.2}5-point case}{37}{subsubsection.4.4.2}%
 \contentsline {subsubsection}{\numberline {4.4.3}6-point case}{39}{subsubsection.4.4.3}%
 \contentsline {subsection}{\numberline {4.5}n-point case}{43}{subsection.4.5}%
-\contentsline {section}{\numberline {5}Summary and Outlook}{43}{section.5}%
+\contentsline {section}{\numberline {5}Summary and Outlook}{44}{section.5}%

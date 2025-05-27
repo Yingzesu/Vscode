@@ -45,6 +45,16 @@ Bo~Feng and Mingxing Luo.
 \newblock {An Introduction to On-shell Recursion Relations}.
 \newblock {\em Front. Phys. (Beijing)}, 7:533--575, 2012.
 
+\bibitem{Hodges:2009hk}
+Andrew Hodges.
+\newblock {Eliminating spurious poles from gauge-theoretic amplitudes}.
+\newblock {\em JHEP}, 05:135, 2013.
+
+\bibitem{Arkani-Hamed:2013jha}
+Nima Arkani-Hamed and Jaroslav Trnka.
+\newblock {The Amplituhedron}.
+\newblock {\em JHEP}, 10:030, 2014.
+
 \bibitem{Cohen:2010mi}
 Timothy Cohen, Henriette Elvang, and Michael Kiermaier.
 \newblock {On-shell constructibility of tree amplitudes in general field theories}.
@@ -59,5 +69,60 @@ Henriette Elvang, Daniel~Z. Freedman, and Michael Kiermaier.
 Freddy Cachazo, Peter Svrcek, and Edward Witten.
 \newblock {MHV vertices and tree amplitudes in gauge theory}.
 \newblock {\em JHEP}, 09:006, 2004.
+
+\bibitem{Bern:1994zx}
+Z.~Bern, L.~J. Dixon, D.~C. Dunbar, and D.~A. Kosower.
+\newblock {Fusing gauge theory tree amplitudes into loop amplitudes}.
+\newblock {\em Nucl. Phys. B}, 435:59--101, 1995.
+
+\bibitem{Kharel:2011vz}
+Savan Kharel and George Siopsis.
+\newblock {Gauge theory one-loop amplitudes and the BCFW recursion relations}.
+\newblock {\em Phys. Rev. D}, 86:025004, 2012.
+
+\bibitem{Bern:2010ue}
+Z.~Bern, J.~J. Carrasco, and H.~Johansson.
+\newblock {Perturbative Quantum Gravity as a Double Copy of Gauge Theory}.
+\newblock {\em Phys. Rev. Lett.}, 105:061602, 2010.
+
+\bibitem{Pasterski:2017kqt}
+Sabrina Pasterski, Shu-Heng Shao, and Andrew Strominger.
+\newblock {Gluon Amplitudes as 2D Conformal Correlators}.
+\newblock {\em Phys. Rev. D}, 96(8):085006, 2017.
+
+\bibitem{Guevara:2019fsj}
+Alfredo Guevara, Ben Maybee, and Justin Vines.
+\newblock {Scattering of Spinning Black Holes from Exponentiated Soft Factors}.
+\newblock {\em JHEP}, 12:027, 2019.
+
+\bibitem{Neill:2013wsa}
+Duff Neill and Ira~Z. Rothstein.
+\newblock {Classical Space-Times from the S Matrix}.
+\newblock {\em Nucl. Phys. B}, 877:177--189, 2013.
+
+\bibitem{Aoki:2024boe}
+Katsuki Aoki, Andrea Cristofoli, and Yu-tin Huang.
+\newblock {On-shell approach to black hole mergers}.
+\newblock {\em JHEP}, 01:066, 2025.
+
+\bibitem{Cachazo:2013gna}
+Freddy Cachazo, Song He, and Ellis~Ye Yuan.
+\newblock {Scattering equations and Kawai-Lewellen-Tye orthogonality}.
+\newblock {\em Phys. Rev. D}, 90(6):065001, 2014.
+
+\bibitem{Cachazo:2013hca}
+Freddy Cachazo, Song He, and Ellis~Ye Yuan.
+\newblock {Scattering of Massless Particles in Arbitrary Dimensions}.
+\newblock {\em Phys. Rev. Lett.}, 113(17):171601, 2014.
+
+\bibitem{Cachazo:2013iea}
+Freddy Cachazo, Song He, and Ellis~Ye Yuan.
+\newblock {Scattering of Massless Particles: Scalars, Gluons and Gravitons}.
+\newblock {\em JHEP}, 07:033, 2014.
+
+\bibitem{Arkani-Hamed:2017mur}
+Nima Arkani-Hamed, Yuntao Bai, Song He, and Gongwang Yan.
+\newblock {Scattering Forms and the Positive Geometry of Kinematics, Color and the Worldsheet}.
+\newblock {\em JHEP}, 05:096, 2018.
 
 \end{thebibliography}
