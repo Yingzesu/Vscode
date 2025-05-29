@@ -1,0 +1,133 @@
+\documentclass{beamer}
+\usetheme{metropolis}
+% 防止目录变灰或消失
+\setbeamercolor{section in toc}{fg=black,bg=white}
+\setbeamercolor{section in toc shaded}{fg=black,bg=white}
+\setbeamercolor{subsection in toc shaded}{fg=black,bg=white}
+\setbeamercolor{alerted text}{fg=black}
+
+% 禁用 shaded 效果
+\setbeamertemplate{section in toc shaded}[default]
+\setbeamertemplate{subsection in toc shaded}[default]
+
+% ========= 字体 & 数学 =========
+\usepackage{newtxtext,newtxmath}
+
+% ========= 图像 & 物理包 =========
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{tikz-feynman}
+\usepackage{physics}
+
+
+% ========= 修复 Metropolis 的变灰问题 =========
+
+
+% ========= 标题信息 =========
+\title{On-Shell Methods for Tree-Level Amplitudes\\ in (De)Constructed Gauge Theory}
+\subtitle{Application of BCFW Recursion Relation}
+
+\author[Su Yingze]{
+  Su Yingze\\
+  Supervisor: Prof. Tanabashi Masaharu
+}
+
+\institute{Theoretical Particle Physics Laboratory, Nagoya University}
+\date{\today}
+
+% ========= 标题页右下角校徽 =========
+\titlegraphic{
+  \vspace*{4.5cm}
+  \hfill
+  \includegraphics[width=2.5cm]{Nagoya.png}
+  \vspace*{-2cm}
+}
+
+% ========= 正文开始 =========
+\begin{document}
+
+% ===== 封面 =====
+\maketitle
+
+% ===== 总目录页 =====
+\begin{frame}{Outline}
+  \setbeamertemplate{section in toc}[sections numbered]
+  \tableofcontents[currentsection]
+\end{frame}
+
+% ===== 每章开始时显示当前目录页（可选）=====
+
+
+% ===== 1. Motivation =====
+\section{Motivation}
+\begin{frame}{Why We Study Scattering Amplitudes?}
+  \begin{enumerate}
+    \item \textbf{Bridge between theory and experiment}
+    \begin{itemize}
+      \item Core prediction targets for high-energy experiments such as the LHC
+      \item Any new theory (SUSY, GUTs, extra dimensions) must predict observable cross sections
+    \end{itemize}
+    \pause
+    \item \textbf{Reveal deep structures of quantum field theory}
+    \begin{itemize}
+      \item Amplitudes exhibit hidden symmetries (e.g., dual conformal, Yangian) not visible in the Lagrangian
+      \item These symmetries suggest deeper theoretical frameworks, such as integrability or AdS/CFT correspondence
+    \end{itemize}
+  \end{enumerate}
+\end{frame}
+\begin{frame}
+    \frametitle{Struggles of Traditional Approaches}
+  
+\end{frame}
+
+% ===== 2. Model =====
+\section{Model}
+\begin{frame}{(De)constructed Gauge Theory}
+  \begin{itemize}
+    \item Based on discretizing extra dimensions
+    \item Multiple gauge groups + link scalar fields
+    \item Focus: a general $n$-site structure and 2-site limit
+  \end{itemize}
+\end{frame}
+
+% ===== 3. Methods =====
+\section{Methods} 
+\begin{frame}{Modern Amplitude Techniques}
+  \begin{itemize}
+    \item BCFW recursion: complex deformation of momenta
+    \item Spinor-helicity formalism: simplifies massless amplitudes
+    \item CSW expansion: handles NMHV amplitudes
+  \end{itemize}
+  \pause
+  \[
+  A_n = \sum_{\text{partitions}} \frac{A_L A_R}{P^2}
+  \]
+\end{frame}
+
+% ===== 4. Results =====
+\section{Results}
+\begin{frame}{Key Results}
+  \begin{itemize}
+    \item Computed tree-level amplitudes for various helicity configurations
+    \item Verified KK-mode cancellation patterns
+    \item Demonstrated efficiency over traditional Feynman diagrams
+  \end{itemize}
+\end{frame}
+
+% ===== 5. Outlook =====
+\section{Outlook}
+\begin{frame}{Future Directions}
+  \begin{itemize}
+    \item Extension to $n$-site models and loop-level amplitudes
+    \item Application to black hole scattering (on-shell gravity)
+    \item Exploration of geometric frameworks (amplituhedron, CHY)
+  \end{itemize}
+\end{frame}
+
+% ===== 致谢 =====
+\begin{frame}{Acknowledgement}
+  \centering
+  Thanks to my advisor, lab colleagues, and audience!
+\end{frame}
+
+\end{document}
