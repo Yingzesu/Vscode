@@ -1,35 +1,5 @@
 \begin{thebibliography}{10}
 
-\bibitem{Drummond:2008vq}
-J.~M. Drummond, J.~Henn, G.~P. Korchemsky, and E.~Sokatchev.
-\newblock {Dual superconformal symmetry of scattering amplitudes in N=4 super-Yang-Mills theory}.
-\newblock {\em Nucl. Phys. B}, 828:317--374, 2010.
-
-\bibitem{Britto:2004ap}
-Ruth Britto, Freddy Cachazo, and Bo~Feng.
-\newblock {New recursion relations for tree amplitudes of gluons}.
-\newblock {\em Nucl. Phys. B}, 715:499--522, 2005.
-
-\bibitem{Witten:2003nn}
-Edward Witten.
-\newblock {Perturbative gauge theory as a string theory in twistor space}.
-\newblock {\em Commun. Math. Phys.}, 252:189--258, 2004.
-
-\bibitem{Britto:2005fq}
-Ruth Britto, Freddy Cachazo, Bo~Feng, and Edward Witten.
-\newblock {Direct proof of tree-level recursion relation in Yang-Mills theory}.
-\newblock {\em Phys. Rev. Lett.}, 94:181602, 2005.
-
-\bibitem{SekharChivukula:2019yul}
-R.~Sekhar~Chivukula, Dennis Foren, Kirtimaan~A. Mohan, Dipan Sengupta, and Elizabeth~H. Simmons.
-\newblock {Scattering amplitudes of massive spin-2 Kaluza-Klein states grow only as ${\cal O}(s)$}.
-\newblock {\em Phys. Rev. D}, 101(5):055013, 2020.
-
-\bibitem{Arkani-Hamed:2001kyx}
-Nima Arkani-Hamed, Andrew~G. Cohen, and Howard Georgi.
-\newblock {(De)constructing dimensions}.
-\newblock {\em Phys. Rev. Lett.}, 86:4757--4761, 2001.
-
 \bibitem{Elvang:2013cua}
 Henriette Elvang and Yu-tin Huang.
 \newblock {Scattering Amplitudes}.
@@ -39,6 +9,11 @@ Henriette Elvang and Yu-tin Huang.
 Vittorio Del~Duca, Lance~J. Dixon, and Fabio Maltoni.
 \newblock {New color decompositions for gauge amplitudes at tree and loop level}.
 \newblock {\em Nucl. Phys. B}, 571:51--70, 2000.
+
+\bibitem{Arkani-Hamed:2001kyx}
+Nima Arkani-Hamed, Andrew~G. Cohen, and Howard Georgi.
+\newblock {(De)constructing dimensions}.
+\newblock {\em Phys. Rev. Lett.}, 86:4757--4761, 2001.
 
 \bibitem{Feng:2011np}
 Bo~Feng and Mingxing Luo.
@@ -69,6 +44,16 @@ Henriette Elvang, Daniel~Z. Freedman, and Michael Kiermaier.
 Freddy Cachazo, Peter Svrcek, and Edward Witten.
 \newblock {MHV vertices and tree amplitudes in gauge theory}.
 \newblock {\em JHEP}, 09:006, 2004.
+
+\bibitem{Ballav:2020ese}
+Sourav Ballav and Arkajyoti Manna.
+\newblock {Recursion relations for scattering amplitudes with massive particles}.
+\newblock {\em JHEP}, 03:295, 2021.
+
+\bibitem{Arkani-Hamed:2017jhn}
+Nima Arkani-Hamed, Tzu-Chen Huang, and Yu-tin Huang.
+\newblock {Scattering amplitudes for all masses and spins}.
+\newblock {\em JHEP}, 11:070, 2021.
 
 \bibitem{Bern:1994zx}
 Z.~Bern, L.~J. Dixon, D.~C. Dunbar, and D.~A. Kosower.

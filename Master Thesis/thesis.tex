@@ -268,7 +268,7 @@ where $T^a$ are generators of fundamental representation. Moreover, in $SU(N)$, 
 \end{equation}
 This identity is easier understood as matrix form like 
 \begin{equation}
-    \mathrm{Tr}\{T^aA\}\mathrm{Tr}\{T^aB\}=\mathrm{Tr}\{AB\}-\frac{1}{N}\{A\}\mathrm{Tr}\{B\},
+    \mathrm{Tr}\{T^aA\}\mathrm{Tr}\{T^aB\}=\mathrm{Tr}\{AB\}-\frac{1}{N}\mathrm{Tr}\{A\}\mathrm{Tr}\{B\},
 \end{equation}
 and
 \begin{equation}
@@ -1110,6 +1110,7 @@ First we explain the color decomposition in this sector by 4 point amplitude $\P
     \begin{align}
         A_1&=\frac{\avg{\hat{2}\hat{I}}\avg{\hat{I}1}}{\avg{1\hat{I}}}\times \frac{1}{s_{12}}\times \frac{[\hat{I}\hat{3}]^3}{[\hat{3}4][4\hat{I}]}\notag\\
         &=(-1)\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
+        \label{4.16}
     \end{align}
     where we use the fact $\aket{\hat{2}}=\aket{2}$, $\sket{\hat{3}}=\sket{3}$, and the \textcolor{red}{Fierz Identity}
     \begin{equation}
@@ -1674,7 +1675,83 @@ The 4-pt amplitude can be computed like
   \bigg) \,,
 \end{equation}
 so actually we compute ta special case in which the parameter $\lambda$ are choosed as $\lambda=2e^2$, so that the boundary are eliminated. 
-\subsubsection{Attempt to massive scalar}
+
+Similarly, if we consider four sclar scattering in 2-site model $\Phi\Phi^\dagger\Phi\Phi^\dagger$, we have the same Feynman diagram but with two different gauge boson propagating in the internal line
+\begin{figure}[H]
+    \centering
+    \includegraphics{4ptt1.pdf}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics{4ptt2.pdf}
+\end{figure}
+These diagrams correspond to two different amplitudes
+\begin{align}
+    \mathcal{A}_1&=g_1^2\left(\frac{-2t-s}{s}\right)r_s+g_1^2\left(\frac{-2s-t}{t}\right)r_t\notag\\
+    &=g_1^2\left(-1-2\frac{t}{s}\right)r_s+g_1^2\left(-1-2\frac{s}{t}\right)r_t\notag\\
+    &=-g_1^2(r_s+r_t)-2g_1^2\left(\frac{t}{s}r_s+\frac{s}{t}r_t\right)
+\end{align}
+\subsection{Attempt to massive scalar}
+It is quite intriguing to investigate what is the situation if we change the scalar to be massive. Without doubt, the BCFW shift should change and here we just refer to the method from \cite{Ballav:2020ese}.
+The shift are choosen like 
+\begin{gather}
+    \aket{\hat{2^I}}=\aket{2^I},\qquad \sket{\hat{2^I}}=\sket{2^I}-\frac{z}{m}\sket{3}[2^I3]\\
+    \aket{\hat{3}}=\aket{3}+\frac{z}{m}p_2\sket{3},\qquad \sket{\hat{3}}=\sket{3}.
+\end{gather}
+For the massive particle with same mass, it is necessary to introduce a x factor as \cite{Arkani-Hamed:2017jhn}. Here the x factor equals to
+\begin{gather}
+    x\lambda_{3\alpha}=\frac{p_{1\alpha\dot{\alpha}}}{m}\tilde{\lambda}_3^{\dot{\alpha}}\quad \Rightarrow \quad x\avg{\xi 3 }=\frac{\asbra{\xi}{p_1}{3}}{m}\qquad x=\frac{\asbra{\xi}{p_1}{3}}{m\avg{\xi 3}}\\
+    \frac{\tilde{\lambda}_3^{\dot{\alpha}}}{x}=\frac{p_1^{\dot{\alpha \alpha}}\lambda_{3\alpha}}{m}\quad \Rightarrow \quad \frac{1}{x}[\xi3]=\frac{\asbra{3}{p_1}{\xi}}{m}\qquad \frac{1}{x}=\frac{\asbra{3}{p_1}{\xi}}{m[3\xi]} ~\text{or}~ x=\frac{m[\xi3]}{\asbra{3}{p_1}{\xi}}
+\end{gather}
+Then, from the 3-point building block
+\begin{equation}
+    M^{\text{min},+1}=x\frac{\avg{\textbf{12}}^{2s}}{m^{2s-1}},\qquad M^{\text{min,-1}}=\frac{1}{x}\frac{[\textbf{12}]^{2s}}{m^{2s-1}}
+\end{equation}
+here min means the minimal coupling. The amplitudes can be similarly computed by utlizing BCFW with some more efforts
+\begin{align}
+    A[\textbf{1},\textbf{2},3^+,4^+]&=g^2m \hat{x}_{12}\times\frac{1}{s_{12}}\times \frac{[\hat{3}4]^3}{[4\hat{I}][\hat{I}\hat{3}]}\notag\\
+    &=g^2m^2\frac{[4\hat{I}]}{\asbra{\hat{I}}{p_1}{4}}\times\frac{1}{s_{12}}\times \frac{[34]^3}{[4\hat{I}][\hat{I}\hat{3}]}
+\end{align}
+and
+\begin{equation}
+    -[3\hat{I}]\asbra{\hat{I}}{p_1}{4}
+\end{equation}
+can be computed as following
+\begin{align}
+    -[3\hat{I}]\asbra{\hat{I}}{p_1}{4}&=-[3|(p_3+p_4)p_1|4]=[3|p_3p_1|4]-[3|p_4p_1|4]=-[3|p_4p_1|4]\notag\\
+    &=-p_{4\mu} p_{1\nu}[3|(\bar{\sigma}^\mu)^{\dot{\alpha}\beta}(\sigma^\nu)_{\beta\dot{\gamma}}|4]\notag\\
+    &=[3|p_1p_4|4]-2p_1\cdot p_4[34]=-2p_1\cdot p_4[34]
+\end{align}
+here we use the formula
+\begin{equation}
+    (\sigma^\mu\bar{\sigma}^\nu+\sigma^\nu\bar{\sigma}^\mu)_\alpha^{\phantom{a}\beta}=2\eta^{\mu\nu}\delta_\alpha^{\phantom{a}\beta}
+\end{equation}
+and the term $2p_1\cdot p_4$ can be extracted from
+\begin{equation}
+    (p_1+p_4)^2=(p_2+p_3)^2=s_{23}
+\end{equation}
+The final result for this amplitude is 
+\begin{equation}
+    A[\textbf{1},\textbf{2},3^+,4^+]=\frac{[34]^3}{s_{34}(s_{23}-m^2)[43]}=m^2g^2\frac{[34]}{\avg{43}(s_{23}-m^2)}
+\end{equation}
+If we take the high energy limit so that the m can be chose to 0, then the amplitude becomes 0, which is consistent with our previous analysis. 
+
+For another helicity configuration, we can compute similarly
+\begin{align}
+    A[\textbf{1},\textbf{2},3^+,4^-]&=g^2m\frac{1}{\hat{x}_{12}}\times\frac{1}{s_{12}}\times\frac{[\hat{I}\hat{3}]^3}{[\hat{3}4][4\hat{I}]}\notag\\
+    &=g^2m\frac{\asbra{\hat{I}}{p_1}{3}}{m[\hat{I}3]}\times\frac{[\hat{I}3]^3}{[34][4\hat{I}]}=g^2\frac{\asbra{\hat{I}}{p_1}{3}[\hat{I}3]^2}{[34][4\hat{I}]s_{34}}
+\end{align}
+aftering the similar computation, the final result can be obtained as 
+\begin{equation}
+    A[\textbf{1},\textbf{2},3^+,4^-]=g^2\frac{\asbra{4}{p_1}{3}^2}{(s_{14}-m^2)s_{34}}
+\end{equation}
+We can also take the high energy limit and check if it is consistent with our previous result. Aftering some subtle computation, it can be proved that the amplitude can be written like 
+\begin{equation}
+    A=\frac{\cbrak{13}{24}\acbrak{14}{32}}{\acbrak{23}{32}\acbrak{12}{21}}=\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
+\end{equation}
+which is perfectly math to the equation \eqref{4.16}.(We neglect the negligible $\pm$ sign)
+
+For the higher point case, in principle, there is no big difference from the computaion before, except the computaion for massive spinor-helicty variable.
 \section{Summary and Outlook}
 In this paper, we have explored scattering amplitudes within the framework of (De)constructed gauge theories, focusing specifically on the simplest 2-site model. Considering the well-known limitations of conventional Feynman diagram methods — particularly their complexity in handling the vast gauge redundancies and their failure to naturally exhibit hidden symmetries such as dual conformal invariance — modern amplitude techniques, such as the BCFW recursion relation, provide powerful alternatives. By leveraging complex momentum shifts, BCFW recursion effectively reduces higher-point scattering amplitudes to simpler lower-point amplitudes, offering substantial analytical and computational simplifications.
 
