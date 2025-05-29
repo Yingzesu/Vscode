@@ -53,6 +53,12 @@
 \newpage
 \begin{abstract}
 \normalsize
+\noindent
+Name: Su Yingze
+
+\noindent
+Student number: 262309017
+
 This thesis explores tree-level scattering amplitudes in (De)constructed gauge theories using modern on-shell methods. Traditional Feynman diagram techniques, though systematic, become increasingly cumbersome in theories with gauge redundancies and high multiplicity. Motivated by these limitations, we adopt a framework based on analyticity, factorization, and gauge invariance, applying the BCFW recursion relation and related spinor-helicity techniques.
 
 Our analysis focuses on the two-site model, the simplest (De)constructed scenario, which provides a renormalizable four-dimensional realization of dimensional deconstruction and naturally generates Kaluza-Klein (KK)-like spectra. Tree-level color-ordered amplitudes involving massive and massless vector bosons are computed using the BCFW recursion, revealing significant simplifications and cancellation patterns, especially in longitudinal gauge boson scattering. To access non-MHV sectors, we further employ the Cachazo-Svrček-Witten (CSW) expansion, which efficiently constructs NMHV amplitudes from MHV vertices, offering a complementary perspective to BCFW recursion.
@@ -69,26 +75,19 @@ Future directions include applying generalized unitarity and BCFW-based recursio
 \tableofcontents
 \newpage
 \section{Introduction}
-As we have known,
-under the conventional quantum field theory frame, Richard Feynman proposed a brilliant method -- Feynman diagrams, to help us perturbatively compute scattering amplitude by a
-diagrammatic method. However, this method faces many challenges during the improvements of physical theory and complexity of construction for model building, there are many
-amplitudes hard to compute by hand or even impossible to compute. In gauge theory, there are huge number of gauge redundancies, making the computation quite complicated.
-We need to address with this kind of unphysical degree of freedom, otherwise we can not obtain the correct physical quantities. Also, we have to address with kinematic factor and color factor simultaneously in the nonabelian gauge theory.
-And it has been known that the amplitudes in $\mathcal{N}=4$ super Yang-Mills theory obtain the symmetry -- dual superconformal symmetry\cite{Drummond:2008vq}, which is not reflected in conventional Feynman diagram method. 
+As we have known, under the conventional quantum field theory framework, Richard Feynman introduced an elegant method—Feynman diagrams—to perturbatively compute scattering amplitudes through diagrammatic expansions. Despite their intuitive and systematic nature, these diagrams quickly become complicated as the complexity of physical theories grows, particularly in gauge theories. When dealing with non-Abelian gauge fields such as gluons, an enormous number of redundant gauge degrees of freedom often arises, significantly increasing computational complexity. This redundancy requires meticulous handling to ensure correct and gauge-invariant results. Furthermore, traditional Feynman diagrams obscure underlying symmetries, such as the dual superconformal symmetry observed explicitly in N = 4 super Yang-Mills theory, making it difficult to identify and exploit these hidden structures.
 
-Hence, all of these factors impetus physicists to propose something new, then the BCFW recursion relation is the first product as a new method to compute amplitudes . Historically, the original recursion relation is for gluon scattering amplitudes, coming from Britto, Cachazo and Feng \cite{Britto:2004ap},
-and it can be seen as the first breakthrough for modern amplitude method. They explored the analytic properties of amplitudes when extended into complex momentum space. In particular, they considered deforming two external momenta by a complex parameter z, in such a way that the on-shell conditions and momentum conservation are preserved.
-Through this deformation, they observed that tree-level amplitudes exhibit simple pole structures in the complex 
-z-plane, corresponding to internal propagators going on-shell. This analytic structure allowed them to derive a recursion relation that expresses an 
-n-point amplitude in terms of lower-point amplitudes. Edward Witten subsequently noticed that his Twistor String Theory\cite{Witten:2003nn}, which reveals the hidden symmetry and geometry structure of amplitude, implied that the scattering amplitudes has stronger 
-analytic property. Their collaboration led to a general formulation of the recursion relations, now known as the BCFW recursion relations\cite{Britto:2005fq}, named after Ruth Britto, Freddy Cachazo, Bo Feng, and Edward Witten.
-In particular, Witten helped clarify the large -- z behavior of the amplitudes under complex momentum shifts --- a crucial condition ensuring the validity of the recursion. 
+These challenges have strongly motivated physicists to develop alternative, more efficient methods. Among these, the BCFW recursion relation represents a pivotal breakthrough. Originating from the work of Britto, Cachazo, and Feng, and later generalized in collaboration with Edward Witten, the BCFW recursion provides a powerful method to compute amplitudes by analytically continuing external momenta into the complex plane. By deforming two external momenta with a complex parameter, while maintaining momentum conservation and on-shell conditions, the amplitudes exhibit simplified pole structures, enabling recursive computation from lower-point amplitudes. This method not only streamlines calculations but also naturally reveals hidden symmetries and analytic properties that are invisible through traditional approaches.
 
-The starting point comes from the precise cancellation in scattering for longitudinal modes of massive spin-2 Kaluza-Klein(KK) states. While individual contributions grow as $\mathcal{O}(s^5)$, $\mathcal{O}(s^4)$, $\mathcal{O}(s^3)$ and $\mathcal{O}(s^2)$, it has been proved that these contributions are cancelled with
-each other in a quite intricate way\cite{SekharChivukula:2019yul}, and the final results only grow as $\mathcal{O}(s)$. But it is quite difficult to compute this kind of scattering amplitudes, so if we can obtain some clues for this KK scattering amplitudes from other aspects, it may help us to
-understand this cancellation in another way. This paper is motivated by a kind of (De)constructed gauge theory, proposed by Nima, Cohen and Georgi\cite{Arkani-Hamed:2001kyx}. They constructed a renormalizable, asymptotically free, four dimension gauge theories that dynamically generate a fifth dimension. 
-In this paper, the authors proposed that the “ Condensed '' theory actually discretized a five dimension gauge theory with gauge group $SU(m)$. After higgsing, the Kaluza-Klein spectrum for $S^1$ compactification appears. It encourages to compute scattering amplitudes in this model. This paper mainly contributes to the 
-computation for scattering amplitudes in the simplest 2-site model by utilizing BCFW recursion relation and other related method, such as color-ordered amplitudes, spinor-helicity formalism, etc.
+Motivated by insights from dimensional deconstruction, this thesis investigates a simplified yet rich class of gauge theories—the (De)constructed gauge theories—where higher-dimensional theories emerge dynamically from four-dimensional renormalizable setups. Proposed initially by Arkani-Hamed, Cohen, and Georgi, these models discretize additional spatial dimensions into gauge groups linked by scalar fields. Specifically, we focus on the simplest example, the two-site model, which dynamically generates Kaluza-Klein-like states. One intriguing phenomenon in these models is the subtle cancellation of amplitudes involving longitudinal modes of massive gauge bosons, which mimics the behavior observed in genuine higher-dimensional gauge theories.
+
+In this work, we apply modern amplitude techniques, such as the BCFW recursion relation and the spinor-helicity formalism, to compute tree-level amplitudes within this two-site framework. By exploring both maximally helicity violating (MHV) and next-to-MHV (NMHV) configurations using the Cachazo-Svrček-Witten (CSW) expansion, we demonstrate significant simplifications and uncover intricate cancellation patterns. These results not only validate the effectiveness of modern on-shell methods in theories with massive and massless gauge fields but also suggest deeper geometric interpretations.
+
+This thesis serves as the foundational step in my research journey, equipping me with essential knowledge and skills and broadening my perspective in scattering amplitude computations. Through this initial exploration of (De)constructed gauge theories using modern on-shell methods, I have established a robust understanding of tree-level amplitudes and gained familiarity with pivotal tools like the BCFW recursion relation and the spinor-helicity formalism. This groundwork will enable me to efficiently transition into further research directions, facilitating deeper inquiries into various topics in theoretical physics.
+
+The structure of this thesis is organized as follows: Chapter 2 provides a comprehensive review of essential theoretical background, including the color structure of gauge theory and modern amplitude techniques such as BCFW recursion, spinor-helicity formalism, and CSW expansions. Chapter 3 introduces the general (De)constructed gauge theory framework, discussing the overall structure and fundamental concepts relevant to the model. Chapter 4 focuses specifically on detailed computations within the two-site (De)constructed gauge model, presenting thorough analyses of tree-level scattering amplitudes, significant simplifications, and cancellation phenomena. Finally, Chapter 5 summarizes key findings, emphasizing their implications and potential applications, while also identifying future research opportunities inspired by this work.
+
+
 
 \section{Review of BCFW recursion relation and others}
 Traditionally, one relies on Feynman diagrams to calculate scattering amplitudes. Feynman diagrams
@@ -1592,8 +1591,8 @@ For the NMHV ampitudes $A[1,2,3_1^+,4_1^-,5_2^+,6_2^-]$, we can obtain the follo
     &+\frac{\avg{26}^2\avg{61}}{\mdavg{25}{56}\asbra{2}{P_{34}}{X}\asbra{1}{P_{34}}{X}}\times\frac{1}{s_{34}}\times\frac{\asbra{4}{P_{34}}{X}^3}{\avg{34}\asbra{3}{P_{34}}{X}}\notag\\
     &+\frac{\avg{24}^2\avg{41}}{\mdavg{23}{36}\asbra{2}{P_{56}}{X}\asbra{1}{P_{56}}{X}}\times\frac{1}{s_{56}}\times\frac{\asbra{6}{P_{56}}{X}^3}{\avg{56}\asbra{5}{P_{56}}{X}}.
 \end{align}
-
-\subsection{n-point case}
+where I do not cancel the dependence of spinor X explicitly, but it is not quite complicated to do.
+\subsubsection{n-point case}
 Here, we first propose a compact formula for the color-ordered amplitude
 \begin{equation}
     A=\frac{\asqu{2a}\!\asqu{1a}}{\underbrace{\avg{2\star}\cdots \avg{\star 1}}_{SU(N_1)}\underbrace{\avg{2\ast }\cdots \avg{\ast 1}}_{SU(N_2)}}
@@ -1603,7 +1602,79 @@ refers to the ordering for the second gauge group. We suppose there are $n_1$ ga
 \par
 The usual way to prove this kind of compact formula is induction. First we suppose that all of the amplitudes with external point lower than n satisfy the compact formula.
 
+\subsection{Pure scalar case}
+Before going to the computation of pure scalar amplitudes in the 2-site model, it is necessary to review a quite similar amplitude -- scalar QED.
+There are two feynman diagrams corresponding to 4 scalar scattering process 
+\begin{figure}[H]
+    \centering
+    \includegraphics{s4pt.pdf}
+    \caption{4 scalar scattering}
+\end{figure}
+First we can use the feynman rule to compute them like
+\begin{align}
+    i\mathcal{A}&=(-ie)^2(-i)\times\frac{(p_1-p_2)(p_3-p_4)}{(p_1+p_2)^2}+(-ie)^2(-i)\frac{(p_1-p_4)(p_3-p_2)}{(p_1+p_4)^2}\notag\\
+    &=ie^2\left(\frac{u-t}{s}+\frac{u-s}{t}\right)\notag\\
+    &=-2ie^2-2ie^2\left(\frac{t}{s}+\frac{s}{t}\right)
+\end{align}
+where the Mandelstam variables are defined as 
+\begin{equation}
+    s=(p_1+p_2)^2,\quad t=(p_1+p_4)^2,\quad u=(p_1+p_3)^2.
+\end{equation}
+We can rewrite this formula in terms of spinor-helicity variables
+\begin{equation}
+    s=\cbrak{12}{21}=\cbrak{34}{43},\quad t=\cbrak{14}{41}=\cbrak{23}{32},\quad u=\cbrak{13}{31}=\cbrak{24}{42}.
+\end{equation}
+then the amplitudes can be rewritten like
+\begin{equation}
+    \mathcal{A}=-2e^2-2e^2\left(\frac{\mdavg{14}{23}}{\mdavg{12}{34}}+\frac{\mdavg{12}{34}}{\mdavg{14}{23}}\right)
+\end{equation}
+The second term can be written further as
+\begin{align}
+    \frac{\mdavg{14}{23}}{\mdavg{12}{34}}+\frac{\mdavg{12}{34}}{\mdavg{14}{23}}&=\frac{\avg{14}^2\avg{23}^2+\avg{12}^2\avg{34}^2}{\mdavg{14}{23}\!\mdavg{12}{34}}=\frac{(\mdavg{14}{23}+\mdavg{12}{34})^2-2\mdavg{14}{23}\!\mdavg{12}{34}}{\mdavg{14}{23}\!\mdavg{12}{34}}\notag\\
+    &=-\frac{\avg{13}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}-2
+\end{align}
+then the final form of amplitudes can be read as
+\begin{equation}
+    \mathcal{A}=\underbrace{2e^2}_{\text{boundary term}}+2e^2\frac{\avg{13}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
+    \label{4.68}
+\end{equation}
+where the meaning of boundary term can be understood later.
 
+If we use BCFW to compute the same amplitude, can we obtain the same result? We choose the normal $[1,3\rangle$ shift and it corresponds two following BCFW channel
+\begin{figure}[H]
+    \centering
+    \includegraphics{s4pt1.pdf}
+\end{figure}
+It can be computed like
+\begin{align}
+    \mathcal{A}&=\frac{\mdavg{\hat{1}\hat{I}}{\hat{I}2}}{\avg{\hat{1}2}}\times\frac{1}{s_{12}}\times\frac{[4\hat{I}][\hat{I}3]}{[\hat{3}4]}+\frac{\mdavg{\hat{1}\hat{I}}{\hat{I}4}}{\avg{4\hat{1}}}\times\frac{1}{s_{14}}\times\frac{[\hat{3}\hat{I}][\hat{I}2]}{[2\hat{3}]}\notag\\
+    &=\frac{\mdavg{13}{24}}{\mdavg{14}{23}}+\frac{\mdavg{13}{24}}{\mdavg{12}{34}}\notag\\
+    &=(-1)g^2\frac{\avg{13}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
+\end{align}
+so if we choose $g=\sqrt{2}e$, we can notice that BCFW actually reproduce partial part of the full amplitude.If we compute the large-z behavior for equation \eqref{4.68}, we can find that
+\begin{equation}
+    \mathcal{A}|_{z\rightarrow \infty}=2e^2
+\end{equation}
+this is why we called it boundary term before. More geneally, if we consider a sclar QED action including a $\phi^4$
+term like
+\begin{align}
+  \mathcal{L} 
+  &= - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} - |D\varphi|^2 - \frac{1}{4} \lambda |\varphi|^4 \notag\\
+  &= - \frac{1}{4} F_{\mu\nu}F^{\mu\nu} - |\partial_\mu \varphi|^2
+     + i e A^\mu \left[ (\partial_\mu \varphi^*) \varphi - \varphi^* \partial_\mu \varphi \right]- e^2 A^\mu A_\mu \varphi^* \varphi - \frac{1}{4} \lambda |\varphi|^4
+\end{align}
+
+The 4-pt amplitude can be computed like
+\begin{equation}
+    A_4(\varphi\, \varphi^* \varphi\, \varphi^*)
+  ~=~
+  -\lambda + \tilde{e}^2 
+  \bigg( 
+     1+\frac{\avg{13}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
+  \bigg) \,,
+\end{equation}
+so actually we compute ta special case in which the parameter $\lambda$ are choosed as $\lambda=2e^2$, so that the boundary are eliminated. 
+\subsubsection{Attempt to massive scalar}
 \section{Summary and Outlook}
 In this paper, we have explored scattering amplitudes within the framework of (De)constructed gauge theories, focusing specifically on the simplest 2-site model. Considering the well-known limitations of conventional Feynman diagram methods — particularly their complexity in handling the vast gauge redundancies and their failure to naturally exhibit hidden symmetries such as dual conformal invariance — modern amplitude techniques, such as the BCFW recursion relation, provide powerful alternatives. By leveraging complex momentum shifts, BCFW recursion effectively reduces higher-point scattering amplitudes to simpler lower-point amplitudes, offering substantial analytical and computational simplifications.
 
@@ -1638,7 +1709,7 @@ In conclusion, the results presented here set the foundation for future explorat
 
 
 
-
+\addcontentsline{toc}{section}{References}
 \bibliographystyle{unsrt}
 \bibliography{reference.bib}
 
