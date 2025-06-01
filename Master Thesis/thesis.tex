@@ -4,6 +4,10 @@
 \usepackage{graphicx}
 \usepackage{cite}
 \usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black
+}
 \usepackage{setspace}
 \usepackage{lmodern}  % 可选：提高 PDF 输出质量
 \usepackage{indentfirst}
@@ -44,8 +48,8 @@
     Department of Physics, Faculty of Science \\
     Nagoya University \\[1cm]
 
-    \textbf{Major:} \\
-    Theoretical Physics \\[1cm]
+    \textbf{Student number:} \\
+    262309017 \\[1cm]
 
     \textbf{Degree:} \\
     Master of Science \\[1cm]
@@ -1265,6 +1269,7 @@ In principle, there is another diagram contributing to this amplitude
     \includegraphics{sqcd6.pdf}
     \caption{MHV $\times$ anti-MHV}
 \end{figure}
+\noindent
 but because of the 3 particle special kinematics, the 3-point anti-MHV part gives vanishing contributtion, this diagram actually equals to 0. This is why we called this method MHV expansion in the following.
 
 In general, individual diagrams exhibit an explicit dependence on the reference spinor $\sket{X}$. However, the full tree-level amplitude must remain independent of this arbitrary choice.The expansion of amplitudes using MHV vertex diagrams extends naturally beyond the NMHV level. More generally, an N$^K$MHV tree-level amplitude can be expressed as a sum over all tree diagrams containing exactly $K + 1$ MHV vertices.
@@ -1603,11 +1608,52 @@ Here, we first propose a compact formula for the color-ordered amplitude
 \begin{equation}
     A=\frac{\asqu{2a}\!\asqu{1a}}{\underbrace{\avg{2\star}\cdots \avg{\star 1}}_{SU(N_1)}\underbrace{\avg{2\ast }\cdots \avg{\ast 1}}_{SU(N_2)}}
 \end{equation}
-where a refer to the particle with - helicity, whichever gauge group it belongs to. And, `$\star$' refers to the ordering for the first gauge group, `$\ast$'
+where $a$ refer to the particle with - helicity, whichever gauge group it belongs to. And, `$\star$' refers to the ordering for the first gauge group, `$\ast$'
 refers to the ordering for the second gauge group. We suppose there are $n_1$ gauge boson 1, $n_2$ gauge boson 2, so the n-point means that $n=n_1+n_2+2$.
 \par
 The usual way to prove this kind of compact formula is induction. First we suppose that all of the amplitudes with external point lower than n satisfy the compact formula.
+Here, we denote the permutation $\star ~ \ast$ as $\sigma$ and $\tau$ respectively. It includes many kinds of channels as following
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{npt1.jpg}
+    \caption{First type}
+\end{figure}
+The first channel can be computed like 
+\begin{equation}
+    A_1=\frac{\avg{\hat{2}a}^2\avg{1a}^2}{\avg{2\sigma(5)}\avg{\sigma(5)\sigma(6)}\cdots\avg{2\tau(n_1+1)}\cdots}\times\frac{1}{s_{\sigma(3)\sigma(4)}}\times\frac{[\hat{\sigma(3)}\sigma(4)]^3}{[\sigma(4)\hat{I}][\hat{I}\hat{\sigma(4)}]}
+    \label{4.63}
+\end{equation}
+We also have other BCFW channels like
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{npt2.jpg}
+    \caption{Second type}
+\end{figure}
+but this kind of channel always have a all-plus subamplitude, so it equals to 0.
 
+And another channel can also be drawn like
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{npt3.jpg}
+    \caption{Third type}
+\end{figure}
+\noindent
+in which we still have an vanishing subamplitude in the right part. 
+
+The last one looks like 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{npt4.jpg}
+    \caption{Fourth type}
+\end{figure}
+\noindent
+and obviously, either the left or right part will offer a all-plus subamplitude, so that it equals to 0.
+
+The equation \eqref{4.63} can be easily evaluated in the similar manner, and it actually gives us the form
+\begin{equation}
+    A=\frac{\asqu{2a}\!\asqu{1a}}{\avg{2\star}\cdots \avg{\star 1}\avg{2\ast }\cdots \avg{\ast 1}}
+\end{equation}
+so we accomplish the prove although it seems a little rough.
 \subsection{Pure scalar case}
 Before going to the computation of pure scalar amplitudes in the 2-site model, it is necessary to review a quite similar amplitude -- scalar QED.
 There are two feynman diagrams corresponding to 4 scalar scattering process 
@@ -1696,6 +1742,27 @@ These diagrams correspond to two different amplitudes
     &=g_1^2\left(-1-2\frac{t}{s}\right)r_s+g_1^2\left(-1-2\frac{s}{t}\right)r_t\notag\\
     &=-g_1^2(r_s+r_t)-2g_1^2\left(\frac{t}{s}r_s+\frac{s}{t}r_t\right)
 \end{align}
+It can also be found that the large-z behavior looks like
+\begin{equation}
+    \mathcal{A}_1|_{z\rightarrow\infty}=-g_1^2(r_s+r_t)
+\end{equation}
+if we choose $[1,3\rangle$ shift.
+
+The color facor $r_s$ can be written like
+\begin{equation}
+    \mathrm{Tr}\{\Phi_1\Phi_2^\dagger T^a\}\mathrm{Tr}\{\Phi_3\Phi_4^\dagger T^a\}=\mathrm{Tr}\{\Phi_1\Phi_2^\dagger\Phi_3\Phi_4^\dagger\}-\frac{1}{N}\mathrm{Tr}\{\Phi_1\Phi_2^\dagger\}\mathrm{Tr}\{\Phi_3\Phi_4^\dagger\},
+\end{equation}
+where the subscript $i$ can be understood as the label of external particle. These two terms can remind that it is possible to introduce two independent operators into the Lagrangian:
+\begin{equation}
+    \mathcal{L}_{\text{4pt}}=\lambda_1\mathrm{Tr}\{\Phi\Phi^\dagger\Phi\Phi^\dagger\}+\lambda_2\mathrm{Tr}\{\Phi\Phi^\dagger\}\mathrm{Tr}\{\Phi\Phi^\dagger\}
+\end{equation}
+which can contribute to $r_s$ and $r_t$ at the same time. Therefore, if we choose the parameter
+\begin{equation}
+    \lambda_1=g_1^2,\qquad \lambda_2=\frac{g_2^2}{N}.
+\end{equation}
+The boundary term can be canceled so that we get a valid large-z behavior, then BCFW recursion relation can be utilized.
+
+Unfortunately, if we consider the 3-site, in which there are two scalars, the pure scalar ampitudes will become quite complicated, so till now we postphone the discussion about that. 
 \subsection{Attempt to massive scalar}
 It is quite intriguing to investigate what is the situation if we change the scalar to be massive. Without doubt, the BCFW shift should change and here we just refer to the method from \cite{Ballav:2020ese}.
 The shift are choosen like 
