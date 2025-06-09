@@ -5,6 +5,7 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{enumitem}
 \usepackage{bm}
 \usepackage{booktabs}
@@ -17,6 +18,9 @@
 \usepackage{comment}
 \usepackage{slashed}
 \usepackage[most]{tcolorbox}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usetikzlibrary{arrows.meta, positioning}
 
 \setlist[enumerate]{label=\arabic*.}
 \setlist[itemize]{label=\textbullet}  % 标准 bullet 点
@@ -83,7 +87,7 @@
 
 
 \begin{frame}
-    \frametitle{Challenges we face befor}
+    \frametitle{Challenges we face before}
 \begin{center}
     
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
@@ -125,15 +129,73 @@
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
-$n=$ & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
+$n$ pt. amplitudes & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 \hline
-     & 4 & 25 & 220 & 2485 & 34300 & 559405 & 10525900 \\
+\# of diag.      & 4 & 25 & 220 & 2485 & 34300 & 559405 & 10525900 \\
 \hline
 \end{tabular}
 \end{center}
 \pause
+\centering
+\textcolor{red}{The number of Feyman diagrams grow quite rapidly!}
 
-The answer is On-shell method.
+\end{frame}
+
+\begin{frame}
+\frametitle{Conventional Computation}
+\hypertarget{conv}{}
+    Usually, when we compute the gluon amplitudes by using Feynman diagram, we will obtain something like 
+\begin{figure}
+  \centering
+  \includegraphics[height=2.5cm]{4ptt2.pdf} \hfill
+  \includegraphics[height=2.8cm]{4ptt2_1.pdf}
+\end{figure}
+
+
+\vspace{-2em}
+\hyperlink{helicity}{
+\begin{flushleft}
+$
+\begin{aligned}
+&\mathcal{M}_s(p_1 p_2 \to p_3 p_4) = - \frac{g_s^2}{s} f^{abe} f^{cde} \\
+&\quad \times \Big\{ 
+-4\, \epsilon_1 \cdot \epsilon_3^* \, \epsilon_2 \cdot p_1 \, \epsilon_4^* \cdot p_3 
++ 2\, \epsilon_1 \cdot \epsilon_2 \, \epsilon_3^* \cdot p_1 \, \epsilon_4^* \cdot p_3 \\
+& \quad - 2\, \epsilon_1 \cdot p_4 \, \epsilon_2 \cdot p_1 \, \epsilon_3^* \cdot \epsilon_4^*
++ \epsilon_1 \cdot \epsilon_2 \, p_4 \cdot p_1 \, \epsilon_3^* \cdot \epsilon_4^*  + \text{remaining 10 terms}\big\}
+\end{aligned}
+$
+\end{flushleft}
+}
+\end{frame}
+
+\begin{frame}
+If you consider 5point case, it will become worse:
+\begin{center}
+    \textcolor{red}{$\bigstar$ We have 25 diagrams and nearly 10000 terms!}
+\end{center}
+\vspace{-2em}
+    % 左侧：传统图像
+
+    \textbf{传统费曼图计算：}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\linewidth]{5pt.png}
+    \end{figure}
+\vspace{-1.5em}
+\pause
+\begin{center}
+\hspace*{-0.5em}\includegraphics[width=1.05\textwidth]{structure.png}
+\end{center}
+\vspace{-1.5em}
+\pause
+\hspace*{-0.5em}\textcolor{red}{We need to cancel many useless information because of gauge redundancies!}
+
+\end{frame}
+\section{Preliminary}
+\begin{frame}
+\frametitle{Modern Amplitude Method} 
+ The answer is On-shell method.
     \begin{center}
         
 
@@ -152,65 +214,69 @@ The answer is On-shell method.
 \draw (463.24,129.5) node [anchor=north west][inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small S-Matrix}}};
 % Text Node
 \draw (317.73,117.5) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {{\fontfamily{ptm}\selectfont {\small \textbf{\textcolor[rgb]{0.95,0.04,0.04}{On-shell method}}}}};
-
-
 \end{tikzpicture}
 \end{center}
-\end{frame}
-\section{Preliminary}
-\begin{frame}
-    \frametitle{Conventional VS. Modern}
-    Usually, when we compute the gluon amplitudes by using Feynman diagram, we will obtain something like 
-\begin{equation*}
-    \begin{aligned}
-&\mathcal{M}_s(p_1 p_2 \to p_3 p_4) = - \frac{g_s^2}{s} f^{abe} f^{cde} \\
-&\quad \times \Big\{ 
--4\, \epsilon_1 \cdot \epsilon_3^* \, \epsilon_2 \cdot p_1 \, \epsilon_4^* \cdot p_3 
-+ 2\, \epsilon_1 \cdot \epsilon_2 \, \epsilon_3^* \cdot p_1 \, \epsilon_4^* \cdot p_3 \\
-&\quad - 2\, \epsilon_1 \cdot p_4 \, \epsilon_2 \cdot p_1 \, \epsilon_3^* \cdot \epsilon_4^*
-+ \epsilon_1 \cdot \epsilon_2 \, p_4 \cdot p_1 \, \epsilon_3^* \cdot \epsilon_4^* \\
-&\quad + 4\, \epsilon_1 \cdot \epsilon_4^* \, \epsilon_2 \cdot p_1 \, \epsilon_3^* \cdot p_4 
-- 2\, \epsilon_1 \cdot \epsilon_2 \, \epsilon_3^* \cdot p_4 \, \epsilon_4^* \cdot p_1 \\
-&\quad - 2\, \epsilon_1 \cdot p_2 \, \epsilon_2 \cdot p_3 \, \epsilon_3^* \cdot \epsilon_4^*
-+ \epsilon_1 \cdot \epsilon_2 \, \epsilon_3^* \cdot \epsilon_4^* \, p_2 \cdot p_3 \\
-&\quad + 4\, \epsilon_1 \cdot p_2 \, \epsilon_2 \cdot \epsilon_3^* \, \epsilon_4^* \cdot p_3 
-- 2\, \epsilon_1 \cdot \epsilon_2 \, \epsilon_3^* \cdot p_2 \, \epsilon_4^* \cdot p_3 \\
-&\quad + 2\, \epsilon_1 \cdot p_2 \, \epsilon_2 \cdot p_4 \, \epsilon_3^* \cdot \epsilon_4^* 
-- \epsilon_1 \cdot \epsilon_2 \, \epsilon_3^* \cdot \epsilon_4^* \, p_4 \cdot p_2 \\
-&\quad + 2\, \epsilon_1 \cdot p_3 \, \epsilon_2 \cdot p_1 \, \epsilon_3^* \cdot \epsilon_4^* 
-- \epsilon_1 \cdot \epsilon_2 \, \epsilon_3^* \cdot \epsilon_4^* \, p_1 \cdot p_3 
-\Big\}.
-\end{aligned}
-\end{equation*}
-\end{frame}
-\begin{frame}
-    If you consider 5point case, it will become worser:
-\begin{center}
-    \textcolor{red}{$\bigstar$ There are nearly 10000 terms!}
-\end{center}
-\begin{columns}[T,onlytextwidth]
-    % 左侧：传统图像
-    \column{0.48\textwidth}
-    \textbf{传统费曼图计算：}
-    \begin{figure}
-        \centering
-        \includegraphics[width=\linewidth]{5pt.png}
-    \end{figure}
-    \pause 
+\vspace{-1em}
+\pause
+$M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Amplitudes}}}\mathrm{Tr}[T^{a_1}T^{a_2}\cdots T^{a_5}]+\text{perms}$ ,\quad$+,-$ : helicity
+
     % 右侧：PT表达式
-    \column{0.48\textwidth}
-    \vspace{1.5em}
-    \qquad \textbf{Parke–Taylor Formula:}
+
+    \qquad \textbf{Parke–Taylor Formula (MHV amplitudes):}
     \begin{gather*}
-        \textcolor{red}{A_5(1^-,2^-,3^+,4^+,5^+)} =\\
-        \textcolor{red}{\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}}
+        {A_5[1^+,2^+,3^+,4^+,5^+]=0}\\
+        {A_5[1^-,2^+,3^+,4^+,5^+]=0}\\
+        \textcolor{red}{A_5[1^-,2^-,3^+,4^+,5^+]=\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trival one})\\
     \end{gather*}
-\end{columns}
-\vspace{2em}
-\textcolor{red}{$\bigstar$ \Large It becomes quite simple and compact!}
+    \vspace{-3em}
+    \pause
+    \begin{gather*}
+        p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}_\alpha[\lambda|_{\dot{\alpha}},\quad \sigma^\mu=(1,\vec{\sigma}),\\
+        \aket{\lambda},\sket{\lambda}: \text{Weyl Spinors}
+    \end{gather*}
 \end{frame}
+
 \begin{frame}
-    \frametitle{Fantasitic result from Cauchy Theorem}
+    \frametitle{Modern Amplitude Method} 
+ The answer is On-shell method.
+    \begin{center}
+        
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da5445374886882226] 
+\draw    (276.25,137) -- (457.5,136.26) ;
+\draw [shift={(459.5,136.25)}, rotate = 179.77] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (233.4,128.25) node [anchor=north] [inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small  Gauge Theory}}\\{\fontfamily{ptm}\selectfont {\small  }}};
+% Text Node
+\draw (463.24,129.5) node [anchor=north west][inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small S-Matrix}}};
+% Text Node
+\draw (317.73,117.5) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {{\fontfamily{ptm}\selectfont {\small \textbf{\textcolor[rgb]{0.95,0.04,0.04}{On-shell method}}}}};
+\end{tikzpicture}
+\end{center}
+\vspace{-1em}
+    % 右侧：PT表达式
+    \qquad \textbf{Parke–Taylor Formula (MHV amplitudes):}
+    \begin{gather*}
+        {A_5[1^+,2^+,3^+,4^+,5^+]=0}\\
+        {A_5[1^-,2^+,3^+,4^+,5^+]=0}\\
+        \textcolor{red}{A_5[1^-,2^-,3^+,4^+,5^+]=\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trival one})\\
+    \end{gather*}
+    \vspace{-2em}
+    \begin{gather*}
+        {A_5[1^-,2^-,3^-,4^-,5^-]=0}\\
+        {A_5[1^+,2^-,3^-,4^-,5^-]=0}\\
+        \textcolor{red}{A_5[1^+,2^+,3^-,4^-,5^-]=\frac{[12]^4}{[12][23][34][45][51]}}
+    \end{gather*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{The Power of BCFW Recursion Relation}
     %First, I will show the most important part in this report.
     \begin{block}{BCFW recursion relation}
         \begin{equation*}
@@ -266,12 +332,275 @@ The answer is On-shell method.
 
 \vspace{1em}
 
-\textcolor{red}{$\bigstar $ ~ From lower point to higher point!!}
+\textcolor{red}{$\bigstar $ ~ From lower point on-shell amp. to higher point on-shell amp.!!}
 
 \end{frame}
+
+\begin{frame}
+    More specifically, 
+
+\begin{center}
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da4236245229594603] 
+\draw    (259,91.9) -- (308,92.24) ;
+\draw [shift={(310,92.25)}, rotate = 180.39] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da22408043084764206] 
+\draw    (341.2,91.9) -- (391,91.76) ;
+\draw [shift={(393,91.75)}, rotate = 179.83] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+%Straight Lines [id:da5239716133788715] 
+\draw    (421.7,91.3) -- (477,91.73) ;
+\draw [shift={(479,91.75)}, rotate = 180.45] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
+
+% Text Node
+\draw (231.8,83.1) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\fontfamily{ptm}\selectfont 3pt.}};
+% Text Node
+\draw (313.5,83) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\fontfamily{ptm}\selectfont 4pt.}};
+% Text Node
+\draw (396.9,83.5) node [anchor=north west][inner sep=0.75pt]   [align=left] {{\fontfamily{ptm}\selectfont 5pt.}};
+% Text Node
+\draw (482.4,85.2) node [anchor=north west][inner sep=0.75pt]    {$\cdots $};
+% Text Node
+\draw (214,107.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\frac{\langle 12\rangle ^{4}}{\langle12\rangle\langle 23\rangle \langle 31\rangle }$};
+% Text Node
+\draw (279.25,107.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\frac{\langle 12\rangle ^{4}}{\langle 12\rangle \langle 23\rangle \langle 34\rangle \langle 41\rangle }$};
+% Text Node
+\draw (370.75,107.4) node [anchor=north west][inner sep=0.75pt]  [font=\small]  {$\frac{\langle 12\rangle ^{4}}{\langle 12\rangle \langle 23\rangle \langle 34\rangle \langle 45\rangle \langle 51\rangle }$};
+
+
+\end{tikzpicture}
+\end{center}  
+ 
+
+\pause
+\begin{equation*}
+    \boxed{\Rightarrow:\quad A[1^+\cdots ~i^-,(i+1)^+\cdots~j^-\cdots n^+]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
+\end{equation*}
+
+\vspace*{2em}
+\textcolor{red}{$\bigstar$ \Large This is the power of BCFW recursion relation.}
+\end{frame}
+\begin{frame}{From Review to Applications}
+
+\begin{columns}[T]
+  % 左列：当前已完成
+  \begin{column}{0.48\textwidth}
+    \begin{block}{\centering\large \textbf{So far: Foundations}}
+      \begin{itemize}[left=1em]
+        \item Reviewed the structure of \textbf{BCFW recursion relation}
+        \item Applied to:
+          \begin{itemize}[left=0.1em]
+            \item \textbf{Pure Yang-Mills} theory
+            \item Tree-level MHV amplitudes
+            \item Color-ordered partial amplitudes
+          \end{itemize}
+      \end{itemize}
+    \end{block}
+  \end{column}
+\pause
+  % 右列：研究目标
+  \begin{column}{0.48\textwidth}
+    \begin{block}{\centering\large \textbf{Next: Realistic Models}}
+      \begin{itemize}[left=1em]
+        \item Move beyond massless gauge theory
+        \item Consider:
+          \begin{itemize}[left=0.1em]
+            \item \textbf{(De)constructed gauge theories}
+          \end{itemize}
+        \item Key questions:
+          \begin{itemize}[left=0.1em]
+            \item Can BCFW still apply?
+            \item How to choose momentum shift?
+            \item What new structures emerge?
+          \end{itemize}
+      \end{itemize}
+    \end{block}
+  \end{column}
+\end{columns}
+
+\end{frame}
+
+\section{Model and Computation}
+
+\begin{frame}{Introduction of quiver gauge theory}
+\vspace{1em}
+\begin{columns}[c]
+    \column{0.43\textwidth}
+    \centering
+    \includegraphics[width=100pt]{Moose.png}
+
+    \column{0.14\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=0.8]
+        \draw[->, line width=1pt] (0,0) -- (1.5,0)
+            node[midway, above] {\footnotesize Condensation}; % ← 加文字
+    \end{tikzpicture}
+
+    \column{0.43\textwidth}
+    \centering
+    \includegraphics[width=100pt]{Moosed.jpeg}
+\end{columns}
+
+
+\pause
+\raggedright
+The Lagrangian can be written like
+\begin{equation*}
+    \mathcal{L} = -\sum_{i=1}^{N} \frac{1}{2} \mathrm{Tr}(F_i^2)
+    + \sum_{i=1}^{N} \mathrm{Tr}\left[(D_\mu \Phi_i)^\dagger (D^\mu \Phi_i)\right],
+\end{equation*}
+here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ transforms under the \textcolor{red}{bi-fundamental} representation, and the covariant derivative equals to
+\begin{equation*}
+    D_\mu \Phi_i = \partial_\mu \Phi_i - i g_i A_{i\mu} \Phi_i + i g_{i+1} \Phi_i A_{i+1\mu}.
+\end{equation*}
+
+\end{frame}
+
+\begin{frame}
+    It has been proposed that this model actually discretized \textcolor{red}{a five-dimension gauge theory} with gauge group $SU(m)$, where 
+    only the fifth dimension are latticed. So it is an effective theory for 5d gauge theory.
+     \vspace{1em} % 图与文字之间的间距
+    \begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.6\linewidth]{Moosed.jpeg} % ← 替换为你的图片文件名
+        \par\vspace{0.5em}
+    \end{minipage}
+    \hspace{0.05\textwidth}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \includegraphics[width=0.6\linewidth]{Lattice.jpg} % ← 替换为你的图片文件名
+        \par\vspace{0.5em}
+    \end{minipage}
+    \end{center}
+    \pause
+    After higgsing the scalar field, we can obtain a spectrum
+    \begin{equation*}
+        M_k^2=4g^2f_s^2\sin^2\left(\frac{\pi k}{N}\right)
+    \end{equation*}
+    This is precisely the \textcolor{red}{Kaluza-Klein} spectrum under $S^1$ compactification. 
+\end{frame}
+
+\begin{frame}
+    \frametitle{Amplitudes from BCFW}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.5\textwidth]{2-site.png}
+    \end{figure}
+    \vspace{-1em}
+    From the previous section, we have known that there are only two kinds of 3 point amplitude
+    \begin{gather*}
+        A[1^\Phi,2^{\Phi^\dagger},3^+]=\frac{[23][31]}{[12]},\qquad A[1^\Phi,2^{\Phi^\dagger},3^-]=\frac{\avg{23}\!\avg{31}}{\avg{12}}\\
+        A[3^+,4^+,5^-]=\frac{[34]^3}{[45][53]},\qquad A[3^-,4^-,5^+]=\frac{\avg{34}^3}{\avg{45}\!\avg{53}}
+    \end{gather*}
+    By using the 3 point building block, we can construct 4 point colorordered amplitudes from BCFW recursion relation.
+\end{frame}
+\begin{frame}
+    \frametitle{Gauge boson sector}
+    \begin{itemize}
+        \item n$ V_1$ or n$V_2$\\
+        This part is completely the same as the pure gluon amplitude, so we can directly borrow the
+        existing results.
+        \begin{equation*}
+            \boxed{\text{Parke - Talyor Formula}:\quad A[\cdots,i^-,\cdots,j^-,\cdots]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
+        \end{equation*}
+        \textcolor{red}{Notice that this formula only applies to MHV amplitudes, although the NMHV can be completely solved.}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{SQCD like sector}
+    \begin{itemize}
+        \item $\Phi^\dagger V_1V_1\Phi$\\
+        Here we compute the color-ordered amplitude $A[1,2,3^+,4^-]$. We choose $[2,3\rangle$ shift
+        \begin{gather*}
+        \hat{\sket{2}}=\sket{2}-z\sket{3},\qquad \hat{\aket{2}}=\aket{2} \\
+        \hat{\sket{3}}=\sket{3},\qquad \hat{\aket{3}}=\aket{3}+z\aket{2}
+        \end{gather*}
+        The amplitudes can be computed 
+        \begin{align*}
+            A[1,2,3^+,4^-]=(-1)\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}\quad (\textcolor{red}{\text{Parke -Talyor like Formula}})
+        \end{align*}
+        \item $\Phi^\dagger V_1V_1V_1\Phi$
+            \begin{equation*}
+                A[1,2,3^+,4^+,5^-]=\frac{\avg{15}^2\!\avg{25}^2}{\mdavg{12}{23}\!\mdavg{34}{45}\!\avg{51}}
+            \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item $\Phi^\dagger (nV_1)\Phi$
+            \begin{equation*}
+                A[1,2,\cdots,(n+2)^-]=(-1)^{n+1}\frac{\avg{1,n+2}^2\avg{2,n+2}^2}{\mdavg{12}{23}\cdots\mdavg{n+1,n+2}{n+2,1}}
+            \end{equation*}
+            \textcolor{red}{$\star$ Bonus relation: \begin{equation*}
+                A[1,2,3^+,4^+]=0\quad \Rightarrow  \quad A[1,2,3^+,\cdots,n^+]=0 \end{equation*}}
+        For the amplitude $\Phi (nV_2)\Phi^\dagger$, we can obtain nearly the same expression.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Pure 2-site amplitude}
+    \begin{itemize}
+        \item $\Phi V_2 \Phi^\dagger V_1$
+        \begin{equation*}
+            A[1,2,3_1^+,4_2^-]=\frac{\mdavg{14}{24}}{\mdavg{13}{23}}
+        \end{equation*}
+        \item $\Phi V_2 \Phi^\dagger V_1V_1$
+        \begin{equation*}
+            A[1,2,3_1^+,4_1^+,5_2^-]=(-1)\frac{\avg{2\textcolor{green}{5}}^2\!\avg{1\textcolor{green}{5}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
+        \end{equation*}
+        \item $\Phi V_2V_2 \Phi^\dagger V_1V_1$
+        \begin{equation*}
+            A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=\frac{\avg{2\textcolor{green}{6}}^2\!\avg{1\textcolor{green}{6}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{61}}}
+        \end{equation*}       
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \begin{itemize}
+        \item Compact formula for general case
+        \begin{equation*}
+            A=\frac{\asqu{2\textcolor{green}{a}}\!\asqu{1\textcolor{green}{a}}}{\underbrace{\avg{2\textcolor{blue}{\star}}\cdots \avg{\textcolor{blue}{\star}1}}_{SU(N_1)}\underbrace{\avg{2\textcolor{red}{\ast} }\cdots \avg{\textcolor{red}{\ast} 1}}_{SU(N_2)}}
+        \end{equation*} 
+        \begin{minipage}{0.7\textwidth}
+            \raggedright  % 或者 \centering 或 \raggedleft
+            \textcolor{green}{Green:} \,Particle with $-$ helicity\\
+            \textcolor{blue}{Blue:}\, Particle belongs to the first gauge group\\
+            \textcolor{red}{Red:}\, Particle belongs to the second gauge group\\
+            $\star$: \,Order for gauge group 1\\
+            $\ast$: \,Order for gauge group 2 
+            \end{minipage}
+       
+    \end{itemize}
+    \pause
+    For example, if we want to compute $A[1,2,5_1^+,3_1^+,4_1^-,7_2^+,6_2^+,8_2^+]$:
+    \begin{equation*}
+        A=\frac{\avg{2\textcolor{green}{4}}^2\avg{1\textcolor{green}{4}}^2}{\textcolor{blue}{\mdavg{25}{53}\mdavg{34}{41}}\textcolor{red}{\mdavg{27}{76}\mdavg{68}{81}}}
+    \end{equation*}
+\end{frame}
+\section{Summary}
+\begin{frame}
+    \frametitle{Summary}
+    \begin{itemize}
+        \item Introduce the on-shell method, including BCFW recursion relation, spinor-helicity formalism, etc.
+        \item Introduce a (de)constructed gauge theory model, which is an effective field theory for 5 dimension gauge theory.
+        \item Much of the scattering amplitudes in this model can be recursively computed by BCFW, and some compact formulas are offered.
+    \end{itemize}
+\end{frame}
+\begin{frame} 
+    \centering
+    \Huge Thanks for your attention!
+\end{frame} 
+\appendix
 \begin{frame}{Spinor-Helicity Formalism}
+    \hypertarget{helicity}{}
 \begin{block}{Helicity}
-\textbf{Helicity} is defined as the projection of a particle's spin vector $\vec{S}$ onto the direction of its momentum $\vec{p}$:
+\textbf{\hyperlink{conv}{Helicity}} is defined as the projection of a particle's spin vector $\vec{S}$ onto the direction of its momentum $\vec{p}$:
 \[
 h = \frac{\vec{S} \cdot \vec{p}}{|\vec{p}|}
 \]
@@ -336,182 +665,6 @@ S-matrix is a function of momentum $p_i$ and helicity $h_i$
 }
 
 \end{frame}
-
-\section{Model and Computation}
-
-\begin{frame}{Introduction of quiver gauge theory}
-\vspace{1em}
-\begin{columns}[c]
-    \column{0.43\textwidth}
-    \centering
-    \includegraphics[width=100pt]{Moose.png}
-
-    \column{0.14\textwidth}
-    \centering
-    \begin{tikzpicture}[scale=0.8]
-        \draw[->, line width=1pt] (0,0) -- (1.5,0)
-            node[midway, above] {\footnotesize Condensation}; % ← 加文字
-    \end{tikzpicture}
-
-    \column{0.43\textwidth}
-    \centering
-    \includegraphics[width=100pt]{Moosed.jpeg}
-\end{columns}
-
-
-\pause
-\raggedright
-The Lagrangian can be written like
-\begin{equation*}
-    \mathcal{L} = -\sum_{i=1}^{N} \frac{1}{2} \mathrm{Tr}(F_i^2)
-    + \sum_{i=1}^{N} \mathrm{Tr}\left[(D_\mu \Phi_i)^\dagger (D^\mu \Phi_i)\right],
-\end{equation*}
-here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ transforms under the \textcolor{red}{bi-fundamental} representation, and the covariant derivative equals to
-\begin{equation*}
-    D_\mu \Phi_i = \partial_\mu \Phi_i - i g_i A_{i\mu} \Phi_i + i g_{i+1} \Phi_i A_{i+1\mu}.
-\end{equation*}
-
-\end{frame}
-
-\begin{frame}
-    It has been proposed that this model actually discretized \textcolor{red}{a five-dimension gauge theory} with gauge group $SU(m)$, where 
-    only the fifth dimension are latticed. So it is an effective theory for 5d gauge theory.
-     \vspace{1em} % 图与文字之间的间距
-    \begin{center}
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.6\linewidth]{Moosed.jpeg} % ← 替换为你的图片文件名
-        \par\vspace{0.5em}
-    \end{minipage}
-    \hspace{0.05\textwidth}
-    \begin{minipage}{0.45\textwidth}
-        \centering
-        \includegraphics[width=0.6\linewidth]{Lattice.jpg} % ← 替换为你的图片文件名
-        \par\vspace{0.5em}
-    \end{minipage}
-    \end{center}
-    \pause
-    After higgsing the scalar field, we can obtain a spectrum
-    \begin{equation*}
-        M_k^2=4g^2f_s^2\sin^2\left(\frac{\pi k}{N}\right)
-    \end{equation*}
-    This is precisely the \textcolor{red}{Kaluza-Klein} spectrum under $S^2$ compactification. 
-\end{frame}
-\begin{frame}
-    \frametitle{Scattering Amplitudes from BCFW}
-    For simplicity, we start from the two-site gauge theory with gauge fields $V_1$, $V_2$ and scalar fields $\Phi$, $\Phi^\dagger$.
-    \begin{equation*}
-        \mathcal{L}=-\frac{1}{2}\mathrm{Tr}(F_1)^2-\frac{1}{2}\mathrm{Tr}(F_2)^2+\mathrm{Tr}[(D_\mu\Phi)^\dagger(D^\mu\Phi)],
-    \end{equation*}
-We only foucus on the following amplitudes:
-\begin{equation*}
-    \textcolor{red}{nV_1,\qquad nV_2,\qquad\Phi^\dagger nV_1 \Phi,\qquad \Phi nV_2 \Phi^\dagger,\qquad \Phi^\dagger \Phi\Phi^\dagger \Phi}
-\end{equation*}
-here n can be any positive integer.
-\end{frame}
-\begin{frame}
-    \frametitle{Basic building block -- 3-point}
-    From the previous section, we have known that there are only two kinds of 3 point amplitude
-    \begin{gather*}
-        A[1,2,3^+]=\frac{[23][31]}{[12]},\qquad A[1,2,3^-]=\frac{\avg{23}\!\avg{31}}{\avg{12}}\\
-        A[3^+,4^+,5^-]=\frac{[34]^3}{[45][53]},\qquad A[3^-,4^-,5^+]=\frac{\avg{34}^3}{\avg{45}\!\avg{53}}
-    \end{gather*}
-    By using the 3 point building block, we can construct 4 point color-ordered amplitudes from BCFW recursion relation.
-\end{frame}
-\begin{frame}
-    \frametitle{Gauge boson sector}
-    \begin{itemize}
-        \item n$ V_1$ or n$V_2$\\
-        This part is completely the same as the pure gluon amplitude, so we can directly borrow the
-        existing results.
-        \begin{equation*}
-            \boxed{\text{Parke - Talyor Formula}:\quad A[\cdots,i^-,\cdots,j^-,\cdots]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
-        \end{equation*}
-        \textcolor{red}{Notice that this formula only applies to MHV amplitudes, although the NMHV can be completely solved.}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{SQCD like sector}
-    \begin{itemize}
-        \item $\Phi^\dagger V_1V_1\Phi$\\
-        Here we compute the color-ordered amplitude $A[1,2,3^+,4^-]$. We choose $[2,3\rangle$ shift
-        \begin{gather*}
-        \hat{\sket{2}}=\sket{2}-z\sket{3},\qquad \hat{\aket{2}}=\aket{2} \\
-        \hat{\sket{3}}=\sket{3},\qquad \hat{\aket{3}}=\aket{3}+z\aket{2}
-        \end{gather*}
-        The amplitudes can be computed 
-        \begin{align*}
-            A[1,2,3^+,4^-]=(-1)\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}
-        \end{align*}
-        \item $\Phi^\dagger V_1V_1V_1\Phi$
-            \begin{equation*}
-                A[1,2,3^+,4^+,5^-]=\frac{\avg{15}^2\!\avg{25}^2}{\mdavg{12}{23}\!\mdavg{34}{45}\!\avg{51}}
-            \end{equation*}
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \begin{itemize}
-        \item $\Phi^\dagger (nV_1)\Phi$
-            \begin{equation*}
-                A[1,2,\cdots,(n+2)^-]=(-1)^{n+1}\frac{\avg{1,n+2}^2\avg{2,n+2}^2}{\mdavg{12}{23}\cdots\mdavg{n+1,n+2}{n+2,1}}
-            \end{equation*}
-            \textcolor{red}{$\star$ Bonus relation: \begin{equation*}
-                A[1,2,3^+,4^+]=0\quad \Rightarrow  \quad A[1,2,3^+,\cdots,n^+]=0 \end{equation*}}
-        For the amplitude $\Phi (nV_2)\Phi^\dagger$, we can obtain nearly the same expression.
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Pure 2-site amplitude}
-    \begin{itemize}
-        \item $\Phi V_2 \Phi^\dagger V_1$
-        \begin{equation*}
-            A[1,2,3_1^+,4_2^-]=\frac{\mdavg{14}{24}}{\mdavg{13}{23}}
-        \end{equation*}
-        \item $\Phi V_2 \Phi^\dagger V_1V_1$
-        \begin{equation*}
-            A[1,2,3_1^+,4_1^+,5_2^-]=(-1)\frac{\avg{2\textcolor{green}{5}}^2\!\avg{1\textcolor{green}{5}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
-        \end{equation*}
-        \item $\Phi V_2V_2 \Phi^\dagger V_1V_1$
-        \begin{equation*}
-            A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=\frac{\avg{2\textcolor{green}{6}}^2\!\avg{1\textcolor{green}{6}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{61}}}
-        \end{equation*}       
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \begin{itemize}
-        \item Compact formula for general case
-        \begin{equation*}
-            A=\frac{\asqu{2\textcolor{green}{a}}\!\asqu{1\textcolor{green}{a}}}{\underbrace{\avg{2\textcolor{blue}{\star}}\cdots \avg{\textcolor{blue}{\star}1}}_{SU(N_1)}\underbrace{\avg{2\textcolor{red}{\ast} }\cdots \avg{\textcolor{red}{\ast} 1}}_{SU(N_2)}}
-        \end{equation*} 
-        \begin{minipage}{0.7\textwidth}
-            \raggedright  % 或者 \centering 或 \raggedleft
-            \textcolor{green}{Green:} \,Particle with $-$ helicity\\
-            \textcolor{blue}{Blue:}\, Particle belongs to the first gauge group\\
-            \textcolor{red}{Red:}\, Particle belongs to the second gauge group\\
-            $\star$: \,Order for gauge group 1\\
-            $\ast$: \,Order for gauge group 2 
-            \end{minipage}
-       
-    \end{itemize}
-\end{frame}
-\section{Summary}
-\begin{frame}
-    \frametitle{Summary}
-    \begin{itemize}
-        \item Introduce the on-shell method, including BCFW recursion relation, spinor-helicity formalism, etc.
-        \item Introduce a (de)constructed gauge theory model, which is an effective field theory for 5 dimension gauge theory.
-        \item Much of the scattering amplitudes in this model can be recursively computed by BCFW, and some compact formulas are offered.
-    \end{itemize}
-\end{frame}
-\begin{frame}
-    \centering
-    \Huge Thanks for your attention!
-\end{frame} 
-\appendix
 
 \begin{frame}
     
@@ -603,4 +756,18 @@ here n can be any positive integer.
         A_3(g_1^-,g_2^-,g_3^+)=g\frac{\avg{12}^3}{\avg{23}\!\avg{31}}
     \end{equation*}
 \end{frame}
+
+\begin{frame}
+    \frametitle{Scattering Amplitudes from BCFW}
+    For simplicity, we start from the two-site gauge theory with gauge fields $V_1$, $V_2$ and scalar fields $\Phi$, $\Phi^\dagger$.
+    \begin{equation*}
+        \mathcal{L}=-\frac{1}{2}\mathrm{Tr}(F_1)^2-\frac{1}{2}\mathrm{Tr}(F_2)^2+\mathrm{Tr}[(D_\mu\Phi)^\dagger(D^\mu\Phi)],
+    \end{equation*}
+We only foucus on the following amplitudes:
+\begin{equation*}
+    \textcolor{red}{nV_1,\qquad nV_2,\qquad\Phi^\dagger nV_1 \Phi,\qquad \Phi nV_2 \Phi^\dagger,\qquad \Phi^\dagger \Phi\Phi^\dagger \Phi}
+\end{equation*}
+here n can be any positive integer.
+\end{frame}
+
 \end{document}
