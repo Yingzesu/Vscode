@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.28)  9 JUN 2025 17:59
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.28)  11 JUN 2025 09:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1092,7 +1092,7 @@ File: 5pt.png Graphic file (type bmp)
 File: structure.png Graphic file (type bmp)
 <structure.png>
 
-Overfull \hbox (11.64081pt too wide) in paragraph at lines 194--194
+Overfull \hbox (11.64081pt too wide) in paragraph at lines 191--191
  | [] 
  []
 
@@ -1112,61 +1112,55 @@ File: 5pt.png Graphic file (type bmp)
 File: structure.png Graphic file (type bmp)
 <structure.png>
 
-Overfull \hbox (11.64081pt too wide) in paragraph at lines 194--194
+Overfull \hbox (11.64081pt too wide) in paragraph at lines 191--191
  | [] 
  []
 
 [9
 
-]
-Missing character: There is no 传 (U+4F20) in font [lmsans10-bold]:mapping=tex-text;!
-Missing character: There is no 统 (U+7EDF) in font [lmsans10-bold]:mapping=tex-text;!
-Missing character: There is no 费 (U+8D39) in font [lmsans10-bold]:mapping=tex-text;!
-Missing character: There is no 曼 (U+66FC) in font [lmsans10-bold]:mapping=tex-text;!
-Missing character: There is no 图 (U+56FE) in font [lmsans10-bold]:mapping=tex-text;!
-Missing character: There is no 计 (U+8BA1) in font [lmsans10-bold]:mapping=tex-text;!
-Missing character: There is no 算 (U+7B97) in font [lmsans10-bold]:mapping=tex-text;!
-Missing character: There is no ： (U+FF1A) in font [lmsans10-bold]:mapping=tex-text;!
-File: 5pt.png Graphic file (type bmp)
-<5pt.png>
-File: structure.png Graphic file (type bmp)
-<structure.png>
+] (./main.toc) [10
 
-Overfull \hbox (11.64081pt too wide) in paragraph at lines 194--194
- | [] 
+]
+Overfull \vbox (2.31776pt too high) detected at line 240
  []
 
-[10
+[11
 
-] (./main.toc) [11
+]
+Overfull \vbox (2.31776pt too high) detected at line 240
+ []
 
-] [12
+[12
 
-] [13
+]
+Overfull \vbox (2.31776pt too high) detected at line 240
+ []
+
+[13
 
 ] [14
-
-] [15
 
 ]
 File: recrel1.pdf Graphic file (type pdf)
 <use recrel1.pdf>
 
-Overfull \hbox (7.07863pt too wide) in paragraph at lines 337--337
+Overfull \hbox (7.07863pt too wide) in paragraph at lines 340--340
+[][]  
+ []
+
+[15
+
+]
+File: recrel1.pdf Graphic file (type pdf)
+<use recrel1.pdf>
+
+Overfull \hbox (7.07863pt too wide) in paragraph at lines 340--340
 [][]  
  []
 
 [16
 
-]
-File: recrel1.pdf Graphic file (type pdf)
-<use recrel1.pdf>
-
-Overfull \hbox (7.07863pt too wide) in paragraph at lines 337--337
-[][]  
- []
-
-[17
+] [17
 
 ] [18
 
@@ -1174,15 +1168,25 @@ Overfull \hbox (7.07863pt too wide) in paragraph at lines 337--337
 
 ] [20
 
-] [21
-
-] (./main.toc) [22
+] (./main.toc) [21
 
 ]
 File: Moose.png Graphic file (type bmp)
 <Moose.png>
 
-Overfull \hbox (11.30806pt too wide) in paragraph at lines 460--460
+Overfull \hbox (11.30806pt too wide) in paragraph at lines 462--462
+ [][] 
+ []
+
+File: Moosed.jpeg Graphic file (type bmp)
+<Moosed.jpeg>
+[22
+
+]
+File: Moose.png Graphic file (type bmp)
+<Moose.png>
+
+Overfull \hbox (11.30806pt too wide) in paragraph at lines 462--462
  [][] 
  []
 
@@ -1191,16 +1195,11 @@ File: Moosed.jpeg Graphic file (type bmp)
 [23
 
 ]
-File: Moose.png Graphic file (type bmp)
-<Moose.png>
-
-Overfull \hbox (11.30806pt too wide) in paragraph at lines 460--460
- [][] 
- []
-
 File: Moosed.jpeg Graphic file (type bmp)
 <Moosed.jpeg>
-[24
+File: Lattice.jpg Graphic file (type bmp)
+<Lattice.jpg>
+ [24
 
 ]
 File: Moosed.jpeg Graphic file (type bmp)
@@ -1210,23 +1209,13 @@ File: Lattice.jpg Graphic file (type bmp)
  [25
 
 ]
-File: Moosed.jpeg Graphic file (type bmp)
-<Moosed.jpeg>
-File: Lattice.jpg Graphic file (type bmp)
-<Lattice.jpg>
- [26
-
-]
 File: 2-site.png Graphic file (type bmp)
 <2-site.png>
- [27
+ [26
 
-]
-Overfull \hbox (6.97427pt too wide) detected at line 512
-[]
- []
+] [27
 
-[28
+] [28
 
 ] [29
 
@@ -1236,20 +1225,20 @@ Overfull \hbox (6.97427pt too wide) detected at line 512
 
 ] [32
 
-] [33
+] (./main.toc) [33
 
-] (./main.toc) [34
+] [34
 
 ] [35
-
-] [36
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 599.
+(hyperref)                removing `\translate ' on input line 597.
 
-[37
+[36
+
+] [37
 
 ] [38
 
@@ -1257,27 +1246,25 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 ] [40
 
-] [41
-
 ]
 File: CT.png Graphic file (type bmp)
 <CT.png>
- [42
+ [41
 
 ]
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 733.
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 731.
 
-[43
+[42
 
 ]
-Overfull \hbox (1.86934pt too wide) detected at line 758
+Overfull \hbox (1.86934pt too wide) detected at line 756
 []
  []
 
-[44
+[43
 
-] [45
+] [44
 
 ]
 \tf@nav=\write7
@@ -1310,4 +1297,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  128i,21n,123p,437b,914s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.pdf (45 pages).
+Output written on main.pdf (44 pages).

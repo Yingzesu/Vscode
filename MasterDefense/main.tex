@@ -73,7 +73,7 @@
   \begin{enumerate}
     \item \textbf{Bridge between theory and experiment}
     \begin{itemize}
-      \item Core prediction targets for high-energy collider experiments such as the LHC
+      \item Core prediction targets for high-energy collider experiments such as the LHC , especially for high multiplicity amplitudes.
       \item Any new theory (SUSY, GUTs, extra dimensions) must predict observable cross sections
     \end{itemize}
     \pause
@@ -126,16 +126,16 @@
 \end{tikzpicture}
 \end{center}
 \vspace{-2.3em}
+\pause
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|}
 \hline
 $n$ pt. amplitudes & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 \hline
-\# of diag.      & 4 & 25 & 220 & 2485 & 34300 & 559405 & 10525900 \\
+\# of diagrams      & 4 & 25 & 220 & 2485 & 34300 & 559405 & 10525900 \\
 \hline
 \end{tabular}
 \end{center}
-\pause
 \centering
 \textcolor{red}{The number of Feyman diagrams grow quite rapidly!}
 
@@ -143,7 +143,7 @@ $n$ pt. amplitudes & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 
 \begin{frame}
 \frametitle{Conventional Computation}
-\hypertarget{conv}{}
+
     Usually, when we compute the gluon amplitudes by using Feynman diagram, we will obtain something like 
 \begin{figure}
   \centering
@@ -153,7 +153,7 @@ $n$ pt. amplitudes & 4 & 5 & 6 & 7 & 8 & 9 & 10 \\
 
 
 \vspace{-2em}
-\hyperlink{helicity}{
+
 \begin{flushleft}
 $
 \begin{aligned}
@@ -166,7 +166,7 @@ $
 \end{aligned}
 $
 \end{flushleft}
-}
+
 \end{frame}
 
 \begin{frame}
@@ -187,9 +187,6 @@ If you consider 5point case, it will become worse:
 \begin{center}
 \hspace*{-0.5em}\includegraphics[width=1.05\textwidth]{structure.png}
 \end{center}
-\vspace{-1.5em}
-\pause
-\hspace*{-0.5em}\textcolor{red}{We need to cancel many useless information because of gauge redundancies!}
 
 \end{frame}
 \section{Preliminary}
@@ -211,28 +208,34 @@ If you consider 5point case, it will become worse:
 % Text Node
 \draw (233.4,128.25) node [anchor=north] [inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small  Gauge Theory}}\\{\fontfamily{ptm}\selectfont {\small  }}};
 % Text Node
-\draw (463.24,129.5) node [anchor=north west][inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small S-Matrix}}};
+\draw (463.24,129.5) node [anchor=north west][inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small Helicity Amplitude}}};
 % Text Node
 \draw (317.73,117.5) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {{\fontfamily{ptm}\selectfont {\small \textbf{\textcolor[rgb]{0.95,0.04,0.04}{On-shell method}}}}};
 \end{tikzpicture}
 \end{center}
 \vspace{-1em}
 \pause
-$M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Amplitudes}}}\mathrm{Tr}[T^{a_1}T^{a_2}\cdots T^{a_5}]+\text{perms}$ ,\quad$+,-$ : helicity
+$M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Amplitudes}}}\mathrm{Tr}[T^{a_1}T^{a_2}\cdots T^{a_5}]+\text{permutations}$ 
 
     % 右侧：PT表达式
 
     \qquad \textbf{Parke–Taylor Formula (MHV amplitudes):}
-    \begin{gather*}
-        {A_5[1^+,2^+,3^+,4^+,5^+]=0}\\
-        {A_5[1^-,2^+,3^+,4^+,5^+]=0}\\
-        \textcolor{red}{A_5[1^-,2^-,3^+,4^+,5^+]=\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trival one})\\
-    \end{gather*}
-    \vspace{-3em}
+    \begin{align*}
+    A_5[1^+2^+3^+4^+5^+] &= 0 
+    \qquad (\!+,-:~\text{\hyperlink{helicity}{helicity};} \\
+    A_5[1^-2^+3^+4^+5^+] &= 0 
+    \qquad 1,2,\cdots,n:~\text{particle labels}) \\
+    \end{align*}
     \pause
+    \vspace{-3em}
+    \hypertarget{conv}{}
     \begin{gather*}
-        p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}_\alpha[\lambda|_{\dot{\alpha}},\quad \sigma^\mu=(1,\vec{\sigma}),\\
-        \aket{\lambda},\sket{\lambda}: \text{Weyl Spinors}
+    \textcolor{red}{A_5[1^-2^-3^+4^+5^+]= 
+    \frac{\langle 1 2 \rangle^4}
+         {\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle45 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trivial one})\\[1em]
+    (p_{i\mu} \sigma^\mu)_{\alpha\dot{\alpha}}=(\aket{p_i})_\alpha([p_i|)_{\dot{\alpha}},\quad \aket{p_i}=\aket{i}\\
+    \quad \sigma^\mu=(1,\vec{\sigma}),\quad \aket{i},\sket{i}: \text{Weyl Spinors}\\
+    \avg{ij}=\langle i |^\alpha \aket{j}_\alpha=\varepsilon^{\alpha\beta}\aket{i}_\beta\aket{j}_\alpha,\quad \varepsilon^{\alpha\beta}: \text{antisymmetric tensor}
     \end{gather*}
 \end{frame}
 
@@ -263,15 +266,15 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
     % 右侧：PT表达式
     \qquad \textbf{Parke–Taylor Formula (MHV amplitudes):}
     \begin{gather*}
-        {A_5[1^+,2^+,3^+,4^+,5^+]=0}\\
-        {A_5[1^-,2^+,3^+,4^+,5^+]=0}\\
-        \textcolor{red}{A_5[1^-,2^-,3^+,4^+,5^+]=\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trival one})\\
+        {A_5[1^+2^+3^+4^+5^+]=0}\\
+        {A_5[1^-2^+3^+4^+5^+]=0}\\
+        \textcolor{red}{A_5[1^-2^-3^+4^+5^+]=\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trival one})\\
     \end{gather*}
-    \vspace{-2em}
+    \vspace{-3em}
     \begin{gather*}
-        {A_5[1^-,2^-,3^-,4^-,5^-]=0}\\
-        {A_5[1^+,2^-,3^-,4^-,5^-]=0}\\
-        \textcolor{red}{A_5[1^+,2^+,3^-,4^-,5^-]=\frac{[12]^4}{[12][23][34][45][51]}}
+        {A_5[1^-2^-3^-4^-5^-]=0}\\
+        {A_5[1^+2^-3^-4^-5^-]=0}\\
+        \textcolor{red}{A_5[1^+2^+3^-4^-5^-]=\frac{[12]^4}{[12][23][34][45][51]}}
     \end{gather*}
 \end{frame}
 
@@ -337,7 +340,7 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
 \end{frame}
 
 \begin{frame}
-    More specifically, 
+    More specifically, it helps us to prove P. T. formula
 
 \begin{center}
 \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
@@ -374,10 +377,10 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
 \end{tikzpicture}
 \end{center}  
  
-
+\vspace{-2em}
 \pause
 \begin{equation*}
-    \boxed{\Rightarrow:\quad A[1^+\cdots ~i^-,(i+1)^+\cdots~j^-\cdots n^+]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
+    \boxed{\Rightarrow:\quad A[1^+\cdots ~i^-(i+1)^+\cdots~j^-(j+1)^+\cdots n^+]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
 \end{equation*}
 
 \vspace*{2em}
@@ -413,7 +416,6 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
         \item Key questions:
           \begin{itemize}[left=0.1em]
             \item Can BCFW still apply?
-            \item How to choose momentum shift?
             \item What new structures emerge?
           \end{itemize}
       \end{itemize}
@@ -425,7 +427,7 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
 
 \section{Model and Computation}
 
-\begin{frame}{Introduction of quiver gauge theory}
+\begin{frame}{Introduction of (De)Constructed gauge theory}
 \vspace{1em}
 \begin{columns}[c]
     \column{0.43\textwidth}
@@ -491,10 +493,10 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
         \includegraphics[width=0.5\textwidth]{2-site.png}
     \end{figure}
     \vspace{-1em}
-    From the previous section, we have known that there are only two kinds of 3 point amplitude
+    From the Lagrangian, we have known that there are only two kinds of 3 point amplitude ($+,-:$ helicity\qquad $\Phi,\Phi^\dagger: \text{charge of scalar}$)
     \begin{gather*}
-        A[1^\Phi,2^{\Phi^\dagger},3^+]=\frac{[23][31]}{[12]},\qquad A[1^\Phi,2^{\Phi^\dagger},3^-]=\frac{\avg{23}\!\avg{31}}{\avg{12}}\\
-        A[3^+,4^+,5^-]=\frac{[34]^3}{[45][53]},\qquad A[3^-,4^-,5^+]=\frac{\avg{34}^3}{\avg{45}\!\avg{53}}
+        A[1^\Phi2^{\Phi^\dagger}3^+]=\frac{[23][31]}{[12]},\qquad A[1^\Phi2^{\Phi^\dagger}3^-]=\frac{\avg{23}\!\avg{31}}{\avg{12}}\\
+        A[3^+4^+5^-]=\frac{[34]^3}{[45][53]},\qquad A[3^-4^-5^+]=\frac{\avg{34}^3}{\avg{45}\!\avg{53}}
     \end{gather*}
     By using the 3 point building block, we can construct 4 point colorordered amplitudes from BCFW recursion relation.
 \end{frame}
@@ -505,7 +507,7 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
         This part is completely the same as the pure gluon amplitude, so we can directly borrow the
         existing results.
         \begin{equation*}
-            \boxed{\text{Parke - Talyor Formula}:\quad A[\cdots,i^-,\cdots,j^-,\cdots]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
+            \boxed{\text{Parke - Talyor Formula}:\quad A[\cdots i^-\cdots j^-\cdots]=\frac{\avg{ij}^4}{\avg{12}\!\avg{23}\cdots\avg{n1}}}
         \end{equation*}
         \textcolor{red}{Notice that this formula only applies to MHV amplitudes, although the NMHV can be completely solved.}
     \end{itemize}
@@ -513,20 +515,15 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
 
 \begin{frame}
     \frametitle{SQCD like sector}
+    The amplitudes can be computed like 
     \begin{itemize}
-        \item $\Phi^\dagger V_1V_1\Phi$\\
-        Here we compute the color-ordered amplitude $A[1,2,3^+,4^-]$. We choose $[2,3\rangle$ shift
-        \begin{gather*}
-        \hat{\sket{2}}=\sket{2}-z\sket{3},\qquad \hat{\aket{2}}=\aket{2} \\
-        \hat{\sket{3}}=\sket{3},\qquad \hat{\aket{3}}=\aket{3}+z\aket{2}
-        \end{gather*}
-        The amplitudes can be computed 
+        \item $\Phi^\dagger V_1V_1\Phi$
         \begin{align*}
-            A[1,2,3^+,4^-]=(-1)\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}\quad (\textcolor{red}{\text{Parke -Talyor like Formula}})
+            A[1^\Phi2^{\Phi^\dagger}3^+4^-]=(-1)\frac{\avg{14}^2\avg{24}^2}{\mdavg{12}{23}\!\mdavg{34}{41}}\quad (\textcolor{red}{\text{Parke -Talyor like Formula}})
         \end{align*}
         \item $\Phi^\dagger V_1V_1V_1\Phi$
             \begin{equation*}
-                A[1,2,3^+,4^+,5^-]=\frac{\avg{15}^2\!\avg{25}^2}{\mdavg{12}{23}\!\mdavg{34}{45}\!\avg{51}}
+                A[1^\Phi2^{\Phi^\dagger}3^+4^+5^-]=\frac{\avg{15}^2\!\avg{25}^2}{\mdavg{12}{23}\!\mdavg{34}{45}\!\avg{51}}
             \end{equation*}
     \end{itemize}
 \end{frame}
@@ -535,10 +532,10 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
     \begin{itemize}
         \item $\Phi^\dagger (nV_1)\Phi$
             \begin{equation*}
-                A[1,2,\cdots,(n+2)^-]=(-1)^{n+1}\frac{\avg{1,n+2}^2\avg{2,n+2}^2}{\mdavg{12}{23}\cdots\mdavg{n+1,n+2}{n+2,1}}
+                A[1^\Phi2^{\Phi^\dagger}\cdots(n+2)^-]=(-1)^{n+1}\frac{\avg{1,n+2}^2\avg{2,n+2}^2}{\mdavg{12}{23}\cdots\mdavg{n+1,n+2}{n+2,1}}
             \end{equation*}
             \textcolor{red}{$\star$ Bonus relation: \begin{equation*}
-                A[1,2,3^+,4^+]=0\quad \Rightarrow  \quad A[1,2,3^+,\cdots,n^+]=0 \end{equation*}}
+                A[1^\Phi2^{\Phi^\dagger}3^+4^+]=0\quad \Rightarrow  \quad A[1^\Phi2^{\Phi^\dagger}3^+\cdots n^+]=0 \end{equation*}}
         For the amplitude $\Phi (nV_2)\Phi^\dagger$, we can obtain nearly the same expression.
     \end{itemize}
 \end{frame}
@@ -548,15 +545,15 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
     \begin{itemize}
         \item $\Phi V_2 \Phi^\dagger V_1$
         \begin{equation*}
-            A[1,2,3_1^+,4_2^-]=\frac{\mdavg{14}{24}}{\mdavg{13}{23}}
+            A[1^\Phi2^{\Phi^\dagger}3_1^+4_2^-]=\frac{\mdavg{14}{24}}{\mdavg{13}{23}}
         \end{equation*}
         \item $\Phi V_2 \Phi^\dagger V_1V_1$
         \begin{equation*}
-            A[1,2,3_1^+,4_1^+,5_2^-]=(-1)\frac{\avg{2\textcolor{green}{5}}^2\!\avg{1\textcolor{green}{5}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
+            A[1^\Phi2^{\Phi^\dagger}3_1^+4_1^+5_2^-]=(-1)\frac{\avg{2\textcolor{green}{5}}^2\!\avg{1\textcolor{green}{5}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
         \end{equation*}
         \item $\Phi V_2V_2 \Phi^\dagger V_1V_1$
         \begin{equation*}
-            A[1,2,3_1^+,4_1^+,5_2^+,6_2^-]=\frac{\avg{2\textcolor{green}{6}}^2\!\avg{1\textcolor{green}{6}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{61}}}
+            A[1^\Phi2^{\Phi^\dagger}3_1^+4_1^+5_2^+6_2^-]=\frac{\avg{2\textcolor{green}{6}}^2\!\avg{1\textcolor{green}{6}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{61}}}
         \end{equation*}       
     \end{itemize}
 \end{frame}
@@ -578,10 +575,11 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
        
     \end{itemize}
     \pause
-    For example, if we want to compute $A[1,2,5_1^+,3_1^+,4_1^-,7_2^+,6_2^+,8_2^+]$:
+    For example, if we want to compute $A[1^\Phi2^{\Phi^\dagger}5_1^+3_1^+4_1^-7_2^+6_2^+8_2^+]$:
     \begin{equation*}
         A=\frac{\avg{2\textcolor{green}{4}}^2\avg{1\textcolor{green}{4}}^2}{\textcolor{blue}{\mdavg{25}{53}\mdavg{34}{41}}\textcolor{red}{\mdavg{27}{76}\mdavg{68}{81}}}
     \end{equation*}
+    If you use Feynman diagrams, it may take sevral days to accomplish the computation.
 \end{frame}
 \section{Summary}
 \begin{frame}
