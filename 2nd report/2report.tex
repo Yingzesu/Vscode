@@ -229,56 +229,59 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
     A_5[1^-2^+3^+4^+5^+] &= 0 
     \qquad 1,2,\cdots,n:~\text{particle labels}) \\
     \end{align*}
-    \pause
     \vspace{-3em}
     \hypertarget{conv}{}
-    \begin{gather*}
-    \textcolor{red}{A_5[1^-2^-3^+4^+5^+]= 
-    \frac{\langle 1 2 \rangle^4}
-         {\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle45 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trivial one})\\[1em]
-    (p_{i\mu} \sigma^\mu)_{\alpha\dot{\alpha}}=(\aket{p_i})_\alpha([p_i|)_{\dot{\alpha}},\quad \aket{p_i}=\aket{i}\\
-    \quad \sigma^\mu=(1,\vec{\sigma}),\quad \aket{i},\sket{i}: \text{Weyl Spinors}\\
-    \avg{ij}=\langle i |^\alpha \aket{j}_\alpha=\varepsilon^{\alpha\beta}\aket{i}_\beta\aket{j}_\alpha,\quad \varepsilon^{\alpha\beta}: \text{antisymmetric tensor}
-    \end{gather*}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Modern Amplitude Method} 
- The answer is On-shell method.
-    \begin{center}
-        
-
-\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
-
-\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
-%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
-
-%Straight Lines [id:da5445374886882226] 
-\draw    (276.25,137) -- (457.5,136.26) ;
-\draw [shift={(459.5,136.25)}, rotate = 179.77] [color={rgb, 255:red, 0; green, 0; blue, 0 }  ][line width=0.75]    (10.93,-3.29) .. controls (6.95,-1.4) and (3.31,-0.3) .. (0,0) .. controls (3.31,0.3) and (6.95,1.4) .. (10.93,3.29)   ;
-
-% Text Node
-\draw (233.4,128.25) node [anchor=north] [inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small  Gauge Theory}}\\{\fontfamily{ptm}\selectfont {\small  }}};
-% Text Node
-\draw (463.24,129.5) node [anchor=north west][inner sep=0.75pt]  [font=\small] [align=left] {{\fontfamily{ptm}\selectfont {\small S-Matrix}}};
-% Text Node
-\draw (317.73,117.5) node [anchor=north west][inner sep=0.75pt]  [font=\normalsize] [align=left] {{\fontfamily{ptm}\selectfont {\small \textbf{\textcolor[rgb]{0.95,0.04,0.04}{On-shell method}}}}};
-\end{tikzpicture}
-\end{center}
-\vspace{-1em}
-    % 右侧：PT表达式
-    \qquad \textbf{Parke–Taylor Formula (MHV amplitudes):}
-    \begin{gather*}
-        {A_5[1^+2^+3^+4^+5^+]=0}\\
-        {A_5[1^-2^+3^+4^+5^+]=0}\\
-        \textcolor{red}{A_5[1^-2^-3^+4^+5^+]=\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}}\quad (\text{first non-trival one})\\
-    \end{gather*}
-    \vspace{-3em}
+    \pause
     \begin{gather*}
         {A_5[1^-2^-3^-4^-5^-]=0}\\
         {A_5[1^+2^-3^-4^-5^-]=0}\\
         \textcolor{red}{A_5[1^+2^+3^-4^-5^-]=\frac{[12]^4}{[12][23][34][45][51]}}
     \end{gather*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Color-ordering for Yang-Mills}
+    Consider the Yang-Mills lagrangian
+    \begin{equation*}
+        \mathcal{L}=-\frac{1}{2}\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})
+    \end{equation*}
+    The 3 point and 4 point vertices include $\tilde{f}^{abc}$ and $\tilde{f}^{abe}\tilde{f}^{cde}+\text{perms}$.
+
+    (With a different convention,$\textrm{Tr}[T^aT^b]=\delta^{ab}$ and $[T^a,T^b]=i\tilde{f}^{abc}T^c$)
+
+    We have 
+    \begin{equation*}
+        c_s=\tilde{f}^{a_1a_2b}\tilde{f}^{ba_3a_4},\quad c_t=\tilde{f}^{a_4a_1b}\tilde{f}^{ba_2a_3},\quad c_u=\tilde{f}^{a_1a_3b}\tilde{f}^{ba_2a_4}
+    \end{equation*}
+    and the color factor can be rewritten by the trace of product of generators
+    \begin{equation*}
+        i\tilde{f}^{abc}=\mathrm{Tr}([T^a,T^b]T^c),
+    \end{equation*}
+    Moreover, in $SU(N)$, we have a Fierz identity
+    \begin{equation}
+        \sum_{a}T^a_{ij}T^a_{kl}=\delta_{il}\delta_{kj}-\frac{1}{N}\delta_{ij}\delta_{kl}.
+    \end{equation}
+\end{frame}
+    
+\begin{frame}
+    This identity is easier understood as matrix form like 
+    \begin{align*}
+    \mathrm{Tr}\{T^aA\}\mathrm{Tr}\{T^aB\}=\mathrm{Tr}\{AB\}-\frac{1}{N}\mathrm{Tr}\{A\}\mathrm{Tr}\{B\},\\
+    \mathrm{Tr}\{AT^aBT^a\}=\mathrm{Tr}\{A\}\mathrm{Tr}\{B\}-\frac{1}{N}\mathrm{Tr}\{AB\}.
+    \end{align*}
+    So, the 4 gluon s-channel gives us
+    \begin{align*}
+        \tilde{f}^{a_1a_2b}\tilde{f}^{ba_3a_4}=\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}T^{a_4})-\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_3}T^{a_4})\\
+        -\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_4}T^{a_3})+\mathrm{Tr}(T^{a_2}T^{a_1}T^{a_4}T^{a_3}).
+    \end{align*}
+    Therefore, the full 4-point amplitude can be rewritten like
+    \begin{equation*}
+        \mathcal{A}_{4,\text{tree}}=g^2(A_4[1234]\mathrm{Tr}(T^{a_1}T^{a_2}T^{a_3}T^{a_4})+\text{perms of } (234) )
+    \end{equation*}
+    here the subamplitudes $A_4[1234],A_4[1243]$, etc. are called \textbf{color-ordered ampltitudes}. This concept can be easily generalized to tree-level n-point case
+    \begin{equation*}
+        \textcolor{red}{\mathcal{A}_{n,\text{tree}}=g^{n-2}\sum_{\sigma}A_n[1,\sigma(2,3\cdots n)]\mathrm{Tr}(T^{a_1}T^{\sigma(a_2\cdots}T^{a_n)})}
+    \end{equation*}
 \end{frame}
 
 \begin{frame}
@@ -465,8 +468,34 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
     \end{equation*}
     This makes it easy to evaluate the residue at $z=z_I$
     \begin{equation*}
-        -\mathrm{Res}|_{z=z_I}\frac{\hat{A}_n(z)}{z}=\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)
+        -\mathrm{Res}|_{z=z_I}\frac{\hat{A}_n(z)}{z}=\frac{(z-z_I)z_I}{z(z-z_I)}\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)|_{z=z_I}=\hat{A}_L(z_I)\frac{1}{P_I^2}\hat{A}_R(z_I)
     \end{equation*}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Large z behavior}
+    In the BCFW formula, the boundary term $B_n$ affects a lot
+    \begin{equation*}
+        A_n=-\sum_{z_I}\mathrm{Res}|_{z=z_I}\frac{\hat{A}_n(z)}{z}+B_n,
+    \end{equation*}
+    In most applications. one assumes or much better, proves $B_n=0$. This is often justified by declaring a stronger condition
+    \begin{equation*}
+        \textcolor{red}{\hat{A}_n(z)\rightarrow 0 \quad \text{for} \quad z\rightarrow \infty} 
+    \end{equation*}
+    Here I show the large z behavior for gluon scattering 
+    \begin{center}
+        \begin{tabular}{lrc}
+            \toprule
+            $[i\, \textbackslash \, j\rangle $ & $+$ & $-$ \\
+            \midrule
+            $+$ & $1/z$ & $z^3$ \\
+            $-$ & $1/z$ & $1/z$ \\
+            \bottomrule
+          \end{tabular}
+    \end{center}
+    proved by using background field expansion ~\textcolor{green}{(N.~Arkani-Hamed and J.~Kaplan,
+%``On Tree Amplitudes in Gauge Theory and Gravity,''
+[arXiv:0801.2385 [hep-th]].)}
 \end{frame}
 
 \begin{frame}
@@ -684,6 +713,12 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
 
 \begin{frame}
     \frametitle{SQCD like sector}
+    The color factor in this sector looks like
+    \begin{equation*}
+        (T^{a_1}T^{a_2}\cdots T^{a_n})_{ij}
+    \end{equation*}
+    so we we need to notice is just the order of gauge boson.
+
     The amplitudes can be computed like 
     \begin{itemize}
         \item $\Phi^\dagger V_1V_1\Phi$
@@ -711,6 +746,84 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
 
 \begin{frame}
     \frametitle{Pure 2-site amplitude}
+    The straightforward way to observe the color structure in this case  is double line notation as follows 
+        \vspace{-0.8em}
+    \begin{center}
+        \tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+        \begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=0.8,xscale=0.8]
+
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Straight Lines [id:da7604191870446242] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (100,100) -- (150,100) ;
+%Straight Lines [id:da7895005569652712] 
+\draw [color={rgb, 255:red, 0; green, 110; blue, 237 }  ,draw opacity=1 ]   (100,110) -- (190,110) ;
+%Straight Lines [id:da19217218880843812] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (150,50) -- (150,100) ;
+%Straight Lines [id:da7866299736623521] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (160,50) -- (160,100) ;
+%Straight Lines [id:da5667542352395977] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (190,110) -- (190,160) ;
+%Straight Lines [id:da33701635654582174] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (200,110) -- (200,160) ;
+%Straight Lines [id:da7076492571881566] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (299,100) -- (389,100) ;
+%Straight Lines [id:da3803886589182971] 
+\draw [color={rgb, 255:red, 0; green, 113; blue, 255 }  ,draw opacity=1 ]   (200,110) -- (250,110) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (128,103.83) -- (120,100.45) -- (127.97,96.99) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (153.28,70.33) -- (150.12,78.42) -- (146.44,70.55) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (156.49,77.35) -- (160.07,69.44) -- (163.33,77.49) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (340,102.83) -- (332,99.45) -- (339.97,95.99) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (120.93,107.08) -- (128.98,110.35) -- (121.06,113.93) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (193.4,129.42) -- (190,137.42) -- (186.55,129.45) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (196.55,138.41) -- (200,130.44) -- (203.4,138.44) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (220.93,107.08) -- (228.98,110.35) -- (221.06,113.93) ;
+%Straight Lines [id:da696489944746132] 
+\draw [color={rgb, 255:red, 0; green, 113; blue, 255 }  ,draw opacity=1 ]   (300,110) -- (350,110) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (321,107) -- (329.05,110.27) -- (321.13,113.84) ;
+%Straight Lines [id:da24340791537710427] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (350,110) -- (350,160) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (353.4,129.42) -- (350,137.42) -- (346.55,129.45) ;
+%Straight Lines [id:da7298898466192736] 
+\draw [color={rgb, 255:red, 0; green, 118; blue, 255 }  ,draw opacity=1 ]   (360,110) -- (360,160) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (356.55,138.41) -- (360,130.44) -- (363.4,138.44) ;
+%Straight Lines [id:da3460055698725] 
+\draw [color={rgb, 255:red, 0; green, 110; blue, 237 }  ,draw opacity=1 ]   (360,110) -- (450,110) ;
+\draw  [color={rgb, 255:red, 0; green, 119; blue, 255 }  ,draw opacity=1 ] (380.93,107.08) -- (388.98,110.35) -- (381.06,113.93) ;
+%Straight Lines [id:da4507056480848969] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (389,50) -- (389,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (393.28,70.33) -- (390.12,78.42) -- (386.44,70.55) ;
+%Straight Lines [id:da6544383915955476] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (399,50) -- (399,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (395.49,77.35) -- (399.07,69.44) -- (402.33,77.49) ;
+%Straight Lines [id:da03624471669725382] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (399,100) -- (449,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (427,103.83) -- (419,100.45) -- (426.97,96.99) ;
+%Straight Lines [id:da34280653261510274] 
+\draw [color={rgb, 255:red, 255; green, 0; blue, 0 }  ,draw opacity=1 ]   (160,100) -- (250,100) ;
+\draw  [color={rgb, 255:red, 255; green, 4; blue, 37 }  ,draw opacity=1 ] (201,102.83) -- (193,99.45) -- (200.97,95.99) ;
+
+% Text Node
+\draw (255,97) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (81,97) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+% Text Node
+\draw (165,46.4) node [anchor=north west][inner sep=0.75pt]    {$V_{1}$};
+% Text Node
+\draw (325,143.4) node [anchor=north west][inner sep=0.75pt]    {$V_{2}$};
+% Text Node
+\draw (407,47.4) node [anchor=north west][inner sep=0.75pt]    {$V_{1}$};
+% Text Node
+\draw (285,97) node [anchor=north west][inner sep=0.75pt]   [align=left] {2};
+% Text Node
+\draw (454,95) node [anchor=north west][inner sep=0.75pt]   [align=left] {1};
+% Text Node
+\draw (166,142.4) node [anchor=north west][inner sep=0.75pt]    {$V_{2}$};
+
+
+        \end{tikzpicture}
+    \end{center}
     \begin{itemize}
         \item $\Phi V_2 \Phi^\dagger V_1$
         \begin{equation*}
@@ -719,11 +832,7 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
         \item $\Phi V_2 \Phi^\dagger V_1V_1$
         \begin{equation*}
             A[1^\Phi2^{\Phi^\dagger}3_1^+4_1^+5_2^-]=(-1)\frac{\avg{2\textcolor{green}{5}}^2\!\avg{1\textcolor{green}{5}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\textcolor{red}{\mdavg{25}{51}}}
-        \end{equation*}
-        \item $\Phi V_2V_2 \Phi^\dagger V_1V_1$
-        \begin{equation*}
-            A[1^\Phi2^{\Phi^\dagger}3_1^+4_1^+5_2^+6_2^-]=\frac{\avg{2\textcolor{green}{6}}^2\!\avg{1\textcolor{green}{6}}^2}{\textcolor{blue}{\mdavg{23}{34}\!\avg{41}}\!\textcolor{red}{\mdavg{25}{56}\!\avg{61}}}
-        \end{equation*}       
+        \end{equation*}  
     \end{itemize}
 \end{frame}
 
@@ -829,8 +938,7 @@ here $F_i$ refers to the $i$th gauge field strength. The scalar field $\Phi_i$ t
         \item[] diagram A' = $\mathrm{anti\text{-}MHV} \times \mathrm{NMHV}$, as opposed to diagram A = $\mathrm{MHV}\times \mathrm{MHV}$. 
         \vspace{1em}
 
-        \textcolor{red}{The equivalence between two different shift is related to powerful residue theorem (N. Arkani-Hamed, F. Cachazo, C. Cheung, and J. Kaplan,
-        JHEP 1003, 020 (2010) [arXiv:0907.5418 [hep-th]].) and Grassmannian.}
+        \textcolor{red}{The equivalence between two different shift is related to powerful residue theorem} \textcolor{green}{(N. Arkani-Hamed, F. Cachazo, C. Cheung, and J. Kaplan, [arXiv:0907.5418 [hep-th]].)} \textcolor{red}{and Grassmannian.}
     \end{itemize}
 \end{frame}
 \begin{frame}
