@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.28)  24 JUN 2025 20:08
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.28)  25 JUN 2025 20:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1371,219 +1371,248 @@ Overfull \hbox (11.64081pt too wide) in paragraph at lines 193--193
 
 ] [13
 
-] [14
+]
+Overfull \vbox (6.28119pt too high) detected at line 277
+ []
 
-] [15
+[14
 
 ]
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 12.0pt on input line 345.
-File: recrel1.pdf Graphic file (type pdf)
-<use recrel1.pdf>
+File: CrossingSYM.png Graphic file (type bmp)
+<CrossingSYM.png>
+ [15
 
-Overfull \hbox (7.07863pt too wide) in paragraph at lines 345--345
-[][]  
+]
+Overfull \vbox (8.78018pt too high) detected at line 334
  []
 
 [16
 
 ]
-File: recrel1.pdf Graphic file (type pdf)
-<use recrel1.pdf>
-
-Overfull \hbox (7.07863pt too wide) in paragraph at lines 345--345
-[][]  
+Overfull \vbox (8.78018pt too high) detected at line 334
  []
 
 [17
 
-] [18
+]
+Overfull \vbox (8.78018pt too high) detected at line 334
+ []
+
+[18
 
 ] [19
 
 ] [20
 
 ]
-File: CT.png Graphic file (type bmp)
-<CT.png>
- [21
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 440.
+File: recrel1.pdf Graphic file (type pdf)
+<use recrel1.pdf>
+
+Overfull \hbox (7.07863pt too wide) in paragraph at lines 440--440
+[][]  
+ []
+
+[21
 
 ]
+File: recrel1.pdf Graphic file (type pdf)
+<use recrel1.pdf>
 
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 498.
+Overfull \hbox (7.07863pt too wide) in paragraph at lines 440--440
+[][]  
+ []
 
 [22
 
-]
-Overfull \vbox (0.24992pt too high) detected at line 525
- []
+] [23
 
-[23
-
-]
-Overfull \vbox (9.03229pt too high) detected at line 555
- []
-
-[24
+] [24
 
 ] [25
 
 ]
-LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
-(Font)              scaled to size 12.0pt on input line 620.
+File: CT.png Graphic file (type bmp)
+<CT.png>
  [26
 
-] [27
+]
 
-] (./2report.toc) [28
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 593.
+
+[27
+
+]
+Overfull \vbox (0.24992pt too high) detected at line 620
+ []
+
+[28
+
+]
+Overfull \vbox (9.03229pt too high) detected at line 650
+ []
+
+[29
+
+] [30
+
+]
+LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/b/n' will be
+(Font)              scaled to size 12.0pt on input line 715.
+ [31
+
+] [32
+
+] (./2report.toc) [33
 
 ]
 File: Moose.png Graphic file (type bmp)
 <Moose.png>
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 9.0pt on input line 656.
+(Font)              scaled to size 9.0pt on input line 751.
 
-Overfull \hbox (8.87807pt too wide) in paragraph at lines 656--656
+Overfull \hbox (8.87807pt too wide) in paragraph at lines 751--751
  [][] 
  []
 
 File: Moosed.jpeg Graphic file (type bmp)
 <Moosed.jpeg>
-[29
+[34
 
 ]
 File: Moose.png Graphic file (type bmp)
 <Moose.png>
 
-Overfull \hbox (8.87807pt too wide) in paragraph at lines 656--656
+Overfull \hbox (8.87807pt too wide) in paragraph at lines 751--751
  [][] 
  []
 
 File: Moosed.jpeg Graphic file (type bmp)
 <Moosed.jpeg>
-[30
+[35
 
 ]
 File: Moosed.jpeg Graphic file (type bmp)
 <Moosed.jpeg>
 File: Lattice.jpg Graphic file (type bmp)
 <Lattice.jpg>
- [31
+ [36
 
 ]
 File: Moosed.jpeg Graphic file (type bmp)
 <Moosed.jpeg>
 File: Lattice.jpg Graphic file (type bmp)
 <Lattice.jpg>
- [32
+ [37
 
 ]
 File: 2-site.png Graphic file (type bmp)
 <2-site.png>
- [33
+ [38
 
-] [34
-
-] [35
-
-] [36
-
-] [37
-
-] [38
-
-]
-File: 6pt.eps Graphic file (type eps)
-<6pt.eps>
- [39
+] [39
 
 ] [40
 
 ] [41
 
-] (./2report.toc) [42
+] [42
+
+] [43
 
 ]
-File: 6ptNMHV.png Graphic file (type bmp)
-<6ptNMHV.png>
- [43
-
-]
-File: 6ptNMHV.png Graphic file (type bmp)
-<6ptNMHV.png>
+File: 6pt.eps Graphic file (type eps)
+<6pt.eps>
  [44
 
 ] [45
 
+] [46
+
+] (./2report.toc) [47
+
+]
+File: 6ptNMHV.png Graphic file (type bmp)
+<6ptNMHV.png>
+ [48
+
+]
+File: 6ptNMHV.png Graphic file (type bmp)
+<6ptNMHV.png>
+ [49
+
+] [50
+
 ]
 File: 6ptNMHV2.png Graphic file (type bmp)
 <6ptNMHV2.png>
- [46
+ [51
 
 ]
 File: NMHV.png Graphic file (type bmp)
 <NMHV.png>
- [47
+ [52
 
 ]
 File: 6ptSpNMHV.png Graphic file (type bmp)
 <6ptSpNMHV.png>
 File: exNMHV.png Graphic file (type bmp)
 <exNMHV.png>
- [48
+ [53
 
 ]
 File: 6ptSpNMHV.png Graphic file (type bmp)
 <6ptSpNMHV.png>
 File: exNMHV.png Graphic file (type bmp)
 <exNMHV.png>
- [49
+ [54
 
 ]
 File: FinalNMHV.png Graphic file (type bmp)
 <FinalNMHV.png>
 
-Overfull \hbox (106.43108pt too wide) detected at line 1014
+Overfull \hbox (106.43108pt too wide) detected at line 1109
 \U/ntxmia/m/it/10.95 = [] \LMS/ntxsy/m/n/10.95 ^^A [] ^^A [] \OML/ntxmi/m/it/10.95 :
  []
 
-[50
+[55
 
-] (./2report.toc) [51
+] (./2report.toc) [56
 
-] [52
+] [57
 
 ]
 LaTeX Font Info:    Font shape `TU/TeXGyreTermesX(0)/m/n' will be
-(Font)              scaled to size 24.88pt on input line 1030.
- [53
+(Font)              scaled to size 24.88pt on input line 1125.
+ [58
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\translate ' on input line 1031.
+(hyperref)                removing `\translate ' on input line 1126.
 
-[54
-
-] [55
-
-] [56
-
-]
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 1123.
-
-[57
-
-] [58
-
-] [59
+[59
 
 ] [60
 
 ] [61
 
-] [62
+]
+
+LaTeX Warning: Command \textbackslash invalid in math mode on input line 1218.
+
+[62
+
+] [63
+
+] [64
+
+] [65
+
+] [66
+
+] [67
 
 ]
 \tf@nav=\write7
@@ -1612,12 +1641,12 @@ Package rerunfilecheck Info: File `2report.out' has not changed.
 (rerunfilecheck)             Checksum: 6ED48423746BA5ED8BECCAA1F6A816C8;681.
  ) 
 Here is how much of TeX's memory you used:
- 41098 strings out of 474773
- 890961 string characters out of 5757724
+ 41153 strings out of 474773
+ 891733 string characters out of 5757724
  1937839 words of memory out of 5000000
- 62388 multiletter control sequences out of 15000+600000
- 594369 words of font info for 163 fonts, out of 8000000 for 9000
+ 62430 multiletter control sequences out of 15000+600000
+ 606146 words of font info for 187 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,21n,123p,440b,988s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on 2report.pdf (62 pages).
+Output written on 2report.pdf (67 pages).

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.28)  24 JUN 2025 19:49
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.6.28)  25 JUN 2025 13:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -885,7 +885,8 @@ File: pgflibraryarrows.meta.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgfarrowlength=\dimen358
 \pgfarrowwidth=\dimen359
 \pgfarrowlinewidth=\dimen360
-) (./main.aux)
+)
+No file main.aux.
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
@@ -898,7 +899,7 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
 LaTeX Font Info:    ... okay on input line 51.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 51.
 LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 51.
- (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
+(/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 51.
@@ -948,11 +949,13 @@ LaTeX Font Info:    ... okay on input line 51.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring OFF on input line 51.
-(./main.out) (./main.out)
 \@outlinefile=\write6
 \openout6 = `main.out'.
 
- (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
+
+Package hyperref Warning: Rerun to get /PageLabels entry.
+
+(/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 ) (/usr/local/texlive/2024/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
 Dictionary: translator-bibliography-dictionary, Language: English 
@@ -1027,7 +1030,9 @@ Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count394
  (./main.nav) [1
 
-] (./main.toc) [2
+]
+No file main.toc.
+[2
 
 ]
 LaTeX Font Info:    Trying to load font information for TU+ptm on input line 126.
@@ -1056,7 +1061,9 @@ Overfull \vbox (3.27176pt too high) detected at line 126
 
 ] [4
 
-] (./main.toc) [5
+]
+No file main.toc.
+[5
 
 ]
 File: BCFW.png Graphic file (type bmp)
@@ -1109,7 +1116,9 @@ Overfull \hbox (1.86934pt too wide) detected at line 548
 
 [16
 
-] (./main.toc) [17
+]
+No file main.toc.
+[17
 
 ]
 File: Quiver.jpg Graphic file (type bmp)
@@ -1148,7 +1157,9 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 717.
 
 [21
 
-] (./main.toc) [22
+]
+No file main.toc.
+[22
 
 ] [23
 
@@ -1169,7 +1180,9 @@ Overfull \hbox (6.97427pt too wide) detected at line 763
 
 ] [29
 
-] (./main.toc) [30
+]
+No file main.toc.
+[30
 
 ] [31
 
@@ -1182,7 +1195,8 @@ Overfull \hbox (6.97427pt too wide) detected at line 763
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `\translate ' on input line 895.
 
-(./main.toc) [34
+No file main.toc.
+[34
 
 ]
 Overfull \hbox (6.97427pt too wide) detected at line 908
@@ -1248,14 +1262,20 @@ L3 programming layer <2024-02-20>
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 1FD812EFBF143465086F43A90E37CFF6;1021.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  1FD812EFBF143465086F43A90E37CFF6;1021.
  ) 
 Here is how much of TeX's memory you used:
- 37772 strings out of 474773
- 843103 string characters out of 5757724
+ 37690 strings out of 474773
+ 841164 string characters out of 5757724
  1939839 words of memory out of 5000000
- 59172 multiletter control sequences out of 15000+600000
+ 59108 multiletter control sequences out of 15000+600000
  566087 words of font info for 94 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  128i,15n,123p,1408b,868s stack positions out of 10000i,1000n,20000p,200000b,200000s

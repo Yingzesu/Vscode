@@ -193,6 +193,100 @@ If you consider 5point case, it will become worse:
 \end{frame}
 \section{Preliminary}
 \begin{frame}
+    \frametitle{Analyticity}
+    Amplitudes are analytic functions
+    \begin{itemize}
+        \item Tree level scattering amplitudes are rational functions of Lorentz invariants, such as $\bm{p_{i\mu}p_j^\mu}$, $\bm{p_{i\mu}\epsilon_j^\mu}$.
+        \item \textbf{Locality} tells us that any pole of a tree-level amplitude must correspond to a on-shell propagating particle. 
+        \item There's only single pole, no branch cuts (logs, square roots, etc) at tree level.
+\end{itemize}
+Historically, when people consider 4-point scattering 
+\begin{equation*}
+    p_1,p_2,p_3,p_4, \quad \text{satisfying}\quad p_i^2=0 \quad\text{and}\quad \sum_{i=1}^{4}p_i=0
+\end{equation*}
+\begin{equation*}
+    \text{d.o.f}=4n-4-n=3n-4\quad \text{independent complexed d.o.f}
+\end{equation*}
+This seems to be too much, so people change to use Mandelstam variables
+\begin{equation*}
+    s,t,u(\text{for}~~\pi\pi~~\text{scattering})\quad\text{satisfying}\quad s+t+u=0
+\end{equation*}
+\end{frame}
+
+\begin{frame}
+    Also for earliest String Amplitude (Venezaino Amplitude)
+    \begin{equation*}
+        A_{\text{open}}(s, t) = g^2 \frac{\Gamma(-\alpha' s)\, \Gamma(-\alpha' t)}{\Gamma(-\alpha' s - \alpha' t)}
+    \end{equation*}
+   But the problem is that Mandelstam variables only apply to 2$\rightarrow$2 scattering, how about higher point?
+   \begin{equation*}
+    \text{single complexed variable like}\quad A(z) 
+   \end{equation*}
+   This is the starting point of BCFW recursion relation!
+\end{frame}
+
+\begin{frame}
+    \frametitle{Poincaré Invariance and Little Group Scaling }
+    We consider a Poincaré invariant field theory.
+    The one-particle state are defined from a reference momentum k like this  
+    \begin{equation*}
+         \aket{p;\sigma}=U(L(p;k))\aket{k;\sigma}
+    \end{equation*}
+    Then the general Lorentz transformation acts like
+    \begin{align*}
+        U(\Lambda)|p,\sigma\rangle &= U(\Lambda) U(L(p;k))|k,\sigma \rangle \\
+        &= U(L(\Lambda p;k)) U(L^{-1}(\Lambda p;k) \Lambda L(p;k)) |k,\sigma \rangle\
+    \end{align*}
+    here $W=L^{-1}(\Lambda p;k) \Lambda L(p;k)$ is not a general transformation but keep k invariant, called little group.
+    Thus we have 
+    \begin{equation*}
+         U(W(\Lambda,p,k))\aket{k;\sigma}=D_{\sigma\sigma^{'}}(W(\Lambda,p,k))\aket{k,\sigma^{'}}
+    \end{equation*}
+    so one-particle state with momentum p transformed like 
+    \begin{equation*}
+        \textcolor{red}{U(\Lambda)|p,\sigma\rangle=D_{\sigma\sigma^{'}}(W(\Lambda,p,k))\aket{\Lambda p,\sigma^{'}}}
+    \end{equation*}
+\end{frame}
+
+\begin{frame}
+    \textcolor{red}{One-particle state transformed under the little group!}
+
+    For massless particle, the little group is $SO(2)\backsimeq U(1)$, so the representation matrix is just a phase.
+    The Poincaré invariance of S-matrix requires 
+    \begin{equation*}
+        \mathcal{M}^\Lambda(p_a,\sigma_a)=\prod_{a}(D_{\sigma\sigma^{'}})\mathcal{M}((\Lambda p)_a,\sigma_a^{'})
+    \end{equation*}
+      \begin{itemize}
+        \item $\textbf{\text{Massless Case}}$\\
+    \begin{equation*}
+        p_\mu \sigma^\mu=p_{\alpha\dot{\alpha}}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}=\aket{\lambda}[\lambda|
+    \end{equation*}
+    There is an ambiguity for the definition, the momentum is invariant under the following redefinition
+    \begin{equation*}
+        \lambda \rightarrow t^{-1}\lambda, \qquad \tilde{\lambda}\rightarrow t\tilde{\lambda}, \qquad t\in\mathbb{C} 
+    \end{equation*}
+    same for
+    \begin{equation*}
+        \aket{\lambda}\rightarrow t^{-1}\aket{\lambda}, \qquad \sket{\lambda}\rightarrow t\sket{\lambda}
+    \end{equation*}
+    The scattering amplitudes should transform \textcolor{red}{covariantly} under little group scaling:
+    \begin{equation*}
+        \color{red} \mathcal{A}_n(\{\aket{1},\sket{1},h_1\},\ldots\{t_i^{-1}\aket{i},t_i\sket{i},h_i\},\ldots )=t_i^{2h_i}\mathcal{A}_n
+    \end{equation*}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Crossing Symmetry and MHV Classification}
+    Crossing symmetry is a result from analyticity, unitarity and Lorentz invariance. 
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.6\textwidth]{CrossingSYM.png}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
 \frametitle{Modern Amplitude Method} 
  The answer is On-shell method.
     \begin{center}
@@ -223,12 +317,13 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
 
     \qquad \textbf{Parke–Taylor Formula (MHV amplitudes):}
     \begin{align*}
-    A_5[1^+2^+3^+4^+5^+] &= 0 
+    A_5[1^+2^+3^+4^+5^+] =& 0 
     \qquad (\!+,-:~\text{\hyperlink{helicity}{helicity};} \\
-    A_5[1^-2^+3^+4^+5^+] &= 0 
+    A_5[1^-2^+3^+4^+5^+] =& 0 
     \qquad 1,2,\cdots,n:~\text{particle labels}) \\
+    \textcolor{red}{A_5[1^-2^-3^+4^+5^+]} &=\frac{\langle 1 2 \rangle^4}{\langle 1 2 \rangle \langle 2 3 \rangle  \langle 3 4 \rangle \langle 4 5 \rangle \langle 5 1 \rangle}\quad (\text{first non-trival one})
     \end{align*}
-    \vspace{-3em}
+    \vspace{-1em}
     \hypertarget{conv}{}
     \pause
     \begin{gather*}
@@ -240,7 +335,7 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
 
 \begin{frame}
     \frametitle{Color-ordering for Yang-Mills}
-    Consider the Yang-Mills lagrangian
+    Consider the Yang-Mills Lagrangian
     \begin{equation*}
         \mathcal{L}=-\frac{1}{2}\mathrm{Tr}(F_{\mu\nu}F^{\mu\nu})
     \end{equation*}
@@ -449,11 +544,11 @@ $M_5=\!\!\!\!\!\!\underbrace{A_5[12345]}_{\textcolor{red}{\text{Color-ordered Am
 \end{frame}
 
 \begin{frame}
-    From Cauchy Theorem, we can ontain
+   The most important point here is that
     \begin{equation*}
-        A_n=-\sum_{z_I}\textrm{Res}|_{z=z_I}\frac{\hat{A}_n(z)}{z}+B_n,
+        \boxed{\color{red}\mathrm{Res}|_{z=0}\frac{\hat{A}_n(z)}{z}=\hat{A}_n(0)=A_n}
     \end{equation*}
-    where $B_n$ is the residue of the pole at $z=\infty$, called boundary term.
+    It means that the original amplitude equals to the residue at origin.
     \vspace{-1em}
     \begin{figure}[htbp]
         \centering
