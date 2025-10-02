@@ -1,0 +1,71 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{graphicx}
+\setlength{\parskip}{0.3em}
+\setlength{\parindent}{0pt}
+% 使用系统字体，需要 XeLaTeX 或 LuaLaTeX 编译
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{indentfirst}
+\setlength{\parindent}{2em}
+\newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
+\newcommand{\avg}[1]{\langle #1 \rangle}
+\newcommand{\doubleavg}[2]{\left\langle #1 \right\rangle\!\left\langle #2 \right\rangle}
+\newcommand{\inavg}[2]{\langle #1 \rangle\! [#2]}
+\newcommand{\rinavg}[2]{[#1]\!\langle #2 \rangle}
+\newcommand{\aket}[1]{|#1\rangle}
+\newcommand{\asqu}[1]{{\langle#1\rangle}^2}
+\newcommand{\sket}[1]{|#1]}
+\newcommand{\cbrak}[2]{\avg{#1}\![#2]}
+\newcommand{\acbrak}[2]{[#1]\!\avg{#2}}
+\newcommand{\abra}[1]{\langle #1|}
+\newcommand{\sbra}[2]{[#1|}
+\begin{document}
+
+\title{Some Details}
+\author{Su Yingze}
+\date{\today}
+\maketitle
+\section{Normalization of Polarization Vectors}
+First, we give the definition of polarization vectors which is written in terms of adjoint representation
+\begin{equation}
+    \varepsilon_a^\mu=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p^J}(\sigma_a)^I_{\ J}}{4(p\cdot q)}
+\end{equation}
+here $a$ runs from 1 to 3. We can use antisymmetric tensor to rewrite this equation,like 
+\begin{equation}
+    \varepsilon_a^\mu=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_K}\epsilon^{JK}(\sigma_a)^I_{\ J}}{4(p\cdot q)}
+\end{equation}
+here we choose the left-multiplication convention.
+
+Then, a $2\times 2$ symmetric matrix can be defined like 
+\begin{equation}
+    (\sigma_a)^{IJ}=\epsilon^{JK}(\sigma_a)^I_{\ K}.
+\end{equation}
+This means that the original polarization vector can be understood as 
+\begin{align}
+    \varepsilon_a^\mu&=-\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_J}}{4(p\cdot q)}(\sigma_a)^{IJ}\notag \\
+    &=-\varepsilon^\mu_{IJ}(\sigma_a)^{IJ}
+\end{align}
+here $I,J$ are fundamental little group indices, runs from 1 to 2.
+
+And we know that the reasonable polarization vector for physical state should be symmetric with little group indices, it means that we need 
+to symmetrize the indices $I$ and $J$ as $(IJ)=\frac{1}{2}(IJ+JI)$
+
+
+Now, we want to compute the normalization for $\varepsilon^\mu_{IJ}$, and after multiplying the symmetric matrix, it should go back to the normalization
+\begin{equation}
+    \varepsilon_a^\mu\varepsilon_{b,\mu}=-\delta_{ab}
+\end{equation}
+
+The method to compute the normalization is just multiplying two polarization vectors directly, like
+\begin{equation}
+    \varepsilon^\mu_{(IJ)}\varepsilon^{}_{(KL),\mu}
+\end{equation}
+
+\end{document}
