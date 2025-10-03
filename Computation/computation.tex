@@ -26,6 +26,7 @@
 \newcommand{\acbrak}[2]{[#1]\!\avg{#2}}
 \newcommand{\abra}[1]{\langle #1|}
 \newcommand{\sbra}[2]{[#1|}
+\newcommand{\inner}[2]{\langle #1 | #2 \rangle}
 \begin{document}
 
 \title{Some Details}
@@ -55,8 +56,11 @@ This means that the original polarization vector can be understood as
 here $I,J$ are fundamental little group indices, runs from 1 to 2.
 
 And we know that the reasonable polarization vector for physical state should be symmetric with little group indices, it means that we need 
-to symmetrize the indices $I$ and $J$ as $(IJ)=\frac{1}{2}(IJ+JI)$
-
+to symmetrize the indices $I$ and $J$ as $(IJ)=\frac{1}{2}(IJ+JI)$. Because of the symmetry of $(\sigma_a)^{IJ}$, so it can be obtained that
+\begin{equation}
+    \varepsilon_a^\mu =-(\varepsilon^\mu_{(IJ)}+\varepsilon^\mu_{[IJ]})(\sigma_a)^{IJ}=-\varepsilon^\mu_{(IJ)}(\sigma_a)^{IJ}
+\end{equation}
+which means we only need to consider the symmetric part of $\varepsilon^\mu_{IJ}$.
 
 Now, we want to compute the normalization for $\varepsilon^\mu_{IJ}$, and after multiplying the symmetric matrix, it should go back to the normalization
 \begin{equation}
@@ -65,7 +69,67 @@ Now, we want to compute the normalization for $\varepsilon^\mu_{IJ}$, and after 
 
 The method to compute the normalization is just multiplying two polarization vectors directly, like
 \begin{equation}
-    \varepsilon^\mu_{(IJ)}\varepsilon^{}_{(KL),\mu}
+    \varepsilon^\mu_{(IJ)}\varepsilon^{}_{(KL),\mu}=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_J}}{4(p\cdot q)}\times \frac{\abra{p_K}(r\cdot \Gamma)\Gamma_\mu\aket{p_L}}{4(p\cdot q)}
+    \label{7}
+\end{equation}
+here we need to use a special 5d equality
+\begin{equation}
+    (\Gamma^\mu)_A^{\ B}(\Gamma_\mu)_C^{\ D}=-2\Omega_{AC}\Omega^{BD}+2\delta_A^{\ D}\delta_C^{\ B}-\delta_A^{\ B}\delta_C^{\ D}
+    \label{8}
+\end{equation}
+and the dirac operator can be decomposed to
+\begin{equation}
+    \cancel{p}=p\cdot \Gamma=p_A^{\ B}= \aket{p_I}_A\abra{p^I}^B
+\end{equation}
+which help us to rewrite the equation \eqref{7} to be
+\begin{align}
+    \varepsilon^\mu_{IJ}\varepsilon^{}_{KL,\mu}&=\frac{\abra{p_I}^A\aket{r_M}_A\abra{r^M}^B(\Gamma^\mu)_B^{\ C}\aket{p_J}_C \abra{p_K}^D\aket{r_N}_D\abra{r^N}^E(\Gamma_\mu)_D^{\ F}\aket{p_L}_F}{16(p\cdot q)^2}\notag \\
+    &=\frac{\inner{p_I}{r_M}\inner{p_K}{r_N}}{16(p\cdot q)^2}\times \abra{r^M}^B(\Gamma^\mu)_B^{\ C}\aket{p_J}_C \abra{r^N}^E(\Gamma_\mu)_E^{\ F}\aket{p_L}_F
+    \label{10}
+\end{align}
+After plugging the equation \eqref{8} into the second part of \eqref{10}, it becomes
+\begin{align}
+    &\quad \abra{r^M}^B \aket{p_J}_C \abra{r^N}^E \aket{p_L}_F (-2\Omega_{BE}\Omega^{CF}+2\delta_B^{\ F}\delta_E^{\ C}-\delta_B^{\ C}\delta_E^{\ F})\notag \\
+    &=-2\inner{r^M}{r^N}\inner{p_L}{p_J}+2\inner{r^M}{p_L}\inner{r^N}{p_J}-\inner{r^M}{p_J}\inner{r^N}{p_L}
+    \label{11}
+\end{align}
+
+The first term of \eqref{11} equals to 0 because the equality
+\begin{equation}
+    \inner{p_I}{p_J}=0
+\end{equation}
+and the remaining two term can be contracted with the first part of \eqref{10}, which helps to obtain the following two terms
+\begin{equation}
+    2\inner{p_I}{r_M}\inner{r^M}{p_L}\inner{p_K}{r_N}\inner{r^N}{p_J}-\inner{p_I}{r_M}\inner{r^M}{p_J}\inner{p_K}{r_N}\inner{r^N}{p_L}
+\end{equation}
+It is known that 
+\begin{equation}
+    \abra{p_I}(r\cdot \Gamma) \aket{p_J}=\mathrm{Tr}[\aket{p_J}\abra{p_I}(r\cdot \Gamma)]=\frac{1}{2}\epsilon_{IJ}\mathrm{Tr}[(p\cdot \Gamma)(r\cdot \Gamma)]=2\epsilon_{IJ}(p\cdot r)
+\end{equation}
+so the formal equation can be rewritten like 
+\begin{equation}
+    8(p\cdot r)^2\epsilon_{IL}\epsilon_{KJ}-4(p\cdot r)^2\epsilon_{IJ}\epsilon_{KL}
 \end{equation}
 
+Finally, we need to symmetrize the indices $(IJ)$ and $(KL)$, so that we obtain
+\begin{equation}
+    \varepsilon^\mu_{IJ}\varepsilon^{}_{KL,\mu}=\frac{1}{8(p\cdot r)^2}(p\cdot r)^2(\epsilon_{IL}\epsilon_{KJ}+\epsilon_{JL}\epsilon_{KI}+\epsilon_{IK}\epsilon_{LJ}+\epsilon_{JK}\epsilon_{LI})-\frac{1}{16 (p\cdot r)^2}(p\cdot r)^2(\epsilon_{(IJ)}\epsilon_{(KL)})
+\end{equation}
+because $\epsilon$ itself is an antisymmetric tensor so it will become zero under the symmetrization, so that the second term is vanishing.
+
+After some rearrangement of indices, we can obtain
+\begin{equation}
+    \varepsilon^\mu_{IJ}\varepsilon^{}_{KL,\mu}=\frac{1}{4}(\epsilon_{IL}\epsilon_{KJ}+\epsilon_{IK}\epsilon_{LJ})
+\end{equation}
+
+\section{Completeness Relation of Polarization Vectors}
+For this purpose, we need to compute the following formula
+\begin{equation}
+    \varepsilon_a^\mu \varepsilon^{a,\nu}=?
+\end{equation}
+If we multiply the momentum $p_\mu$, it should become vanishing so that the completeness relation should look like 
+\begin{equation}
+    \varepsilon_a^\mu \varepsilon^{a,\nu}=k(-\eta^{\mu\nu}+\frac{p^\mu r^\nu+p^\nu r^\mu}{(p\cdot r)^2})
+\end{equation}
+here k is just a overall coefficient.
 \end{document}
