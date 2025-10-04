@@ -148,6 +148,10 @@ with the normalization
     \inner{p^I}{r^J}=\epsilon^{IJ}
     \label{22}
 \end{equation}
+which means the following condition
+\begin{equation}
+    2(p\cdot r)=1
+\end{equation}
 The method to compute this completeness relation is still just multiplying them togther like
 \begin{equation}
     \varepsilon_{(IJ)}^\mu \varepsilon^{(IJ),\nu}=\frac{\abra{p_{(I}}\Gamma^\mu\aket{r_{J)}}}{\sqrt{2}}\times \frac{\abra{p^{(I}}\Gamma^\nu\aket{r^{J)}}}{\sqrt{2}}
@@ -170,11 +174,36 @@ The fourth piece is nearly the same as the first one
 \end{equation}
 The remaining two need some extra efforts, here I compute it explictly
 \begin{equation}
-     \abra{p_I}\Gamma^\mu\aket{r_J}\times \abra {p^J}\Gamma^\nu\aket{r^{I}}
+    \abra{p_I}\Gamma^\mu\aket{r_J}\times \abra {p^J}\Gamma^\nu\aket{r^{I}}
+    \label{27} 
 \end{equation}
 In terms of two massless spinors that satisfy \eqref{22}, the $USp(2,2)$ identity operator can be written as
 \begin{equation}
     \aket{r_a}_A\abra{p^a}^B+\aket{p_a}_A\abra{r^a}^B=\delta_A^{\ B}
 \end{equation}
+It can be used to rewrite the equation \eqref{27} like
+\begin{align}
+    &\quad \ \abra{p_I}^A(\Gamma^\mu)_A^{\ B}\aket{r_J}_B\abra{p^J}^C(\Gamma^\nu)_C^{\ D}\aket{r^I}_D \notag \\
+    &=\abra{p_I}^A(\Gamma^\mu)_A^{\ B} (\delta_B^{\ C}-\aket{p_J}_B\abra{r^J}^C)(\Gamma^\nu)_C^{\ D}\aket{r^I}_D \notag \\
+    &=\abra{p_I}^A(\Gamma^\mu)_A^{\ B}(\Gamma^\nu)_B^{\ D}\aket{r^I}_D-\abra{p_I}\Gamma^\mu\aket{p_J}\abra{r^J}\Gamma^\nu\aket{r^I}
+\end{align}
+And similarly for 
+\begin{align}
+    \abra{p_J}\Gamma^\mu\aket{r_I}\times \abra {p^I}\Gamma^\nu\aket{r^{J}}&=\abra {p^I}\Gamma^\nu\aket{r^{J}}\times \abra{p_J}\Gamma^\mu\aket{r_I}\notag \\
+    &=\abra {p^I}^A(\Gamma^\nu)_A^{\ B}(-\aket{p^J}_B\abra{r_J}^{\ C}-\delta_B^{\ C})(\Gamma^\mu)_C^{\ D}\aket{r_I}_D \notag \\
+    &=-\abra {p^I}^A(\Gamma^\nu)_A^{\ B}(\Gamma^\mu)_B^{\ D}\aket{r_I}_D-\abra{p^I}\Gamma^\nu\aket{p^J}\abra{r_J}\Gamma^\mu\aket{r_I}
+\end{align}
+Now we can combine these two terms
+\begin{align}
+    &\abra{p_I}^A(\Gamma^\mu)_A^{\ B}(\Gamma^\nu)_B^{\ D}\aket{r^I}_D-\abra{p_I}\Gamma^\mu\aket{p_J}\abra{r^J}\Gamma^\nu\aket{r^I}-\abra {p^I}^A(\Gamma^\nu)_A^{\ B}(\Gamma^\mu)_B^{\ D}\aket{r_I}_D-\abra{p^I}\Gamma^\mu\aket{p^J}\abra{r_J}\Gamma^\nu\aket{r_I}\notag \\
+    &=\abra{p_I}(\Gamma^\mu\Gamma^\nu+\Gamma^\nu\Gamma^\mu)\aket{r^I}-\abra{p_I}\Gamma^\mu\aket{p_J}\abra{r^J}\Gamma^\nu\aket{r^I}-\abra{p^I}\Gamma^\nu\aket{p^J}\abra{r_J}\Gamma^\mu\aket{r_I}\notag \\
+    &=2\eta^{\mu\nu}\inner{p_I}{r^I}-(2p^\mu\epsilon_{IJ})(-2r^\nu\epsilon^{JI})-(-2p^\nu\epsilon^{IJ})(2r^\mu\epsilon_{JI})\notag \\
+    &=4\eta^{\mu\nu}+8p^\mu r^\nu+8p^\nu r^\mu
+\end{align}
 
+Above all, we can conclude that 
+\begin{align}
+    \varepsilon_{(IJ)}^\mu \varepsilon^{(IJ),\nu}&=\frac{1}{2}\times \frac{1}{8}[8(p^\mu r^\nu+p^\nu r^\mu -(p\cdot r)\eta^{\mu\nu})+4\eta^{\mu\nu}+8p^\mu r^\nu+8p^\nu r^\mu]\notag \\
+    &\overset{?}{=}2p^{(\mu}r^{\nu)}
+\end{align}
 \end{document}
