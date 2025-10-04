@@ -25,7 +25,7 @@
 \newcommand{\cbrak}[2]{\avg{#1}\![#2]}
 \newcommand{\acbrak}[2]{[#1]\!\avg{#2}}
 \newcommand{\abra}[1]{\langle #1|}
-\newcommand{\sbra}[2]{[#1|}
+\newcommand{\sbra}[1]{[#1|}
 \newcommand{\inner}[2]{\langle #1 | #2 \rangle}
 \begin{document}
 
@@ -132,4 +132,49 @@ If we multiply the momentum $p_\mu$, it should become vanishing so that the comp
     \varepsilon_a^\mu \varepsilon^{a,\nu}=k(-\eta^{\mu\nu}+\frac{p^\mu r^\nu+p^\nu r^\mu}{(p\cdot r)^2})
 \end{equation}
 here k is just a overall coefficient.
+
+Here, we choose to compute the completeness relation for polarization vectors with fundamental indices
+\begin{equation}
+    \varepsilon_{IJ}^\mu \varepsilon^{IJ,\nu}=a(-\eta^{\mu\nu}+\frac{p^\mu r^\nu+p^\nu r^\mu}{(p\cdot r)^2})
+\end{equation}
+with a different coefficient.
+
+For symplisity, we start with the convention from paper arxiv:2202.08257, in which the polarization vector looks like
+\begin{equation}
+    \epsilon_{IJ}^\mu=\frac{\abra{p_{(I}}\Gamma^\mu \aket{r_{J)}}}{\sqrt{2}}
+\end{equation}
+with the normalization
+\begin{equation}
+    \inner{p^I}{r^J}=\epsilon^{IJ}
+    \label{22}
+\end{equation}
+The method to compute this completeness relation is still just multiplying them togther like
+\begin{equation}
+    \varepsilon_{(IJ)}^\mu \varepsilon^{(IJ),\nu}=\frac{\abra{p_{(I}}\Gamma^\mu\aket{r_{J)}}}{\sqrt{2}}\times \frac{\abra{p^{(I}}\Gamma^\nu\aket{r^{J)}}}{\sqrt{2}}
+\end{equation}
+
+It can be decomposed into 4 pices $IJ^{\textstyle IJ}$, $IJ^{\textstyle JI}$, $JI^{\textstyle IJ}$, $JI^{\textstyle JI}$, and the first one can be computed like
+\begin{align}
+    \abra{p_I}\Gamma^\mu\aket{r_J}\times \abra {p^I}\Gamma^\nu\aket{r^{J}}&=-\abra{p_I}\Gamma^\mu\aket{r_J}\abra {r^J}\Gamma^\nu\aket{p^{I}}\notag\\
+    &=-\mathrm{Tr}[\aket{p^{I}}\abra{p_I}\Gamma^\mu\aket{r_J}\abra r^J\Gamma^\nu]\notag \\
+    &=\mathrm{Tr}[(p\cdot \Gamma)\Gamma^\mu (r\cdot \Gamma)\Gamma^\nu]\notag \\
+    &=4(p^\mu r^\nu+p^\nu r^\mu -(p\cdot r)\eta^{\mu\nu})
+\end{align}
+where we use a nontrival fact that 
+\begin{equation}
+    \abra {p^I}\Gamma^\nu\aket{r^{J}}=-\abra {r^J}\Gamma^\nu\aket{p^{I}}\quad (\text{obtained from}\quad C^T\Gamma^\mu C=-(\Gamma^\mu)^T)
+\end{equation}
+The fourth piece is nearly the same as the first one
+\begin{equation}
+    \abra{p_J}\Gamma^\mu\aket{r_I}\times \abra {p^J}\Gamma^\nu\aket{r^{I}}=4(p^\mu r^\nu+p^\nu r^\mu -(p\cdot r)\eta^{\mu\nu})
+\end{equation}
+The remaining two need some extra efforts, here I compute it explictly
+\begin{equation}
+     \abra{p_I}\Gamma^\mu\aket{r_J}\times \abra {p^J}\Gamma^\nu\aket{r^{I}}
+\end{equation}
+In terms of two massless spinors that satisfy \eqref{22}, the $USp(2,2)$ identity operator can be written as
+\begin{equation}
+    \aket{r_a}_A\abra{p^a}^B+\aket{p_a}_A\abra{r^a}^B=\delta_A^{\ B}
+\end{equation}
+
 \end{document}
