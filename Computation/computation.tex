@@ -36,11 +36,11 @@
 \section{Normalization of Polarization Vectors}
 First, we give the definition of polarization vectors which is written in terms of adjoint representation
 \begin{equation}
-    \varepsilon_a^\mu=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p^J}(\sigma_a)^I_{\ J}}{4(p\cdot q)}
+    \varepsilon_a^\mu=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p^J}(\sigma_a)^I_{\ J}}{4(p\cdot r)}
 \end{equation}
 here $a$ runs from 1 to 3. We can use antisymmetric tensor to rewrite this equation,like 
 \begin{equation}
-    \varepsilon_a^\mu=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_K}\epsilon^{JK}(\sigma_a)^I_{\ J}}{4(p\cdot q)}
+    \varepsilon_a^\mu=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_K}\epsilon^{JK}(\sigma_a)^I_{\ J}}{4(p\cdot r)}
 \end{equation}
 here we choose the left-multiplication convention.
 
@@ -50,7 +50,7 @@ Then, a $2\times 2$ symmetric matrix can be defined like
 \end{equation}
 This means that the original polarization vector can be understood as 
 \begin{align}
-    \varepsilon_a^\mu&=-\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_J}}{4(p\cdot q)}(\sigma_a)^{IJ}\notag \\
+    \varepsilon_a^\mu&=-\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_J}}{4(p\cdot r)}(\sigma_a)^{IJ}\notag \\
     &=-\varepsilon^\mu_{IJ}(\sigma_a)^{IJ}
 \end{align}
 here $I,J$ are fundamental little group indices, runs from 1 to 2.
@@ -69,7 +69,7 @@ Now, we want to compute the normalization for $\varepsilon^\mu_{IJ}$, and after 
 
 The method to compute the normalization is just multiplying two polarization vectors directly, like
 \begin{equation}
-    \varepsilon^\mu_{(IJ)}\varepsilon^{}_{(KL),\mu}=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_J}}{4(p\cdot q)}\times \frac{\abra{p_K}(r\cdot \Gamma)\Gamma_\mu\aket{p_L}}{4(p\cdot q)}
+    \varepsilon^\mu_{(IJ)}\varepsilon^{}_{(KL),\mu}=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_J}}{4(p\cdot r)}\times \frac{\abra{p_K}(r\cdot \Gamma)\Gamma_\mu\aket{p_L}}{4(p\cdot r)}
     \label{7}
 \end{equation}
 here we need to use a special 5d equality
@@ -83,8 +83,8 @@ and the dirac operator can be decomposed to
 \end{equation}
 which help us to rewrite the equation \eqref{7} to be
 \begin{align}
-    \varepsilon^\mu_{IJ}\varepsilon^{}_{KL,\mu}&=\frac{\abra{p_I}^A\aket{r_M}_A\abra{r^M}^B(\Gamma^\mu)_B^{\ C}\aket{p_J}_C \abra{p_K}^D\aket{r_N}_D\abra{r^N}^E(\Gamma_\mu)_D^{\ F}\aket{p_L}_F}{16(p\cdot q)^2}\notag \\
-    &=\frac{\inner{p_I}{r_M}\inner{p_K}{r_N}}{16(p\cdot q)^2}\times \abra{r^M}^B(\Gamma^\mu)_B^{\ C}\aket{p_J}_C \abra{r^N}^E(\Gamma_\mu)_E^{\ F}\aket{p_L}_F
+    \varepsilon^\mu_{IJ}\varepsilon^{}_{KL,\mu}&=\frac{\abra{p_I}^A\aket{r_M}_A\abra{r^M}^B(\Gamma^\mu)_B^{\ C}\aket{p_J}_C \abra{p_K}^D\aket{r_N}_D\abra{r^N}^E(\Gamma_\mu)_D^{\ F}\aket{p_L}_F}{16(p\cdot r)^2}\notag \\
+    &=\frac{\inner{p_I}{r_M}\inner{p_K}{r_N}}{16(p\cdot r)^2}\times \abra{r^M}^B(\Gamma^\mu)_B^{\ C}\aket{p_J}_C \abra{r^N}^E(\Gamma_\mu)_E^{\ F}\aket{p_L}_F
     \label{10}
 \end{align}
 After plugging the equation \eqref{8} into the second part of \eqref{10}, it becomes
@@ -121,6 +121,16 @@ After some rearrangement of indices, we can obtain
 \begin{equation}
     \varepsilon^\mu_{IJ}\varepsilon^{}_{KL,\mu}=\frac{1}{4}(\epsilon_{IL}\epsilon_{KJ}+\epsilon_{IK}\epsilon_{LJ})
 \end{equation}
+
+Unfortunately, when we want to reproduce the original normalization relation, we will obtain something like
+\begin{align}
+    \varepsilon_a^\mu\varepsilon_{b,\mu}&=(-\varepsilon^\mu_{(IJ)}(\sigma_a)^{IJ})(-\varepsilon^\mu_{(KL)}(\sigma_b)^{KL})\notag \\
+    &= \frac{1}{4}(\epsilon_{IL}\epsilon_{KJ}+\epsilon_{IK}\epsilon_{LJ})(\sigma_a)^{IJ}(\sigma_b)^{KL}\notag \\
+    &=\frac{1}{4}\epsilon_{IL}\epsilon_{KJ}\epsilon^{JM}(\sigma_a)^I_{\ M}\epsilon^{LN}(\sigma_b)^K_{\ N}+\frac{1}{4}\epsilon_{IK}\epsilon_{LJ}\epsilon^{IM}(\sigma_a)^J_{\ M}\epsilon^{LN}(\sigma_b)^K_{\ N}\notag \\
+    &=\frac{1}{4}\delta_I^{\ N}\delta_K^{\ M}(\sigma_a)^I_{\ M}(\sigma_b)^K_{\ N}+\frac{1}{4}\delta_K^{\ M}\delta_J^{\ N}(\sigma_a)^J_{\ M}(\sigma_b)^K_{\ N}\notag \\
+    &=\frac{1}{4}2\mathrm{tr}(\sigma_a\sigma_b)\notag \\
+    &=\delta_{ab}
+\end{align}
 
 \section{Completeness Relation of Polarization Vectors}
 For this purpose, we need to compute the following formula
