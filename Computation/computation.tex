@@ -1,6 +1,9 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{lmodern}
 \usepackage{cancel}
 \usepackage{tikz}
 \usepackage{graphicx}
@@ -216,4 +219,111 @@ Above all, we can conclude that
     \varepsilon_{(IJ)}^\mu \varepsilon^{(IJ),\nu}&=\frac{1}{2}\times \frac{1}{8}[8(p^\mu r^\nu+p^\nu r^\mu -(p\cdot r)\eta^{\mu\nu})+4\eta^{\mu\nu}+8p^\mu r^\nu+8p^\nu r^\mu]\notag \\
     &\overset{?}{=}2p^{(\mu}r^{\nu)}
 \end{align}
+
+\section{Completeness Relation Review}
+Under the following definition of polarization vector
+\begin{equation}
+    \varepsilon_a^\mu=\frac{\abra{p_I}(r\cdot \Gamma)\Gamma^\mu\aket{p_J}}{4(p\cdot r)}(\sigma_a)^I_{\ K}\epsilon^{KJ}
+\end{equation}
+and same for 
+\begin{equation}
+    \varepsilon_a^\mu=\frac{\abra{p^I}(r\cdot \Gamma)\Gamma^\mu\aket{p^J}}{4(p\cdot r)}(\sigma_a)^K_{\ J}\epsilon_{KI},
+\end{equation}
+the polarization vector living in the adjoint representation can be defined as
+\begin{equation}
+    \varepsilon^\mu_{IJ}(p;r)\coloneqq \frac{\abra{p_{(I}}(r\cdot \Gamma)\Gamma^\mu\aket{p_{J)}}}{4(p\cdot r)}
+\end{equation}
+\begin{equation}
+    \varepsilon^{IJ,\mu}(p;r)\coloneqq \frac{\abra{p^{(I}}(r\cdot \Gamma)\Gamma^\mu\aket{p^{J)}}}{4(p\cdot r)}.
+\end{equation}
+
+The corresponding complex conjugate can be obtained
+\begin{equation}
+    (\varepsilon^\mu_{IJ}(p;r))^*=-\frac{\abra{p^{(I}}\Gamma^\mu(r\cdot \Gamma)\aket{p^{J)}}}{4(p\cdot r)}
+\end{equation}
+and similarly
+\begin{equation}
+    (\varepsilon^{IJ,\mu}(p;r))^*=-\frac{\abra{p_{(I}}\Gamma^\mu(r\cdot \Gamma)\aket{p_{J)}}}{4(p\cdot r)}.
+\end{equation}
+
+For the consistency of index placement with the summation convention, we can define the following quantities
+\begin{equation}
+    \varepsilon^{*\mu}_{IJ}(p;r)\coloneqq  (\varepsilon^{IJ,\mu}(p;r))^*=-\frac{\abra{p_{(I}}\Gamma^\mu(r\cdot \Gamma)\aket{p_{J)}}}{4(p\cdot r)},
+\end{equation}
+\begin{equation}
+    \varepsilon^{*IJ,\mu}(p;r)\coloneqq (\varepsilon^\mu_{IJ}(p;r))^*=-\frac{\abra{p^{(I}}\Gamma^\mu(r\cdot \Gamma)\aket{p^{J)}}}{4(p\cdot r)}
+\end{equation}
+
+Then the completeness relation can be computed like
+\begin{equation}
+    \varepsilon^{*\,IJ,\mu}\,\varepsilon_{IJ}^{\nu}=-\frac{\abra{p^{(I}}\Gamma^\mu(r\cdot \Gamma)\aket{p^{J)}}}{4(p\cdot r)}\frac{\abra{p_{(I}}(r\cdot \Gamma)\Gamma^\nu\aket{p_{J)}}}{4(p\cdot r)}
+\end{equation}
+It includes 4 terms and can be grouped into two part, the first part can be computed like
+\begin{align*}
+    &\quad \abra{p^I}\Gamma^\mu(r\cdot \Gamma)\aket{p^J}\abra{p_I}(r\cdot \Gamma)\Gamma^\nu \aket{p_J}\\
+    &=-\abra{p^I}\Gamma^\mu(r\cdot \Gamma)\aket{p^J}\abra{p_J}\Gamma^\nu(r\cdot \Gamma) \aket{p_I}\\
+    &=-\mathrm{tr}[\aket{p_I}\abra{p^I}\Gamma^\mu(r\cdot \Gamma)\aket{p^J}\abra{p_J}\Gamma^\nu(r\cdot\Gamma)]\\
+    &=\mathrm{tr}[(p\cdot \Gamma)\Gamma^\mu(r\cdot \Gamma)(p\cdot \Gamma)\Gamma^\nu (r\cdot \Gamma)] \label{44}\tag{\theequation}\stepcounter{equation}
+\end{align*}
+Here we need to compute trace for the product of 6 gamma matrices, and I just give the answer
+\begin{align*}
+\mathrm{Tr}\!\big(\Gamma^{a}\Gamma^{b}\Gamma^{c}\Gamma^{d}\Gamma^{e}\Gamma^{f}\big)=4\Big(
+& \eta^{ab}\eta^{cd}\eta^{ef}
+-\eta^{ab}\eta^{ce}\eta^{df}
++\eta^{ab}\eta^{cf}\eta^{de} \\
+&-\eta^{ac}\eta^{bd}\eta^{ef}
++\eta^{ac}\eta^{be}\eta^{df}
+-\eta^{ac}\eta^{bf}\eta^{de} \\
+&+\eta^{ad}\eta^{bc}\eta^{ef}
+-\eta^{ad}\eta^{be}\eta^{cf}
++\eta^{ad}\eta^{bf}\eta^{ce} \\
+&-\eta^{ae}\eta^{bc}\eta^{df}
++\eta^{ae}\eta^{bd}\eta^{cf}
+-\eta^{ae}\eta^{bf}\eta^{cd} \\
+&+\eta^{af}\eta^{bc}\eta^{de}
+-\eta^{af}\eta^{bd}\eta^{ce}
++\eta^{af}\eta^{be}\eta^{cd}
+\Big). \tag{\theequation}\stepcounter{equation}
+\end{align*}
+A compact way to write the result is
+\[
+\mathrm{Tr}\!\big(\Gamma^{a_1}\cdots\Gamma^{a_6}\big)
+= 4 \sum_{\text{pairings}} (-1)^{\sigma}\,
+\eta^{a_{i_1} a_{j_1}}\eta^{a_{i_2} a_{j_2}}\eta^{a_{i_3} a_{j_3}} .
+\]
+Here the sum runs over all pairwise partitions (pairings) of the index set
+$\{1,\dots,6\}$ into three disjoint pairs 
+$\{(i_1,j_1),(i_2,j_2),(i_3,j_3)\}$.Here $(-1)^{\sigma}$ denotes the sign (parity) of the permutation needed to reorder the sequence so that the members of each pair become adjacent.
+
+Using this formula, we can rewrite the equation \eqref{44}
+\begin{align}
+    \eqref{44}=&\quad p^\mu r^\nu (p\cdot r)-p^\mu r^\nu (p\cdot r)+p^\mu p^\nu r^2 \notag \\
+    &-p^\mu r^\nu(p\cdot r)+\eta^{\mu\nu}(p\cdot r)^2-p^\nu r^\mu (p\cdot r)\notag \\
+    &+r^\mu r^\nu p^2-\eta^{\mu\nu} p^2 r^2+r^\mu r^\nu p^2\notag \\
+    &-p^\nu r^\mu (p\cdot r)+p^\nu p^\mu r^2 -p^\nu r^\mu (p\cdot r)\notag \\
+    &+p^\nu r^\mu (p\cdot r)-p^\mu r^\nu (p\cdot r)+ \eta^{\mu\nu}(p\cdot r)^2\notag \\
+    &=4(-2p^\mu r^\nu (p\cdot r)-2p^\nu r^\mu (p\cdot r)+\eta^{\mu\nu}(p\cdot r)^2)
+\end{align}
+in which many terms cancel with each other.
+
+Similarly, the second part can be computed like
+\begin{align}
+    &\quad \abra{p^I}\Gamma^\mu(r\cdot \Gamma)\aket{p^J}\abra{p_J}(r\cdot \Gamma)\Gamma^\nu \aket{p_I}\notag \\
+    &=\mathrm{tr}[\aket{p_I}\abra{p^I}\Gamma^\mu(r\cdot \Gamma)\aket{p^J}\abra{p_J}(r\cdot\Gamma)\Gamma^\nu]\notag\\
+    &=-\mathrm{tr}[(p\cdot \Gamma)\Gamma^\mu(r\cdot \Gamma)(p\cdot \Gamma) (r\cdot \Gamma)\Gamma^\nu]\notag \\
+    &=-\mathrm{tr}[(p\cdot \Gamma)\Gamma^\mu(r\cdot \Gamma)(p\cdot \Gamma) \{(r\cdot \Gamma),\Gamma^\nu\}]+\mathrm{tr}[(p\cdot \Gamma)\Gamma^\mu(r\cdot \Gamma)(p\cdot \Gamma)\Gamma^\nu (r\cdot \Gamma)]
+\end{align}
+It can be noticed that the first term  equals to 0 and the second term is just the same as the result for first part. In short, the two part give us the same result.
+
+Above all. the completeness relation can be written as
+\begin{align}
+    \varepsilon^{*\,IJ,\mu}\,\varepsilon_{IJ}^{\nu}&=-\frac{1}{16(p\cdot r)^2}\times\frac{1}{4}\times \left[4\times4(-2p^\mu r^\nu (p\cdot r)-2p^\nu r^\mu (p\cdot r)+\eta^{\mu\nu}(p\cdot r)^2)\right]\notag \\
+    &=-\frac{1}{2}\left[\frac{-p^\mu r^\nu-p^\nu r^\mu}{(p\cdot r)}+\eta^{\mu\nu}\right]\notag \\
+    &=-\frac{1}{2}\eta^{\mu\nu}+\frac{p^{(\mu}r^{\nu)}}{(p\cdot r)}
+\end{align}
+We can quickly check its correctness by multiplying a momentum
+\begin{equation}
+    p_\mu\varepsilon^{*\,IJ,\mu}\,\varepsilon_{IJ}^{\nu}=-\frac{1}{2}p^\nu+\frac{\frac{1}{2}p^2 r^\nu+\frac{1}{2}p^\nu(p\cdot r) }{(p \cdot r)}=0
+\end{equation}
+
 \end{document}
