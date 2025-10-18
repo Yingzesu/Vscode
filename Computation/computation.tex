@@ -326,4 +326,82 @@ We can quickly check its correctness by multiplying a momentum
     p_\mu\varepsilon^{*\,IJ,\mu}\,\varepsilon_{IJ}^{\nu}=-\frac{1}{2}p^\nu+\frac{\frac{1}{2}p^2 r^\nu+\frac{1}{2}p^\nu(p\cdot r) }{(p \cdot r)}=0
 \end{equation}
 
+\section{All for 5 dimension}
+\subsection{Spinor-Helicty in 5D}
+The Lorentz group in 5D is $\textrm{Spin}(5)\cong \mathrm{USp}(4)\cong \mathrm{Sp}(4,\mathbb{C} )\cap \mathrm{SU}(4) $,we can also consider the non-compact version $\mathrm{SO}(1,4)$, which has an isomorphism $\mathrm{SO}(1,4)\cong \mathrm{USp}(2,2)$. For a 5-momentum vector $p^\mu$, we can identify it with a $4\times 4$ antisymmetric matrix
+\begin{equation}
+    p_{AB}=p_\mu\gamma^\mu_{AB}\equiv -p_\mu (\gamma^\mu)_A^{\ C}\Omega_{CB}=-(\cancel{p}\ \Omega)_{AB}
+    \label{4.1}
+\end{equation}
+Here we choose a symplectic form to be the metric
+\begin{equation}
+    \Omega_{AB}=\begin{pmatrix}
+        \epsilon_{\alpha\beta} & 0 \\
+        0 & -\epsilon^{\dot{\alpha}\dot{\beta}}
+    \end{pmatrix}= \Omega^{BA}
+\end{equation}
+where we use the fact that fundamental indices $A,B$ for $\mathrm{USp}(2,2)$ can be decomposed to $\mathrm{SL}(2,\mathbb{C})$ indices like $A=\alpha\oplus \dot{\alpha} $, and the normalization for 2 dimension Levi-Civita tensor is $\epsilon^{12}=\epsilon_{21}=1$.
+
+We use metric $\Omega$ to lower and raise the indices like 
+\begin{equation}
+    X^A=\Omega^{AB}X_B,\qquad X_A=\Omega_{AB}X^B
+\end{equation} 
+where $X$ are spinors belongs to $\mathrm{USp}(2,2)$.
+
+Also, from the defination \eqref{4.1}, we know the gamma matrices with lower indices can be defined like 
+\begin{equation}
+    \gamma_{AB}=\Omega_{BC}\gamma_A^{\ C}
+\end{equation}
+similary the gamma matrix with upper indices can be obtained by
+\begin{equation}
+    \gamma^{AB}=\Omega^{AC}\gamma_C^{\ B}.
+\end{equation}
+The gamma matrices with lower indices are antisymmetric and $\Omega$-traceless
+\begin{equation}
+    \gamma_{AB}=\gamma_{BA},\qquad \gamma_{AB}\Omega^{AB}=0
+\end{equation}
+
+The determinant of $p_{AB}$ evaluates to $\mathrm{Det}(p_{AB})=\frac{1}{4}(p_{AB}p^{AB})^2=(p^2)^2$. For 5D massless particle, $p^2=0 \Rightarrow \mathrm{Det}(p_{AB}=0)$, so the rank of this matrix equals to 2. Beacuse the little group of 5D massless particle is $\mathrm{SO}(3)\cong \mathrm{SU}(2)$, so the matrix $p_{AB}$ can be decomposed to be the outer product of two $4\times 2$ matrix, here specifically, the $\mathrm{USp}(2,2)$ spinors with $\mathrm{SU}(2)$ little group indices
+\begin{equation}
+    p_{AB}=\lambda_A^{\ a}\lambda_{Ba}=\aket{p^a}_A\aket{p_a}_B,\qquad p_A^{\ B}=\lambda_A^{\ a}\lambda^B_{\ a}=\aket{p^a}_A\abra{p_a}^B
+\end{equation}
+with $a,b$ runs over $1,2$. A little group transformation that preserves $p_{AB}$ behaves like $\aket{p^a}_A \rightarrow t^a_{\ b} \aket{p^b}_A$, here $t^a_{\ b}$ refers to the $\mathrm{SU}(2)$ little group transformation. 
+
+Since the little groups of massive 4D momentum and massless 5D momentum are identified, there exist a consistent embedding of the former into the latter.
+\begin{equation}
+    \lambda_A^{\ a} = 
+    \begin{pmatrix}
+        \lambda_\alpha^{\;a} \\
+        \tilde{\lambda}^{\dot{\alpha} a}
+    \end{pmatrix},
+    \qquad
+    \Omega_{AB} = 
+    \begin{pmatrix}
+        -\epsilon_{\alpha\beta} & 0 \\
+        0 & \epsilon^{\dot{\alpha}\dot{\beta}}
+    \end{pmatrix},
+\end{equation}
+where we can think of 5D Lorentz indices breaking up into 4D Lorentz indices 
+\( A \mapsto (\alpha, \dot{\alpha}) \) once a particular direction is chosen, means we manifestly break the 5D Lorentz symmetry. 
+
+The antisymmetry of \( p_{AB} \) implies the important identity that 
+\begin{equation}
+    \Omega^{AB} \lambda_A^{\;a} \lambda_B^{\;b} = 0,
+\end{equation}
+so no Lorentz-invariant little-group tensors can be formed from just 
+considering a single particle alone.
+
+\subsection{5D 3-particle Amplitude}
+\noindent
+\textbf{Special Kinematics in 5D}
+
+Scattering amplitudes, are Lorentz invariant and transform covariantly under the little group. So like the massive 4D case, the amplitudes here are $\mathrm{SU}(2)$ covariants, means it carries $\mathrm{SU}(2)$ little group indices and no free Lorentz indices. We want keep the consistency with 4D so here the spin-s particle still transformed in the (2s+1)-dimension symmetric representation of 2s product of $\mathrm{SU}(2)$. In short, a spin-s particle should carry $2s$ $\mathrm{SU}(2)$ little group indices. 
+
+Then, a 3-particle amplitude of spin $s_1,s_2,s_3$ is a tensor carrying $(2s_1+2s_2+2s_3)$ indices like
+\begin{equation}
+    \mathcal{M}_{(a_1 \cdots a_{2s_1})(b_1 \cdots b_{2s_2})(c_1 \cdots c_{2s_3})}
+\end{equation} 
+for $a_i, b_j, c_k$ indices of $\mathrm{SU}(2)$ little group of particle 1, 2, 3 respectively.
+
+In order to construct amplitudes which is a tensor carrying little group indices, it is necessary to figure out what tensors structure are possible here. 
 \end{document}
