@@ -30,6 +30,7 @@
 \newcommand{\abra}[1]{\langle #1|}
 \newcommand{\sbra}[1]{[#1|}
 \newcommand{\inner}[2]{\langle #1 | #2 \rangle}
+\newcommand{\smallkern}{\kern0.08em}
 \begin{document}
 
 \title{Some Details}
@@ -403,5 +404,135 @@ Then, a 3-particle amplitude of spin $s_1,s_2,s_3$ is a tensor carrying $(2s_1+2
 \end{equation} 
 for $a_i, b_j, c_k$ indices of $\mathrm{SU}(2)$ little group of particle 1, 2, 3 respectively.
 
-In order to construct amplitudes which is a tensor carrying little group indices, it is necessary to figure out what tensors structure are possible here. 
+In order to construct amplitudes which is a tensor carrying little group indices, it is necessary to figure out what tensors structure are possible here. The spinors that make up an on-shell 3-point amplitude without any Lorentz indices can be possibly listed as follows
+\begin{gather}
+    y^{12}{}_{ab}\coloneqq (\lambda_1)^A\kern0.08em_a (\lambda_2)_{Ab}\\
+    y^{23}{}_{bc}\coloneqq (\lambda_2)^A\smallkern_b (\lambda_3)_{Ac}\\
+    y^{31}{}_{ca}\coloneqq (\lambda_3)^A\smallkern_c (\lambda_3)_{Aa}
+\end{gather}
+Because of momentum conservation, the determinant of this $y^{ij}$ vanishes 
+\begin{equation}
+    \mathrm{Det}(y^{12})=\frac{1}{2}\epsilon^{ab}\epsilon^{cd}y^{12}{}_{ac}y^{12}{}_{bd}=\frac{1}{2}y^{12}{}_{ac}y^{12ac}=\frac{1}{2}p_1^{AB}p_{2AB}=2(p_1\cdot p_2)=0
+\end{equation}
+This means we can decompose each of them into a outer product of $\mathrm{SU}(2)$ spinors:
+\begin{gather}
+    y^{12}{}_{ab}=y^1{}_ay^2{}_b\\
+    y^{23}{}_{bc}=y^2{}_by^3{}_c\\
+    y^{31}{}_{ca}=y^3{}_cy^1{}_a
+\end{gather}
+In the following, we use the notation: $1_a\coloneqq y^1{}_a$ and $1^A{}_a\coloneqq (\lambda_1)^A{}_a$ for massless 5D spniors.
+
+First, we can try to write down a 3-point amplitude using these variables, e.g. the Yukawa interaction in 5D is precisely $y^12{}_{ab}$:
+\begin{equation}
+    \mathcal{M}_{a,b}=\text{Corresponding Feynman diagram} = g1_a2_b 
+\end{equation}
+\textbf{Connecting to 4D $\mathrm{x}$-factor}
+
+If there exist a similar "x" factor in 5D, it would be of the form $\chi^c{}_{c'}$ with no Lorentz indices but little group indices. It can be understood as
+\begin{equation}
+    p_2^{AB}3_B{}^c=\chi^c{}_{c'}3^{Ac'}
+\end{equation}
+There is no inverse of $\chi$ because of $\chi^2=0$, $\mathrm{tr} \chi =0$ and $\mathrm{Det}\chi = 0$. In the following, it can be known that 
+\begin{equation}
+    \chi^c{}_{c'}=3^c3_{c'}
+\end{equation}
+so the special kinematics $\mathrm{SU}(2)$ spinors $y^3{}_c=3_c$ is a sort of  ``square root" of $\chi$, the x-factor in 5D. Similarly, for other two particles, we can obtain the corresponding x-factor
+\begin{gather}
+    p_3^{AB}1_B{}^a=\chi^a{}_{a'}1^{Aa'}=(1_a1^{a'})1^{Aa'}\\
+    p_1^{AB}2_B{}^b=\chi^b{}_{b'}2^{Ab'}=(2_b2^{b'})2^{Ab'}
+\end{gather}
+
+Then, in scalr-QED in 5D, the scalar-scalar-photon amplitude can be directly written as
+\begin{equation}
+    \mathcal{M}_{cc'}=(\text{Corresponding Feynman diagram})=g3_c3_{c'}
+\end{equation}
+
+If one compactifies to 4D, all 4D massive amplitudes should satisfy $m_1\pm m_2 \pm^{'}m_3=0$. If one particle 3 is massless in 4D and other 2 are massive with same mass m, the 4D $x$ factor appears in the form as
+\begin{equation}
+    3_c3_{c'}=\begin{pmatrix}
+        -mx^{-1} & \mp im \\
+        \mp im & mx
+    \end{pmatrix}_{cc'}
+\end{equation}
+So we obtain the corresponding amplitude after compactifying, where the diagonal components refer to the massless 4-vector of particle 3, and the off-diagonal components represent the scalar sector. Either $\mathcal{M} \sim  x$ or $x^{-1}$ depending on its helicity.
+
+\appendix
+\section{Detailed explaination of special 5D spinor variables}
+\textbf{Lemma} : \textit{Momentum consevation for 3-particle amplitude implies}
+\begin{gather}
+    y^{12}{}_{ab}\coloneqq 1^A{}_a2_{Ab}=y^1{}_ay^2_b=1_a2_b\\
+    y^{23}{}_{bc}\coloneqq 2^A{}_b3_{Ac}=y^2{}_by^3_c=2_b3_c\\
+    y^{31}{}_{ca}\coloneqq 3^A{}_c1_{Aa}=y^3{}_cy^1_a=3_c1_a
+\end{gather}
+
+\noindent
+\textit{Proof}. First note that $y^{(i)(i)}_{ab}=0$, e.g.
+\begin{equation}
+    \Omega_{AB}1^A_a2^B_b=C\epsilon_{ab} (\text{from antisymmetry of ab})\quad \text{and} \quad C \propto \Omega_{AB}1^A_a1^B_b\epsilon^{ab}\propto \Omega_{AB}p_1^{AB}=0
+\end{equation}
+
+Another property of y is that the determinant of this $y^{ij}$ vanishes such that 
+\begin{equation}
+    \mathrm{Det}(y^{12})=\frac{1}{2}\epsilon^{ab}\epsilon^{cd}y^{12}{}_{ac}y^{12}{}_{bd}=\frac{1}{2}y^{12}{}_{ac}y^{12ac}=\frac{1}{2}p_1^{AB}p_{2AB}=2(p_1\cdot p_2)=0
+\end{equation}
+Thus it is a rank 1 quantity, which can be decomposed into the outer product of 2-spinors:
+\begin{align}
+y^{12}{}_{ab} &= y^{1}{}_{a} y^{2}{}_{b} \\
+y^{23}{}_{bc} &= \Upsilon^{2}{}_{b} \Upsilon^{3}{}_{c} \\
+y^{31}{}_{ca} &= \Upsilon^{3}{}_{c} \Upsilon^{1}{}_{a}
+\end{align}
+Note that not all of there $\mathrm{SU}(2)$ spinors are independent, indeed it is only a 2-dimension vector space. By momentum conservation
+\begin{equation}
+    y^{12}{}_a{}^b y^{23}{}_b{}^c=1^A{}_a2_A{}^b2^B{}_b3_B{}^c=1^A{}_ap_{aA}{}^B3_B{}^c=1^A{}_a(-p_{1A}{}^B-p_{3A}{}^B)3_B{}^c=0
+\end{equation}
+Thus $\Upsilon^{2b}y^2{}_b=0$,so $\Upsilon^2{}_b\propto y^2{}_b$ (note the metric we are using now is antisymmetric tensor $\epsilon_{ab}$). Similarly, 
+\begin{gather}
+    y^{23}{}_b{}^c y^{31}{}_c{}^a=0 \Rightarrow \Upsilon^3{}_c\propto y^3{}_c\\
+    y^{31}{}_c{}^a y^{12}{}_a{}^b=0 \Rightarrow \Upsilon^1{}_a\propto y^1{}_a
+\end{gather}
+Therefore, up to some constants A,B,C, we have 
+\begin{align}
+    y^{12}{}_{ab}&=y^1{}_ay^2_b\\
+    y^{23}{}_{bc}&=By^2{}_by^3_c\\
+    y^{31}{}_{ca}&=Cy^3{}_cAy^1_a
+\end{align}
+As long as we are working over $\mathbb{C} $, we can always rescale them to obtain
+\begin{align}
+    y^{12}{}_{ab}&=y^1{}_ay^2_b\\
+    y^{23}{}_{bc}&=y^2{}_by^3_c\\
+    y^{31}{}_{ca}&=y^3{}_cy^1_a
+\end{align}
+here each y are determined uniquely, up to an overall flip $(y^1, y^2, y^3)\mapsto (-y^1, -y^2, -y^3)$.
+
+The space of 2-dimension representation of $\mathrm{SU}(2)$ is too small to ensure the hold of following equality
+\begin{equation}
+    \delta_A \coloneqq 1^a1_{Aa}=2^b2_{Ab}=3^c3_{Ac}
+\end{equation}
+$\delta_A$ is same for all particles.
+
+\textit{Proof}. From the 3-particle momentum conservation
+\begin{align}
+    0&=1_A{}^a1_{Ba}+2_A{}^b2_{Bb}+3_A{}^c3_{Bc}\\
+    0&=\underbrace{1^A{}_a(1_A{}^{a'}}_{=0}1_{B{a'}}+2_A{}^b2_{Bb}+3_A{}^c3_{Bc})\\
+    0&=(1_a2^b)2_{Bb}+(-1_a3^c)3_{Bc}\\
+    0&=1_a(2^b2_{Bb}-3^c3_{Bc})\\
+    &\Rightarrow 2^b2_{Bb}=3^c3_{Bc}
+\end{align}
+Cyclically premutating the indices, we can obtain $1^a1_{Ba}=2^b2_{Bb}=3^c3_{Bc}$.
+
+A useful equality can be obtained 
+\begin{equation}
+    \delta_A\lambda_(i)^A{}_b\propto y^{ia}y^i{}_b=0
+\end{equation}
+\section{$\chi$ in 5D}
+Since $\delta_A=1^a1_{Aa}=2^b2_{Ab}=3^c3_{Ac}$, we can evaluate $\chi_3$ by
+\begin{equation}
+    p_2{}^{AB}3_B{}^c=2^{Ab}2^B{}_b3_B{}^c=2^{Ab}2_b3^c=-\delta^A3^c=3^{A{c'}}3_{c'}3^c=\underbrace{(3^c3_{c'})}_{\chi_3} 3^{A{c'}}
+\end{equation}
+Cycling the particle labels, we can obtain the $\chi$ for each particle
+\begin{gather}
+    p_1{}^{AB}2_B{}^b=(2^b2_{b'})2^{A{b'}}\\
+    p_3{}^{AB}1_B{}^a=(1^a1_{a'})1^{A{a'}}
+\end{gather}
+Other combinations can be simply obtained by momentum conservation,like $ p_1{}^{AB}3_B{}^c=-p_2{}^{AB}3_B{}^c=-\chi_3^c{}_{c'}3^{A{c'}}$.
 \end{document}
