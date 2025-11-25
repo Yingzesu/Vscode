@@ -1,0 +1,291 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{lmodern}
+\usepackage{cancel}
+\usepackage{tikz}
+\usepackage{graphicx}
+\setlength{\parskip}{0.3em}
+\setlength{\parindent}{0pt}
+% 使用系统字体，需要 XeLaTeX 或 LuaLaTeX 编译
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{indentfirst}
+\begin{document}
+\title{Answers From Chatgpt}
+\author{Su Yingze}
+\date{\today}
+\maketitle
+\section{Explanation of the SU(2) Global Anomaly Remark}
+
+We explain the logic of the remark step by step.
+
+\subsection{SU(2) Gauge Theory in Four Dimensions}
+
+The weak interaction is described by an $SU(2)$ gauge theory. Therefore, on our
+four-dimensional spacetime $M$ there is an $SU(2)$ principal bundle
+\[
+P \to M.
+\]
+On a local patch we may treat spacetime as $\mathbb{R}^4$, and a gauge
+transformation is a map
+\[
+g : \mathbb{R}^4 \to SU(2).
+\]
+
+\subsection{Compactification to $S^4$ and Large Gauge Transformations}
+
+Assume the gauge transformation becomes trivial at spatial infinity:
+\[
+g(x) \to \mathbf{1} \quad \text{as } |x|\to\infty.
+\]
+This allows us to compactify $\mathbb{R}^4$ by adding a point at infinity:
+\[
+\mathbb{R}^4 \cup \{\infty\} \cong S^4,
+\]
+with $g(\infty)=\mathbf{1}$. Hence gauge transformations are classified by maps
+\[
+g : S^4 \to SU(2) \simeq S^3.
+\]
+The homotopy classes of such maps are elements of
+\[
+\pi_4(S^3)\simeq\mathbb{Z}_2=\{0,1\}.
+\]
+The nontrivial class ($1$) corresponds to a ``large'' gauge transformation.
+
+\subsection{SU(2) Doublet Fermions}
+
+Fermions charged under the weak force transform in the fundamental (doublet)
+representation $\mathbf{2}$ of $SU(2)$. A single such fermion field is a section of 
+the associated vector bundle
+\[
+\mathbf{2}\otimes S \longrightarrow M,
+\]
+where $S$ is the spinor bundle. For our purposes, the only important fact is:
+
+\medskip
+\centerline{\textbf{A single SU(2) doublet fermion is one section of a vector bundle.}}
+\medskip
+
+\subsection{Witten's SU(2) Global Anomaly}
+
+A key result of Witten (1982) states that under a large gauge transformation
+$g:S^4\to S^3$, the partition function of a single $SU(2)$ doublet fermion transforms as
+\[
+Z_{\text{single doublet}} \;\longrightarrow\; (-1)^s\, Z_{\text{single doublet}},
+\]
+where $s=[g]\in \pi_4(S^3)\simeq\mathbb{Z}_2$. Thus
+\[
+s=0:\; Z \text{ invariant},\qquad 
+s=1:\; Z\mapsto -Z.
+\]
+Therefore:
+
+\medskip
+\centerline{\textbf{A single SU(2) doublet suffers from a global SU(2) anomaly.}}
+\medskip
+
+\subsection{Multiple Doublets and Anomaly Cancellation}
+
+If there are $N$ doublets, the total transformation is
+\[
+Z \longrightarrow (-1)^{Ns} Z.
+\]
+The theory is gauge invariant for all gauge transformations if and only if $N$ is even.
+In the Standard Model, one generation contains
+\[
+3 \text{ quark doublets } + 1 \text{ lepton doublet } = 4 \text{ doublets}.
+\]
+Hence
+\[
+(-1)^{4s} = +1,
+\]
+and the anomaly cancels.
+
+This explains, for instance, why one cannot simply change $SU(3)$ color to $SU(4)$:
+it would change the number of weak doublets, potentially making $N$ odd and producing
+an inconsistency.
+
+\subsection{Summary}
+
+\begin{itemize}
+    \item Large $SU(2)$ gauge transformations are classified by $\pi_4(S^3)\simeq\mathbb{Z}_2$.
+    \item A single doublet fermion changes sign under the nontrivial transformation.
+    \item A consistent theory must have an \emph{even} number of doublets.
+    \item The Standard Model satisfies this automatically ($N=4$ per generation).
+\end{itemize}
+
+\section{Fiber Choice in the Covering Map $\mathbb{R}\to S^1$}
+
+Consider the covering map
+\[
+p:\mathbb{R}\longrightarrow S^1,\qquad p(x)=e^{2\pi i x}.
+\]
+For any point $z=e^{2\pi i\alpha}\in S^1$, the fiber is
+\[
+p^{-1}(z)=\{x\in\mathbb{R}\mid e^{2\pi i x}=z\}=\alpha+\mathbb{Z},
+\]
+a translated copy of $\mathbb{Z}$.  
+Thus every fiber is homeomorphic to the discrete set $\mathbb{Z}$.
+
+In the long exact sequence of a fibration, one chooses a basepoint $b_0\in S^1$
+and defines the fiber as $p^{-1}(b_0)$.  
+Although $b_0=1\in S^1$ (the identity element) is the conventional choice,
+any $b_0$ works because $S^1$ is path-connected and homotopy groups based
+at different points are naturally isomorphic.
+
+\section{Homotopy Groups of the Discrete Space $\mathbb{Z}$}
+
+Although $\mathbb{Z}$ is not a manifold, it is a valid topological space
+and its homotopy groups are well-defined.
+
+\subsection{All Continuous Maps $S^n\to\mathbb{Z}$ Are Constant ($n\ge 1$)}
+
+Since $\mathbb{Z}$ is discrete, each singleton $\{k\}\subset\mathbb{Z}$ is open.
+A continuous map from a connected space $S^n$ to a discrete space must have
+connected image, hence the image consists of only one point.  
+Thus any map
+\[
+f:S^n\to\mathbb{Z},\quad n\ge1
+\]
+is constant.
+
+\subsection{Computation of $\pi_n(\mathbb{Z})$}
+
+If we fix the basepoint $k_0\in\mathbb{Z}$, the only based map
+$S^n\to\mathbb{Z}$ is the constant map $f(x)\equiv k_0$.  
+Hence, for $n\ge1$,
+\[
+\pi_{n}(\mathbb{Z},k_0)=0.
+\]
+
+For $n=0$, the path components of $\mathbb{Z}$ are just its points, so
+\[
+\pi_0(\mathbb{Z})\cong\mathbb{Z}.
+\]
+
+\subsection{Summary}
+
+\[
+\boxed{
+\pi_0(\mathbb{Z})=\mathbb{Z},\qquad
+\pi_{n\ge1}(\mathbb{Z})=0.
+}
+\]
+
+\subsection{Application: Computing $\pi_n(S^1)$ Using the Covering Space}
+
+From the fibration
+\[
+\mathbb{Z}\longrightarrow \mathbb{R}\longrightarrow S^1,
+\]
+the long exact sequence gives
+\[
+\pi_n(S^1)\cong \pi_{n-1}(\mathbb{Z}).
+\]
+Using our calculation of $\pi_{n-1}(\mathbb{Z})$, we obtain the classical result:
+\[
+\pi_n(S^1)=
+\begin{cases}
+\mathbb{Z}, & n=1,\\[4pt]
+0, & n\ne 1.
+\end{cases}
+\]
+
+\section{Understanding why $\partial : \mathbb{Z} \to \mathbb{Z}$ must be multiplication by $2$}
+
+Consider the fibration
+\[
+SO(2)\;\longrightarrow\; SO(3)\;\longrightarrow\; S^{2}.
+\]
+The long exact sequence in homotopy (for $n=3$ in the book's notation) contains the segment
+\[
+\pi_2(SO(2)) \longrightarrow \pi_2(SO(3))
+   \longrightarrow \pi_2(S^2) \xrightarrow{\;\partial\;}
+   \pi_1(SO(2)) \longrightarrow \pi_1(SO(3)) \longrightarrow \pi_1(S^2).
+\]
+
+We substitute the known homotopy groups:
+\[
+\pi_2(SO(2)) = 0,\quad
+\pi_2(S^2) = \mathbb{Z},\quad
+\pi_1(SO(2)) = \mathbb{Z},\quad
+\pi_1(SO(3)) = \mathbb{Z}_2,\quad
+\pi_1(S^2)=0.
+\]
+Thus the exact sequence becomes
+\[
+0 \longrightarrow \pi_2(SO(3))
+   \longrightarrow \mathbb{Z} \xrightarrow{\;\partial\;}
+   \mathbb{Z} \xrightarrow{\;\bmod 2\;}
+   \mathbb{Z}_2 \longrightarrow 0.
+\]
+
+\subsection{Step 1: Determining the form of $\partial$}
+
+Exactness at $\pi_1(SO(2))=\mathbb{Z}$ means
+\[
+\mathrm{Im}(\partial)=\ker(\bmod 2).
+\]
+Since
+\[
+\ker(\bmod 2)=2\mathbb{Z},
+\]
+we obtain
+\[
+\mathrm{Im}(\partial)=2\mathbb{Z}.
+\]
+
+Any group homomorphism $\partial : \mathbb{Z}\to \mathbb{Z}$ must have the form
+\[
+\partial(n)=kn,\qquad k\in\mathbb{Z}.
+\]
+Its image is $k\mathbb{Z}$.  
+To satisfy $\mathrm{Im}(\partial)=2\mathbb{Z}$, the only possibility is
+\[
+k=\pm2.
+\]
+Hence
+\[
+\partial(n)=\pm 2n.
+\]
+This is the meaning of the sentence in the book:
+\begin{quote}
+``This forces $\partial : \mathbb{Z}\to\mathbb{Z}$ to be a multiplication by $2$.'' 
+\end{quote}
+
+\subsection{Step 2: Computing $\pi_2(SO(3))$}
+
+Exactness at $\pi_2(S^2)=\mathbb{Z}$ implies
+\[
+\mathrm{Im}\big(\pi_2(SO(3))\longrightarrow\mathbb{Z}\big)
+   = \ker(\partial).
+\]
+Since $\partial(n)=\pm 2n$, its kernel is
+\[
+\ker(\partial)=\{0\}.
+\]
+Thus
+\[
+\mathrm{Im}\big(\pi_2(SO(3))\to\mathbb{Z}\big)=0.
+\]
+But the map $0\to\pi_2(SO(3))$ at the beginning of the sequence is injective, so the only way
+$\pi_2(SO(3))$ can map to $0$ inside $\mathbb{Z}$ is if
+\[
+\pi_2(SO(3))=0.
+\]
+
+So the conclusion is:
+\[
+\boxed{\pi_2(SO(3))=0.}
+\]
+
+
+
+
+\end{document}

@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.2)  21 NOV 2025 19:51
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2025.10.2)  22 NOV 2025 22:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/VscodeCloud/Vscode/Computation/computation
-(d:/VscodeCloud/Vscode/Computation/computation.tex
+**"d:/VscodeCloud/Vscode/GPT Answer/answer"
+(d:/VscodeCloud/Vscode/GPT Answer/answer.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
 (d:/texlive/2025/texmf-dist/tex/latex/base/article.cls
@@ -477,25 +477,25 @@ Package caption Info: Standard document class detected.
 Package caption Info: float package is loaded.
 ) (d:/texlive/2025/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-) (./computation.aux)
-\openout1 = `computation.aux'.
+) (./answer.aux)
+\openout1 = `answer.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
+LaTeX Font Info:    ... okay on input line 19.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -533,96 +533,70 @@ LaTeX Font Info:    ... okay on input line 34.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 39.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 23.
 (d:/texlive/2025/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 39.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 23.
  (d:/texlive/2025/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 39.
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 23.
  (d:/texlive/2025/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 39.
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 23.
  (d:/texlive/2025/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 39.
+(Font)              <14.4> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 39.
+(Font)              <10> on input line 23.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 39.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 39.
+(Font)              <7> on input line 23.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 23.
  (d:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 39.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 23.
  (d:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 42.
+(Font)              <12> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 42.
+(Font)              <8> on input line 30.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 42.
+(Font)              <6> on input line 30.
 
 
 [1
 
 ]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 123.
+
 
 [2]
 
 [3]
-Overfull \hbox (10.16324pt too wide) detected at line 216
-[]
- []
-
-
 
 [4]
 
-[5]
-
-[6]
-
-[7]
-
-[8]
-
-[9]
-
-[10]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 527.
-
-Overfull \hbox (12.13956pt too wide) in paragraph at lines 536--538
-\TU/TimesNewRoman(0)/m/n/12 Other combinations can be simply obtained by momentum conservation,like $\OML/lmm/m/it/12 p[][][]\OT1/lmr/m/n/12 3[][][] = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 p[][][]\OT1/lmr/m/n/12 3[][][] =
- []
-
-
-
-[11] (./computation.aux)
+[5] (./answer.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-09-02>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 17895 strings out of 468389
- 396342 string characters out of 5444297
- 825854 words of memory out of 5000000
- 46097 multiletter control sequences out of 15000+600000
- 656238 words of font info for 98 fonts, out of 8000000 for 9000
+ 17878 strings out of 468389
+ 396175 string characters out of 5444297
+ 815849 words of memory out of 5000000
+ 46075 multiletter control sequences out of 15000+600000
+ 676846 words of font info for 105 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 102i,16n,107p,579b,243s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,11n,107p,448b,243s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on computation.pdf (11 pages).
+Output written on answer.pdf (5 pages).
