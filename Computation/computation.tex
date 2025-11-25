@@ -16,7 +16,6 @@
 \usepackage{float}
 \usepackage{caption}
 \usepackage{indentfirst}
-\setlength{\parindent}{2em}
 \newcommand{\mdavg}[2]{\langle #1 \rangle\!\langle #2 \rangle}
 \newcommand{\avg}[1]{\langle #1 \rangle}
 \newcommand{\doubleavg}[2]{\left\langle #1 \right\rangle\!\left\langle #2 \right\rangle}
@@ -368,7 +367,7 @@ The determinant of $p_{AB}$ evaluates to $\mathrm{Det}(p_{AB})=\frac{1}{4}(p_{AB
 \end{equation}
 with $a,b$ runs over $1,2$. A little group transformation that preserves $p_{AB}$ behaves like $\aket{p^a}_A \rightarrow t^a_{\ b} \aket{p^b}_A$, here $t^a_{\ b}$ refers to the $\mathrm{SU}(2)$ little group transformation. 
 
-Since the little groups of massive 4D momentum and massless 5D momentum are identified, there exist a consistent embedding of the former into the latter.
+\hspace*{2em}Since the little groups of massive 4D momentum and massless 5D momentum are identified, there exist a consistent embedding of the former into the latter.
 \begin{equation}
     \lambda_A^{\ a} = 
     \begin{pmatrix}
@@ -455,6 +454,97 @@ If one compactifies to 4D, all 4D massive amplitudes should satisfy $m_1\pm m_2 
     \end{pmatrix}_{cc'}
 \end{equation}
 So we obtain the corresponding amplitude after compactifying, where the diagonal components refer to the massless 4-vector of particle 3, and the off-diagonal components represent the scalar sector. Either $\mathcal{M} \sim  x$ or $x^{-1}$ depending on its helicity.
+
+\section{Detailed Construction}
+\noindent
+We start from the convention for 5D gamma matrix and momentum
+\begin{equation}
+    p^\mu=(p_0,\vec{p},p^4), \quad \mu=\bar{\mu}=(0,1,2,3) \quad \mu=\hat{\mu}=4
+\end{equation}
+\begin{equation}
+    p_\mu=(p^0,-\vec{p},-p^4)
+\end{equation}
+and
+\begin{equation}
+    \Gamma^{\bar{\mu}}=\begin{pmatrix}
+        0 & \sigma^{\bar{\mu}}\\
+        \bar{\sigma}^{\bar{\mu}} & 0
+    \end{pmatrix}
+\end{equation}
+\begin{equation}
+    \Gamma^4=\begin{pmatrix}
+        -i & & &\\
+         & -i & &\\
+         & & i & \\
+         & & & i 
+
+    \end{pmatrix}
+\end{equation}
+where $\sigma^{\bar{\mu}}=(\mathbf{1},\vec{\sigma})$ and $\bar{\sigma}^{\bar{\mu}}=(\mathbf{1},-\vec{\sigma})$.
+
+Then the Dirac operator can be written as
+\begin{align}
+    \cancel{p}&=p_\mu\Gamma^\mu=p_{\bar{\mu}}\Gamma^{\bar{\mu}}-p^4 \Gamma^4\notag \\
+    &=\begin{pmatrix}
+        0 & 0 & p^0-p^3 & -p^1+ip^2 \\
+        0 & 0 & -p^1-i-p^2 & p^0+p^3 \\
+        p^0+p^3 & p^1-ip^2 & 0 & 0 \\
+        p^1+ip^2 & p^0-p^3 & 0 & 0 
+    \end{pmatrix} -\begin{pmatrix}
+        -ip^4 & & &\\
+         & -ip^4 & &\\
+         & & ip^4 & \\
+         & & & ip^4 
+    \end{pmatrix} \notag \\
+    &=\begin{pmatrix}
+        ip^4 & 0 & p^0-p^3 & -p^1+ip^2 \\
+        0 & ip^4 & -p^1-i-p^2 & p^0+p^3 \\
+        p^0+p^3 & p^1-ip^2 & -ip^4 & 0 \\
+        p^1+ip^2 & p^0-p^3 & 0 & -ip^4 
+    \end{pmatrix}
+\end{align}
+
+The determinant of this matrix equals to zero, which means it can be decomposed to the outer product of two 4-component spinor with $\mathrm{Sp}(2,\mathbb{C})$ little group indices
+\begin{equation}
+    \cancel{p}=\aket{p^a}_A\abra{p_a}^B
+\end{equation}
+ant they satisfy the massless Dirac equation
+\begin{equation}
+    \cancel{p}\aket{p^a}_A=0.
+\end{equation}
+
+A specific construction for the spinor-helicity variable is 
+\begin{equation}
+    \aket{p^a}_A=\begin{pmatrix}
+        p^0 - p^3 & 0 \\
+        -p^1 - ip^2 & \dfrac{ip^4}{p^0-p^3} \\
+        -ip^4 & \dfrac{p^1 - ip^2}{p^0 - p^3} \\
+        0 & 1
+    \end{pmatrix}
+\end{equation}
+and the bra can be obtained by introducing a symplectic form
+\begin{equation}
+    \Omega_{AB}=\begin{pmatrix}
+        0 & -1 & & \\
+        1 & 0 & & \\
+         & & 0 & -1 \\
+         & & 1 & 0
+    \end{pmatrix}=\Omega^{BA}.
+\end{equation}
+Then the corresponding bra variable can be written like 
+\begin{align}
+    \abra{p_a}^A&=\epsilon_{ab}(\Omega^{AB}\aket{p^b}_B)^T\notag \\
+    &=\begin{pmatrix}
+        \frac{-ip^4}{p^0-p^3} & 0 & -1 & \frac{p^1-ip^2}{p^0-p^3}\\
+        -p^1-ip^2 & -p^0+p^3 & 0 & p^4 
+    \end{pmatrix}
+\end{align}
+Also, we have 
+\begin{align}
+    \aket{p_a}_A&=\epsilon_{ab}\aket{p^b}_A\notag \\
+    &=
+\end{align}
+
 
 \appendix
 \section{Detailed explaination of special 5D spinor variables}
