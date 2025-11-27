@@ -165,7 +165,7 @@ which means the following condition
 \begin{equation}
     2(p\cdot r)=1
 \end{equation}
-The method to compute this completeness relation is still just multiplying them togther like
+The method to compute this completeness relation is still just multiplying them together like
 \begin{equation}
     \varepsilon_{(IJ)}^\mu \varepsilon^{(IJ),\nu}=\frac{\abra{p_{(I}}\Gamma^\mu\aket{r_{J)}}}{\sqrt{2}}\times \frac{\abra{p^{(I}}\Gamma^\nu\aket{r^{J)}}}{\sqrt{2}}
 \end{equation}
@@ -542,10 +542,361 @@ Then the corresponding bra variable can be written like
 Also, we have 
 \begin{align}
     \aket{p_a}_A&=\epsilon_{ab}\aket{p^b}_A\notag \\
-    &=
+    &=\begin{pmatrix}
+        p^0 - p^3 & 0 \\
+        -p^1 - ip^2 & \dfrac{ip^4}{p^0-p^3} \\
+        -ip^4 & \dfrac{p^1 - ip^2}{p^0 - p^3} \\
+        0 & 1
+    \end{pmatrix}\begin{pmatrix}
+        0& 1\\
+        -1 & 0 
+    \end{pmatrix}\notag \\
+    &=\begin{pmatrix}
+        0 & p^0-p^3\\
+        \frac{-ip^4}{p^0-p^3} & -p^1-ip^2\\
+        \frac{-p^1+ip^2}{p^0-p^3} & -ip^4\\
+        -1 & 0
+    \end{pmatrix}
 \end{align}
 
+\hspace*{2em}Similar for 4d massless case, we can also construct the corresponding spinor-helicity variable from 
+\begin{equation}
+    p_{\alpha\dot{\alpha}}=\begin{pmatrix}
+        p^0-p^3 & -p^1+ip^2 \\
+        -p^1-ip^2 & p^0+p^3
+    \end{pmatrix}=\lambda_\alpha \tilde{\lambda}_{\dot{\alpha}}
+\end{equation}
+where the $\lambda$ and $\tilde{\lambda}$ are represented by
+\begin{equation}
+    \lambda_{\alpha}=\aket{p}_{\alpha}=\begin{pmatrix}
+        p^0-p^3\\
+        -p^1-ip^2
+    \end{pmatrix},\qquad \tilde{\lambda}_{\dot{\alpha}}=\sbra{p}_{\dot{\alpha}}=\begin{pmatrix}
+        1\\
+        \frac{-p^1+ip^2}{p^0-p^3}
+    \end{pmatrix}
+\end{equation}
+Also, we can obtain the corresponding "bra" and "ket" variable by contracting with antisymmetric tensor $\epsilon$
+\begin{equation}
+    \abra{p}^\alpha=\epsilon^{\alpha\beta}\aket{p}_\beta=\begin{pmatrix}
+        -p^1-ip^2\\
+        -p^0+p^3
+    \end{pmatrix},\qquad \sket{p}^{\dot{\alpha}}=\epsilon^{\dot{\alpha}\dot{\beta}}\sbra{p}_{\dot{\beta}}=\begin{pmatrix}
+        \frac{-p^1+ip^2}{p^0-p^3}\\
+        -1
+    \end{pmatrix}
+\end{equation}
+Then it can found that if we choose the limit in which the fifth component $p^4=0$, the 5D spinor-helicity variable reduces to
+\begin{equation}
+    \abra{p_a}^A|_{p^4=0}=\begin{pmatrix}
+        0 & \abra{p}^\alpha \\
+        -\sbra{p}_{\dot{\alpha}} & 0
+    \end{pmatrix}^T
+\end{equation}
+and 
+\begin{equation}
+    \aket{p_a}_A|_{p^4=0}=\begin{pmatrix}
+        0 & \aket{p}_\alpha\\
+        \sket{p}^{\dot{\alpha}} & 0
+    \end{pmatrix}
+\end{equation}
 
+It is straightforward now to compute $y^{ij}{}_{ab}$, here we choose $y^{12}{}_{ab}$ as an example 
+\begin{equation}
+    \inner{1_a}{2_b}=\begin{pmatrix}
+        [21] & 0\\
+        0 & \langle12\rangle
+    \end{pmatrix}=1_a2_b
+\end{equation}
+From the 3 particle momentum conservation, we have known that 4D massless spinor-helicity variable should satisfy
+\begin{equation}
+    \aket{1}\propto\aket{2}\propto\aket{3}\qquad \text{or}\qquad \sket{1}\propto\sket{2}\propto\sket{3}
+\end{equation}
+which means one of $[21]$ and $\langle12\rangle$ will become vanishing.
+
+First we consider non-vanishing $[21]$ case, in which we can choose a particular decomposition 
+\begin{gather}
+    y^{12}=1_a2_b=\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}\begin{pmatrix}
+        [21]\\
+        0
+    \end{pmatrix}\\
+    y^{23}=\Upsilon_{2b}3_c=\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}\begin{pmatrix}
+        [32]\\
+        0
+    \end{pmatrix}\\
+    y^{31}=\Upsilon_{3c}\Upsilon_{1a}=\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}\begin{pmatrix}
+        [13]\\
+        0
+    \end{pmatrix}
+\end{gather}
+from which we can read off
+\begin{equation}
+    \Upsilon_{1a}=[13]1_a,\quad \Upsilon_{2b}=\frac{1}{[21]}2_b,\quad \Upsilon_{3c}=\frac{1}{[32]}3_c
+\end{equation}
+We denote these coefficients as $A$, $B$ and $C$. We want to use the consistent decomposition for these y variables, means the same $2_b$ appearing both in $y^{12}$ and $y^{23}$, like 
+\begin{gather}
+    y^{12}=1'_a2'_b\\
+    y^{23}=2'_b3'_c\\
+    y^{31}=3'_c1'_a
+\end{gather}
+Because of the ambiguity in the decomposition, we can rescale like
+\begin{equation}
+    1'_a=\alpha_1 1_a,\quad 2'_b=\alpha_2 2_b,\quad 3'_c=\alpha_3 3_c
+\end{equation}
+which means the following equation should satisfy
+\begin{gather}
+    y^{12}=\alpha_1 1_a \alpha_2 2_b=1_a 2_b\\
+    y^{23}=\alpha_2 2_b \alpha_3 3_c=B2_bC3_c\\
+    y^{31}=\alpha_3 3_c \alpha_1 1_a=C3_c A1_a
+\end{gather}
+So we have a group of equations
+\begin{gather}
+    \alpha_1\alpha_2=1\\
+    \alpha_2\alpha_3=BC\\
+    \alpha_3\alpha_1=CA
+\end{gather}
+and the solutions are given as following
+\begin{equation}
+    \alpha_1=\sqrt{\frac{AC}{B}}, \quad \alpha_2=\sqrt{\frac{B}{AC}},\quad \alpha_3=\sqrt{ABC}
+\end{equation}
+After inserting these solutions, we obtain the final decomposition
+\begin{equation}
+    1_a=\sqrt{\frac{[13][21]}{[32]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix},\quad 2_b=\sqrt{\frac{[21][32]}{[13]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix},\quad 3_c=\sqrt{\frac{[13][32]}{[21]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}.\label{107}
+\end{equation}
+
+In order to give the correct Yang-Mills amplitude, we need the "inverse" of these two-component spinor, defined as following
+\begin{equation}
+    \hat{i}^a i_a=1.
+\end{equation}
+From \eqref{107}, we can explicitly solve the inverse spinor
+\begin{gather}
+    \hat{1}^a=\sqrt{\frac{[32]}{[13][21]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}+\alpha_1 1^a, \\
+    \hat{2}^b=\sqrt{\frac{[13]}{[21][32]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}+\alpha_2 2^b, \\
+    \hat{3}^c=\sqrt{\frac{[21]}{[13][32]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix} + \alpha_3 3^c
+\end{gather}
+here the second means the shift ambiguity. ($\alpha$ are arbitrary complex number here)
+
+Because of the physical constraint
+\begin{equation}
+    \Lambda \cdot z =0
+\end{equation}
+we need 
+\begin{equation}
+    \hat{\delta}_{1A}+\hat{\delta}_{2A}+ \hat{\delta}_{3A}+(\alpha_1+\alpha_2+\alpha_3)\delta_A=0
+\end{equation}
+where $\hat{\delta}_{iA}=\hat{i}^ai_{Aa}$ and $\delta_A=i^a i_{Aa}$.
+
+We also know that
+\begin{equation}
+    \hat{\delta}_{1A}+\hat{\delta}_{2A}+ \hat{\delta}_{3A}=\hat{K}\delta_A
+\end{equation}
+so in order to satisfy the constraint, we just need
+\begin{equation}
+    \hat{K}+(\alpha_1+\alpha_2+\alpha_3)=0
+\end{equation}
+
+Here, we can try to give the explicit form of $\hat{\delta}_{1A}$
+\begin{equation}
+    \hat{\delta}_{1A}=\hat{1}^a 1_{Aa}=\begin{pmatrix}
+        0 & p^0-p^3\\
+        0 & -p^1-ip^2\\
+        \frac{-p^1+ip^2}{p^0-p^3} & 0\\
+        -1 & 0
+    \end{pmatrix}\sqrt{\frac{[32]}{[13][21]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}=\sqrt{\frac{[32]}{[13][21]}}\begin{pmatrix}
+        0\\
+        0\\
+        \frac{-p^1+ip^2}{p^0-p^3}\\
+        -1
+    \end{pmatrix}=\sqrt{\frac{[32]}{[13][21]}}\begin{pmatrix}
+        0\\
+        \sket{1}^{\dot{\alpha}}
+    \end{pmatrix}
+\end{equation}
+The non-vanishing component can be written as 
+\begin{equation}
+    \sqrt{\frac{[32]}{[13][21]}}\sket{1}^{\dot{\alpha}}=\sqrt{\frac{1}{[32][21][13]}}[32]\sket{1}^{\dot{\alpha}}
+\end{equation}
+From the Schouten identity
+\begin{equation}
+    \sket{i}\langle jk \rangle+\sket{k}\langle ij \rangle+\sket{j}\langle ki \rangle=0
+\end{equation}
+we can obtain
+\begin{equation}
+    [32]\sket{1}=-([13]\sket{2}+[21]\sket{3}).
+\end{equation}
+Surprisingly, we can find that 
+\begin{equation}
+    \sqrt{\frac{1}{[32][21][13]}}[13]\sket{2} \qquad \text{and} \qquad  \sqrt{\frac{1}{[32][21][13]}}[21]\sket{3} 
+\end{equation}
+are just the non-vanishing components of $\hat{\delta}_{2A}$ and $\hat{\delta}_{3A}$, in other words, 
+\begin{equation}
+    \hat{\delta}_{1A}=-\hat{\delta}_{2A}-\hat{\delta}_{3A}
+\end{equation}
+so that
+\begin{equation}
+    \hat{\delta}_{1A}+\hat{\delta}_{2A}+\hat{\delta}_{3A}=0
+\end{equation}
+which means the constraint is equivalent to 
+\begin{equation}
+    (\alpha_1+\alpha_2+\alpha_3)\delta_A=0 \quad \Leftrightarrow \quad \alpha_1+\alpha_2+\alpha_3=0
+\end{equation}
+Here, we can simply choose them to be 0. Also, we can confirm $\delta_A=1^a1_{Aa}=2^b2_{Ab}=3^c3_{Ac}$ through these explicit forms
+\begin{equation}
+    1^a1_{Aa}=\begin{pmatrix}
+        0 & p^0-p^3\\
+        0 & -p^1-ip^2\\
+        \frac{-p^1+ip^2}{p^0-p^3} & 0\\
+        -1 & 0
+    \end{pmatrix}\sqrt{\frac{[13][21]}{[32]}}\begin{pmatrix}
+        0\\
+        -1
+    \end{pmatrix}=\sqrt{\frac{[13][21]}{[32]}}\begin{pmatrix}
+        -(p^0-p^3)\\
+        -(-p^1-ip^2)\\
+        0\\
+        0
+    \end{pmatrix}=\sqrt{\frac{[13][21]}{[32]}}\begin{pmatrix}
+        -\aket{1}_\alpha\\
+        0
+    \end{pmatrix}
+\end{equation}
+From the momentum conservation
+\begin{equation}
+    \aket{1}\sbra{1}+ \aket{2}\sbra{2}+ \aket{3}\sbra{3}=0
+\end{equation}
+by contracting a $\sket{3}$ in both sides, we can obtain
+\begin{equation}
+    \aket{1}=-\frac{[23]}{[13]}\aket{2}
+\end{equation}
+and this gives us the following result
+\begin{equation}
+    \sqrt{\frac{[13][21]}{[32]}}\begin{pmatrix}
+        \frac{[23]}{[13]}\aket{2}_\alpha\\
+        0
+    \end{pmatrix}=\sqrt{\frac{[21][32]}{[13]}}\begin{pmatrix}
+        -\aket{2}_\alpha\\
+        0
+    \end{pmatrix}=2^b2_{Ab}
+\end{equation}
+So we confirm the fact 
+\begin{equation}
+    \delta_A=1^a1_{Aa}=2^b2_{Ab}
+\end{equation}
+the remaining two can be confirmed in similar manner.
+
+
+\hspace*{2em}Suppose we want to compute the amplitude with two spin $\frac{1}{2}$ fermions and spin 1 gauge boson in 5D, the amplitude can be directly written as 
+\begin{equation}
+    \mathcal{M}_{ab(cc')}=g(1_a2_b\hat{3}_c+1_a\hat{2}_b3_c+\hat{1}_a2_b3_c)3_{c'}.
+\end{equation}
+By using the explicit form of these building blocks, it can written as 
+\begin{align}
+    \mathcal{M}_{ab(cc')}&=\left(
+        \sqrt{\frac{[13][21]}{[32]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}_a \sqrt{\frac{[21][32]}{[13]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}_b\sqrt{\frac{[21]}{[13][32]}}\begin{pmatrix}
+        0\\
+        1
+    \end{pmatrix}_c +\right.\notag \\
+    &\quad   \sqrt{\frac{[13][21]}{[32]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}_a\sqrt{\frac{[13]}{[21][32]}}\begin{pmatrix}
+        0\\
+        1
+    \end{pmatrix}_b\sqrt{\frac{[13][32]}{[21]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}_c+\notag \\
+    &\quad  \left. \sqrt{\frac{[32]}{[13][21]}}\begin{pmatrix}
+        0\\
+        1
+    \end{pmatrix}_a\sqrt{\frac{[21][32]}{[13]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}_b\sqrt{\frac{[13][32]}{[21]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}_c 
+    \right)\sqrt{\frac{[13][32]}{[21]}}\begin{pmatrix}
+        1\\
+        0
+    \end{pmatrix}_{c'}
+\end{align}
+
+By picking the different indices, we can reproduce the different helicity amplitudes in 4D, like
+\begin{equation}
+    a,b,(c,c')=1,2,(1,1)\quad \Rightarrow \quad \sqrt{\frac{[13][21]}{[32]}}\sqrt{\frac{[13]}{[21][32]}}\frac{[13][32]}{[21]}=\frac{[13]^2}{[21]}
+\end{equation}
+
+\begin{equation}
+    a,b,(c,c')=1,1,(1,2)=\sqrt{\frac{[13][21]}{[32]}}\sqrt{\frac{[32][21]}{[13]}}\frac{1}{2}(1+1)=[21]
+\end{equation}
+
+\begin{equation}
+    a,b,(c,c')=2,1,(1,1)=\sqrt{\frac{[32]}{[13][21]}}\sqrt{\frac{[21][32]}{[13]}}\frac{[13][32]}{[21]}=\frac{[32]^2}{[21]}
+\end{equation}
+
+From the known 4D results
+\begin{equation}
+M^{h_1 h_2 h_3} =
+\begin{cases}
+\tilde g\,[12]^{\,h_1+h_2-h_3}\,[23]^{\,h_2+h_3-h_1}\,[31]^{\,h_3+h_1-h_2},
+& \text{when } h_1+h_2+h_3>0, \\[8pt]
+g\,\langle 12\rangle^{\,h_3-h_1-h_2}\,
+   \langle 23\rangle^{\,h_1-h_2-h_3}\,
+   \langle 31\rangle^{\,h_2-h_3-h_1},
+& \text{when } h_1+h_2+h_3<0.
+\end{cases}
+\end{equation}
+we know that the 3 point amplitudes with $(1/2^+,1/2^-,+1)$ configuration equals to 
+\begin{equation}
+    \mathcal{M}(+\frac{1}{2},-\frac{1}{2},+1)=\frac{[31]^2}{[12]}
+\end{equation} 
+
+\begin{equation}
+    \mathcal{M}(-\frac{1}{2},+\frac{1}{2},+1)=\frac{[32]^2}{[12]}
+\end{equation}
+
+\begin{equation}
+    \mathcal{M}(0,0,+1)=[12]
+\end{equation}
+
+We found that the 5D 3 point amplitudes actually reproduce the corresponding 4D amplitudes.
 \appendix
 \section{Detailed explaination of special 5D spinor variables}
 \textbf{Lemma} : \textit{Momentum consevation for 3-particle amplitude implies}
