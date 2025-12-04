@@ -285,6 +285,131 @@ So the conclusion is:
 \boxed{\pi_2(SO(3))=0.}
 \]
 
+\section{Unitarity in 2-2 scattering}
+The partial–wave coefficients are defined by projecting the 
+$T$–matrix onto two–particle states of definite total momentum 
+and total angular momentum,
+%
+\begin{equation}
+f_J(p^2)\;\propto\;
+\frac{
+\langle\,p , J , \vec m \,|\, \hat T \,|\, p , J , \vec m\,\rangle
+}{
+\langle\,p , J , \vec m \,|\, p , J , \vec m\,\rangle
+}\, .
+\label{eq:partialwave-def}
+\end{equation}
+%
+Because $\hat T$ is invariant under translations and under
+$SO(1,d{-}1)$, the matrix element in this basis is diagonal in 
+$(J,\vec m)$, so the proportionality constant is independent of 
+$p^2$ and of $\vec m$.  The result therefore depends only on the 
+Lorentz–invariant combination $p^2=s$.
+
+We start from the angular form of the elastic unitarity equation,
+%
+\begin{equation}
+2\,\Im T(s,t(z))
+=\int_{-1}^{1}\!dz'\,w(z')\!\int_{-1}^{1}\!dz''\,w(z'')\,
+\mathcal P_d(z,z',z'')\,
+T(s,t(z'))\,T^*(s,t(z'')),
+\label{eq:unitarity-angular}
+\end{equation}
+%
+where
+\[
+w(z)=(1-z^2)^{\frac{d-4}{2}}.
+\]
+
+Next we insert the partial-wave expansion,
+%
+\begin{equation}
+T(s,t(z))=\sum_{L=0}^\infty n^{(d)}_L\, f_L(s)\,P_L^{(d)}(z),
+\label{eq:pw-expansion}
+\end{equation}
+%
+and substitute this expression into \eqref{eq:unitarity-angular}.  
+At this stage we obtain
+%
+\begin{align}
+2\,\Im T(s,t(z))
+&=
+\sum_{L,L'} 
+n^{(d)}_L n^{(d)}_{L'} f_L(s) f_{L'}^*(s)
+\int_{-1}^1\!dz'\,w(z')\,\mathcal P_d(z,z',z'')\,P_L^{(d)}(z')
+\nonumber\\
+&\qquad\qquad\qquad\times
+\int_{-1}^1\!dz''\,w(z'')\,P_{L'}^{(d)}(z'').
+\label{eq:unitarity-expanded}
+\end{align}
+
+To isolate the coefficient $f_J(s)$ we project both sides of 
+\eqref{eq:unitarity-expanded} onto the $J$-th partial wave,
+multiplying by
+%
+\[
+\frac{\mathcal N_d}{2}\, w(z)\,P_J^{(d)}(z)
+\]
+%
+and integrating over $z$.  
+Using the projection formula
+%
+\begin{equation}
+f_J(s)=\frac{\mathcal N_d}{2}\int_{-1}^1 dz\,
+w(z)\,P_J^{(d)}(z)\,T(s,t(z)),
+\label{eq:projection}
+\end{equation}
+%
+the left-hand side becomes simply
+%
+\[
+\frac{\mathcal N_d}{2}
+\int_{-1}^1 dz\,w(z)P_J^{(d)}(z)\,2\,\Im T(s,t(z))
+=2\,\Im f_J(s).
+\]
+
+Now we insert the kernel decomposition (eq.~(67))
+%
+\begin{equation}
+\mathcal P_d(z,z',z'')
+=\frac12\,\mathcal N_d^2\,w(z')\,w(z'')\,
+\sum_{L=0}^\infty n_L^{(d)}\,
+P_L^{(d)}(z)\,P_L^{(d)}(z')\,P_L^{(d)}(z''),
+\label{eq:kernel-decomposition}
+\end{equation}
+%
+and use the orthogonality relation
+%
+\begin{equation}
+\frac12\int_{-1}^1dz\, w(z)\,P_J^{(d)}(z)\,P_L^{(d)}(z)
+=\frac{\delta_{JL}}{\mathcal N_d n_J^{(d)}}.
+\label{eq:orthogonality}
+\end{equation}
+
+Substituting \eqref{eq:kernel-decomposition} into 
+\eqref{eq:unitarity-expanded} and performing the two $z',z''$ integrals,
+only the term $L=L'=J$ survives due to \eqref{eq:orthogonality}, giving
+%
+\[
+\frac{\mathcal N_d}{2}\int dz\,w(z)P_J^{(d)}(z)\,(\text{RHS})
+=
+\frac{(s-4m^2)^{\frac{d-3}{2}}}{\sqrt{s}}
+\,|f_J(s)|^2.
+\]
+
+Equating both sides yields the elastic partial-wave unitarity condition
+%
+\begin{equation}
+2\,\Im f_J(s)
+=
+\frac{(s-4m^2)^{\frac{d-3}{2}}}{\sqrt{s}}\,
+|f_J(s)|^2,
+\label{eq:pw-unitarity}
+\end{equation}
+%
+which is eq.~(68) of the main text.
+
+
 
 
 
