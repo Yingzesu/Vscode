@@ -408,6 +408,322 @@ Equating both sides yields the elastic partial-wave unitarity condition
 \end{equation}
 %
 which is eq.~(68) of the main text.
+\newpage
+\section{Solution Structure of $S_i$ from Given Helicity Data}
+
+We are given three helicities
+\begin{equation}
+h_1,\,h_2,\,h_3\in \tfrac12\mathbb Z,
+\qquad 
+h_1+h_2+h_3>0,
+\end{equation}
+three spins $$S_i\ge0$$ (half-integers), and integers $$k_i\ge0$$ satisfying
+\begin{equation}\label{eq:basic}
+S_i - k_i = h_i ,\qquad i=1,2,3.
+\end{equation}
+We also impose the constraint
+\begin{equation}\label{eq:sumk}
+k_1 + k_2 + k_3 \;\le\; 2 S_{\min},
+\qquad 
+S_{\min}:=\min(S_1,S_2,S_3).
+\end{equation}
+
+\paragraph{Elementary implications}\leavevmode\\
+
+From \eqref{eq:basic} and $k_i\ge0$,
+\begin{equation}
+S_i = h_i + k_i \quad\Rightarrow\quad S_i \ge h_i.
+\end{equation}
+Hence every spin satisfies the effective lower bound
+\begin{equation}\label{eq:Si-lower}
+S_i \ge \max(0,h_i).
+\end{equation}
+
+Let the ordered helicities be 
+\begin{equation}
+   h_{(1)}\le h_{(2)}\le h_{(3)}.
+\end{equation}
+
+Then
+\begin{equation}\label{eq:Smin-lower}
+S_{\min}
+= \min_{i} S_i
+\;\ge\;
+\min_{i}\max(0,h_i)
+=
+\max(0,h_{(1)}).
+\end{equation}
+
+
+
+\paragraph{Rewriting the constraint}\leavevmode\\
+
+Using $k_i=S_i-h_i$ in \eqref{eq:sumk},
+\begin{equation}
+k_1+k_2+k_3
+= (S_1+S_2+S_3)-(h_1+h_2+h_3)
+\le 2 S_{\min}.
+\end{equation}
+
+From $S_i\ge S_{\min}$, we have
+\begin{equation}
+   k_i=S_i-h_i\ge S_{\min}-h_i
+\end{equation}
+and at the same time $k_i\ge0$, so we obtain
+\begin{equation}
+   k_i\ge \max\{0,S_{\min}-h_i\}
+\end{equation}
+Define
+\begin{equation}
+f(S_{\min}) := \sum_{i=1}^3 \max\{0,\,S_{\min}-h_i\}.
+\end{equation}
+This quantity is the minimal possible value of $k_1+k_2+k_3$ at fixed $S_{\min}$.  
+
+Thus a necessary and sufficient condition for feasible $k_i$ is
+\begin{equation}\label{eq:f-inequality}
+f(S_{\min}) \le 2 S_{\min}.
+\end{equation}
+
+With ordered helicities,
+\begin{equation}
+f(S_{\min})=
+\begin{cases}
+0, & 0\le S_{\min}\le h_{(1)}, \\[4pt]
+S_{\min}-h_{(1)}, & h_{(1)}\le S_{\min}\le h_{(2)}, \\[4pt]
+2 S_{\min}-(h_{(1)}+h_{(2)}), & h_{(2)}\le S_{\min}\le h_{(3)}, \\[4pt]
+3 S_{\min}-(h_1+h_2+h_3), & S_{\min}\ge h_{(3)}.
+\end{cases}
+\end{equation}
+
+Imposing \eqref{eq:f-inequality} yields:
+\begin{itemize}
+\item Region I: $$0\le S_{\min}\le h_{(1)}$$  
+  Always satisfied.
+
+\item Region II: 
+   
+      $$h_{(1)}\le S_{\min}\le h_{(2)}$$
+   \begin{equation}
+      S_{\min}-h_{(1)}\ge 0,\quad S_{\min}-h_{(2)}\le0,\quad S_{\min}-h_{(3)}\le0
+   \end{equation}
+   So we have
+   \begin{equation}
+      f(S_{\min})=S_{\min}-h_{(1)}\le 2 S_{\min}
+      \quad\Rightarrow\quad
+      S_{\min}\ge -h_{(1)}.
+   \end{equation}
+  If $h_{(1)}<0$, it will give us a non-trival lower bound.
+
+\item Region III: $$h_{(2)}\le S_{\min}\le h_{(3)}$$  
+   \begin{equation}
+      S_{\min}-h_{(1)}\ge 0,\quad S_{\min}-h_{(2)}\ge0,\quad S_{\min}-h_{(3)}\le0
+   \end{equation}
+   So we have 
+   \begin{equation}
+      f(S_{\min})=2S_{\min} - (h_{(1)}+h_{(2)}) \le 2 S_{\min}
+      \quad\Rightarrow\quad
+      h_{(1)}+h_{(2)}\ge 0.
+   \end{equation}
+
+\item Region IV: $$S_{\min}\ge h_{(3)}$$  
+  \begin{equation}
+  3 S_{\min}-(h_1+h_2+h_3)\le 2 S_{\min}
+  \quad\Rightarrow\quad
+  S_{\min}\le h_1+h_2+h_3.
+  \end{equation}
+\end{itemize}
+
+Combining \eqref{eq:Smin-lower} with the former constraints, a solution exists iff
+\begin{equation}\label{eq:existence}
+h_{(1)} + h_{(2)} \ge 0,
+\end{equation}
+and the interval
+\begin{equation}
+S_{\min} \in 
+\Bigl[\,
+\max(0,h_{(1)}),
+\;h_1+h_2+h_3
+\Bigr]
+\end{equation}
+is nonempty.
+
+Since $$h_1+h_2+h_3>0,$$ the upper bound is always positive.
+
+Thus \eqref{eq:existence} is the essential obstruction that rules out forbidden helicity configurations.
+
+\vspace*{1em}
+Whenever a valid $S_{\min}$ exists, the spins are reconstructed by
+\begin{equation}
+S_i = h_i + k_i,
+\qquad
+k_i\in\mathbb Z_{\ge0},
+\end{equation}
+with
+\begin{equation}
+k_i \ge \max(0,\,S_{\min}-h_i),
+\qquad
+k_1+k_2+k_3 \le 2 S_{\min}.
+\end{equation}
+
+Because both $$S_{\min}$$ and $$k_1+k_2+k_3$$ are bounded, only finitely many triples $$(S_1,S_2,S_3)$$ are possible for specific helicities.
+
+\subsection{A general lower bound valid for all solutions for $h_1<0,h_{2,3}\ge 0$}
+We do not assume which $S_i$ equals $S_{\min}$.  We only use the relations
+\begin{equation}
+S_i = h_i + k_i, \qquad k_i \ge 0,
+\end{equation}
+and the definition of the minimal spin
+\begin{equation}
+S_i \ge S_{\min}.
+\end{equation}
+From this inequality we immediately obtain
+\begin{equation}
+S_{\min} - h_i \;\le\; S_i - h_i = k_i,
+\end{equation}
+and therefore
+\begin{equation}
+k_i \;\ge\; S_{\min} - h_i.
+\end{equation}
+Combining with $k_i \ge 0$ gives the unified inequality
+\begin{equation}
+k_i \;\ge\; \max\{0,\, S_{\min}-h_i\},
+\qquad i=1,2,3.
+\end{equation}
+Summing these three inequalities yields
+\begin{equation}
+k_1 + k_2 + k_3 
+\;\ge\; 
+\sum_{i=1}^3 \max\{0,\, S_{\min}-h_i\}.
+\end{equation}
+
+Now consider the case of exactly one negative helicity and two positive helicities.
+After reordering,
+\begin{equation}
+h_1 < 0 < h_2 \le h_3.
+\end{equation}
+Since each $S_i \ge 0$, we necessarily have
+\begin{equation}
+S_{\min} \ge 0.
+\end{equation}
+
+We determine the signs of the terms in the previous inequality:
+\begin{itemize}
+    \item For $i=1$: since $h_1<0$ and $S_{\min}\ge 0$, we have
+    \begin{equation}
+    \max\bigl(0, S_{\min}-h_1\bigr)
+    = S_{\min}-h_1
+    > 0.
+    \end{equation}
+
+    \item For $i=2,3$: since $h_2, h_3 > 0$, we only need the trivial bounds
+    \begin{equation}
+    \max\bigl(0, S_{\min}-h_2\bigr) \ge 0, 
+    \qquad
+    \max\bigl(0, S_{\min}-h_3\bigr) \ge 0.
+    \end{equation}
+\end{itemize}
+
+Therefore,
+\begin{equation}
+k_1 + k_2 + k_3
+\;\ge\;
+(S_{\min}-h_1) + 0 + 0
+=
+S_{\min} - h_1.
+\end{equation}
+
+Combining this with the fundamental inequality
+\begin{equation}
+k_1 + k_2 + k_3 \le 2 S_{\min},
+\end{equation}
+we obtain the chain
+\begin{equation}
+S_{\min}-h_1 \;\le\; k_1+k_2+k_3 \;\le\; 2S_{\min}
+\quad\Longrightarrow\quad
+S_{\min}-h_1 \le 2 S_{\min}.
+\end{equation}
+
+Rearranging gives the universal lower bound
+\begin{equation}
+-h_1 \le S_{\min}
+\quad\Longrightarrow\quad
+S_{\min} \ge |h_1|.
+\end{equation}
+
+Since $S_1 \ge S_{\min}$ for all solutions, we also have
+\begin{equation}
+S_1 \ge S_{\min} \ge |h_1|.
+\end{equation}
+
+Thus we have established the following conclusion:
+
+\begin{equation}
+\boxed{
+\text{For any admissible solution, we necessarily have } 
+S_1 \ge |h_1|.
+}
+\end{equation}
+
+This bound required no assumption about which spin equals $S_{\min}$;
+it is a universal constraint following only from the defining inequalities.
+
+\paragraph{Existence of a solution saturating the lower bound}\mbox{}\\
+Assume in addition the necessary helicity condition
+\begin{equation}
+h_1 + h_2 \ge 0 
+\qquad\Longleftrightarrow\qquad
+h_2 \ge |h_1|,
+\end{equation}
+which is required for the existence of any solution.
+
+We now construct an explicit solution saturating the inequality $S_1 \ge |h_1|$.
+Define
+\begin{equation}
+S_1 = |h_1|,\qquad
+S_2 = h_2,\qquad
+S_3 = h_3.
+\end{equation}
+Using $S_i = h_i + k_i$ we obtain the corresponding integers
+\begin{equation}
+k_1 = S_1 - h_1 = |h_1| - h_1 = 2|h_1|,
+\qquad
+k_2 = 0,
+\qquad
+k_3 = 0.
+\end{equation}
+
+Since $h_2 \ge |h_1|$ and $h_3 \ge h_2$, we have
+\begin{equation}
+S_2 = h_2 \ge |h_1|, 
+\qquad
+S_3 = h_3 \ge h_2 \ge |h_1|,
+\end{equation}
+so that in this configuration
+\begin{equation}
+S_{\min} = S_1 = |h_1|.
+\end{equation}
+
+Finally,
+\begin{equation}
+k_1 + k_2 + k_3 = 2|h_1| = 2S_{\min},
+\end{equation}
+which saturates the inequality $k_1 + k_2 + k_3 \le 2 S_{\min}$.
+
+Thus the lower bound is sharp: the minimal possible value of $S_1$ is
+\begin{equation}
+\boxed{
+S_1^{\min} = |h_1|.
+}
+\end{equation}
+
+An explicit solution attaining this minimum is
+\begin{equation}
+(S_1,S_2,S_3) = \bigl(|h_1|,\,h_2,\,h_3\bigr),
+\qquad
+(k_1,k_2,k_3) = \bigl(2|h_1|,\,0,\,0\bigr).
+\end{equation}
+
+This completes the demonstration that, in the case of one negative helicity and two positive helicities with $h_2 \ge |h_1|$, we not only have the universal bound $S_1 \ge |h_1|$ but also a concrete solution saturating it.
 
 
 
