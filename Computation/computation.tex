@@ -7,7 +7,7 @@
 \usepackage{cancel}
 \usepackage{tikz}
 \usepackage{graphicx}
-\setlength{\parskip}{0.3em}
+\setlength{\parskip}{0.5em}
 \setlength{\parindent}{0pt}
 % 使用系统字体，需要 XeLaTeX 或 LuaLaTeX 编译
 \usepackage{fontspec}
@@ -897,6 +897,165 @@ we know that the 3 point amplitudes with $(1/2^+,1/2^-,+1)$ configuration equals
 \end{equation}
 
 We found that the 5D 3 point amplitudes actually reproduce the corresponding 4D amplitudes.
+
+\section{5D 4-point amplitude}
+Consider the s-channel limit of a 4-point scattering amplitude.
+\begin{figure}[htbp]
+\centering
+\begin{minipage}{0.4\textwidth}
+\centering
+\includegraphics[width=\linewidth]{sch.png}
+\end{minipage}
+\hspace{-0.05\textwidth}
+\begin{minipage}{0.5\textwidth}
+\begin{equation}
+\rightarrow \quad \frac{1}{s}M_3(1_A^a,2_A^b,I_A^e)M_3(J_A^e,3_A^c,4_A^d)
+\end{equation}
+\end{minipage}
+\end{figure}
+
+In this case, the propagator $P_I^{AB}=-P_J^{AB}$ is on-shell because of 
+\begin{equation}
+    P_I^{AB}P_{I\,AB}=2(p_1+p_2)^2=2s=0
+\end{equation}
+which means that we can use the 3 particle special kinematics what we learned before.
+
+For the internal line, we have
+\begin{gather}
+    P_{I\,AB}=I_A{}^eI_{B\,e}=-J_A{}^eJ_{B\,e}=-P_{J\,AB}\\
+    \Rightarrow J_A{}^e=\pm iI_A{}^e
+\end{gather}
+here we choose the convention $J_A{}^e=+ iI_A{}^e$.
+
+For the two 3 point subamplitude, we can use the special kinematics as following
+\begin{equation}
+\left\{
+\begin{aligned}
+    y^{12}{}_{ab}&= 1^A{}_a2_{Ab}=1_a2_b\quad y^{J3}{}_{ec}= J^A{}_e3_{Ac}=+I_e3_c=J_e3_c  \\
+    y^{2I}{}_{be}&= 2^A{}_bI_{Ae}=2_bI_e\quad y^{34}{}_{cd}= 3^A{}_c4_{Ad}=3_c4_d \\
+    y^{I1}{}_{ea}&= I^A{}_e1_{Aa}=I_e1_a\quad y^{4J}{}_{de}= 4^A{}_diI_{Ae}=4_dJ_e
+\end{aligned}
+\right.
+\end{equation}
+where the hat variable is defined like before
+\begin{equation}
+    \hat{i}^ai_a=1\quad \Leftrightarrow \quad \hat{i}_{[a}i_{b]}=\frac{1}{2}\epsilon_{ab}.
+    \label{143}
+\end{equation}
+Also from the 3-point momentum conservation, we have 
+\begin{gather}
+    \delta_A\coloneqq 1^a 1_{Aa}=2^b 2_{Ab}=I^e I_{Ae}\\
+    \delta^\prime_A\coloneqq 3^c 3_{Ac}=4^d 4_{Ad}=J^e iI_{Ae}
+\end{gather}
+\textcolor{red}{$\star$ Notice that while $J_{Ae}=+iI_{Ae}$, $J_e\neq I_e$.} ($I^eJ_e$ is important and non-trival in the 4-point amplitude.)
+And don't forget that here we have the shift redundancy $\alpha_1+\alpha_2+\alpha_I=0$ and $\alpha_3+\alpha_4+\alpha_J=0$.
+
+In fact. on the s-pole, we have a important relation
+\begin{equation}
+    I^eJ_e=\sqrt{-u}=\sqrt{t}\qquad (\text{when} \,s=0, t=-u)
+\end{equation}
+\textit{Proof:} \qquad Consider $y^{13}{}_{ac}=1^A{}_a3_{Ac}$
+\begin{align}
+    \mathrm{det}y^{13}{}_{ac}&=\frac{1}{2}\epsilon^{aa^\prime}\epsilon^{cc^\prime}y^{13}{}_{ac}y^{13}{}_{a^{\prime} c^{\prime}}= \frac{1}{2}1^A{}_a 3_{Ac}\epsilon^{aa^\prime}\epsilon^{cc^\prime} 1^B{}_{a^\prime}3_{Bc^\prime} \notag \\
+    &=\frac{1}{2}1^A{}_a 3_{Ac}1^{Ba} 3_B{}^c=\frac{1}{2}\inner{1_a}{3_c}\inner{1^a}{3^c}=2p_1\cdot p_3=u
+\end{align}
+where $u=(p_1+p_3)^2=p_1^2+p_3^2+2p_1\cdot p_3=2p_1\cdot p_3$.
+
+A key obervation here is that $y^{13}{}_{ac}y^{13}{}_{a}{}^{c^\prime}$ is antisymmetric in $c\leftrightarrow c^\prime$, and $y^{13}{}_{ac}y^{13}{}_{a^\prime}{}^{c}$ is antisymmetric in $a \leftrightarrow a^\prime$ (proof is skipped).
+
+From the equation \eqref{143}, we can rewrite u in three different ways
+\begin{equation}
+    \begin{aligned}
+        1.\quad u&=-\hat{1}^{[a}1^{a^\prime]}y^{13}{}_{ac}y^{13}{}_{a^\prime}{}^{c}\\
+            &=-\hat{1}^a1^{a^\prime}y^{13}{}_{ac}y^{13}{}_{a^\prime}{}^{c}\\
+            &=-\hat{\delta}_1^A\delta^B 3_{Ac}3_B{}^c\\
+            &=-\hat{\delta}_1^A (I^e I^B{}_e)3_{Ac}3_B{}^c\\
+            &=-\hat{\delta}_1^A I^e (-iJ_e 3^c)3_{Ac}\\
+            &=+i(I^eJ_e)\hat{\delta}_1^A\delta^\prime_A
+    \end{aligned}
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        2.\quad u&=-\hat{3}^{[c}3^{c^\prime]}y^{13}{}_{ac}y^{13\,a}{}_{c^\prime}\\
+            &=-\hat{3}^c3^{c^\prime}y^{13}{}_{ac}y^{13\,a}{}_{c^\prime}\\
+            &=-\hat{3}^c3^{c^\prime}1^A{}_a3_{Ac}1^{Ba}3_{Bc^\prime}\\
+            &=-\hat{\delta}_{3A}(J^eiI_{Be})1^{Ba}1^A{}_a\\
+            &=-\hat{\delta}_{3A}J^e(-i1^aI_e)1^A{}_a\\
+            &=-i(I^eJ_e)\delta^A\hat{\delta}_{3A}
+    \end{aligned}
+\end{equation}
+\begin{equation}
+    \begin{aligned}
+        3. \quad u&=2\times \hat{1}^{[a}1^{a^\prime]}\hat{3}^{[c}3^{c^\prime]}y^{13}{}_{ac}y^{13}{}_{a^{\prime} c^{\prime}}\\
+            &=2\times\hat{1}^{[a}1^{a^\prime]}\hat{3}^{[c}3^{c^\prime]}1^A{}_a3_{Ac}1^B{}_{a^\prime}3_{Bc^\prime}\\
+            &=2\times \hat{\delta}_1^{[A}\delta^{B]}\hat{\delta}_{3\,[A}\delta^\prime{}_{B]}\\
+            &=-\hat{\delta}_1{}^B\delta^A\hat{\delta}_{3A}\delta^\prime_B\\
+            &=-(\delta^A\hat{\delta}_{3A})(\hat{\delta}_1{}^B\delta^\prime_B)
+    \end{aligned}
+\end{equation}
+\begin{gather}
+    1\times2 \quad \Rightarrow \quad u^2=(I^eJ_e)^2(\delta^A\hat{\delta}_{3A})(\hat{\delta}_1{}^B\delta^\prime_B)=(I^eJ_e)^2(-u)\\
+    \Longrightarrow I^eJ_e=\sqrt{-u}
+\end{gather}
+So we finish the proof. This also implies that 
+\begin{equation}
+    \hat{\delta}_1^A\delta^\prime_A=-\sqrt{-u}\qquad \text{and}\qquad \delta^A\hat{\delta}_{3A}=\sqrt{u}.
+\end{equation}
+
+From $\hat{I}^eI^f\hat{J}_{[e}J_{f]}=\frac{1}{2}hat{I}^eI^f\epsilon_{ef}=\frac{1}{2}$, what we can do next is expanding in both sides
+\begin{equation}
+    (\hat{I}^e\hat{J}_e)(I^fJ_f)-(\hat{I}^eJ_e)(I^f\hat{J}_f)=1
+\end{equation}
+because of the redundancy of definition of the hat variables, we can shift the definition of $\hat{I}$ and $\hat{J}$ to impose the condition 
+$\hat{I}^eJ_e=0=I^f\hat{J}_f$, so that we have
+\begin{gather}
+    (\hat{I}^e\hat{J}_e)(I^fJ_f)=1\notag \\
+    \Rightarrow \quad \hat{I}^e\hat{J}_e=\frac{1}{I^fJ_f}=\frac{1}{\sqrt{-u}}
+\end{gather}
+
+Before, for the on-shell 3-particle kinematics, we can decompose the corresponding y variable into the outer product of two no-hatted variables. 
+But we didn't address with the y variable like $y^{13}$, because its leg crosses through two on-shell 3-point subamplitudes, so that we cann't utilize 
+the special kinematics. Fortunately, for every leg, not ony $i$ variable, we also have $\hat{i}$ variable, which combined together to expand a basis for every little group space.
+It means that in general, we can expand $y^{13}$ as following
+\begin{equation}
+    y^{13}{}_{ac}=X1_a3_c+Y\hat{1}_a3_c+Z1_a\hat{3}_c+W\hat{1}_a\hat{3}_c
+\end{equation}
+then contracting with $1^a\hat{3}^c$, we can obtain one coefficient
+\begin{equation}
+    1^a\hat{3}^cy^{13}{}_{ac}=-Y=1^a\hat{3}^c1^A{}_a3_{Ac}=\delta^A\hat{\delta}_{3A}=\sqrt{u}
+\end{equation}
+By contracting $\hat{1}^a3^c$ and $1^a3^c$, we can obtain the corresponding coefficient
+\begin{gather}
+    -Z=\hat{\delta}_1^A\delta^\prime_A=-\sqrt{u}\\
+    W=\delta^A\delta^\prime_A=0
+\end{gather}
+Thus 
+\begin{equation}
+    y^{13}{}_{ac}=X1_a3_c-\sqrt{u}\hat{1}_a3_c+\sqrt{u}1_a\hat{3}_c.
+\end{equation}
+Till now, we cannot fix the constant X, but it will be completly fixed later.
+
+We can get the expansion of $y^{ij}$ quickly and systematically by finding the various contractions of $\delta_A$ and $\hat{\delta}_{iA}$. First notice that $\delta_A \delta^{\prime A}=0$ and any objects contracted with itself
+gives the vanishing result(e.g. $\, \delta^A \delta_A=1^a 1^A{}_a 1^b 1_{A b}=1^a1^b\inner{1_a}{1_b}=0$).
+
+One can also check the following contractions give vanishing results
+\begin{gather}
+    \delta^A \hat{\delta}_{iA}=0 \qquad \delta^{\prime A}\hat{\delta}_{jA}=0\\
+    \hat{\delta}_i{}^A\hat{\delta}_{i^\prime A}=0 \qquad \hat{\delta}_j{}^A\hat{\delta}_{j^\prime A}=0
+\end{gather}
+for $i,i^\prime \in \{1,2,I\}$ and $j,j^\prime \in \{3,4,J\}$.
+
+For example,
+\begin{gather}
+    \delta^A \hat{\delta}_{iA}=i^ai^A{}_a \hat{i}^b i_{Ab}=i^a\hat{i}^b\inner{i_a}{i_b}=0\\
+    \hat{\delta}_i{}^A\hat{\delta}_{i^\prime A}=\hat{i}^a i^A{}_{a} \hat{i^\prime}^b i^\prime_{Ab}=\hat{i}^a\hat{i^\prime}^b y^{ii^\prime}{}_{ab}=\hat{i}^a\hat{i^\prime}^b i_a i^\prime _b=0
+\end{gather}
+
+
+
+
+
+
 \appendix
 \section{Detailed explaination of special 5D spinor variables}
 \textbf{Lemma} : \textit{Momentum consevation for 3-particle amplitude implies}
