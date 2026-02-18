@@ -1269,6 +1269,7 @@ So the term we focus on looks like
         [32] & \\
          & \avg{23}
     \end{pmatrix}\right]^2
+    \label{202}
 \end{equation}
 Because we are considering the pure YMs amplitude, every external particle are accompanied with two little group indices, which runs from $1$ to $2$. Here we use a notation $(aa^\prime)$ to represent the indices configuration for a specific external particle. For example,
 \begin{equation}
@@ -1352,6 +1353,77 @@ then the partial amplitude equals to
     \frac{2\avg{24}^2\avg{14}^2}{\doubleavg{12}{23}\!\doubleavg{34}{41}}
 \end{equation}
 which is expected for 4D color ordered amplitude $A_4[1,2,3^+,4^-]$.
+
+Then we need to consider a special kind of component -- all scalar amplitude. The scalar component is $(12)$ or $(21)$, so we can list all possible components
+\begin{gather}
+    (12)(12)(12)(12)\qquad (21)(21)(21)(21)\\
+    (12)(12)(21)(21)\qquad (21)(21)(12)(12)\\
+    (12)(21)(12)(21)\qquad (21)(12)(21)(12)\\
+    (12)(21)(21)(12)\qquad (21)(12)(12)(21)
+\end{gather}
+In order to make components explicit, we first list the crossing term appearing in \eqref{202}
+\begin{align}
+    &-2\begin{pmatrix}
+        [21] & \\
+         & \avg{12}
+    \end{pmatrix}_{ab}\begin{pmatrix}
+        [43] & \\
+         & \avg{34}
+    \end{pmatrix}_{cd}\begin{pmatrix}
+        [31] & \\
+         & \avg{13}
+    \end{pmatrix}_{ac}\begin{pmatrix}
+        [42] & \\
+         & \avg{24}
+    \end{pmatrix}_{bd}  \\
+    &-2\begin{pmatrix}
+        [31] & \\
+         & \avg{13}
+    \end{pmatrix}_{ac}\begin{pmatrix}
+        [42] & \\
+         & \avg{24}
+    \end{pmatrix}_{bd}\begin{pmatrix}
+        [41] & \\
+         & \avg{14}
+    \end{pmatrix}_{ad}\begin{pmatrix}
+        [32] & \\
+         & \avg{23}
+    \end{pmatrix}_{bc} \\
+    &+2\begin{pmatrix}
+        [21] & \\
+         & \avg{12}
+    \end{pmatrix}_{ab}\begin{pmatrix}
+        [43] & \\
+         & \avg{34}
+    \end{pmatrix}_{cd}\begin{pmatrix}
+        [41] & \\
+         & \avg{14}
+    \end{pmatrix}_{ad}\begin{pmatrix}
+        [32] & \\
+         & \avg{23}
+    \end{pmatrix}_{bc}.
+\end{align}
+Then we can read off the first and second component
+\begin{align}
+    (12)(12)(12)(12)=&[21][43]\avg{12}\avg{34}+[31][42]\doubleavg{13}{24}+[41][32]\doubleavg{14}{23}\notag\\
+    &-2[21][43]\doubleavg{13}{24}-2[31][42]\doubleavg{14}{23}+2[21][43]\doubleavg{14}{23}.
+\end{align}
+This is not so clear now so we need to write down all components
+\begin{align}
+    (21)(21)(21)(21)=&[21][43]\avg{12}\avg{34}+[31][42]\doubleavg{13}{24}+[41][32]\doubleavg{14}{23}\notag\\
+    &-2\doubleavg{12}{34}[31][42]-2\doubleavg{13}{24}[41][32]+2\doubleavg{12}{34}[41][32].
+\end{align}
+and
+\begin{gather}
+    (12)(12)(21)(21)=[21]\!\doubleavg{34}{12}\![43]\qquad (21)(21)(12)(12)=\avg{12}[43][21]\avg{34}\\
+    (12)(21)(12)(21)=[31]\avg{24}\avg{13}[42]\qquad (21)(12)(21)(12)=\avg{13}[42][31]\avg{24}\\
+    (12)(21)(21)(12)=[41]\avg{23}\avg{14}[32]\qquad (21)(12)(12)(21)=\avg{14}[32][41]\avg{23}
+\end{gather}
+
+Finally, we want to consider the component
+\begin{gather}
+    (12)(12)(11)(11)
+\end{gather}
 \appendix
 \section{Detailed explaination of special 5D spinor variables}
 \textbf{Lemma} : \textit{Momentum consevation for 3-particle amplitude implies}
