@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.15)  13 FEB 2026 18:45
+This is XeTeX, Version 3.141592653-2.6-0.999997 (TeX Live 2025) (preloaded format=xelatex 2026.1.15)  17 FEB 2026 19:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -618,28 +618,43 @@ File: sch.png Graphic file (type bmp)
 [18]
 
 [19]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 1127.
 
-Overfull \hbox (12.13956pt too wide) in paragraph at lines 1136--1138
+[20]
+
+[21]
+Overfull \hbox (22.35997pt too wide) in paragraph at lines 1288--1290
+\TU/TimesNewRoman(0)/m/n/12 So the equation [] equals to 0, which is expected for 4D color ordered amplitude $\OML/lmm/m/it/12 A[]\OT1/lmr/m/n/12 [1[]\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 2[]\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 3[]\OML/lmm/m/it/12 ; \OT1/lmr/m/n/12 4[]] =
+ []
+
+
+
+[22]
+
+[23]
+
+[24]
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <17.28> on input line 1422.
+
+Overfull \hbox (12.13956pt too wide) in paragraph at lines 1431--1433
 \TU/TimesNewRoman(0)/m/n/12 Other combinations can be simply obtained by momentum conservation,like $\OML/lmm/m/it/12 p[][][]\OT1/lmr/m/n/12 3[][][] = \OMS/lmsy/m/n/12 ^^@\OML/lmm/m/it/12 p[][][]\OT1/lmr/m/n/12 3[][][] =
  []
 
 
 
-[20] (./computation.aux)
+[25] (./computation.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 17916 strings out of 473832
- 398152 string characters out of 5729481
- 814876 words of memory out of 5000000
- 40671 multiletter control sequences out of 15000+600000
+ 17917 strings out of 473832
+ 398157 string characters out of 5729481
+ 817876 words of memory out of 5000000
+ 40672 multiletter control sequences out of 15000+600000
  602074 words of font info for 99 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  102i,18n,107p,545b,311s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on computation.pdf (20 pages).
+Output written on computation.pdf (25 pages).

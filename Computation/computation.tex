@@ -1002,7 +1002,7 @@ So we finish the proof. This also implies that
     \hat{\delta}_1^A\delta^\prime_A=-\sqrt{u}\qquad \text{and}\qquad \delta^A\hat{\delta}_{3A}=\sqrt{u}.
 \end{equation}
 
-From $\hat{I}^eI^f\hat{J}_{[e}J_{f]}=\frac{1}{2}hat{I}^eI^f\epsilon_{ef}=\frac{1}{2}$, what we can do next is expanding in both sides
+From $\hat{I}^eI^f\hat{J}_{[e}J_{f]}=\frac{1}{2}\hat{I}^eI^f\epsilon_{ef}=\frac{1}{2}$, what we can do next is expanding in both sides
 \begin{equation}
     (\hat{I}^e\hat{J}_e)(I^fJ_f)-(\hat{I}^eJ_e)(I^f\hat{J}_f)=1
 \end{equation}
@@ -1048,14 +1048,310 @@ for $i,i^\prime \in \{1,2,I\}$ and $j,j^\prime \in \{3,4,J\}$.
 For example,
 \begin{gather}
     \delta^A \hat{\delta}_{iA}=i^ai^A{}_a \hat{i}^b i_{Ab}=i^a\hat{i}^b\inner{i_a}{i_b}=0\\
-    \hat{\delta}_i{}^A\hat{\delta}_{i^\prime A}=\hat{i}^a i^A{}_{a} \hat{i^\prime}^b i^\prime_{Ab}=\hat{i}^a\hat{i^\prime}^b y^{ii^\prime}{}_{ab}=\hat{i}^a\hat{i^\prime}^b i_a i^\prime _b=0
+    \hat{\delta}_i{}^A\hat{\delta}_{i^\prime A}=\hat{i}^a i^A{}_{a} \hat{i^\prime}^b i^\prime_{Ab}=\hat{i}^a\hat{i^\prime}^b y^{ii^\prime}{}_{ab}=\hat{i}^a\hat{i^\prime}^b i_a i^\prime _b=1 \,??\\
+    \hat{\delta}_1^A\hat{\delta}_{IA}=\hat{1}^a1^A_a\hat{I}^bI_{Ab}
 \end{gather}
+Any contraction involing particles $I,J$ gives 0, so the remaining possible contractions are 
+\begin{gather}
+    \delta^{\prime A}\hat{\delta}_{iA}\qquad \delta^{ A}\hat{\delta}^\prime_{jA}\qquad \hat{\delta}^A_i\hat{\delta}_{jA}
+\end{gather}
+for $i\in \{1,2\},\, j\in \{3,4\}$.
 
+We use the 4 particle momentum conservation to help us obtain some useful identities
+\begin{align}
+    0&=\epsilon_{ab}1_A{}^a1_B{}^b+\epsilon_{ab}2_A{}^a2_B{}^b+\epsilon_{ab}3_A{}^a3_B{}^b+\epsilon_{ab}4_A{}^a4_B{}^b\\
+    \Longrightarrow \,0&=\hat{1}_{[a}1_{b]}1_A{}^a1_B{}^b+\hat{2}_{[a}2_{b]}2_A{}^a2_B{}^b+\hat{3}_{[a}3_{b]}3_A{}^a3_B{}^b+\hat{4}_{[a}4_{b]}4_A{}^a4_B{}^b\\
+    &=\hat{1}_a1_b1_{[A}{}^a1_{B]}{}^b+\hat{2}_a2_b2_{[A}{}^a2_{B]}{}^b+\hat{3}_a3_b3_{[A}{}^a3_{B]}{}^b+\hat{4}_a4_b4_{[A}{}^a4_{B]}{}^b\\
+    0&=(\hat{\delta}_{1[A}+\hat{\delta}_{2[A})\delta_{B]}+(\hat{\delta}_{3[A}+\hat{\delta}_{4[A})\delta^\prime_{B]}
+\end{align}
 
+Contracting with $\delta^A$ gives 
+\begin{align}
+    0&=\delta^A(\hat{\delta}_{1[A}+\hat{\delta}_{2[A})\delta_{B]}+\delta^A(\hat{\delta}_{3[A}+\hat{\delta}_{4[A})\delta^\prime_{B]}\notag\\
+    &=\delta^A(\hat{\delta}_{3[A}+\hat{\delta}_{4[A})\delta^\prime_{B]}\notag\\
+    &=\delta^A(\hat{\delta}_{3A}+\hat{\delta}_{4A})\delta^\prime_{B}
+\end{align}
+which implies to
+\begin{equation}
+    0=\delta^A(\hat{\delta}_{3A}+\hat{\delta}_{4A}).
+\end{equation}
 
+Contracting with $\delta^{\prime A}$ gives 
+\begin{equation}
+    0=\delta^{\prime A}(\hat{\delta}_{1A}+\hat{\delta}_{2A})
+\end{equation}
+\begin{equation}
+    \vdots 
+\end{equation}
 
+Aftering fixing all special $y_a$ spinors, we can conclude that
+\begin{align}
+    y^{12}{}_{ab} &= 1_a 2_b \\
+    y^{13}{}_{ac} &= \sqrt{u}\,\bigl(1_a \hat{3}_c - \hat{1}_a 3_c\bigr) \\
+    y^{14}{}_{ad} &= \sqrt{u}\,\bigl(1_a \hat{4}_d + \hat{1}_a 4_d\bigr) \\
+    y^{23}{}_{bc} &= \sqrt{u}\,\bigl(-2_b \hat{3}_c - \hat{2}_b 3_c\bigr) \\
+    y^{24}{}_{bd} &= \sqrt{u}\,\bigl(-2_b \hat{4}_d + \hat{2}_b 4_d\bigr) \\
+    y^{34}{}_{cd} &= 3_c 4_d
+\end{align}
 
+We can use these identities to form other quantities like
+\begin{equation}
+    y^{12a}{}_{b}\,y^{13}{}_{ac} = \sqrt{u}\,2_b 3_c .
+\end{equation}
+which can help us to significantly simplify the computation for the 4-point amplitude.
 
+Notice that the $y_a$ spinors provide a more efficient description of kinematics subject to momentum conservation than the conventional spinor--helicity bilinears $y^{ij}{}_{ab}$, since the latter admit many redundant representations of structures such as $2_b 3_c$. 
+For instance,
+\begin{equation}
+y^{42d}{}_{b}\,y^{43}{}_{dc}
+\;\sim\; 2_b 3_c
+\;\sim\;
+y^{42d}{}_{b}\,y^{43}{}_{d}{}^{c'}\,y^{13}{}_{ac'}\,y^{13a}{}_{c}.
+\end{equation}
+Nevertheless, the residues of the full amplitude at its poles must ultimately be expressible solely in terms of the standard spinor--helicity pairs $y^{ij}{}_{ab}$.
+
+\subsection{Example of 4-point amplitudes}
+$\mathbf{Yang-Mills}$
+Considering we glue two 3-point YMs amplitudes, so that we obtain the s pole residue
+\begin{align}
+\lim_{s \to 0} s\,\mathcal{M}_4
+&= \mathcal{M}_{3\,(aa)(bb)}^{(ee)}(1,2,I)\,
+   \mathcal{M}_{3\,(ee)(cc)(dd)}(J,3,4) \\
+&= g^{2}\Bigl[
+   (\hat{1}_a 2_b I^{e} + 1_a \hat{2}_b I^{e} + 1_a 2_b \hat{I}^{e})
+   (\hat{J}_e 3_c 4_d + J_e \hat{3}_c 4_d + J_e 3_c \hat{4}_d)
+   \Bigr]^{2} \\
+&= g^{2}\Biggl[
+   \sqrt{-u}\,(\hat{1}_a 2_b + 1_a \hat{2}_b)
+   (\hat{3}_c 4_d + 3_c \hat{4}_d)
+   + \frac{1}{\sqrt{-u}}\,(1_a 2_b 3_c 4_d)
+   \Biggr]^{2} \\
+&= \frac{g^{2}}{-u}\Bigl[
+   -u\,(\hat{1}_a 2_b + 1_a \hat{2}_b)
+   (\hat{3}_c 4_d + 3_c \hat{4}_d)
+   + 1_a 2_b 3_c 4_d
+   \Bigr]^{2}.
+\end{align}
+
+The square here means the symmetric tensor product of little group indices. Following the previous dictionary, we can see that $y^{12}y^{34}=1234$, where we use the abbreviation $1234=1_a2_b3_c4_d$. And also
+\begin{align}
+y^{14} y^{23}
+&= u\,(1\hat{4} + \hat{1}4)(-2\hat{3} - \hat{2}3) \notag\\
+&= -u\,(12\hat{3}\hat{4} + 1\hat{2}3\hat{4} + \hat{1}2\hat{3}4 + \hat{1}\hat{2}34), \\
+y^{13} y^{24}
+&= u\,(1\hat{3} - \hat{1}3)(-2\hat{4} + \hat{2}4) \notag\\
+&= u\,(-12\hat{3}\hat{4} + 1\hat{2}\hat{3}4 + \hat{1}23\hat{4} - \hat{1}\hat{2}34).
+\end{align}
+
+So the combination 
+\begin{equation}
+    y^{12} y^{34}-y^{13} y^{24}+y^{14} y^{23}=1234-u(\hat{1}2+1\hat{2})(\hat{3}4+3\hat{4})
+\end{equation}
+Therefore we obtain the s-pole residue
+\begin{equation}
+\lim_{s \to 0} s\,\mathcal{M}_4
+= \frac{g^{2}}{t}
+\left[
+y^{12}{}_{ab} y^{34}{}_{cd}
+- y^{13}{}_{ac} y^{24}{}_{bd}
++ y^{14}{}_{ad} y^{23}{}_{bc}
+\right]^{2}.
+\end{equation}
+
+Now the entire residue is written in terms of general spinors that don’t just live on the
+pole $s=0$. As we expected, a single pole in t channel appearing in the s-pole residue. This evokes the existence of another
+factorization channel in order for the YM amplitude to be consistent.
+
+In order to obtain the t-pole residue, we only need to exchange $2\leftrightarrow 4$ and $s \leftrightarrow t$. Notice that under $2\leftrightarrow 4$ exchange,
+\begin{equation}
+    y^{12}{}_{ab} y^{34}{}_{cd}- y^{13}{}_{ac} y^{24}{}_{bd}+ y^{14}{}_{ad} y^{23}{}_{bc} \rightarrow y^{14}{}_{ad} y^{32}{}_{cb}- y^{13}{}_{ac} y^{42}{}_{db}+ y^{12}{}_{ab} y^{43}{}_{dc}
+\end{equation}
+which means it keeps invariant under crossing. So we can conclude that 
+\begin{equation}
+\lim_{t \to 0} t\,\mathcal{M}_4
+= \frac{g^{2}}{s}
+\left[
+y^{12}{}_{ab} y^{34}{}_{cd}
+- y^{13}{}_{ac} y^{24}{}_{bd}
++ y^{14}{}_{ad} y^{23}{}_{bc}
+\right]^{2}.
+\end{equation}
+
+Similar to u-pole, which need us to do $2 \leftrightarrow 3$ and $s \leftrightarrow u$, then 
+\begin{equation}
+\lim_{u \to 0} u\,\mathcal{M}_4
+= \frac{g^{2}}{t}
+\left[
+y^{12}{}_{ab} y^{34}{}_{cd}
+- y^{13}{}_{ac} y^{24}{}_{bd}
++ y^{14}{}_{ad} y^{23}{}_{bc}
+\right]^{2}.
+\end{equation}
+
+From the pole structure, we can make the ansatz for full 4-point amplitude, like 
+\begin{equation}
+    \mathcal{M}_4=g^2\left[
+y^{12}{}_{ab} y^{34}{}_{cd}
+- y^{13}{}_{ac} y^{24}{}_{bd}
++ y^{14}{}_{ad} y^{23}{}_{bc}
+\right]^{2} \left(\frac{A_{a_1a_2a_3a_4}}{st}+\frac{B_{a_1a_2a_3a_4}}{tu}+\frac{C_{a_1a_2a_3a_4}}{su}\right) 
+\end{equation}
+where the constants $A_{a_1a_2a_3a_4},B_{a_1a_2a_3a_4},C_{a_1a_2a_3a_4}$ are related to color factor.
+
+In order to make the full amplitude consistent, the ansatz should satisfy the following condition
+\begin{align}
+    \mathop{\mathrm{Res}}_{s=0}\mathcal{M}_4&=g^2\frac{\left[
+y^{12}{}_{ab} y^{34}{}_{cd}
+- y^{13}{}_{ac} y^{24}{}_{bd}
++ y^{14}{}_{ad} y^{23}{}_{bc}
+\right]^{2}}{t}(A_{a_1a_2a_3a_4}-C_{a_1a_2a_3a_4})\notag \\
+&=g^2\frac{\left[
+y^{12}{}_{ab} y^{34}{}_{cd}
+- y^{13}{}_{ac} y^{24}{}_{bd}
++ y^{14}{}_{ad} y^{23}{}_{bc}
+\right]^{2}}{t}c_s
+\end{align}
+and for other two channels, we have the similar condition, which combine together to give us
+\begin{gather}
+    C-A=c_s,\quad A-B=c_t,\quad B-C=c_u.
+\end{gather}
+We can solve for $A,B,C$ if and only if the color factor $c_s,c_t,c_u$ satisfy the following identities
+\begin{equation}
+    c_s+c_t+c_u=0
+\end{equation}
+which is just the Jacobbi identity.
+
+We can choose a special solution to this group of equation
+\begin{equation}
+    C=0,\quad A=-c_s, \quad B=c_u.
+\end{equation}
+Now the full amplitude are written like 
+\begin{equation}
+    \mathcal{M}_4=g^2\left[
+y^{12}{}_{ab} y^{34}{}_{cd}
+- y^{13}{}_{ac} y^{24}{}_{bd}
++ y^{14}{}_{ad} y^{23}{}_{bc}
+\right]^{2}\left(\frac{-c_s}{st}+\frac{c_u}{tu}\right)
+\end{equation}
+
+For simplicity, here we only compute the color-ordered amplitude. The important ingredient is the term inside the square parentheses, which includes 
+many terms. In the following, we will analyse these terms carefully.
+
+In the following, we only consider a special momentum choice, for which all of the fifth component are chosen to be 0. From the definition of y variable
+\begin{equation}
+    y^{ij}=\lambda_{ia}^A\lambda_{ibA}=\inner{i}{j}
+\end{equation}
+it behaves as a diagonal $2\times 2$ matrix, e.g. $y^{12}$ is
+\begin{equation}
+    y^{12}{}_{ab}=\begin{pmatrix}
+        [21] & \\
+         & \avg{12}
+    \end{pmatrix}
+\end{equation}
+So the term we focus on looks like
+\begin{equation}
+    \left[\begin{pmatrix}
+        [21] & \\
+         & \avg{12}
+    \end{pmatrix}\begin{pmatrix}
+        [43] & \\
+         & \avg{34}
+    \end{pmatrix}-\begin{pmatrix}
+        [31] & \\
+         & \avg{13}
+    \end{pmatrix}\begin{pmatrix}
+        [42] & \\
+         & \avg{24}
+    \end{pmatrix}+\begin{pmatrix}
+        [41] & \\
+         & \avg{14}
+    \end{pmatrix}\begin{pmatrix}
+        [32] & \\
+         & \avg{23}
+    \end{pmatrix}\right]^2
+\end{equation}
+Because we are considering the pure YMs amplitude, every external particle are accompanied with two little group indices, which runs from $1$ to $2$. Here we use a notation $(aa^\prime)$ to represent the indices configuration for a specific external particle. For example,
+\begin{equation}
+    (11)(11)(11)(11)
+\end{equation}
+means we choose $a,a^\prime, b,b^\prime,c,c^\prime,d,d^\prime =1$, and because of the special choice of momentum, most of the components give vanishing result. Here we only show the nonvanishing results.
+
+The first one is $(11)(11)(11)(11)$, which gives 
+\begin{align}
+    (11)(11)(11)(11)\quad\Rightarrow &\quad [21]^2[43]^2+[31]^2[42]^2+[41]^2[32]^2-2[21][42][31][42]\notag\\ &\quad-2[31][42][41][32]+2[21][43][41][32]\notag \\
+    &=([21][43]-[31][42]+[41][32])^2
+    \label{204}
+\end{align}
+From the Fierz identity, we know that
+\begin{equation}
+    [21][43]+[23][14]+[24][31]=0.
+\end{equation}
+So the equation \eqref{204} equals to 0, which is expected for 4D color ordered amplitude $A_4[1^+,2^+,3^+,4^+]=0$. For the similar reason, the component $(22)(22)(22)(22)$ also equals to 0, with all square brackets flipping to angle brackets.
+
+The component $(22)(11)(11)(11)$ directly gives us 0 result, which is also expected for 4D color-ordered amplitude $A_4[1^-,2^+,3^+,4^+]=0$. And similar for $(11)(22)(11)(11)$, $(11)(11)(22)(11)$, $(11)(11)(11)(22)$.
+
+The next nonvanishing component is $(22)(22)(11)(11)$, which gives
+\begin{equation}
+    (22)(22)(11)(11)\quad \Rightarrow \quad \avg{12}^2[43]^2.
+\end{equation}
+Then the color-ordered amplitude can be computed as 
+\begin{equation}
+    \frac{\avg{12}^2[43]^2}{st}=\frac{\avg{12}^2[43]^2}{\cbrak{12}{21}\cbrak{23}{32}}
+\end{equation}
+From the momentum conservation,we can obtain a relation for $[43]$
+\begin{equation}
+    \sum\aket{i}[i|=0\quad \Rightarrow \quad \abra{1}(\sum\aket{i}[i|)\sbra{3}=0
+\end{equation}
+which implies 
+\begin{equation}
+    \cbrak{12}{23}+\cbrak{14}{43}=0\quad \Rightarrow \quad [43]=-\frac{\avg{12}}{\avg{14}}[32]
+\end{equation}
+
+So the amplitude equals to
+\begin{equation}
+    \frac{\avg{12}^4}{\doubleavg{12}{23}\!\avg{14}^2}\times\frac{[32]}{[21]}
+\end{equation}
+Again from momentum coservation, we can obtain
+\begin{equation}
+    \frac{[32]}{[21]}=\frac{\avg{41}}{\avg{34}}
+\end{equation}
+which combine together to give us 
+\begin{equation}
+    \frac{\avg{12}^4}{\doubleavg{12}{23}\!\doubleavg{34}{41}}
+\end{equation}
+This is just the Parke-Talyor foumula for color-ordered amplitude $A_4[1^-,2^-,3^+,4^+]$.
+
+We can also check the second partial amplitude
+\begin{equation}
+  \frac{\avg{12}^2[43]^2}{tu}=\frac{\avg{12}^2[43]^2}{\cbrak{13}{31}\cbrak{32}{23}}
+\end{equation}
+After inserting 
+\begin{equation}
+    [43]=-\frac{\avg{12}}{\avg{14}}[32]\quad \text{and} \quad \frac{[23]}{[31]}=\frac{\avg{41}}{\avg{42}}
+\end{equation}
+we can obtain the partial amplitude
+\begin{equation}
+    \frac{\avg{12}^2}{\doubleavg{13}{32}}\times\frac{\avg{12}^2}{\avg{14}^2}\times \frac{\avg{41}}{\avg{42}}=\frac{\avg{12}^4}{\doubleavg{13}{32}\!\doubleavg{24}{41}}
+\end{equation}
+The component $(22)(11)(22)(11)$, $(22)(11)(11)(22)$ and others are the same except for the helicity configuration.
+
+The next important component is $(12)(21)(11)(22)$
+\begin{equation}
+    (12)(21)(11)(22)\quad \Rightarrow \quad -2\acbrak{31}{24}\!\acbrak{32}{14}
+\end{equation}
+so that the partial amplitude equals to
+\begin{equation}
+    \frac{-2\acbrak{31}{24}\!\acbrak{32}{14}}{\cbrak{12}{21}\!\cbrak{23}{32}}=\frac{-2\doubleavg{24}{14}}{\doubleavg{12}{23}}\times \frac{[31]}{[21]}
+\end{equation}
+Also from the momentum conservation, we know that
+\begin{equation}
+    \frac{[31]}{[21]}=-\frac{\avg{42}}{\avg{43}}
+\end{equation}
+then the partial amplitude equals to
+\begin{equation}
+    \frac{2\avg{24}^2\avg{14}^2}{\doubleavg{12}{23}\!\doubleavg{34}{41}}
+\end{equation}
+which is expected for 4D color ordered amplitude $A_4[1,2,3^+,4^-]$.
 \appendix
 \section{Detailed explaination of special 5D spinor variables}
 \textbf{Lemma} : \textit{Momentum consevation for 3-particle amplitude implies}
@@ -1064,7 +1360,6 @@ For example,
     y^{23}{}_{bc}\coloneqq 2^A{}_b3_{Ac}=y^2{}_by^3_c=2_b3_c\\
     y^{31}{}_{ca}\coloneqq 3^A{}_c1_{Aa}=y^3{}_cy^1_a=3_c1_a
 \end{gather}
-
 \noindent
 \textit{Proof}. First note that $y^{(i)(i)}_{ab}=0$, e.g.
 \begin{equation}
